@@ -27,10 +27,25 @@
                     "message": "You must designate a viewEngine"
                 };
             }
+            app.setupHamburger();
 
 
             return app;
         },
+
+        setupHamburger: function () {
+
+            deeptissue(".hamburger-nav").tap(function () {
+                requestAnimationFrame(function () {
+
+                    $("body").toggleClass("expand-menu");
+
+                });
+            });
+
+
+        },
+
 
         parseServices: function (services) {
 

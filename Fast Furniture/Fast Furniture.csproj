@@ -184,6 +184,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\dev\app.css" />
+    <Content Include="css\dev\ui\action-menu.css" />
+    <Content Include="css\dev\ui\action.panel.css" />
+    <Content Include="css\dev\ui\forms.css" />
+    <Content Include="css\dev\ui\navigation.css" />
+    <Content Include="css\dev\ui\typography.css" />
+    <Content Include="css\libs\touch.css" />
     <Content Include="css\dev\ui\animations.css" />
     <Content Include="css\dev\ui\form.css" />
     <Content Include="css\dev\views\category.css" />
@@ -238,6 +244,7 @@
     <Content Include="js\libs\addtohomescreen.min.js" />
     <Content Include="js\libs\class.js" />
     <Content Include="js\libs\controller.js" />
+    <Content Include="js\libs\deeptissue.js" />
     <Content Include="js\libs\dollarbill.min.js" />
     <Content Include="js\libs\l2Storagecache.js" />
     <Content Include="js\libs\simpleViewEngine.js" />
