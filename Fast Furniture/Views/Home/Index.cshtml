@@ -1,0 +1,233 @@
+﻿@using SPAHelper
+
+<!DOCTYPE html>
+@{if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        @:<html lang="en">
+        }
+    else
+    {
+        @:<html lang="en" manifest="app.cache">
+        }
+}
+
+<head>
+
+    <script>
+
+		var ef = "?_escaped_fragment_=";
+
+		if (!('querySelector' in document)
+			 || !('localStorage' in window)
+			 || !('addEventListener' in window)
+			|| !('matchMedia' in window)) {
+
+			if (window.location.href.indexOf("#!") > 0) {
+				window.location.href = window.location.href.replace("#!", ef);
+			} else {
+				if (window.location.href.indexOf(ef) < 0) {
+					window.location.href = window.location.href + ef;
+				}
+			}
+
+		} else {
+
+			if (window.location.href.indexOf(ef) >= 0) {
+				window.location.href = window.location.href.replace(ef, "#!");
+			}
+		}
+
+    </script>
+
+    <meta content="on" http-equiv="cleartype">
+    <meta http-equiv="content-language" content="us-en">
+
+    <title>Fast Furniture</title>
+
+    @if (!Html.HasEscapeFragment())
+    {
+        if (HttpContext.Current.IsDebuggingEnabled)
+        {
+
+            <link href="~/css/libs/normalize.css" rel="stylesheet" />
+            <link href="~/css/libs/spa.css" rel="stylesheet" />
+            <link href="~/css/dev/ui/animations.css" rel="stylesheet" />
+            <link href="~/css/dev/app.css" rel="stylesheet" />
+
+    <!-- Add library specific CSS references here -->
+            <link href="css/dev/views/category.css" rel="stylesheet" />
+            <link href="css/dev/views/product.css" rel="stylesheet" />
+            <link href="css/dev/views/search.css" rel="stylesheet" />
+            <link href="css/dev/views/home.css" rel="stylesheet" />
+            <link href="css/dev/views/NotFound.css" rel="stylesheet" />
+            <link href="css/dev/views/login.css" rel="stylesheet" />
+            <link href="css/dev/views/forgotemail.css" rel="stylesheet" />
+            <link href="css/dev/views/forgotpassword.css" rel="stylesheet" />
+
+
+        }
+        else
+        {
+
+            <script>
+
+                function loadCSS(href, before, media, callback) {
+                    "use strict";
+                    var ss = window.document.createElement("link"),
+                        ref = before || window.document.getElementsByTagName("script")[0],
+                        sheets = window.document.styleSheets;
+
+                    ss.rel = "stylesheet";
+                    ss.href = href;
+                    ss.media = "only x";
+
+                    if (callback) {
+                        ss.onload = callback;
+                    }
+
+                    ref.parentNode.insertBefore(ss, ref);
+
+                    ss.onloadcssdefined = function (cb) {
+                        var defined, i = 0;
+
+                        for (; i < sheets.length; i++) {
+                            if (sheets[i].href && sheets[i].href.indexOf(href) > -1) {
+                                defined = true;
+                            }
+                        }
+                        if (defined) {
+                            cb();
+                        } else {
+                            setTimeout(function () {
+                                ss.onloadcssdefined(cb);
+                            });
+                        }
+                    };
+                    ss.onloadcssdefined(function () {
+                        ss.media = media || "all";
+                    });
+                    return ss;
+                }
+
+                loadCSS("http://images.professionalaspnet.com/furniture/css/site.min.css");
+
+            </script>
+
+        }
+
+    }
+    else
+    {
+
+        <link href="http://images.professionalaspnet.com/furniture/css/core/Fast-Furniture.app.core.css" rel="stylesheet">
+
+    }
+
+    @if (Request.UserAgent.ToLower().Contains("ipad") || Request.UserAgent.ToLower().Contains("iphone"))
+    {
+        <link href="http://images.professionalaspnet.com/furniture/addtohomescreen.css" rel="stylesheet">
+    }
+
+    <meta content="Making Furnishing Your World Fast" name="description">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link href="favicon.ico" rel="shortcut icon">
+
+    <link rel="icon" sizes="192x192" href="http://images.professionalaspnet.com/furniture/touch-icon-android.png">
+    <link rel="apple-touch-icon" href="http://images.professionalaspnet.com/furniture/touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://images.professionalaspnet.com/furnituretouch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://images.professionalaspnet.com/furniture/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://images.professionalaspnet.com/furniture/touch-icon-ipad-retina.png">
+
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+
+    <link rel="apple-touch-startup-image" href="http://images.professionalaspnet.com/furniturestartup.png">
+
+    <meta name="application-name" content="" />
+    <meta name="msapplication-config" content="IEconfig.xml" />
+
+    <meta name="msapplication-allowDomainMetaTags" content="true">
+    <meta name="msapplication-navbutton-color" content="">
+    <meta name="msapplication-badge" content="frequency=1440; polling-uri=">
+    <meta name="msapplication-notification" content="frequency=1440;polling-uri=; cycle=1" />
+    <meta name="msapplication-starturl" content="#!">
+    <meta name="msapplication-tooltip" content="">
+
+    <link type="text/plain" rel="author" href="http://furniture.love2dev.com/humans.txt" />
+
+</head>
+
+<body spa-app="">
+
+    <main class="main-content" role="main"></main>
+
+    <footer class="footer"></footer>
+
+    @if (!Html.HasEscapeFragment())
+    {
+
+        @SPARenderPage("layouts/fastFurnitureLayout.cshtml")
+
+        @SPARenderPage("views/category.cshtml")
+        @SPARenderPage("views/product.cshtml")
+        @SPARenderPage("views/search.cshtml")
+        @SPARenderPage("views/home.cshtml")
+        @SPARenderPage("views/NotFound.cshtml")
+        @SPARenderPage("views/login.cshtml")
+        @SPARenderPage("views/forgotemail.cshtml")
+        @SPARenderPage("views/forgotpassword.cshtml")
+
+
+        @SPARenderPage("templates/foobar.cshtml")
+        @SPARenderPage("templates/test1.cshtml")
+
+    }
+
+    @if (!Html.HasEscapeFragment())
+    {
+
+        if (HttpContext.Current.IsDebuggingEnabled)
+        {
+
+            <script src="~/js/libs/spa.js"></script>
+            <script src="~/js/libs/class.js"></script>
+            <script src="~/js/libs/controller.js"></script>
+            <script src="~/js/libs/dollarbill.min.js"></script>
+            <script src="~/js/libs/spapm.js"></script>
+            <script src="~/js/libs/simpleViewEngine.js"></script>
+            <script src="~/js/libs/l2Storagecache.js"></script>
+
+            <script src="~/js/dev/Fast-Furniture.app.js"></script>
+
+            <script src="~/js/dev/services/Fast-Furniture.data.js"></script>
+            
+            <script src="~/js/dev/controllers/fastFurnitureController.js"></script>
+            <script src="~/js/dev/controllers/fastFurnitureControllerAuthenticatedController.js"></script>
+            
+            <script src="js/dev/controllers/category.js"></script>
+            <script src="js/dev/controllers/product.js"></script>
+            <script src="js/dev/controllers/search.js"></script>
+            <script src="js/dev/controllers/home.js"></script>
+            <script src="js/dev/controllers/NotFound.js"></script>
+            <script src="js/dev/controllers/login.js"></script>
+            <script src="js/dev/controllers/forgotemail.js"></script>
+            <script src="js/dev/controllers/forgotpassword.js"></script>
+
+            <script src="~/js/dev/Fast-Furniture.bootstrap.js"></script>
+
+        }
+        else
+        {
+            <script src="js/Fast-Furniture.app.min.js"></script>
+
+            if (Request.UserAgent.ToLower().Contains("ipad") || Request.UserAgent.ToLower().Contains("iphone"))
+            {
+                <script src="http://images.professionalaspnet.com/furnitureaddtohomescreen.min.js" async="async"></script>
+            }
+        }
+
+    }
+            </body>
+        </html>

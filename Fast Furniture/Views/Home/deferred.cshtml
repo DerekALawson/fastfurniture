@@ -1,0 +1,61 @@
+﻿@using SPAHelper
+
+@{if (HttpContext.Current.IsDebuggingEnabled)
+	{
+
+        <link href="css/dev/views/new account.css" rel="stylesheet" />
+        <link href="css/dev/views/payment options.css" rel="stylesheet" />
+        <link href="css/dev/views/orders.css" rel="stylesheet" />
+        <link href="css/dev/views/place order.css" rel="stylesheet" />
+        <link href="css/dev/views/order confirmation.css" rel="stylesheet" />
+        <link href="css/dev/views/my favorites.css" rel="stylesheet" />
+        <link href="css/dev/views/about.css" rel="stylesheet" />
+        <link href="css/dev/views/feedback.css" rel="stylesheet" />
+        <link href="css/dev/views/social.css" rel="stylesheet" />
+        <link href="css/dev/views/account.css" rel="stylesheet" />
+    }
+
+	else
+	{
+
+        <link href="deferred.min.css" rel="stylesheet" />
+
+	}
+}
+
+
+    @SPARenderPage("views/new account.cshtml")
+    @SPARenderPage("views/payment options.cshtml")
+    @SPARenderPage("views/orders.cshtml")
+    @SPARenderPage("views/place order.cshtml")
+    @SPARenderPage("views/order confirmation.cshtml")
+    @SPARenderPage("views/my favorites.cshtml")
+    @SPARenderPage("views/about.cshtml")
+    @SPARenderPage("views/feedback.cshtml")
+    @SPARenderPage("views/social.cshtml")
+    @SPARenderPage("views/account.cshtml")
+
+
+@{
+	if (HttpContext.Current.IsDebuggingEnabled)
+	{
+
+            <script src="js/dev/contollers/new account.js"></script>
+            <script src="js/dev/contollers/payment options.js"></script>
+            <script src="js/dev/contollers/orders.js"></script>
+            <script src="js/dev/contollers/place order.js"></script>
+            <script src="js/dev/contollers/order confirmation.js"></script>
+            <script src="js/dev/contollers/my favorites.js"></script>
+            <script src="js/dev/contollers/about.js"></script>
+            <script src="js/dev/contollers/feedback.js"></script>
+            <script src="js/dev/contollers/social.js"></script>
+            <script src="js/dev/contollers/account.js"></script>
+
+    }
+	else
+	{
+
+        <script src="deferred.min.js"></script>
+
+	}
+}

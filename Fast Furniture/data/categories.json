@@ -1,0 +1,315 @@
+﻿[
+    {
+        "Name": "Living Room",
+        "Slug": "Living-Room",
+        "Children": [
+            {
+                "Slug": "Sofas",
+                "Name": "Sofas"
+            },
+            {
+                "Slug": "Loveseats",
+                "Name": "Loveseats"
+            },
+            {
+
+                "Slug": "Sectionals",
+                "Name": "Sectionals"
+            },
+            {
+
+                "Slug": "Recliners",
+                "Name": "Recliners"
+            },
+            {
+
+                "Slug": "Ottomans-Benches",
+                "Name": "Ottomans & Benches"
+            },
+            {
+
+                "Slug": "Living Room-Chairs",
+                "Name": "Living Room - Chairs"
+            },
+            {
+
+                "Slug": "Living-Room-Tables",
+                "Name": "Living Room - Tables"
+            },
+            {
+
+                "Slug": "Curios",
+                "Name": "Curios"
+            },
+            {
+
+                "Slug": "Sleepers-Futons",
+                "Name": "Sleepers & Futons"
+            }
+        ]
+    },
+    {
+        "Name": "Dining",
+        "Slug": "Dining",
+        "Children": [
+            {
+
+                "Slug": "Dining-Table-Sets",
+                "Name": "Dining & Table Sets"
+            },
+            {
+
+                "Slug": "Dining-Room-Tables",
+                "Name": "Dining Room - Tables"
+            },
+            {
+
+                "Slug": "Chairs-Benches",
+                "Name": "Chairs & Benches"
+            },
+            {
+
+                "Slug": "Stools",
+                "Name": "Stools"
+            },
+            {
+
+                "Slug": "Sideboards-Buffets",
+                "Name": "Sideboards & Buffets"
+            },
+            {
+
+                "Slug": "Curios",
+                "Name": "Curios"
+            }
+        ]
+    },
+    {
+        "Name": "Bedroom",
+        "Slug": "Bedroom",
+        "Children": [
+            {
+
+                "Slug": "Bedroom-Sets",
+                "Name": "Bedroom Sets"
+            },
+            {
+
+                "Slug": "Beds",
+                "Name": "Beds"
+            },
+            {
+
+                "Slug": "Dressers-Chests",
+                "Name": "Dressers & Chests"
+            },
+            {
+
+                "Slug": "Nightstands",
+                "Name": "Nightstands"
+            },
+            {
+
+                "Slug": "Media-Chests",
+                "Name": "Media Chests"
+            },
+            {
+
+                "Slug": "Underbed Storage",
+                "Name": "Underbed Storage"
+            }
+        ]
+    },
+    {
+        "Name": "Mattress",
+        "Slug": "Mattress",
+        "Children": [
+            {
+
+                "Slug": "Innerspring-Mattresses",
+                "Name": "Innerspring Mattresses"
+            },
+            {
+
+                "Slug": "Foam-Mattresses",
+                "Name": "Foam Mattresses"
+            },
+            {
+
+                "Slug": "Hybrid-Mattresses",
+                "Name": "Hybrid Mattresses"
+            },
+            {
+
+                "Slug": "Boxsprings",
+                "Name": "Boxsprings"
+            },
+            {
+
+                "Slug": "Bases-Adjustable-Bases",
+                "Name": "Bases & Adjustable Bases"
+            },
+            {
+
+                "Slug": "Bedding-Linen",
+                "Name": "Bedding & Linen"
+            }
+        ]
+    },
+    {
+        "Name": "Office",
+        "Slug": "Office",
+        "Children": [
+            {
+                "Slug": "Desks",
+                "Name": "Desks"
+            },
+            {
+                "Slug": "Cabinets-File-Storage",
+                "Name": "Cabinets & File Storage"
+            },
+            {
+                "Slug": "Office-Chairs",
+                "Name": "Office Chairs"
+            },
+            {
+                "Slug": "Bookshelves",
+                "Name": "Bookshelves"
+            }
+        ]
+    },
+    {
+        "Name": "Entertainment",
+        "Slug": "Entertainment",
+        "Children": [
+            {
+                "Slug": "TV-Consoles",
+                "Name": "TV Consoles"
+            },
+            {
+                "Slug": "Fireplaces",
+                "Name": "Fireplaces"
+            },
+            {
+                "Slug": "Piers-Bookcases",
+                "Name": "Piers & Bookcases"
+            }
+        ]
+    },
+    {
+        "Name": "Entertainment",
+        "Slug": "Entertainment",
+        "Children": [
+            {
+                "Slug": "TV-Consoles",
+                "Name": "TV Consoles"
+            },
+            {
+                "Slug": "Fireplaces",
+                "Name": "Fireplaces"
+            },
+            {
+                "Slug": "Piers-Bookcases",
+                "Name": "Piers & Bookcases"
+            }
+        ]
+    },
+    {
+        "Name": "Youth",
+        "Slug": "Youth",
+        "Children": [
+            {
+                "Slug": "Youth-Bedroom-Set",
+                "Name": "Youth - Bedroom Set"
+            },
+            {
+                "Slug": "Youth-Beds",
+                "Name": "Youth - Beds"
+            },
+            {
+                "Slug": "Youth-Dressers-Chests",
+                "Name": "Youth - Dressers & Chests"
+            },
+            {
+                "Slug": "Youth-Nightstands",
+                "Name": "Youth - Nightstands"
+            },
+            {
+                "Slug": "Youth-Desks",
+                "Name": "Youth - Desks"
+            },
+            {
+                "Slug": "Youth-Accents",
+                "Name": "Youth - Accents"
+            },
+            {
+                "Slug": "Youth-Storage",
+                "Name": "Youth - Storage"
+            }
+        ]
+    },
+    {
+        "Name": "Patio",
+        "Slug": "Patio",
+        "Children": [
+            {
+                "Slug": "Patio-Table-Sets",
+                "Name": "Patio Table Sets"
+            },
+            {
+                "Slug": "Patio-Firepit-Sets",
+                "Name": "Patio Firepit Sets"
+            },
+            {
+                "Slug": "Patio-Chairs",
+                "Name": "Patio Chairs"
+            },
+            {
+                "Slug": "Lounge-Seating",
+                "Name": "Lounge Seating"
+            },
+            {
+                "Slug": "Patio-Table",
+                "Name": "Patio Table"
+            },
+            {
+                "Slug": "Patio-Firepits",
+                "Name": "Patio Firepits"
+            }
+        ]
+    },
+    {
+        "Name": "Accent/Decor",
+        "Slug": "Accent-Decor",
+        "Children": [
+            {
+                "Slug": "Mirrors",
+                "Name": "Mirrors"
+            },
+            {
+                "Slug": "Clocks",
+                "Name": "Clocks"
+            },
+            {
+                "Slug": "Lighting",
+                "Name": "Lighting"
+            },
+            {
+                "Slug": "Rugs",
+                "Name": "Rugs"
+            },
+            {
+                "Slug": "Accent Pillows",
+                "Name": "Accent Pillows"
+            },
+            {
+                "Slug": "Accent-Furniture",
+                "Name": "Accent Furniture"
+            },
+            {
+                "Slug": "Accessories",
+                "Name": "Accessories"
+            }
+        ]
+    }
+]

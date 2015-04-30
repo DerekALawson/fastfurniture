@@ -1,0 +1,61 @@
+﻿
+.main-content {
+	overflow: hidden;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	border-radius: 5px 5px 0 0;
+    background-color: #fff;
+}
+
+.spa-layout {
+	display: none;
+	position: relative;
+	top: 0;
+	left: 0;
+	bottom: 10px;
+	right: 0;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.spa-view {
+	position: relative;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+.spa-current-view {
+	display: block;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	
+}
+
+
+.show {
+    display: block !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+
+
+@media(min-width:975px) {
+
+	.main-content {
+		position: relative;
+	}
+
+	.spa-current-view {
+	
+		min-height:300px;
+	
+	}
+}
