@@ -1,0 +1,51 @@
+﻿
+
+.item-grid {
+    padding: 0;
+    overflow: hidden;
+    margin-left: 0;
+    width: 4500px;
+}
+
+.item-grid-group {
+    display: inline-block;
+    margin: 1% 1%;
+    height: 640px;
+    width: 880px;
+}
+
+.item-grid-target,
+.item-grid-target-first {
+    display: inline-block;
+    list-style-type: none;
+    margin: 10px;
+    width: 200px;
+    overflow: hidden;
+    background: transparent;
+    text-align: center;
+    float:left;
+    height:250px;
+}
+
+.item-grid-target-first{
+    width:auto;
+    max-width:400px;
+    height:auto;
+}
+
+
+.item-grid-group-title {
+    width: 100%;
+    font: 1.5em bold;
+    padding: 0;
+    margin: 1% 0;
+}
+
+
+.item-grid-photo-caption {
+    color: #ccc;
+    background: #333;
+    font-size: 1.2em;
+    padding: 1%;
+    height: 3em;
+}

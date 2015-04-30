@@ -187,6 +187,7 @@
     <Content Include="css\dev\ui\action-menu.css" />
     <Content Include="css\dev\ui\action.panel.css" />
     <Content Include="css\dev\ui\forms.css" />
+    <Content Include="css\dev\ui\grid.css" />
     <Content Include="css\dev\ui\navigation.css" />
     <Content Include="css\dev\ui\typography.css" />
     <Content Include="css\libs\touch.css" />
