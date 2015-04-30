@@ -1,0 +1,29 @@
+﻿[
+    {
+        "Name": "Home",
+        "Slug": "home",
+        "icon": "home-icon"
+    },
+    {
+        "Name": "Categories",
+        "Slug": "categories",
+        "icon": "categories-icon",
+        "children": [ ]
+    },
+    {
+        "Name": "Privacy",
+        "Slug": "privacy",
+        "icon": "home-icon"
+    },
+    {
+        "Name": "About",
+        "Slug": "about",
+        "icon": "home-icon"
+    },
+        {
+        "Name": "Contact",
+        "Slug": "contact",
+        "icon": "home-icon"
+    }
+
+]

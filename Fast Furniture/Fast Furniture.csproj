@@ -309,6 +309,7 @@
     <Content Include="css\dev\views\product.less" />
     <Content Include="css\dev\views\search.less" />
     <Content Include="css\libs\spa.less" />
+    <Content Include="data\menu.json" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Home\templates\foobar.cshtml" />
     <Content Include="Views\Home\templates\test1.cshtml" />
@@ -333,6 +334,10 @@
     <Content Include="Views\Home\deferred.cshtml" />
     <Content Include="Views\Home\layouts\fastFurnitureLayout.cshtml" />
     <Content Include="Views\Home\views\criticalcss.cshtml" />
+    <Content Include="Views\Home\templates\productGridItem.cshtml" />
+    <Content Include="Views\Home\templates\productDetail.cshtml" />
+    <Content Include="Views\Home\templates\categoryGridItem.cshtml" />
+    <Content Include="Views\Home\templates\staticText.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\git\SPAHelper\SPAHelper\SPAHelper.4.0.csproj">

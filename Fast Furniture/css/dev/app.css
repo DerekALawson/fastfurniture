@@ -75,6 +75,7 @@ h3, .view-title-large, .panel-title {
     font-weight: 200;
     font-size: 20pt;
     line-height: 1.2;
+    width:100%;
 }
 
 h4, .panel-small-title {
