@@ -1,0 +1,22 @@
+{
+  "name": "Love2Dev",
+  "version": "2.0.0",
+  "authors": [
+    "Chris Love <clove@extremewebworks.com>"
+  ],
+  "description": "Chris Love's Internet Home",
+  "moduleType": [
+    "es6",
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "love2dev.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
