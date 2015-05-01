@@ -27,10 +27,17 @@
                     "message": "You must designate a viewEngine"
                 };
             }
+
             app.setupHamburger();
 
 
             return app;
+        },
+
+        parsingEnd: function () {
+
+            this.setupMenu();
+
         },
 
         setupHamburger: function () {
@@ -46,6 +53,46 @@
 
         },
 
+        setupMenu: function () {
+
+            var menu = [
+                        {
+                            "Name": "Home",
+                            "Slug": "",
+                            "icon": "home-icon"
+                        },
+                        {
+                            "Name": "Categories",
+                            "Slug": "categories",
+                            "icon": "categories-icon",
+                            "children": []
+                        },
+                        {
+                            "Name": "Login",
+                            "Slug": "login",
+                            "icon": "login-icon"
+                        },
+                        {
+                            "Name": "Privacy",
+                            "Slug": "privacy",
+                            "icon": "home-icon"
+                        },
+                        {
+                            "Name": "About",
+                            "Slug": "about",
+                            "icon": "home-icon"
+                        },
+                        {
+                            "Name": "Contact",
+                            "Slug": "contact",
+                            "icon": "home-icon"
+                        }
+
+            ];
+
+            this.viewEngine.bind(".main-nav", "menuItem", {menu: menu});
+
+        },
 
         parseServices: function (services) {
 

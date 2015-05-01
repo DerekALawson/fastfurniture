@@ -1,0 +1,7 @@
+﻿<script id="menuItem" type="text/x-simpleTemplate-template">
+
+    <%for(var index in this.menu) {%>
+    <a href="#!<%this.menu[index].Slug%>" role="menuitem" class="home-nav"><span class="nav-icon <%this.menu[index].icon%>"></span><span class="nav-text"><%this.menu[index].Name%></span></a>
+    <%}%>
+
+</script>

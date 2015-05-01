@@ -6,6 +6,10 @@
     clear: both;
 }
 
+.product-detail-header {
+    float: left;
+    width: 30%;
+}
 
 
 .product-detail-header h1 {
@@ -37,15 +41,13 @@
 }
 
 .product-detail-description {
-    width: 100%;
-    padding: 1% 5% 1% 5%;
+    width: 30%;
+    padding: 1% 5% 1% 1%;
     float: left;
 }
 
-
-
 .product-details-related-products {
-    width: 25%;
+    width: 110px;
     float: left;
 }
 
@@ -60,7 +62,11 @@
     color: #444;
     font-size: 1.2em;
     padding: 1% 5%;
-    height: 2em;
+    height: 4em;
     overflow: hidden;
     margin: .5% 0;
+}
+
+.replated-product-photo{
+    width:80px;
 }

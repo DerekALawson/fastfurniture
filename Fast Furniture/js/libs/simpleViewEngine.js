@@ -43,8 +43,8 @@
 		templateService: undefined,
 		ViewSelector: "script[class='spa-view']",
 		LayoutSelector: "script[class='spa-layout']",
-		TemplateSelector: "[type='text/x-simple-template']",
-		appPrefix: "mustacheApp-",
+		TemplateSelector: "[type='text/x-simpleTemplate-template']",
+		appPrefix: "spaApp-",
 
 		views: {},
 		templates: {},
@@ -215,7 +215,7 @@
 				if (typeof views[i] === "function") {
 					views[i] = views[i];
 				} else {
-					views[i] = Mustache.compile(views[i]);
+					views[i] = views[i];
 				}
 			}
 
@@ -255,7 +255,7 @@
 		setTemplate: function (templateId, template) {
 
 			if (typeof template === "string") {
-				this.templates[templateId] = Mustache.compile(template);
+				this.templates[templateId] = template;
 			}
 
 		},

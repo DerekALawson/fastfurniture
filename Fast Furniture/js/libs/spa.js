@@ -47,7 +47,8 @@
 		window.addEventListener("DOMContentLoaded", function () {
 
 			//cannot assume backpack anymore
-			spa.viewEngine = spa.settings.viewEngine;
+		    spa.viewEngine = spa.settings.viewEngine;
+		    spa.AppContext = spa.settings.AppContext;
 			spa.pm = spa.settings.pm;
 
 			spa.analytics = spa.settings.analytics;
@@ -59,6 +60,8 @@
 				spa.pm.setupRoutes(document.querySelectorAll(".spa-view"));
 
 				spa.viewEngine.parseViews();
+
+				spa.AppContext.parsingEnd();
 
 			}
 

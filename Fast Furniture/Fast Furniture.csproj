@@ -378,6 +378,7 @@
     <Content Include="Views\Home\templates\staticText.cshtml" />
     <Content Include="Views\Home\templates\productGridGroup.cshtml" />
     <Content Include="Views\Home\views\categories.cshtml" />
+    <Content Include="Views\Home\templates\menuItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\git\SPAHelper\SPAHelper\SPAHelper.4.0.csproj">

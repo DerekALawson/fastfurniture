@@ -16,25 +16,20 @@ namespace Fast_Furniture.Controllers
     {
 
         [HttpGet]
-        public HttpResponseMessage Products()
+        public HttpResponseMessage Products(int? page, int? count)
         {
+
+            if (count == null)
+            {
+                count = 10;
+            }
+
+            if (page == null || page < 1)
+            {
+                page = 1;
+            }
 
             string content = File.ReadAllText(HttpContext.Current.Server.MapPath(@"~\data\products.json"));
-
-            var resp = new HttpResponseMessage()
-            {
-                Content = new StringContent(content)
-            };
-            resp.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            return resp;
-
-        }
-
-        [HttpGet]
-        public HttpResponseMessage Categories()
-        {
-
-            string content = File.ReadAllText(HttpContext.Current.Server.MapPath(@"~\data\categories.json"));
 
             var resp = new HttpResponseMessage()
             {

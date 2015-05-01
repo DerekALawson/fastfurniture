@@ -30,7 +30,7 @@ _spa = SPA({
     "AppContext": fastFurniture,
 	"viewEngine": ve,
 	"pm": pm,
-	"viewSelector": "[type='text/x--template']",
+	"viewSelector": "[type='text/x-simpleTemplate-template']",
 	"defaultPage": "index",
 	"viewWrapper": "#main",
 	"viewTransition": "slide",
