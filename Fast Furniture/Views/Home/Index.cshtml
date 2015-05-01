@@ -62,6 +62,7 @@
 
     <!-- Add library specific CSS references here -->
             <link href="css/dev/views/category.css" rel="stylesheet" />
+            <link href="css/dev/views/categories.css" rel="stylesheet" />
             <link href="css/dev/views/product.css" rel="stylesheet" />
             <link href="css/dev/views/search.css" rel="stylesheet" />
             <link href="css/dev/views/home.css" rel="stylesheet" />
@@ -176,9 +177,10 @@
                       <span class="hamburger-bar-text">menu</span>
                   </span>
                   <h1 class="view-title">Fast Furniture</h1>
+
+                  <span class="right">[Search]</span>
               </header>
 
-              <aside class="action-panel panel-v-scroll"></aside>
               <aside class="left-panel panel-v-scroll">
                   <div class="nav-header">
                       <div class="dropdown profile-element">
@@ -217,6 +219,7 @@
                   @SPARenderPage("layouts/fastFurnitureLayout.cshtml")
 
                   @SPARenderPage("views/category.cshtml")
+                  @SPARenderPage("views/categories.cshtml")
                   @SPARenderPage("views/product.cshtml")
                   @SPARenderPage("views/search.cshtml")
                   @SPARenderPage("views/home.cshtml")
@@ -226,8 +229,10 @@
                   @SPARenderPage("views/forgotpassword.cshtml")
 
 
-                  @SPARenderPage("templates/foobar.cshtml")
-                  @SPARenderPage("templates/test1.cshtml")
+                  @SPARenderPage("templates/categoryGridItem.cshtml")
+                  @SPARenderPage("templates/productDetail.cshtml")
+                  @SPARenderPage("templates/productGridGroup.cshtml")
+                  @SPARenderPage("templates/productGridItem.cshtml")
 
               }
 
@@ -246,9 +251,6 @@
                       <script src="~/js/libs/l2Storagecache.js"></script>
                       <script src="~/js/libs/deeptissue.js"></script>
 
-                      <script src="~/js/dev/ui/action.panel.js"></script>
-
-
                       <script src="~/js/dev/Fast-Furniture.app.js"></script>
 
                       <script src="~/js/dev/services/Fast-Furniture.data.js"></script>
@@ -257,6 +259,7 @@
                       <script src="~/js/dev/controllers/fastFurnitureControllerAuthenticatedController.js"></script>
 
                       <script src="js/dev/controllers/category.js"></script>
+                      <script src="js/dev/controllers/categories.js"></script>
                       <script src="js/dev/controllers/product.js"></script>
                       <script src="js/dev/controllers/search.js"></script>
                       <script src="js/dev/controllers/home.js"></script>
@@ -280,4 +283,5 @@
 
               }
           </body>
+
         </html>

@@ -28,6 +28,10 @@
 	display: none;
 }
 
+spa-child-view{
+    height:100%;
+}
+
 .spa-current-view {
 	display: block;
 	overflow: hidden;

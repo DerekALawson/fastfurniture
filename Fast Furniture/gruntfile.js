@@ -107,6 +107,13 @@ module.exports = function (grunt) {
 				tasks: ['less', 'cssmin'],
 			},
 		},
+		uncss: {
+		    dist: {
+		        files: {
+		            'css/critical.site.css': ['http://localhost:7856/critical.html']
+		        }
+		    }
+		}
 	});
 
 

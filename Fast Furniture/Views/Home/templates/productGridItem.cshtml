@@ -1,1 +1,14 @@
-﻿
+﻿<script id="productGridItem" type="text/x-simpleTemplate-template">
+
+    <%for(var index in this.products) {%>
+
+    <div class="item-grid-target">
+        <a href="#!product/<%this.products[index]slug%>">
+            <img alt="<%this.products[index].Name%>" src="img/<%this.products[index].image" class="product-grid-photo">
+            <figcaption class="item-grid-photo-caption"><%this.products[index].Name%></figcaption>
+        </a>
+    </div>
+
+    <%}%>
+
+</script>

@@ -11,6 +11,11 @@
         "children": [ ]
     },
     {
+        "Name": "Login",
+        "Slug": "login",
+        "icon": "login-icon"
+    },
+    {
         "Name": "Privacy",
         "Slug": "privacy",
         "icon": "home-icon"

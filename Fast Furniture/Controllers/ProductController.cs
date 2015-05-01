@@ -1,4 +1,5 @@
-﻿using Fast_Furniture.Models;
+﻿using System;
+using Fast_Furniture.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +12,7 @@ using System.Web.Http;
 
 namespace Fast_Furniture.Controllers
 {
-    public class DataController : ApiController
+    public class ProductController : ApiController
     {
 
         [HttpGet]
@@ -44,30 +45,14 @@ namespace Fast_Furniture.Controllers
 
         }
 
-        [HttpGet]
-        public HttpResponseMessage CategoryProducts(string category)
-        {
-
-            string content = File.ReadAllText(HttpContext.Current.Server.MapPath(@"~\data\" + category + ".json"));
-            
-            var resp = new HttpResponseMessage()
-            {
-                Content = new StringContent(content)
-            };
-            resp.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            return resp;
-
-        }
-
-
         [HttpPut, HttpPost]
-        public HttpResponseMessage Category(Category category)
+        public HttpResponseMessage Product(Product Product)
         {
 
 
             var resp = new HttpResponseMessage()
             {
-                Content = new StringContent(category.Name)
+                Content = new StringContent(Product.Name)
             };
             resp.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             return resp;
@@ -75,7 +60,7 @@ namespace Fast_Furniture.Controllers
         }
 
         [HttpGet]
-        public HttpResponseMessage Category(string slug)
+        public HttpResponseMessage Product(string slug)
         {
 
             string content = File.ReadAllText(HttpContext.Current.Server.MapPath(@"~\data\" + slug + ".json"));
@@ -91,7 +76,7 @@ namespace Fast_Furniture.Controllers
 
 
         [HttpDelete]
-        public HttpResponseMessage DeleteCategory(string slug)
+        public HttpResponseMessage DeleteProduct(string slug)
         {
 
             var resp = new HttpResponseMessage()
@@ -102,6 +87,7 @@ namespace Fast_Furniture.Controllers
             return resp;
 
         }
+
 
     }
 }

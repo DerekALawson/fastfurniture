@@ -1,10 +1,22 @@
 <script id="login"
-		  class="spa-view"
-		  spa-transition="slide"
-		  spa-view-id=".spa-view-login"
-		  spa-layout="fast-furniture-layout"
-		  spa-route="login"
-            type="spa-view">
+        class="spa-view"
+        spa-transition="slide"
+        spa-view-id=".spa-view-login"
+        spa-layout="fast-furniture-layout"
+        spa-route="login"
+        type="spa-view">
 
-	<section class="spa-view-login"></section>
+    <section class="spa-view-login login-form">
+        <h1>Canvass and Survey America Like A Pro</h1>
+        <h2>Empower your workforce with a mobile app built just for them.</h2>
+        <form>
+            <ul class="vertical-list login-form">
+                <li><label for="username">Username:</label><span class="fa icon-profile_alt"></span><input id="rememberme" type="text" name="username" class="username" placeholder="Username" /></li>
+                <li><label for="password">Password:</label><span class="fa fa-lock"></span><input type="password" name="password" class="password" placeholder="Password" /></li>
+                <li><span><input type="checkbox" name="rememberme" /><label class="checkbox" for="rememberme">Remmeber Me</label></span><span><span class="fa forgot-pwd fa-question"></span>Forgot Password</span></li>
+                <li class="login-submit"><div class="btn blue login-button">Login</div><a class="btn olive" href="http://www.roofstrike.com/">Sign Up</a></li>
+            </ul>
+        </form>
+
+    </section>
 </script>

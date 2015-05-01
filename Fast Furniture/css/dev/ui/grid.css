@@ -11,7 +11,7 @@
     display: inline-block;
     margin: 1% 1%;
     height: 640px;
-    width: 880px;
+    width: 940px;
 }
 
 .item-grid-target,
@@ -19,7 +19,7 @@
     display: inline-block;
     list-style-type: none;
     margin: 10px;
-    width: 200px;
+    width: 240px;
     overflow: hidden;
     background: transparent;
     text-align: center;
@@ -39,6 +39,8 @@
     font: 1.5em bold;
     padding: 0;
     margin: 1% 0;
+    color: #000;
+    float: left;
 }
 
 

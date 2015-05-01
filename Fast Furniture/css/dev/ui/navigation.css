@@ -3,7 +3,7 @@
 .left-panel {
     display: block;
     width: 220px;
-    background: rgba(198,198,198,0.75);
+    background: #dedede;
     position: absolute;
     left: -220px;
     top: 70px;
@@ -91,7 +91,7 @@
 .main-nav > a, .main-nav > a:visited {
     background-color: transparent;
     font-weight: 300;
-    color: #aaa;
+    color: #444;
     text-decoration: none;
     font-size: 1.25em;
     display: block;
@@ -227,12 +227,12 @@ a.sub-nav {
         width: 30px;
         height: 30px;
         text-align: center;
-        margin: 0 2em;
+        margin: 0;
     }
 
     .nav-text, .nav-icon {
         display: inline-block;
-        /*float: left;*/
+        float: left;
         text-align: left;
     }
 

@@ -1,0 +1,23 @@
+﻿
+
+.categories-grid-item {
+    margin: 2%;
+    width: 45%;
+    display: inline-block;
+}
+
+.categories-grid-parent-title {
+    color: #444;
+    font-size: 1.5em;
+    padding: .75% 1%;
+    margin: 1.5% 0;
+    display: block;
+}
+
+
+.categories-grid-child-title {
+    color: #666;
+    font-size: 1.1em;
+    padding: .3% .75%;
+    margin: .3% 0;
+}

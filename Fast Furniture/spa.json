@@ -84,6 +84,26 @@
             "deferred": false
         },
         {
+            "Name": "login",
+            "spaViewId": "spa-view-login",
+            "spaTransition": "slide",
+            "spaLayout": "fast-furniture-layout",
+            "spaTitle": "Login to Fast Furniture",
+            "spaRoute": "login",
+            "controller": "fastFurnitureController",
+            "deferred": false
+        },
+        {
+            "Name": "categories",
+            "spaViewId": "spa-view-categories",
+            "spaTransition": "slide",
+            "spaLayout": "fast-furniture-layout",
+            "spaTitle": "Furniture categories",
+            "spaRoute": "categories",
+            "controller": "fastFurnitureController",
+            "deferred": false
+        },
+        {
             "Name": "home",
             "spaViewId": "spa-view-home",
             "spaTransition": "slide",
