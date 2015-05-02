@@ -23,15 +23,27 @@
     overflow: hidden;
     background: transparent;
     text-align: center;
-    float:left;
-    height:250px;
+    float: left;
+    height: 250px;
+    position: relative;
 }
 
-.item-grid-target-first{
-    width:auto;
-    max-width:400px;
-    height:auto;
+.item-grid-target-first {
+    width: 400px;
+    max-width: 400px;
+    height: 520px;
 }
+
+    .item-grid-target-first .product-grid-photo {
+        min-width: 200px;
+        max-height: 470px;
+    }
+
+.product-grid-photo {
+    min-height: 210px;
+    background:#808080;
+}
+
 
 
 .item-grid-group-title {
@@ -43,11 +55,14 @@
     float: left;
 }
 
-
 .item-grid-photo-caption {
     color: #ccc;
     background: #333;
     font-size: 1.2em;
     padding: 1%;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    position: absolute;
     height: 3em;
 }

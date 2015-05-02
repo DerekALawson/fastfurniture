@@ -268,6 +268,9 @@
 
 		},
 
+        /*
+         * This is to push the view chang eot the analytics package
+         */
 		pushView: function (path) {
 
 			var spa = this;

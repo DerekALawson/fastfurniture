@@ -30,11 +30,13 @@
 
             if (cachedData) {
 
-                if (options.callback) {
-                    options.callback(cachedData);
+                if (options.success) {
+                    options.success(cachedData);
                     return;
                 }
             }
+
+            options.cache = true;
 
             return this.getData(options);
 
@@ -83,7 +85,7 @@
 
         },
 
-        errorCallback: function (err) {
+        errorsuccess: function (err) {
 
             err = JSON.parse(err.response);
 
@@ -115,6 +117,7 @@
 
         ajaxSettings: {
             cache: false,
+            cacheTTL: 60000, //1 minute default
             dataType: "json",
             method: 'get',
             type: 'json',
@@ -122,7 +125,7 @@
             success: function (d) { }
         },
 
-        failCallback: function (data) {
+        failsuccess: function (data) {
 
             if (data.responseText) {
                 console.error(JSON.stringify(data.responseText));
@@ -160,9 +163,21 @@
                     try {
                         var json = JSON.parse(this.responseText);
                         options.success.call(that, json);
+
+                        if (options.cache) {
+                            that.cache.setObject(that.appKey + options.cacheKey, json, options.cacheTTL);
+                        }
+
+
                     }
                     catch (e) {
+
                         options.success.call(that, this.responseText);
+
+                        if (options.cache) {
+                            that.cache.setItem(that.appKey + options.cacheKey, this.responseText, options.cacheTTL);
+                        }
+
                     }
 
                 }
@@ -248,362 +263,372 @@
          */
 
 
-        getCategories: function (callback) {
+        getCategories: function (success) {
 
             return this.getCachedData({
                 url: "categories",
                 cacheKey: "categories-",
-                callback: callback
+                success: success
             });
 
         },
 
-        getCategory: function (name, callback) {
+        getHomeCategories: function (success) {
+
+            return this.getCachedData({
+                url: "homecategories",
+                cacheKey: "home-categories",
+                success: success
+            });
+
+        },
+
+        getCategory: function (name, success) {
 
             return this.getCachedData({
                 url: "category?slug=" + name,
                 cacheKey: "category-" + name,
                 data: name,
-                callback: callback
+                success: success
             });
 
         },
 
-        getCategoryProducts: function (name, callback) {
+        getCategoryProducts: function (name, success) {
 
             return this.getCachedData({
                 url: "CategoryProducts?category=" + name,
                 cacheKey: "category-" + name,
                 data: name,
-                callback: callback
+                success: success
             });
 
         },
 
-        addCategory: function (category, callback) {
+        addCategory: function (category, success) {
 
             return this.postJSON({
                 url: "category",
                 data: category,
-                callback: callback
+                success: success
             });
 
         },
 
-        udpateCategory: function (category, callback) {
+        udpateCategory: function (category, success) {
 
             return this.putJSON({
                 url: "category",
                 data: category,
-                callback: callback
+                success: success
             });
 
         },
 
-        deleteCategory: function (name, callback) {
+        deleteCategory: function (name, success) {
 
             return this.deleteData({
                 url: "DeleteCategory?slug=" + name,
                 data: name,
-                callback: callback
+                success: success
             });
 
         },
 
 
 
-        getProducts: function (callback) {
+        getProducts: function (success) {
 
             return this.getCachedData({
                 url: "product",
                 cacheKey: "products-",
-                callback: callback
+                success: success
             });
 
         },
 
-        getProduct: function (slug, callback) {
+        getProduct: function (slug, success) {
 
             return this.getCachedData({
                 url: "product?slug=" + slug,
                 cacheKey: "product-" + productId,
-                callback: callback
+                success: success
             });
 
         },
 
-        addProduct: function (product, callback) {
+        addProduct: function (product, success) {
 
             return this.postData({
                 url: "product",
                 data: product,
-                callback: callback
+                success: success
             });
 
         },
 
-        udpateProduct: function (product, callback) {
+        udpateProduct: function (product, success) {
 
             return this.putData({
                 url: "product",
                 data: product,
-                callback: callback
+                success: success
             });
 
         },
 
-        deleteProduct: function (slug, callback) {
+        deleteProduct: function (slug, success) {
 
             return this.deleteData({
                 url: "product?slug=" + slug,
-                callback: callback
+                success: success
             });
 
         },
 
 
 
-        getCarts: function (callback) {
+        getCarts: function (success) {
 
             return this.getCachedData({
                 url: "cart",
                 cacheKey: "carts-",
-                callback: callback
+                success: success
             });
 
         },
 
-        getCart: function (cartId, callback) {
+        getCart: function (cartId, success) {
 
             return this.getCachedData({
                 url: "cart?cartid=" + cartId,
                 cacheKey: "cart-" + cartId,
-                callback: callback
+                success: success
             });
 
         },
 
-        addCart: function (cartId, cart, callback) {
+        addCart: function (cartId, cart, success) {
 
             return this.postJSON({
                 url: "cart",
                 data: cart,
-                callback: callback
+                success: success
             });
 
         },
 
-        udpateCart: function (cart, callback) {
+        udpateCart: function (cart, success) {
 
             return this.putJSON({
                 url: "cart",
                 data: cart,
-                callback: callback
+                success: success
             });
 
         },
 
-        deleteCart: function (cartId, callback) {
+        deleteCart: function (cartId, success) {
 
             return this.deleteData({
                 url: "cart?cartId=" + cartId,
-                callback: callback
+                success: success
             });
 
         },
 
 
 
-        getUsers: function (callback) {
+        getUsers: function (success) {
 
             return this.getCachedData({
                 url: "user",
                 cacheKey: "users-",
-                callback: callback
+                success: success
             });
 
         },
 
-        getUser: function (userId, callback) {
+        getUser: function (userId, success) {
 
             return this.getCachedData({
                 url: "user/" + userId,
                 cacheKey: "user-" + userId,
-                callback: callback
+                success: success
             });
 
         },
 
-        addUser: function (userId, user, callback) {
+        addUser: function (userId, user, success) {
 
             return this.postData({
                 url: "user/" + userId,
-                callback: callback
+                success: success
             });
 
         },
 
-        udpateUser: function (user, callback) {
+        udpateUser: function (user, success) {
 
             return this.putData({
                 url: "user/" + user.userId,
-                callback: callback
+                success: success
             });
 
         },
 
-        deleteUser: function (userId, callback) {
+        deleteUser: function (userId, success) {
 
             return this.deleteData({
                 url: "user/" + userId,
-                callback: callback
+                success: success
             });
 
         },
 
 
 
-        getRoles: function (callback) {
+        getRoles: function (success) {
 
             return this.getCachedData({
                 url: "role",
                 cacheKey: "roles-",
-                callback: callback
+                success: success
             });
 
         },
 
-        getRole: function (roleId, callback) {
+        getRole: function (roleId, success) {
 
             return this.getCachedData({
                 url: "role/" + roleId,
                 cacheKey: "role-" + roleId,
-                callback: callback
+                success: success
             });
 
         },
 
-        addRole: function (roleId, role, callback) {
+        addRole: function (roleId, role, success) {
 
             return this.postData({
                 url: "role/" + roleId,
-                callback: callback
+                success: success
             });
 
         },
 
-        udpateRole: function (role, callback) {
+        udpateRole: function (role, success) {
 
             return this.putData({
                 url: "role/" + role.roleId,
-                callback: callback
+                success: success
             });
 
         },
 
-        deleteRole: function (roleId, callback) {
+        deleteRole: function (roleId, success) {
 
             return this.deleteData({
                 url: "role/" + roleId,
-                callback: callback
+                success: success
             });
 
         },
 
 
 
-        getOrders: function (callback) {
+        getOrders: function (success) {
 
             return this.getCachedData({
                 url: "order",
                 cacheKey: "orders-",
-                callback: callback
+                success: success
             });
 
         },
 
-        getOrder: function (orderId, callback) {
+        getOrder: function (orderId, success) {
 
             return this.getCachedData({
                 url: "order/" + orderId,
                 cacheKey: "order-" + orderId,
-                callback: callback
+                success: success
             });
 
         },
 
-        addOrder: function (orderId, order, callback) {
+        addOrder: function (orderId, order, success) {
 
             return this.postData({
                 url: "order/" + orderId,
-                callback: callback
+                success: success
             });
 
         },
 
-        udpateOrder: function (order, callback) {
+        udpateOrder: function (order, success) {
 
             return this.putData({
                 url: "order/" + order.orderId,
-                callback: callback
+                success: success
             });
 
         },
 
-        deleteOrder: function (orderId, callback) {
+        deleteOrder: function (orderId, success) {
 
             return this.deleteData({
                 url: "order/" + orderId,
-                callback: callback
+                success: success
             });
 
         },
 
 
 
-        getContacts: function (callback) {
+        getContacts: function (success) {
 
             return this.getCachedData({
                 url: "contact",
                 cacheKey: "contacts-",
-                callback: callback
+                success: success
             });
 
         },
 
-        getContact: function (contactId, callback) {
+        getContact: function (contactId, success) {
 
             return this.getCachedData({
                 url: "contact/" + contactId,
                 cacheKey: "contact-" + contactId,
-                callback: callback
+                success: success
             });
 
         },
 
-        addContact: function (contactId, contact, callback) {
+        addContact: function (contactId, contact, success) {
 
             return this.postData({
                 url: "contact/" + contactId,
-                callback: callback
+                success: success
             });
 
         },
 
-        udpateContact: function (contact, callback) {
+        udpateContact: function (contact, success) {
 
             return this.putData({
                 url: "contact/" + contact.contactId,
-                callback: callback
+                success: success
             });
 
         },
 
-        deleteContact: function (contactId, callback) {
+        deleteContact: function (contactId, success) {
 
             return this.deleteData({
                 url: "contact/" + contactId,
-                callback: callback
+                success: success
             });
 
         }

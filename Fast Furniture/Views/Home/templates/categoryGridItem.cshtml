@@ -1,16 +1,33 @@
 ﻿<script id="categoryGridItem" type="text/x-simpleTemplate-template">
 
-    <h1><%this.Name%></h1>
+    <%for(var category in this.categories) {%>
 
-    <%for(var index in this.products) {%>
+    <div class="item-grid-group">
+        <a class="item-grid-group-title" href="#!category/<%this.categories[category].Slug%>"><%this.categories[category].Name%></a>
 
-    <div class="item-grid-target">
-        <a href="#!product/<%this.products[index]slug%>">
-            <img alt="<%this.products[index].Name%>" src="img/<%this.products[index].image" class="product-grid-photo">
-            <figcaption class="item-grid-photo-caption"><%this.products[index].Name%></figcaption>
-        </a>
+        <%for(var index in this.categories[category].Products) {%>
+        
+        <div 
+             <%if(index === "0"){%>
+            class="item-grid-target-first"
+            <%}else{%>
+             class="item-grid-target"
+            <%}%>>
+            <a href="#!product/<%this.categories[category].Products[index].Slug%>">
+                <img alt="<%this.categories[category].Products[index].Name%>" 
+                <%if(index === "0"){%>
+                src="https://fastfurniture.blob.core.windows.net/originals/<%this.categories[category].Products[index].Photo%>" class="product-grid-photo"
+                <%}else{%>
+                src="https://fastfurniture.blob.core.windows.net/mobile/<%this.categories[category].Products[index].Photo%>" class="product-grid-photo"
+                <%}%> 
+                >
+                <figcaption class="item-grid-photo-caption"><%this.categories[category].Products[index].Name%></figcaption>
+            </a>
+        </div>
+
+        <%}%>
+
     </div>
-
     <%}%>
 
 </script>

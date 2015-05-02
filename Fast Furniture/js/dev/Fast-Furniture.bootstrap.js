@@ -23,6 +23,8 @@ var lsCache = l2Storeagecache(),
 	}
 	});
 
+fastFurniture.appKey = "Fast-Furniture-";
+
 pm.setupAssets();
 
 

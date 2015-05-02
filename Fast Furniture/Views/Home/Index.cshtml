@@ -44,6 +44,10 @@
 
     <title>Fast Furniture</title>
 
+    <style>
+   @RenderPage("views/criticalcssmin.cshtml")
+        </style>
+
     @if (!Html.HasEscapeFragment())
     {
         if (HttpContext.Current.IsDebuggingEnabled)
@@ -196,14 +200,7 @@
                       </div>
                   </div>
                   <div class="y-scroller-wrapper">
-                      <nav class="main-nav" role="navigation">
-                          <a href="@Html.SPALink("")" role="menuitem" class="home-nav"><span class="nav-icon home-icon"></span><span class="nav-text">Home</span></a>
-                          <a href="@Html.SPALink("workout/list")" role="menuitem" class="maps-nav"><span class="nav-icon maps-icon"></span><span class="nav-text">workouts</span></a>
-                          <a href="@Html.SPALink("exercises")" role="menuitem" class="search-nav"><span class="nav-icon search-icon"></span><span class="nav-text">exercises</span></a>
-                          <a href="@Html.SPALink("workout/history")" role="menuitem" class="social-nav"><span class="nav-icon social-icon"></span><span class="nav-text">history</span></a>
-                          <a href="@Html.SPALink("about")" role="menuitem" class="about-nav"><span class="nav-icon about-icon"></span><span class="nav-text">About</span></a>
-                          <a href="@Html.SPALink("social")" role="menuitem" class="privacy-nav"><span class="nav-icon privacy-icon"></span><span class="nav-text">Social</span></a>
-                      </nav>
+                      <nav class="main-nav" role="navigation"></nav>
                   </div>
                   <div class="action-items"></div>
               </aside>
@@ -234,6 +231,8 @@
                   @SPARenderPage("templates/productGridGroup.cshtml")
                   @SPARenderPage("templates/productGridItem.cshtml")
                   @SPARenderPage("templates/menuItem.cshtml")
+                  @SPARenderPage("templates/userMenuProfile.cshtml")
+
 
               }
 
@@ -257,7 +256,7 @@
                       <script src="~/js/dev/services/Fast-Furniture.data.js"></script>
 
                       <script src="~/js/dev/controllers/fastFurnitureController.js"></script>
-                      <script src="~/js/dev/controllers/fastFurnitureControllerAuthenticatedController.js"></script>
+                      <script src="~/js/dev/controllers/fastFurnitureAuthenticatedController.js"></script>
 
                       <script src="js/dev/controllers/category.js"></script>
                       <script src="js/dev/controllers/categories.js"></script>

@@ -224,12 +224,12 @@
     <Content Include="css\dev\views\deferred\about.css" />
     <Content Include="css\dev\views\deferred\account.css" />
     <Content Include="css\dev\views\deferred\feedback.css" />
-    <Content Include="css\dev\views\deferred\my favorites.css" />
+    <Content Include="css\dev\views\deferred\my.favorites.css" />
     <Content Include="css\dev\views\deferred\new account.css" />
-    <Content Include="css\dev\views\deferred\order confirmation.css" />
+    <Content Include="css\dev\views\deferred\order.confirmation.css" />
     <Content Include="css\dev\views\deferred\orders.css" />
-    <Content Include="css\dev\views\deferred\payment options.css" />
-    <Content Include="css\dev\views\deferred\place order.css" />
+    <Content Include="css\dev\views\deferred\payment.options.css" />
+    <Content Include="css\dev\views\deferred\place.order.css" />
     <Content Include="css\dev\views\deferred\social.css" />
     <Content Include="css\dev\views\forgotemail.css" />
     <Content Include="css\dev\views\forgotpassword.css" />
@@ -246,6 +246,8 @@
     <Content Include="Global.asax" />
     <Content Include="data\categories.json" />
     <Content Include="data\products.json" />
+    <Content Include="gruntfile.js" />
+    <Content Include="img\profile_small.jpg" />
     <Content Include="js\dev\controllers\categories.js" />
     <Content Include="js\dev\controllers\category.js" />
     <Content Include="js\dev\controllers\deferred\about.js" />
@@ -318,6 +320,7 @@
     <Folder Include="css\dev\ui\deferred\" />
     <Folder Include="css\dev\ui\dynamic\" />
     <Folder Include="css\dev\views\dynamic\" />
+    <Folder Include="data\Products\" />
     <Folder Include="js\dev\services\deferred\" />
     <Folder Include="Views\deferred\templates\" />
     <Folder Include="Views\deferred\views\" />
@@ -334,7 +337,7 @@
     <Content Include="css\dev\views\deferred\about.less" />
     <Content Include="css\dev\views\deferred\account.less" />
     <Content Include="css\dev\views\deferred\feedback.less" />
-    <Content Include="css\dev\views\deferred\my favorites.less" />
+    <Content Include="css\dev\views\deferred\my.favorites.less" />
     <Content Include="css\dev\views\deferred\new account.less" />
     <Content Include="css\dev\views\deferred\order confirmation.less" />
     <Content Include="css\dev\views\deferred\orders.less" />
@@ -350,6 +353,7 @@
     <Content Include="css\dev\views\search.less" />
     <Content Include="css\libs\spa.less" />
     <Content Include="data\menu.json" />
+    <Content Include="data\home-categories.json" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Home\views\about.cshtml" />
     <Content Include="Views\Home\views\account.cshtml" />
@@ -359,13 +363,13 @@
     <Content Include="Views\Home\views\forgotpassword.cshtml" />
     <Content Include="Views\Home\views\home.cshtml" />
     <Content Include="Views\Home\views\login.cshtml" />
-    <Content Include="Views\Home\views\my favorites.cshtml" />
-    <Content Include="Views\Home\views\new account.cshtml" />
+    <Content Include="Views\Home\views\myfavorites.cshtml" />
+    <Content Include="Views\Home\views\newaccount.cshtml" />
     <Content Include="Views\Home\views\NotFound.cshtml" />
-    <Content Include="Views\Home\views\order confirmation.cshtml" />
+    <Content Include="Views\Home\views\orderconfirmation.cshtml" />
     <Content Include="Views\Home\views\orders.cshtml" />
-    <Content Include="Views\Home\views\payment options.cshtml" />
-    <Content Include="Views\Home\views\place order.cshtml" />
+    <Content Include="Views\Home\views\paymentoptions.cshtml" />
+    <Content Include="Views\Home\views\placeorder.cshtml" />
     <Content Include="Views\Home\views\product.cshtml" />
     <Content Include="Views\Home\views\search.cshtml" />
     <Content Include="Views\Home\views\social.cshtml" />
@@ -379,6 +383,10 @@
     <Content Include="Views\Home\templates\productGridGroup.cshtml" />
     <Content Include="Views\Home\views\categories.cshtml" />
     <Content Include="Views\Home\templates\menuItem.cshtml" />
+    <Content Include="Views\Home\templates\userMenuProfile.cshtml" />
+    <Content Include="Views\Home\templates\relatedProduct.cshtml" />
+    <Content Include="Views\Home\templates\categoryListItem.cshtml" />
+    <Content Include="Views\Home\views\criticalcssmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\git\SPAHelper\SPAHelper\SPAHelper.4.0.csproj">

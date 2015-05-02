@@ -1,0 +1,511 @@
+/*** uncss> filename: http://localhost:7856/critical_files/normalize.css ***/
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0px;
+}
+
+aside,
+footer,
+header,
+ main,
+nav {
+  display: block;
+}
+
+a {
+  background: none;
+}
+
+a:active ,
+a:hover {
+  outline: 0px;
+}
+
+b, strong {
+  font-weight: bold;
+}
+
+h1 {
+  margin: 0.67em 0px;
+  font-size: 2em;
+}
+
+img {
+  border: 0px currentColor;
+  border-image: none;
+}
+
+/*** uncss> filename: http://localhost:7856/critical_files/spa.css ***/
+
+.main-content {
+  border-radius: 5px 5px 0px 0px;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  overflow: hidden;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+}
+
+@media all and (min-width:975px) {
+  .main-content {
+    position: relative;
+  }
+}
+
+/*** uncss> filename: http://localhost:7856/critical_files/animations.css ***/
+
+/*** uncss> filename: http://localhost:7856/critical_files/touch.css ***/
+
+.y-scroller-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding-right: 0px;
+  -ms-overflow-x: hidden;
+  -ms-overflow-y: scroll;
+  -ms-scroll-chaining: none;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -ms-scroll-translation: vertical-to-horizontal;
+  -webkit-overflow-style: none;
+  overflow-style: none;
+  -moz-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+.y-scroller-wrapper {
+  height: 100%;
+  overflow: hidden;
+  padding-right: 15px;
+  -ms-overflow-x: hidden;
+  -ms-overflow-y: scroll;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+
+.panel-v-scroll {
+  overflow: hidden;
+  -ms-overflow-x: hidden;
+  -ms-overflow-y: scroll;
+  -ms-scroll-chaining: none;
+  -ms-scroll-snap-type: proximity;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -ms-touch-action: pan-y;
+  -ms-scroll-translation: vertical-to-horizontal;
+  touch-action: pan-y;
+  overflow-style: none;
+  -moz-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+@media all and (min-width:1024px) {
+  .panel-v-scroll {
+    overflow: hidden;
+    -ms-overflow-x: hidden;
+    -ms-overflow-y: hidden;
+    -ms-overflow-style: none;
+    -ms-touch-action: none;
+    touch-action: none;
+    overflow-style: none;
+  }
+}
+
+/*** uncss> filename: http://localhost:7856/critical_files/app.css ***/
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+*::before {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+*::after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  color: rgb(0, 0, 0);
+  line-height: 1.231;
+  letter-spacing: 0.02em;
+  font-family: "Segoe UI","Segoe WP","Open Sans","Lucida Grande",sans-serif;
+  font-size: 13px;
+  -ms-overflow-x: hidden;
+  -ms-content-zooming: none;
+  -ms-user-select: none;
+  -ms-touch-action: none;
+  -ms-scroll-translation: vertical-to-horizontal;
+  touch-action: none;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgb(255, 255, 255);
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
+
+main {
+  display: block;
+}
+
+a {
+  color: rgb(238, 238, 238);
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(238, 238, 238);
+  text-decoration: none;
+}
+
+h1 {
+  margin: 0px;
+}
+
+h1 {
+  margin: 15px 0px 0px 40px;
+  width: calc(100% - 100px);
+  height: 26pt;
+  text-align: left;
+  line-height: 26pt;
+  letter-spacing: 0px;
+  overflow: hidden;
+  font-size: 1.5em;
+  font-weight: 200;
+  float: left;
+}
+
+.view-title {
+  margin: 15px 0px 0px 40px;
+  width: calc(100% - 100px);
+  height: 26pt;
+  text-align: left;
+  line-height: 26pt;
+  letter-spacing: 0px;
+  overflow: hidden;
+  font-size: 1.5em;
+  font-weight: 200;
+  float: left;
+}
+
+.site-header {
+  left: 0px;
+  top: 0px;
+  height: 80px;
+  right: 0px;
+  position: absolute;
+}
+
+.win-backbutton {
+  display: none;
+}
+
+.back-btn {
+  display: none;
+}
+
+.main-content {
+  background: rgb(255, 255, 255);
+  transition: left 1s ease-out;
+  left: 0px;
+  top: 70px;
+  right: 0px;
+  bottom: 0px;
+  overflow: hidden;
+  position: absolute;
+  -moz-transition: left 1s ease-out;
+  -o-transition: left 1s ease-out;
+  -webkit-transition: left 1s ease-out;
+}
+
+.block {
+  display: block;
+}
+
+.m-t-xs {
+  margin-top: 5px;
+}
+
+@media screen and (max-width:320px) {
+  .win-backbutton {
+    margin: 20px 0px 0px 20px;
+    border-radius: 1.75em;
+    border: 2px solid rgb(255, 255, 255);
+    border-image: none;
+    width: 1.75em;
+    height: 1.75em;
+    text-align: center;
+    line-height: 1.75em;
+    float: left;
+    display: inline-block;
+  }
+
+}
+
+@media all and (min-width:600px) {
+  .view-title {
+    width: 400px;
+    height: 30pt;
+    line-height: 30pt;
+    font-size: 1.5em;
+  }
+}
+
+@media all and (min-width:800px) {
+  .main-content {
+    left: 10px;
+    bottom: 40px;
+  }
+
+  .view-title {
+    line-height: 30pt;
+    padding-bottom: 2pt;
+    font-size: 26pt;
+  }
+}
+
+@media all and (min-width:1100px) {
+  .nav-icon {
+    display: inline-block;
+  }
+}
+
+/*** uncss> filename: http://localhost:7856/css/dev/ui/typography.css ***/
+
+/*** uncss> filename: http://localhost:7856/css/dev/ui/forms.css ***/
+
+/*** uncss> filename: http://localhost:7856/critical_files/navigation.css ***/
+
+.left-panel {
+  background: rgb(222, 222, 222);
+  transition: left 1s ease-out;
+  left: -220px;
+  top: 70px;
+  width: 220px;
+  bottom: 0px;
+  color: rgb(0, 0, 0);
+  display: block;
+  position: absolute;
+  -moz-transition: left 1s ease-out;
+  -o-transition: left 1s ease-out;
+  -webkit-transition: left 1s ease-out;
+}
+
+.nav-header {
+  padding: 33px 25px;
+  width: 220px;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.nav-header .text-muted {
+  color: rgb(128, 149, 168);
+}
+
+.hamburger-nav {
+  margin: 10px 2em 10px 5px;
+  border: 1px solid rgb(41, 56, 70);
+  border-image: none;
+  width: 120px;
+  height: 40px;
+  line-height: 26pt;
+  float: left;
+  display: inline-block;
+}
+
+.hamburger-bar-wrapper {
+  width: 40px;
+  height: 40px;
+  padding-top: 8px;
+  float: left;
+  display: inline-block;
+}
+
+.hamburger-bar {
+  margin: 3px auto;
+  border-radius: 4px;
+  width: 30px;
+  height: 4px;
+  display: block;
+  background-color: rgb(41, 56, 70);
+}
+
+.hamburger-bar-text {
+  margin: 0px 10px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  float: left;
+  display: inline-block;
+}
+
+.main-nav > a {
+  padding: 0px 0px 0px 12px;
+  width: 220px;
+  height: 40px;
+  color: rgb(68, 68, 68);
+  font-size: 1.25em;
+  font-weight: 300;
+  text-decoration: none;
+  border-bottom-color: rgb(119, 119, 119);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  display: block;
+  background-color: transparent;
+}
+
+.main-nav > a:visited {
+  padding: 0px 0px 0px 12px;
+  width: 220px;
+  height: 40px;
+  color: rgb(68, 68, 68);
+  font-size: 1.25em;
+  font-weight: 300;
+  text-decoration: none;
+  border-bottom-color: rgb(119, 119, 119);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  display: block;
+  background-color: transparent;
+}
+
+.main-nav > a:active {
+  border-bottom-color: rgb(255, 255, 255);
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  background-color: rgb(41, 56, 70) !important;
+}
+
+.nav-text {
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+}
+
+.nav-icon {
+  width: 32px;
+  height: 32px;
+  display: none;
+  background-repeat: no-repeat;
+}
+
+.left-panel .y-scroller-wrapper {
+  height: calc(100% - 75px);
+}
+
+@media all and (min-width:600px) {
+  .hamburger-nav {
+    margin-left: 2em;
+  }
+
+  .main-nav {
+    width: 220px;
+    height: auto;
+    padding-bottom: 2%;
+    background-color: transparent;
+  }
+
+  .main-nav > a:visited {
+    width: 220px;
+    height: 40px;
+    text-align: center;
+    color: rgb(201, 201, 201);
+    padding-left: 10px;
+    font-size: 1.25em;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+  }
+
+  .main-nav .nav-icon {
+    margin: 0px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+  }
+
+  .nav-text {
+    text-align: left;
+    float: left;
+    display: inline-block;
+  }
+
+  .nav-icon {
+    text-align: left;
+    float: left;
+    display: inline-block;
+  }
+
+  .nav-text {
+    width: calc(100% - 40px);
+    overflow: hidden;
+    padding-left: 10px;
+  }
+
+  .view-title {
+    width: calc(100% - 220px);
+  }
+}
+
+@media all and (min-width:960px) {
+  .main-content {
+    left: 0px;
+  }
+}
+
+@media all and (min-width:1180px) {
+  .nav-icon {
+    display: inline-block;
+  }
+}
+
+/*** uncss> filename: http://localhost:7856/critical_files/action-menu.css ***/
+
+/*** uncss> filename: http://localhost:7856/critical_files/grid.css ***/
+
+/*** uncss> filename: http://localhost:7856/css/dev/views/category.css ***/
+
+/*** uncss> filename: http://localhost:7856/critical_files/categories.css ***/
+
+/*** uncss> filename: http://localhost:7856/critical_files/product.css ***/
+
+/*** uncss> filename: http://localhost:7856/css/dev/views/search.css ***/
+
+/*** uncss> filename: http://localhost:7856/css/dev/views/home.css ***/
+
+/*** uncss> filename: http://localhost:7856/css/dev/views/NotFound.css ***/
+
+/*** uncss> filename: http://localhost:7856/critical_files/login.css ***/
+
+/*** uncss> filename: http://localhost:7856/css/dev/views/forgotemail.css ***/
+
+/*** uncss> filename: http://localhost:7856/css/dev/views/forgotpassword.css ***/

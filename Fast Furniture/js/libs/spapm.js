@@ -76,16 +76,10 @@
 
 		ViewSelector: "script[class='spa-view']",
 		LayoutSelector: "script[class='spa-layout']",
-		cssSelector: "link[rel='stylesheet']",
+		cssSelector: "type[type='x-spa-css']",
 		scriptSelector: "script",
 
 		views: {},
-
-		getFileName: function (path) {
-
-			return path.replace(/^.*[\\\/]/, '');
-		},
-
 
 		loadImport: function (ImportURL, moduleName) {
 
@@ -169,39 +163,31 @@
 		processCSS: function (css) {
 
 			var pm = this,
-				cssRefs = pm.cache.getObject(pm.appPrefix + -"css") || {};
+				cssRefs = pm.cache.getObject(pm.appPrefix + -"css") || {},
+			    cssObjs = JSON.parse(css);
 
-			if (css && css.length) {
+			cssRefs = $.extend(cssRefs, cssObjs);
 
-				for (var i = 0; i < css.length; i++) {
-
-					pm.appendCSS(css[i].href);
-					
-					cssRefs[pm.getFileName(css[i].href)] = css[i].href;
-
-				}
-
-				pm.cache.setObject(pm.appPrefix + "-css", cssRefs);
-
+			for (var i = 0; i < cssRefs.length; i++) {
+			    pm.appendCSS(cssRefs[i]);
 			}
 
 		},
 
-		appendCSS: function (url, id) {
+		appendCSS: function (cssObj) {
 
 			var pm = this,
-				cssLink,
-				fileName = pm.getFileName(url);
+				cssLink;
 
-			if (!document.querySelector("link[id='" + fileName + "']")) {
+			if (!document.getElementById(cssObj.id)) {
 
 				cssLink = document.createElement("link");
 
-				cssLink.id = fileName;
+				cssLink.id = cssObj.id;
 
 				cssLink.rel = "stylesheet";
 				cssLink.type = "text/css";
-				cssLink.href = url;
+				cssLink.href = cssObj.url;
 
 				document.head.appendChild(cssLink);
 
@@ -212,36 +198,29 @@
 		processScripts: function (scripts) {
 
 			var pm = this,
-				scriptRefs = pm.cache.getObject(pm.appPrefix + "-scripts") || {};
+				scriptRefs = pm.cache.getObject(pm.appPrefix + "-scripts") || {},
+			    jsObjs = JSON.parse(scripts)
 
-			if (scripts && scripts.length) {
+			scriptRefs = $.extend(scriptRefs, jsObjs);
 
-				for (var i = 0; i < scripts.length; i++) {
-
-					pm.appendScript(scripts[i].src);
-
-					scriptRefs[pm.getFileName(scripts[i].src)] = scripts[i].src;
-
-				}
-
-				pm.cache.setObject(pm.appPrefix + "-scripts", scriptRefs);
-
+			for (var i = 0; i < scriptRefs.length; i++) {
+			    pm.appendScript(scriptRefs[i]);
 			}
+
 
 		},
 
 		appendScript: function (src) {
 
 			var pm = this,
-				script,
-				fileName = pm.getFileName(src);
+				script;
 
-			if (!document.querySelector("script[id='" + fileName + "']")) {
+			if (!document.getElementById(src.id)) {
 
 				script = document.createElement("script");
 
-				script.id = fileName;
-				script.src = src;
+				script.id = src.id;
+				script.src = src.url;
 
 				document.body.appendChild(script);
 
