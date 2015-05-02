@@ -354,6 +354,7 @@
     <Content Include="css\libs\spa.less" />
     <Content Include="data\menu.json" />
     <Content Include="data\home-categories.json" />
+    <Content Include="data\related-products.json" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Home\views\about.cshtml" />
     <Content Include="Views\Home\views\account.cshtml" />

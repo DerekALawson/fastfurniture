@@ -1,7 +1,7 @@
 ﻿<script id="productDetails" type="text/x-simpleTemplate-template">
 
     <span class="product-detail-photo-wrapper">
-        <img alt="Product Name" src="<%this.displayPhoto%>" class="product-grid-photo">
+        <img alt="<%this.Name%>" src="<%this.displayPhoto%>" class="product-grid-photo">
     </span>
 
     <header class="product-detail-header">
@@ -9,14 +9,14 @@
     </header>
 
     <ul class="product-detail-list vertical-list">
-        <li class="product-detail-list-item product-detail-price"><%this.price%></li>
+        <li class="product-detail-list-item product-detail-price">$<%this.Price%></li>
         <li class="product-detail-list-item"></li>
         <li class="product-detail-list-item"></li>
-        <li class="product-detail-list-item"><button class="btn" data-product="<%this.slug%>">Order Now</button></li>
+        <li class="product-detail-list-item"><button class="btn" data-product="<%this.Slug%>">Order Now</button></li>
     </ul>
 
     <div class="product-detail-description">
-        <%this.description%>
+        <%this.Description%>
     </div>
 
 

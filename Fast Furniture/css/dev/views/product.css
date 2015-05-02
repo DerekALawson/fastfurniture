@@ -22,6 +22,7 @@
 .product-detail-photo-wrapper {
     float: left;
     margin: 1% 5% 1% 0;
+    width: 60%;
 }
 
 
@@ -67,6 +68,7 @@
     margin: .5% 0;
 }
 
-.replated-product-photo{
-    width:80px;
+.replated-product-photo {
+    width: 80px;
+    min-height: 80px;
 }

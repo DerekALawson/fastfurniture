@@ -340,18 +340,29 @@
         getProducts: function (success) {
 
             return this.getCachedData({
-                url: "product",
+                url: "products",
                 cacheKey: "products-",
                 success: success
             });
 
         },
 
+        getRelatedProducts: function (success) {
+
+            return this.getCachedData({
+                url: "relatedproducts",
+                cacheKey: "relatedproducts-",
+                success: success
+            });
+
+        },
+
+
         getProduct: function (slug, success) {
 
             return this.getCachedData({
                 url: "product?slug=" + slug,
-                cacheKey: "product-" + productId,
+                cacheKey: "product-" + slug,
                 success: success
             });
 

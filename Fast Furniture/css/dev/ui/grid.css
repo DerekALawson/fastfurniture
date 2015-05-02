@@ -41,7 +41,8 @@
 
 .product-grid-photo {
     min-height: 210px;
-    background:#808080;
+    background: #808080;
+    width: 100%;
 }
 
 

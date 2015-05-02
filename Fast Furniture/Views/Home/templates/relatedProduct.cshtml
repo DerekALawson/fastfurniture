@@ -1,11 +1,11 @@
 ﻿<script id="relatedProduct" type="text/x-simpleTemplate-template">
 
-    <%for(var index in this.products.relatedProducts) {%>
+    <%for(var index in this.product.relatedProducts) {%>
 
     <div class="related-products-target">
-        <a href="#!product/<%this.products.relatedProducts[index].Slug%>">
-            <img alt="Product Name" src="<%this.products.relatedProducts[index].ohotos.thumb%>" class="replated-product-photo">
-            <figcaption class="related-products-photo-caption"><%this.products.relatedProducts[index].Name%></figcaption>
+        <a href="#!product/<%this.product.relatedProducts[index].Slug%>">
+            <img alt="Product Name" src="https://fastfurniture.blob.core.windows.net/thumbs/<%this.product.relatedProducts[index].Photo%>" class="replated-product-photo">
+            <figcaption class="related-products-photo-caption"><%this.product.relatedProducts[index].Name%></figcaption>
         </a>
     </div>
 

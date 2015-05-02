@@ -30,6 +30,37 @@ namespace Fast_Furniture.Controllers
         }
 
         [HttpGet]
+        public HttpResponseMessage Product(string slug)
+        {
+
+            string content = File.ReadAllText(HttpContext.Current.Server.MapPath(@"~\data\products\" + slug + ".json"));
+
+            var resp = new HttpResponseMessage()
+            {
+                Content = new StringContent(content)
+            };
+            resp.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            return resp;
+
+        }
+
+        [HttpGet]
+        public HttpResponseMessage RelatedProducts()
+        {
+
+            string content = File.ReadAllText(HttpContext.Current.Server.MapPath(@"~\data\related-products.json"));
+
+            var resp = new HttpResponseMessage()
+            {
+                Content = new StringContent(content)
+            };
+            resp.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            return resp;
+
+        }
+
+
+        [HttpGet]
         public HttpResponseMessage HomeCategories()
         {
             string content = File.ReadAllText(HttpContext.Current.Server.MapPath(@"~\data\home-categories.json"));
