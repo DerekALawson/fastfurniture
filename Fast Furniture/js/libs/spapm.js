@@ -76,8 +76,8 @@
 
 		ViewSelector: "script[class='spa-view']",
 		LayoutSelector: "script[class='spa-layout']",
-		cssSelector: "type[type='x-spa-css']",
-		scriptSelector: "script",
+		cssSelector: "script[type='x-spa-css']",
+		scriptSelector: "script[type='x-spa-js']",
 
 		views: {},
 
@@ -134,9 +134,9 @@
 			moduleDef.Views = pm.processViews(module.querySelectorAll(pm.ViewSelector +
 													", " + pm.LayoutSelector), moduleName);
 
-			moduleDef.scripts = pm.processScripts(module.querySelectorAll(pm.scriptSelector), moduleName);
+	//		moduleDef.scripts = pm.processScripts(module.querySelector(pm.scriptSelector), moduleName);
 
-			moduleDef.css = pm.processCSS(module.querySelectorAll(pm.cssSelector), moduleName);
+			moduleDef.css = pm.processCSS(module.querySelector(pm.cssSelector), moduleName);
 
 			pm.cache.setObject("spa-module-" + moduleName, moduleDef, +new Date() + 86400000000); //long long time in the future
 
@@ -164,12 +164,22 @@
 
 			var pm = this,
 				cssRefs = pm.cache.getObject(pm.appPrefix + -"css") || {},
-			    cssObjs = JSON.parse(css);
+			    cssObjs = {};
+
+			if (css && css.length > 0) {
+			    return;
+			}
+
+			if (css.innerHTML !== "") {
+
+			    cssObjs = JSON.parse(css.innerHTML);
+
+			}
 
 			cssRefs = $.extend(cssRefs, cssObjs);
 
-			for (var i = 0; i < cssRefs.length; i++) {
-			    pm.appendCSS(cssRefs[i]);
+			for (var ref in cssRefs) {
+			    pm.appendCSS(cssRefs[ref]);
 			}
 
 		},
@@ -197,9 +207,17 @@
 
 		processScripts: function (scripts) {
 
-			var pm = this,
+		    var pm = this,
 				scriptRefs = pm.cache.getObject(pm.appPrefix + "-scripts") || {},
-			    jsObjs = JSON.parse(scripts)
+			    jsObjs = {};
+
+
+		    if (scripts && scripts != "") {
+
+		        jsObjs = JSON.parse(scripts);
+
+		    }
+
 
 			scriptRefs = $.extend(scriptRefs, jsObjs);
 

@@ -39,4 +39,4 @@ _spa = SPA({
 	"defaultTitle": "Fast Furniture"
 });
 
-//pm.loadImport("home/deferred", "deferred");
+pm.loadImport("home/deferred", "deferred");
