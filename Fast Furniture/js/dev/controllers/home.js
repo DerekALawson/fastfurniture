@@ -16,8 +16,6 @@ FastFurniture.fn.home = FastFurniture.fn.fastFurnitureController.extend({
 
     renderHomeCategories: function (categories) {
 
-        console.log(categories);
-
         ve.bind(".products-wrapper", "categoryGridItem", { "categories": categories });
 
 

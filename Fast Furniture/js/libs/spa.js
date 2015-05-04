@@ -44,7 +44,7 @@
 
 		}
 
-		window.addEventListener("DOMContentLoaded", function () {
+//		window.addEventListener("DOMContentLoaded", function () {
 
 			//cannot assume backpack anymore
 		    spa.viewEngine = spa.settings.viewEngine;
@@ -81,7 +81,7 @@
 				spa.swapView();
 			}
 
-		});
+//		});
 
 		return spa;
 

@@ -1,6 +1,6 @@
 ﻿;
 
-FastFurniture.fn.new account = FastFurniture.fn.fastFurnitureController.extend({
+FastFurniture.fn.newAccount = FastFurniture.fn.fastFurnitureController.extend({
 
     onload: function (response) {
 

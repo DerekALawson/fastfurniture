@@ -1,6 +1,6 @@
 ﻿;
 
-FastFurniture.fn.place order = FastFurniture.fn.fastFurnitureController.extend({
+FastFurniture.fn.placeOrder = FastFurniture.fn.fastFurnitureController.extend({
 
     onload: function (response) {
 

@@ -1,6 +1,6 @@
 ﻿;
 
-FastFurniture.fn.payment options = FastFurniture.fn.fastFurnitureController.extend({
+FastFurniture.fn.paymentOptions = FastFurniture.fn.fastFurnitureController.extend({
 
     onload: function (response) {
 

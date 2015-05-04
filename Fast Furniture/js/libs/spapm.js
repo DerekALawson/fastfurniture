@@ -182,6 +182,8 @@
 			    pm.appendCSS(cssRefs[ref]);
 			}
 
+			pm.cache.setObject(pm.appPrefix + -"css", cssRefs);
+
 		},
 
 		appendCSS: function (cssObj) {
@@ -223,11 +225,12 @@
 
 			scriptRefs = $.extend(scriptRefs, jsObjs);
 
-			for (var i = 0; i < scriptRefs.length; i++) {
-			    pm.appendScript(scriptRefs[i]);
+			for (var ref in scriptRefs) {
+			    pm.appendScript(scriptRefs[ref]);
 			}
 
-
+			pm.cache.setObject(pm.appPrefix + "-scripts", jsObjs);
+            
 		},
 
 		appendScript: function (src) {
@@ -237,10 +240,23 @@
 
 			if (!document.getElementById(src.id)) {
 
+			    pm.scriptLoadingState += 1;
+
 				script = document.createElement("script");
 
 				script.id = src.id;
 				script.src = src.url;
+
+				script.onload = function () {
+
+				    pm.scriptLoadingState -= 1;
+
+				    if (pm.scriptLoadingState === 0 && pm.assetsComplete) {
+				        pm.assetsComplete();
+				    }
+
+				};
+
 
 				document.body.appendChild(script);
 
@@ -248,13 +264,19 @@
 
 		},
 
-		setupAssets: function () {
+        scriptLoadingState: 0,
+
+		assetsComplete: function(){},
+
+		setupAssets: function (done) {
 
 			var pm = this,
 				asset,
 				scriptRefs = pm.cache.getObject(pm.appPrefix + "-scripts"),
 				cssRefs = pm.cache.getObject(pm.appPrefix + "-css");
 
+			pm.assetsComplete = done;
+            
 			for (asset in scriptRefs) {
 				pm.appendScript(scriptRefs[asset]);
 			}
@@ -263,6 +285,9 @@
 				pm.appendCSS(cssRefs[asset]);
 			}
 			
+			if (pm.scriptLoadingState === 0 && pm.assetsComplete) {
+			    pm.assetsComplete();
+			}
 		},
 
 		getAttributeDefault: function (ele, attr, def) {

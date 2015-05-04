@@ -1,6 +1,6 @@
 ﻿;
 
-FastFurniture.fn.order confirmation = FastFurniture.fn.fastFurnitureController.extend({
+FastFurniture.fn.orderConfirmation = FastFurniture.fn.fastFurnitureController.extend({
 
     onload: function (response) {
 

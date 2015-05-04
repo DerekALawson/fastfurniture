@@ -2,13 +2,13 @@
 
 var lsCache = l2Storeagecache(),
 	ve = simpleViewEngine({
-		"appName": "Fast-Furniture",
-		"appPrefix": "Fast-Furniture-"
+	    "appName": "Fast-Furniture",
+	    "appPrefix": "Fast-Furniture-"
 	}),
 	pm = SPAPM({
-		viewEngine: ve,
-		cache: lsCache,
-		"appPrefix": "Fast-Furniture-"
+	    viewEngine: ve,
+	    cache: lsCache,
+	    "appPrefix": "Fast-Furniture-"
 	}),
 
 
@@ -20,23 +20,25 @@ var lsCache = l2Storeagecache(),
 	    services: {
 	        "viewEngine": ve,
 	        "Fast-FurnitureData": fastFurnitureData
-	}
+	    }
 	});
 
 fastFurniture.appKey = "Fast-Furniture-";
 
-pm.setupAssets();
+pm.setupAssets(function () {
 
+    _spa = SPA({
+        "AppContext": fastFurniture,
+        "viewEngine": ve,
+        "pm": pm,
+        "viewSelector": "[type='text/x-simpleTemplate-template']",
+        "defaultPage": "index",
+        "viewWrapper": "#main",
+        "viewTransition": "slide",
+        "defaultTitle": "Fast Furniture"
+    });
 
-_spa = SPA({
-    "AppContext": fastFurniture,
-	"viewEngine": ve,
-	"pm": pm,
-	"viewSelector": "[type='text/x-simpleTemplate-template']",
-	"defaultPage": "index",
-	"viewWrapper": "#main",
-	"viewTransition": "slide",
-	"defaultTitle": "Fast Furniture"
+    pm.loadImport("home/deferred", "deferred");
+
 });
 
-pm.loadImport("home/deferred", "deferred");
