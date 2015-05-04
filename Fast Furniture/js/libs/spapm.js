@@ -134,7 +134,7 @@
 			moduleDef.Views = pm.processViews(module.querySelectorAll(pm.ViewSelector +
 													", " + pm.LayoutSelector), moduleName);
 
-	//		moduleDef.scripts = pm.processScripts(module.querySelector(pm.scriptSelector), moduleName);
+			moduleDef.scripts = pm.processScripts(module.querySelector(pm.scriptSelector), moduleName);
 
 			moduleDef.css = pm.processCSS(module.querySelector(pm.cssSelector), moduleName);
 
@@ -166,7 +166,7 @@
 				cssRefs = pm.cache.getObject(pm.appPrefix + -"css") || {},
 			    cssObjs = {};
 
-			if (css && css.length > 0) {
+			if (!css) {
 			    return;
 			}
 
@@ -211,13 +211,15 @@
 				scriptRefs = pm.cache.getObject(pm.appPrefix + "-scripts") || {},
 			    jsObjs = {};
 
-
-		    if (scripts && scripts != "") {
-
-		        jsObjs = JSON.parse(scripts);
-
+		    if (!scripts) {
+		        return;
 		    }
 
+		    if (scripts.innerHTML !== "") {
+
+		        jsObjs = JSON.parse(scripts.innerHTML);
+
+		    }
 
 			scriptRefs = $.extend(scriptRefs, jsObjs);
 

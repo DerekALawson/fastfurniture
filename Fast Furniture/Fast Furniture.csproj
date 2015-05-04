@@ -225,7 +225,7 @@
     <Content Include="css\dev\views\deferred\account.css" />
     <Content Include="css\dev\views\deferred\feedback.css" />
     <Content Include="css\dev\views\deferred\my.favorites.css" />
-    <Content Include="css\dev\views\deferred\new account.css" />
+    <Content Include="css\dev\views\deferred\new.account.css" />
     <Content Include="css\dev\views\deferred\order.confirmation.css" />
     <Content Include="css\dev\views\deferred\orders.css" />
     <Content Include="css\dev\views\deferred\payment.options.css" />
@@ -253,12 +253,12 @@
     <Content Include="js\dev\controllers\deferred\about.js" />
     <Content Include="js\dev\controllers\deferred\account.js" />
     <Content Include="js\dev\controllers\deferred\feedback.js" />
-    <Content Include="js\dev\controllers\deferred\my favorites.js" />
-    <Content Include="js\dev\controllers\deferred\new account.js" />
-    <Content Include="js\dev\controllers\deferred\order confirmation.js" />
+    <Content Include="js\dev\controllers\deferred\my-favorites.js" />
+    <Content Include="js\dev\controllers\deferred\new-account.js" />
+    <Content Include="js\dev\controllers\deferred\order-confirmation.js" />
     <Content Include="js\dev\controllers\deferred\orders.js" />
-    <Content Include="js\dev\controllers\deferred\payment options.js" />
-    <Content Include="js\dev\controllers\deferred\place order.js" />
+    <Content Include="js\dev\controllers\deferred\payment-options.js" />
+    <Content Include="js\dev\controllers\deferred\place-order.js" />
     <Content Include="js\dev\controllers\deferred\social.js" />
     <Content Include="js\dev\controllers\fastFurnitureAuthenticatedController.js" />
     <Content Include="js\dev\controllers\fastFurnitureController.js" />
@@ -338,7 +338,7 @@
     <Content Include="css\dev\views\deferred\account.less" />
     <Content Include="css\dev\views\deferred\feedback.less" />
     <Content Include="css\dev\views\deferred\my.favorites.less" />
-    <Content Include="css\dev\views\deferred\new account.less" />
+    <Content Include="css\dev\views\deferred\new.account.less" />
     <Content Include="css\dev\views\deferred\order confirmation.less" />
     <Content Include="css\dev\views\deferred\orders.less" />
     <Content Include="css\dev\views\deferred\payment options.less" />
