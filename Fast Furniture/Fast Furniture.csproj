@@ -251,6 +251,7 @@
     <Content Include="js\dev\controllers\category.js" />
     <Content Include="js\dev\controllers\deferred\about.js" />
     <Content Include="js\dev\controllers\deferred\account.js" />
+    <Content Include="js\dev\controllers\deferred\contact.js" />
     <Content Include="js\dev\controllers\deferred\feedback.js" />
     <Content Include="js\dev\controllers\deferred\my-favorites.js" />
     <Content Include="js\dev\controllers\deferred\new-account.js" />
@@ -387,6 +388,7 @@
     <Content Include="Views\Home\templates\relatedProduct.cshtml" />
     <Content Include="Views\Home\templates\categoryListItem.cshtml" />
     <Content Include="Views\Home\views\criticalcssmin.cshtml" />
+    <Content Include="Views\Home\views\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\git\SPAHelper\SPAHelper\SPAHelper.4.0.csproj">
