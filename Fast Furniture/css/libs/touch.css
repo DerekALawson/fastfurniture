@@ -28,9 +28,18 @@
     touch-action: pan-y;
     overflow: hidden;
     overflow-x: hidden;
-    overflow-y: scroll;
     height: 100%;
     padding-right: 15px;
+    width: 100%;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-style: none;
+    overflow-style: none;
+    -moz-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    height: 100%;
+    -ms-overflow-y: scroll;
+    overflow-y: scroll;
 }
 
 .text-scroll {
@@ -65,8 +74,8 @@
     margin: auto;
 }
 
-.large-text{
-    font-size:1.1em;
+.large-text {
+    font-size: 1.1em;
 }
 
 @media (min-width:600px) {
@@ -86,15 +95,15 @@
         margin: auto;
     }
 
-    .view-list{
+    .view-list {
         height: calc(100% - 60px);
         margin: auto;
     }
 
-    
-.large-text{
-    font-size:1.6em;
-}
+
+    .large-text {
+        font-size: 1.6em;
+    }
 }
 
 @media(min-width: 1024px) {

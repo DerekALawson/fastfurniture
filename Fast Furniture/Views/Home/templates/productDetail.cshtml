@@ -1,12 +1,12 @@
 ﻿<script id="productDetails" type="text/x-simpleTemplate-template">
 
-    <span class="product-detail-photo-wrapper">
-        <img alt="<%this.Name%>" src="<%this.displayPhoto%>" class="product-grid-photo">
-    </span>
-
     <header class="product-detail-header">
         <h1><%this.Name%></h1>
     </header>
+
+    <span class="product-detail-photo-wrapper">
+        <img alt="<%this.Name%>" src="https://fastfurniture.blob.core.windows.net/originals/<%this.Photos.Original%>" class="product-grid-photo">
+    </span>
 
     <ul class="product-detail-list vertical-list">
         <li class="product-detail-list-item product-detail-price">$<%this.Price%></li>
