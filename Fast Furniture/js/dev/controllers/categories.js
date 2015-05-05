@@ -6,11 +6,7 @@ FastFurniture.fn.categories = FastFurniture.fn.fastFurnitureController.extend({
 
         var home = this;
 
-        fastFurnitureData.getCategories(function (response) {
-
-            home.renderHomeCategories(response);
-
-        });
+        fastFurnitureData.getCategories(home.renderHomeCategories);
 
     },
 
@@ -19,6 +15,12 @@ FastFurniture.fn.categories = FastFurniture.fn.fastFurnitureController.extend({
         console.log(categories);
 
         ve.bind(".categories-grid", "categoryListItem", { "categories": categories });
+
+    },
+
+    callMe: function () {
+
+        console.log("called me");
 
     }
 

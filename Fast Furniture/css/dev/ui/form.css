@@ -5,15 +5,15 @@
     width: 45%;
     display: inline-block;
     height: 30px;
-    border: 1px solid #fff;
+    border: 1px solid #000;
     background-color: transparent;
-    color: #fff;
+    color: #000;
     text-align: center;
     padding: 6px 12px;
-    margin-bottom: 0;
+    margin-bottom: 0px;
     font-size: 14px;
     font-weight: normal;
-    line-height: 1.42857143;
+    line-height: 1.4285;
     white-space: nowrap;
     vertical-align: middle;
     -ms-touch-action: manipulation;
@@ -24,7 +24,6 @@
     -ms-user-select: none;
     user-select: none;
     background-image: none;
-    border-radius: 4px;
 }
 
     .btn:focus,

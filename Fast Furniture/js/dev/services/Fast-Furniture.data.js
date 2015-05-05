@@ -21,9 +21,17 @@
 
         ttl: 30000, //30 seconds, for development purposes
 
+        status: {
+            "0": "notOnitialized",
+            "1": "connectionEstablished",
+            "2": "received",
+            "3": "processing",
+            "4": "success"
+        },
+
         appKey: "fast-funriture-",
 
-        getCachedData: function (options) {
+        getCachedObject: function (options) {
 
             var appData = this,
                 cachedData = appData.cache.getObject(appData.appKey + options.cacheKey);
@@ -37,6 +45,27 @@
             }
 
             options.cache = true;
+            options.type = "json";
+
+            return this.getData(options);
+
+        },
+
+        getCachedText: function (options) {
+
+            var appData = this,
+                cachedData = appData.cache.getItem(appData.appKey + options.cacheKey);
+
+            if (cachedData) {
+
+                if (options.success) {
+                    options.success(cachedData);
+                    return;
+                }
+            }
+
+            options.cache = true;
+            options.type = "text";
 
             return this.getData(options);
 
@@ -142,9 +171,13 @@
                     this.ajaxSettings,
                     options);
 
-            //if (options.data) {
-            //    options.url += ("?" + this.buildAjaxDataQueryString(options.data));
-            //}
+            if (options.onload) {
+                xhr.onload = options.onload;
+            }
+
+            if (options.onerror) {
+                xhr.onerror = options.onerror;
+            }
 
             options.url = this.API_ROOT + options.url;
 
@@ -158,16 +191,40 @@
             //xhr.addEventListener("abort", function () { console.info("abort"); }, false);
 
             xhr.onreadystatechange = function (e) {
+
+                if (xhr.readyState != 4 && options[xhr.readyState]) {
+
+                    options[xhr.readyState]();
+
+                }
+
                 if (xhr.readyState === 4 && xhr.status == 200 && options.success) {
 
                     try {
-                        var json = JSON.parse(this.responseText);
-                        options.success.call(that, json);
 
-                        if (options.cache) {
-                            that.cache.setObject(that.appKey + options.cacheKey, json, options.cacheTTL);
+                        switch (options.type) {
+
+                            case "json":
+
+                                options.success.call(that, JSON.parse(this.responseText));
+
+                                break;
+
+                            case "text":
+
+                                options.success.call(that, this.responseText);
+
+                                break;
+
+                            default: //DOMString
+
+                                options.success.call(that, this.responseText);
+
                         }
 
+                        if (options.cache) {
+                            that.cache.setObject(that.appKey + options.cacheKey, this.responseText, options.cacheTTL);
+                        }
 
                     }
                     catch (e) {
@@ -265,7 +322,7 @@
 
         getCategories: function (success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "categories",
                 cacheKey: "categories-",
                 success: success
@@ -275,7 +332,7 @@
 
         getHomeCategories: function (success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "homecategories",
                 cacheKey: "home-categories",
                 success: success
@@ -285,7 +342,7 @@
 
         getCategory: function (name, success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "category?slug=" + name,
                 cacheKey: "category-" + name,
                 data: name,
@@ -296,7 +353,7 @@
 
         getCategoryProducts: function (name, success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "CategoryProducts?category=" + name,
                 cacheKey: "category-" + name,
                 data: name,
@@ -339,7 +396,7 @@
 
         getProducts: function (success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "products",
                 cacheKey: "products-",
                 success: success
@@ -349,7 +406,7 @@
 
         getRelatedProducts: function (success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "relatedproducts",
                 cacheKey: "relatedproducts-",
                 success: success
@@ -360,7 +417,7 @@
 
         getProduct: function (slug, success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "product?slug=" + slug,
                 cacheKey: "product-" + slug,
                 success: success
@@ -401,7 +458,7 @@
 
         getCarts: function (success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "cart",
                 cacheKey: "carts-",
                 success: success
@@ -411,7 +468,7 @@
 
         getCart: function (cartId, success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "cart?cartid=" + cartId,
                 cacheKey: "cart-" + cartId,
                 success: success
@@ -452,7 +509,7 @@
 
         getUsers: function (success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "user",
                 cacheKey: "users-",
                 success: success
@@ -462,7 +519,7 @@
 
         getUser: function (userId, success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "user/" + userId,
                 cacheKey: "user-" + userId,
                 success: success
@@ -501,7 +558,7 @@
 
         getRoles: function (success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "role",
                 cacheKey: "roles-",
                 success: success
@@ -511,7 +568,7 @@
 
         getRole: function (roleId, success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "role/" + roleId,
                 cacheKey: "role-" + roleId,
                 success: success
@@ -550,7 +607,7 @@
 
         getOrders: function (success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "order",
                 cacheKey: "orders-",
                 success: success
@@ -560,7 +617,7 @@
 
         getOrder: function (orderId, success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "order/" + orderId,
                 cacheKey: "order-" + orderId,
                 success: success
@@ -599,7 +656,7 @@
 
         getContacts: function (success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "contact",
                 cacheKey: "contacts-",
                 success: success
@@ -609,7 +666,7 @@
 
         getContact: function (contactId, success) {
 
-            return this.getCachedData({
+            return this.getCachedObject({
                 url: "contact/" + contactId,
                 cacheKey: "contact-" + contactId,
                 success: success

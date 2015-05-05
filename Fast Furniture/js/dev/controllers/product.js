@@ -5,7 +5,7 @@ FastFurniture.fn.product = FastFurniture.fn.fastFurnitureController.extend({
     onload: function (response) {
 
 
-        this.getRelatedProducts();
+//        this.getRelatedProducts();
         this.getProduct(response.paramValues.Name);
     },
 
@@ -14,6 +14,7 @@ FastFurniture.fn.product = FastFurniture.fn.fastFurnitureController.extend({
         fastFurnitureData.getProduct(slug, function (response) {
 
             ve.bind(".product-details", "productDetails", response);
+            ve.bind(".product-details-related-products", "relatedProduct", response);
 
         });
 
