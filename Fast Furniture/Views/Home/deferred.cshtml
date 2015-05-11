@@ -6,46 +6,55 @@
         <script type="x-spa-css">
 
             [
-                {
-                    "id": "newaccount-css",
-                    "url": "css/dev/views/deferred/new.account.css"
-                },
-                {
-                    "id": "payment-options-css",
-                    "url": "css/dev/views/deferred/payment.options.css"
-                },
-                {
-                    "id": "orders-css",
-                    "url": "css/dev/views/deferred/orders.css"
-                },
-                {
-                    "id": "placeorder-css",
-                    "url": "css/dev/views/deferred/place.order.css"
-                },
-                {
-                    "id": "order-confirmation-css",
-                    "url": "css/dev/views/deferred/order.confirmation.css"
-                },
-                {
-                    "id": "my-favorites-css",
-                    "url": "css/dev/views/deferred/my.favorites.css"
-                },
-                {
-                "id": "about-css",
-                "url": "css/dev/views/deferred/about.css"
-                },
-                {
-                "id": "feedback-css",
-                "url": "css/dev/views/deferred/feedback.css"
-                },
-                {
-                    "id": "social-css",
-                    "url": "css/dev/views/deferred/social.css"
-                },
-                {
-                    "id": "account-css",
-                    "url": "css/dev/views/deferred/account.css"
-                }
+            {
+            "id": "newaccount-css",
+            "url": "css/dev/views/deferred/new.account.css"
+            },
+            {
+            "id": "payment-options-css",
+            "url": "css/dev/views/deferred/payment.options.css"
+            },
+            {
+            "id": "orders-css",
+            "url": "css/dev/views/deferred/orders.css"
+            },
+            {
+            "id": "placeorder-css",
+            "url": "css/dev/views/deferred/place.order.css"
+            },
+            {
+            "id": "order-confirmation-css",
+            "url": "css/dev/views/deferred/order.confirmation.css"
+            },
+            {
+            "id": "my-favorites-css",
+            "url": "css/dev/views/deferred/my.favorites.css"
+            },
+            {
+            "id": "about-css",
+            "url": "css/dev/views/deferred/about.css"
+            },
+            {
+            "id": "feedback-css",
+            "url": "css/dev/views/deferred/feedback.css"
+            },
+            {
+            "id": "social-css",
+            "url": "css/dev/views/deferred/social.css"
+            },
+            {
+            "id": "account-css",
+            "url": "css/dev/views/deferred/account.css"
+            },
+            {
+            "id": "registersuccess-css",
+            "url": "css/dev/views/deferred/registerstatus.css"
+            },
+            {
+            "id": "shoppingCart-css",
+            "url": "css/dev/views/deferred/shoppingCart.css"
+            }
+
             ]
 
         </script>
@@ -63,94 +72,112 @@
             "url": "deferred.min.css"
             }
             ]
+        </script>
+
+    }
+}
+
+
+@SPARenderPage("views/newaccount.cshtml")
+@SPARenderPage("views/paymentoptions.cshtml")
+@SPARenderPage("views/orders.cshtml")
+@SPARenderPage("views/placeorder.cshtml")
+@SPARenderPage("views/orderconfirmation.cshtml")
+@SPARenderPage("views/myfavorites.cshtml")
+@SPARenderPage("views/about.cshtml")
+@SPARenderPage("views/social.cshtml")
+@SPARenderPage("views/account.cshtml")
+@SPARenderPage("views/contact.cshtml")
+@SPARenderPage("views/registersuccess.cshtml")
+@SPARenderPage("views/register.cshtml")
+@SPARenderPage("views/shoppingCart.cshtml")
+
+
+@SPARenderPage("templates/CartTemplate.cshtml")
+
+
+
+    @{
+        if (HttpContext.Current.IsDebuggingEnabled)
+        {
+
+            <script type="x-spa-js">
+
+                [
+                {
+                "id": "new-account-js",
+                "url": "js/dev/controllers/deferred/new-account.js"
+                },
+                {
+                "id": "payment-options-js",
+                "url": "js/dev/controllers/deferred/payment-options.js"
+                },
+                {
+                "id": "orders-js",
+                "url": "js/dev/controllers/deferred/orders.js"
+                },
+                {
+                "id": "place-order-js",
+                "url": "js/dev/controllers/deferred/place-order.js"
+                },
+                {
+                "id": "order-confirmation-js",
+                "url": "js/dev/controllers/deferred/order-confirmation.js"
+                },
+                {
+                "id": "my-favorites-js",
+                "url": "js/dev/controllers/deferred/my-favorites.js"
+                },
+                {
+                "id": "about-js",
+                "url": "js/dev/controllers/deferred/about.js"
+                },
+                {
+                "id": "feedback-js",
+                "url": "js/dev/controllers/deferred/feedback.js"
+                },
+                {
+                "id": "social-js",
+                "url": "js/dev/controllers/deferred/social.js"
+                },
+                {
+                "id": "account-js",
+                "url": "js/dev/controllers/deferred/account.js"
+                },
+                {
+                "id": "contact-js",
+                "url": "js/dev/controllers/deferred/contact.js"
+                },
+                {
+                "id": "register-js",
+                "url": "js/dev/controllers/deferred/register.js"
+                },
+                {
+                "id": "registerstatus-js",
+                "url": "js/dev/controllers/deferred/registerStatus.js"
+                },
+                {
+                "id": "shoppingCart-js",
+                "url": "js/dev/controllers/deferred/shoppingCart.js"
+                }
+                
+                ]
+
             </script>
 
-            }
-            }
+        }
+        else
+        {
 
+            <script type="x-spa-css">
 
-            @SPARenderPage("views/newaccount.cshtml")
-            @SPARenderPage("views/paymentoptions.cshtml")
-            @SPARenderPage("views/orders.cshtml")
-            @SPARenderPage("views/placeorder.cshtml")
-            @SPARenderPage("views/orderconfirmation.cshtml")
-            @SPARenderPage("views/myfavorites.cshtml")
-            @SPARenderPage("views/about.cshtml")
-            @SPARenderPage("views/feedback.cshtml")
-            @SPARenderPage("views/social.cshtml")
-            @SPARenderPage("views/account.cshtml")
-            @SPARenderPage("views/contact.cshtml")
-
-
-            @{
-                if (HttpContext.Current.IsDebuggingEnabled)
+                [
                 {
-
-                    <script type="x-spa-js">
-
-                        [
-                        {
-                        "id": "new-account-js",
-                        "url": "js/dev/controllers/deferred/new-account.js"
-                        },
-                        {
-                        "id": "payment-options-js",
-                        "url": "js/dev/controllers/deferred/payment-options.js"
-                        },
-                        {
-                        "id": "orders-js",
-                        "url": "js/dev/controllers/deferred/orders.js"
-                        },
-                        {
-                        "id": "place-order-js",
-                        "url": "js/dev/controllers/deferred/place-order.js"
-                        },
-                        {
-                        "id": "order-confirmation-js",
-                        "url": "js/dev/controllers/deferred/order-confirmation.js"
-                        },
-                        {
-                        "id": "my-favorites-js",
-                        "url": "js/dev/controllers/deferred/my-favorites.js"
-                        },
-                        {
-                        "id": "about-js",
-                        "url": "js/dev/controllers/deferred/about.js"
-                        },
-                        {
-                        "id": "feedback-js",
-                        "url": "js/dev/controllers/deferred/feedback.js"
-                        },
-                        {
-                        "id": "social-js",
-                        "url": "js/dev/controllers/deferred/social.js"
-                        },
-                        {
-                        "id": "account-js",
-                        "url": "js/dev/controllers/deferred/account.js"
-                        },
-                        {
-                        "id": "contact-js",
-                        "url": "js/dev/controllers/deferred/contact.js"
-                        }
-
-                        ]
-
-                    </script>
-
+                "id": "deferred-js",
+                "url": "js/deferred.min.js"
                 }
-                else
-                {
+                ]
+            </script>
 
-                    <script type="x-spa-css">
-
-                        [
-                        {
-                        "id": "deferred-js",
-                        "url": "js/deferred.min.js"
-                        }
-                        ]
-                    </script>
-
-                }
-            }
+        }
+    }

@@ -49,6 +49,10 @@
 		views: {},
 		templates: {},
 
+		getTemplates: function () {
+
+		    this.templates = JSON.parse(localStorage.getItem(this.appPrefix + "templates")) || {};
+		},
 
 		parseViews: function (html, remove) {
 
@@ -110,6 +114,14 @@
 				viewMarkup = temp.innerHTML.replace(/(\r\n|\n|\r)/gm, "");
 
 				templates[temp.id] = viewMarkup;
+
+				if (remove === true) {
+
+				    if (temp.parentNode) {
+				        temp.parentNode.removeChild(temp);
+				    }
+
+				}
 
 			}
 

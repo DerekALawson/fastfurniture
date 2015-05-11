@@ -8,12 +8,10 @@
         <img alt="<%this.Name%>" src="https://fastfurniture.blob.core.windows.net/originals/<%this.Photos.Original%>" class="product-grid-photo">
     </span>
 
-    <ul class="product-detail-list vertical-list">
-        <li class="product-detail-list-item product-detail-price">$<%this.Price%></li>
-        <li class="product-detail-list-item"></li>
-        <li class="product-detail-list-item"></li>
-        <li class="product-detail-list-item"><button class="btn" data-product="<%this.Slug%>">Order Now</button></li>
-    </ul>
+    <div class="product-detail-list">
+        <div class="product-detail-list-item product-detail-price">$<%this.Price%></div>
+        <div class="product-detail-list-item"><button class="btn add-to-cart" data-product="<%this.Slug%>">Order Now</button></div>
+    </div>
 
     <div class="product-detail-description">
         <%this.Description%>

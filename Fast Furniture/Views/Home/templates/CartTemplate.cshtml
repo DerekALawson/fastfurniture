@@ -1,0 +1,25 @@
+﻿<script id="shoppingCartTemplate" type="text/x-simpleTemplate-template">
+
+    <%for(var orderItem in this.Items) {%>
+
+    <div class="shopping-cart-item">
+        <a href="#!product/<%this.Items[orderItem].Slug%>">
+            <img alt="Product Name" src="https://fastfurniture.blob.core.windows.net/thumb/<%this.Items[orderItem].Photos.Thumb%>" class="cart-item-photo">
+            <span class="cart-item-name"><%this.Items[orderItem].Name%></span>
+        </a>
+        <div class="cart-item-qty"><%this.Items[orderItem].Qty%></div>
+        <div class="cart-item-price"><%this.Items[orderItem].Price%></div>
+        <div class="cart-item-delete"></div>
+    </div>
+
+    <%}%>
+
+    <div class="col-sm-offset-2 col-sm-10">
+        <button class="btn">Update</button>
+    </div>
+
+    <div class="cart-sales-tax"><label>Sales Tax: </label><%this.salesTax%></div>
+    <div class="cart-sales-shipping"><label>Shipping: </label><%this.shipping%></div>
+    <div class="cart-grand-total"><label>Grand Total: </label><%this.grandTotal%></div>
+
+</script>

@@ -28,7 +28,37 @@
     },
     "models": {
         "category": { },
-        "product": { },
+        "product": {
+            "id": "product",
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Name": {
+                    "type": "string"
+                },
+                "Slug": {
+                    "type": "string"
+                },
+                "Description": {
+                    "type": "string"
+                },
+                "Photos": {
+                    "type": "PhotoList"
+                },
+                "Price": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "Categories": {
+                    "type": "[Product]"
+                },
+                "Related": {
+                    "type": "[Product]"
+                }
+            }
+        },
         "cart": { },
         "user": { },
         "role": { },
@@ -248,6 +278,36 @@
             "spaTitle": "account",
             "spaRoute": "account",
             "controller": "fastFurnitureAuthenticatedController",
+            "deferred": true
+        },
+        {
+            "Name": "register",
+            "spaViewId": "spa-view-register",
+            "spaTransition": "slide",
+            "spaLayout": "fast-furniture-layout",
+            "spaTitle": "register",
+            "spaRoute": "register",
+            "controller": "fastFurnitureController",
+            "deferred": true
+        },
+        {
+            "Name": "shoppingCart",
+            "spaViewId": "spa-view-shoping-cart",
+            "spaTransition": "slide",
+            "spaLayout": "fast-furniture-layout",
+            "spaTitle": "Shoping Cart",
+            "spaRoute": "cart",
+            "controller": "fastFurnitureController",
+            "deferred": true
+        },
+        {
+            "Name": "changePassword",
+            "spaViewId": "spa-view-change-password",
+            "spaTransition": "slide",
+            "spaLayout": "fast-furniture-layout",
+            "spaTitle": "Change Password",
+            "spaRoute": "changepassword",
+            "controller": "fastFurnitureController",
             "deferred": true
         }
     ],

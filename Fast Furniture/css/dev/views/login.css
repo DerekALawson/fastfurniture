@@ -11,12 +11,6 @@ body.login {
     width: 90%;
 }
 
-    .login-form,
-    .login-form h1,
-    .login-form h2 {
-        color: #fff;
-    }
-
         .login-form h1,
         .login-form h2 {
             text-align: center;
@@ -40,7 +34,7 @@ body.login {
     padding: .2em;
     width: 2em;
     background-color: #F25C05;
-    color: #fff;
+    color: #333;
     text-align: center;
     font-size: 2em;
 }
@@ -92,7 +86,7 @@ body.login {
     margin: 10px;
     width: 33%;
     border: none;
-    color: #fff;
+    color: #333;
     height: auto;
 }
 

@@ -12,5 +12,6 @@ namespace Fast_Furniture.Models
         public string LastName { get; set; }
 
         public List<UserRoles> Roles { get; set; }
+        public object UserName { get; internal set; }
     }
 }

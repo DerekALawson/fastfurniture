@@ -1,8 +1,8 @@
 ﻿(function (window, undefined) {
 
-	"use strict";
+    "use strict";
 
-	/*
+    /*
 	 * initial load grabs module definitions
 	 * loops through them and stamps references to scripts and CSS in DOM
 	 * views are just views and processed like we have been.
@@ -17,369 +17,403 @@
 	 * 
 	 */
 
-	var SPAPM = function (settings) {
+    var SPAPM = function (settings) {
 
-		return new SPAPM.fn.init(settings);
+        return new SPAPM.fn.init(settings);
 
-	};
+    };
 
-	SPAPM.fn = SPAPM.prototype = {
+    SPAPM.fn = SPAPM.prototype = {
 
-		constructor: SPAPM,
+        constructor: SPAPM,
 
-		init: function (settings) {
+        init: function (settings) {
 
-			var pm = this;
+            var pm = this;
 
-			if (!settings) {
-				settings = {};
-			}
+            if (!settings) {
+                settings = {};
+            }
 
-			//these are required
-			pm.viewEngine = settings.viewEngine;
-			pm.cache = settings.cache;
+            //these are required
+            pm.viewEngine = settings.viewEngine;
+            pm.cache = settings.cache;
 
-			if (settings.ViewSelector) {
+            if (settings.ViewSelector) {
 
-				ViewSelector: settings.ViewSelector;
+                ViewSelector: settings.ViewSelector;
 
-			}
+            }
 
-			if (settings.cssSelector) {
+            if (settings.cssSelector) {
 
-				cssSelector: settings.cssSelector;
+                cssSelector: settings.cssSelector;
 
-			}
+            }
 
-			if (settings.scriptSelector) {
+            if (settings.scriptSelector) {
 
-				scriptSelector: settings.scriptSelector;
+                scriptSelector: settings.scriptSelector;
 
-			}
+            }
 
-			if (settings.appPrefix) {
-				pm.appPrefix = settings.appPrefix;
-			}
+            if (settings.appPrefix) {
+                pm.appPrefix = settings.appPrefix;
+            }
 
-			return pm;
-		},
+            return pm;
+        },
 
-		version: "0.0.1",
+        version: "0.0.1",
 
-		viewEngine: undefined,
-		cache: undefined,
+        viewEngine: undefined,
+        cache: undefined,
 
-		mainWrappperSelector: "main",
-		currentClass: "current",
-		appPrefix: "SPAapp-",
+        mainWrappperSelector: "main",
+        currentClass: "current",
+        appPrefix: "SPAapp-",
 
 
-		ViewSelector: "script[class='spa-view']",
-		LayoutSelector: "script[class='spa-layout']",
-		cssSelector: "script[type='x-spa-css']",
-		scriptSelector: "script[type='x-spa-js']",
+        ViewSelector: "script[class='spa-view']",
+        LayoutSelector: "script[class='spa-layout']",
+        cssSelector: "script[type='x-spa-css']",
+        scriptSelector: "script[type='x-spa-js']",
+        TemplateSelector: "[type='text/x-simpleTemplate-template']",
 
-		views: {},
+        views: {},
+        templates: {},
 
-		loadImport: function (ImportURL, moduleName) {
+        loadImport: function (ImportURL, moduleName) {
 
-			var pm = this;
+            var pm = this;
 
-			pm.getImport(ImportURL, function (content) {
+            pm.getImport(ImportURL, function (content) {
 
-				pm.parseImport(content, moduleName);
+                pm.parseImport(content, moduleName);
 
-			});
+            });
 
-		},
+        },
 
-		getImport: function (route, callback) {
+        getImport: function (route, callback) {
 
-			var request = new XMLHttpRequest();
-			request.open('GET', route, true);
+            var request = new XMLHttpRequest();
+            request.open('GET', route, true);
 
-			request.onload = function () {
-				if (request.status >= 200 && request.status < 400) {
-					// Success!
-					var resp = request.responseText.replace(/(\r\n|\n|\r)/gm, "");
+            request.onload = function () {
+                if (request.status >= 200 && request.status < 400) {
+                    // Success!
+                    var resp = request.responseText.replace(/(\r\n|\n|\r)/gm, "");
 
-					if (callback) {
-						callback(resp);
-					}
+                    if (callback) {
+                        callback(resp);
+                    }
 
-				} else {
-					// We reached our target server, but it returned an error
+                } else {
+                    // We reached our target server, but it returned an error
 
-				}
-			};
+                }
+            };
 
-			request.onerror = function () {
-				// There was a connection error of some sort
-			};
+            request.onerror = function () {
+                // There was a connection error of some sort
+            };
 
-			request.send();
+            request.send();
 
-		},
+        },
 
-		parseImport: function (content, moduleName) {
+        parseImport: function (content, moduleName) {
 
-			var pm = this,
+            var pm = this,
 				moduleDef = {
-					name: moduleName
+				    name: moduleName
 				},
 				module = document.createElement("div");
 
-			module.innerHTML = content;
+            module.innerHTML = content;
 
-			moduleDef.Views = pm.processViews(module.querySelectorAll(pm.ViewSelector +
+            moduleDef.Views = pm.processViews(module.querySelectorAll(pm.ViewSelector +
 													", " + pm.LayoutSelector), moduleName);
 
-			moduleDef.scripts = pm.processScripts(module.querySelector(pm.scriptSelector), moduleName);
+            moduleDef.scripts = pm.processScripts(module.querySelector(pm.scriptSelector), moduleName);
 
-			moduleDef.css = pm.processCSS(module.querySelector(pm.cssSelector), moduleName);
+            moduleDef.css = pm.processCSS(module.querySelector(pm.cssSelector), moduleName);
 
-			pm.cache.setObject("spa-module-" + moduleName, moduleDef, +new Date() + 86400000000); //long long time in the future
+            pm.processTemplates(module.querySelectorAll(pm.TemplateSelector));
 
-		},
+            pm.cache.setObject("spa-module-" + moduleName, moduleDef, +new Date() + 86400000000); //long long time in the future
 
-		processViews: function (moduleViews, moduleName) {
+        },
 
-			var pm = this,
+        processViews: function (moduleViews, moduleName) {
+
+            var pm = this,
 				ele = document.createElement("div");
 
-			for (var i = 0; i < moduleViews.length; i++) {
+            for (var i = 0; i < moduleViews.length; i++) {
 
-				ele.appendChild(moduleViews[i]);
+                ele.appendChild(moduleViews[i]);
 
-			}
+            }
 
-			pm.viewEngine.parseViews(ele.innerHTML);
+            pm.viewEngine.parseViews(ele.innerHTML);
 
-			pm.setupRoutes(moduleViews);
+            pm.setupRoutes(moduleViews);
 
-		},
+        },
 
+        processTemplates: function (temps) {
 
-		processCSS: function (css) {
+            var pm = this,
+                temp, viewMarkup;
 
-			var pm = this,
+                pm.templates = JSON.parse(localStorage.getItem(pm.appPrefix + "templates")) || {};
+
+            //todo: refactor to common function with above loop
+            for (var i = 0; i < temps.length; i++) {
+
+                temp = temps[i];
+                viewMarkup = temp.innerHTML.replace(/(\r\n|\n|\r)/gm, "");
+
+                pm.templates[temp.id] = viewMarkup;
+
+                localStorage.setItem(pm.appPrefix + "templates", JSON.stringify(pm.templates));
+
+                pm.viewEngine.getTemplates();
+
+//                if (remove === true) {
+
+                    if (temp.parentNode) {
+                        temp.parentNode.removeChild(temp);
+                    }
+
+        //        }
+
+            }
+
+        },
+        
+        processCSS: function (css) {
+
+            var pm = this,
 				cssRefs = pm.cache.getObject(pm.appPrefix + -"css") || {},
 			    cssObjs = {};
 
-			if (!css) {
-			    return;
-			}
+            if (!css) {
+                return;
+            }
 
-			if (css.innerHTML !== "") {
+            if (css.innerHTML !== "") {
 
-			    cssObjs = JSON.parse(css.innerHTML);
+                cssObjs = JSON.parse(css.innerHTML);
 
-			}
+            }
 
-			cssRefs = $.extend(cssRefs, cssObjs);
+            cssRefs = $.extend(cssRefs, cssObjs);
 
-			for (var ref in cssRefs) {
-			    pm.appendCSS(cssRefs[ref]);
-			}
+            for (var ref in cssRefs) {
+                pm.appendCSS(cssRefs[ref]);
+            }
 
-			pm.cache.setObject(pm.appPrefix + -"css", cssRefs);
+            pm.cache.setObject(pm.appPrefix + -"css", cssRefs);
 
-		},
+        },
 
-		appendCSS: function (cssObj) {
+        appendCSS: function (cssObj) {
 
-			var pm = this,
+            var pm = this,
 				cssLink;
 
-			if (!document.getElementById(cssObj.id)) {
+            if (!document.getElementById(cssObj.id)) {
 
-				cssLink = document.createElement("link");
+                cssLink = document.createElement("link");
 
-				cssLink.id = cssObj.id;
+                cssLink.id = cssObj.id;
 
-				cssLink.rel = "stylesheet";
-				cssLink.type = "text/css";
-				cssLink.href = cssObj.url;
+                cssLink.rel = "stylesheet";
+                cssLink.type = "text/css";
+                cssLink.href = cssObj.url;
 
-				document.head.appendChild(cssLink);
+                document.head.appendChild(cssLink);
 
-			}
+            }
 
-		},
+        },
 
-		processScripts: function (scripts) {
+        processScripts: function (scripts) {
 
-		    var pm = this,
+            var pm = this,
 				scriptRefs = pm.cache.getObject(pm.appPrefix + "-scripts") || {},
 			    jsObjs = {};
 
-		    if (!scripts) {
-		        return;
-		    }
+            if (!scripts) {
+                return;
+            }
 
-		    if (scripts.innerHTML !== "") {
+            if (scripts.innerHTML !== "") {
 
-		        jsObjs = JSON.parse(scripts.innerHTML);
+                jsObjs = JSON.parse(scripts.innerHTML);
 
-		    }
+            }
 
-			scriptRefs = $.extend(scriptRefs, jsObjs);
+            scriptRefs = $.extend(scriptRefs, jsObjs);
 
-			for (var ref in scriptRefs) {
-			    pm.appendScript(scriptRefs[ref]);
-			}
+            for (var ref in scriptRefs) {
+                pm.appendScript(scriptRefs[ref]);
+            }
 
-			pm.cache.setObject(pm.appPrefix + "-scripts", jsObjs);
-            
-		},
+            pm.cache.setObject(pm.appPrefix + "-scripts", jsObjs);
 
-		appendScript: function (src) {
+        },
 
-			var pm = this,
+        appendScript: function (src) {
+
+            var pm = this,
 				script;
 
-			if (!document.getElementById(src.id)) {
+            if (!document.getElementById(src.id)) {
 
-			    pm.scriptLoadingState += 1;
+                pm.scriptLoadingState += 1;
 
-				script = document.createElement("script");
+                script = document.createElement("script");
 
-				script.id = src.id;
-				script.src = src.url;
+                script.id = src.id;
+                script.src = src.url;
 
-				script.onload = function () {
+                script.onload = function () {
 
-				    pm.scriptLoadingState -= 1;
+                    pm.scriptLoadingState -= 1;
 
-				    if (pm.scriptLoadingState === 0 && pm.assetsComplete) {
-				        pm.assetsComplete();
-				    }
+                    if (pm.scriptLoadingState === 0 && pm.assetsComplete) {
+                        pm.assetsComplete();
+                    }
 
-				};
+                };
 
 
-				document.body.appendChild(script);
+                document.body.appendChild(script);
 
-			}
+            }
 
-		},
+        },
 
         scriptLoadingState: 0,
 
-		assetsComplete: function(){},
+        assetsComplete: function () { },
 
-		setupAssets: function (done) {
+        setupAssets: function (done) {
 
-			var pm = this,
+            var pm = this,
 				asset,
 				scriptRefs = pm.cache.getObject(pm.appPrefix + "-scripts"),
 				cssRefs = pm.cache.getObject(pm.appPrefix + "-css");
 
-			pm.assetsComplete = done;
-            
-			for (asset in scriptRefs) {
-				pm.appendScript(scriptRefs[asset]);
-			}
+            pm.assetsComplete = done;
 
-			for (asset in cssRefs) {
-				pm.appendCSS(cssRefs[asset]);
-			}
-			
-			if (pm.scriptLoadingState === 0 && pm.assetsComplete) {
-			    pm.assetsComplete();
-			}
-		},
+            for (asset in scriptRefs) {
+                pm.appendScript(scriptRefs[asset]);
+            }
 
-		getAttributeDefault: function (ele, attr, def) {
+            for (asset in cssRefs) {
+                pm.appendCSS(cssRefs[asset]);
+            }
 
-			return (ele.hasAttribute(attr) ? ele.getAttribute(attr) : def);
+            if (pm.scriptLoadingState === 0 && pm.assetsComplete) {
+                pm.assetsComplete();
+            }
+        },
 
-		},
+        getAttributeDefault: function (ele, attr, def) {
 
-		getRoutes: function () {
+            return (ele.hasAttribute(attr) ? ele.getAttribute(attr) : def);
 
-			return JSON.parse(localStorage.getItem(this.appPrefix + "routes")) || {};
-		},
+        },
 
-		setRoutes: function (routes) {
+        getRoutes: function () {
 
-			localStorage.setItem(this.appPrefix + "routes", JSON.stringify(routes));
-		},
+            return JSON.parse(localStorage.getItem(this.appPrefix + "routes")) || {};
+        },
 
-		setupRoutes: function (views) {
+        setRoutes: function (routes) {
 
-			var pm = this,
+            localStorage.setItem(this.appPrefix + "routes", JSON.stringify(routes));
+        },
+
+        setupRoutes: function (views) {
+
+            var pm = this,
 				routes = pm.getRoutes(),
 				i = 0,
 				rawPath, view, route, viewId;
 
-			if (views.length === undefined) {
-				views = [views];
-			}
+            if (views.length === undefined) {
+                views = [views];
+            }
 
-			for (; i < views.length; i++) {
+            for (; i < views.length; i++) {
 
-				view = views[i];
+                view = views[i];
 
-				if (view.hasAttributes() && view.hasAttribute("id")) {
+                if (view.hasAttributes() && view.hasAttribute("id")) {
 
-					viewId = view.getAttribute("id");
-					rawPath = pm.getAttributeDefault(view, "spa-route", "");
+                    viewId = view.getAttribute("id");
+                    rawPath = pm.getAttributeDefault(view, "spa-route", "");
 
-					route = pm.createRoute(viewId, rawPath, view);
+                    route = pm.createRoute(viewId, rawPath, view);
 
-					if (route) {
+                    if (route) {
 
-						routes[route.path] = route;
+                        routes[route.path] = route;
 
-					}
+                    }
 
-				}
+                }
 
-			}
+            }
 
-			pm.setRoutes(routes);
+            pm.setRoutes(routes);
 
-		},
+        },
 
-		createRoute: function (viewId, rawPath, view) {
-			
-			//need to check for duplicate path
-			var pm = this,
+        createRoute: function (viewId, rawPath, view) {
+
+            //need to check for duplicate path
+            var pm = this,
 				route = {
-				viewId: viewId,
-				viewModule: pm.getAttributeDefault(view, "spa-module", viewId),
-				path: rawPath.split("/:")[0],
-				params: rawPath.split("/:").slice(1),
-				spaViewId: pm.getAttributeDefault(view, "spa-view-id", "#" + viewId),
-				title: pm.getAttributeDefault(view, "spa-title", ""),
-				viewType: pm.getAttributeDefault(view, "spa-view-type", "view"),
-				layout: pm.getAttributeDefault(view, "spa-layout", undefined),
-				transition: pm.getAttributeDefault(view, "spa-transition", ""),
-				paramValues: {},
-				beforeonload: pm.getAttributeDefault(view, "spa-beforeonload", undefined),
-				onload: pm.getAttributeDefault(view, "spa-onload", undefined),
-				afteronload: pm.getAttributeDefault(view, "spa-afteronload", undefined),
-				beforeunload: pm.getAttributeDefault(view, "spa-beforeunload", undefined),
-				unload: pm.getAttributeDefault(view, "spa-unload", undefined),
-				afterunload: pm.getAttributeDefault(view, "spa-afterunload", undefined)
+				    viewId: viewId,
+				    viewModule: pm.getAttributeDefault(view, "spa-module", viewId),
+				    path: rawPath.split("/:")[0],
+				    params: rawPath.split("/:").slice(1),
+				    spaViewId: pm.getAttributeDefault(view, "spa-view-id", "#" + viewId),
+				    title: pm.getAttributeDefault(view, "spa-title", ""),
+				    viewType: pm.getAttributeDefault(view, "spa-view-type", "view"),
+				    layout: pm.getAttributeDefault(view, "spa-layout", undefined),
+				    transition: pm.getAttributeDefault(view, "spa-transition", ""),
+				    paramValues: {},
+				    beforeonload: pm.getAttributeDefault(view, "spa-beforeonload", undefined),
+				    onload: pm.getAttributeDefault(view, "spa-onload", undefined),
+				    afteronload: pm.getAttributeDefault(view, "spa-afteronload", undefined),
+				    beforeunload: pm.getAttributeDefault(view, "spa-beforeunload", undefined),
+				    unload: pm.getAttributeDefault(view, "spa-unload", undefined),
+				    afterunload: pm.getAttributeDefault(view, "spa-afterunload", undefined)
 				};
 
-			if (route.viewType === "view") {
+            if (route.viewType === "view") {
 
-				return route;
+                return route;
 
-			}
+            }
 
-		}
+        }
 
 
-	};
+    };
 
-	// Give the init function the spapm prototype for later instantiation
-	SPAPM.fn.init.prototype = SPAPM.fn;
+    // Give the init function the spapm prototype for later instantiation
+    SPAPM.fn.init.prototype = SPAPM.fn;
 
-	return (window.SPAPM = SPAPM);
+    return (window.SPAPM = SPAPM);
 
 
 }(window));

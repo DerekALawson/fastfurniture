@@ -1,4 +1,10 @@
-﻿
+﻿/*
+ * 
+ * Probably should break this into different modules/services that inherit from the base class/module.
+ * 
+ */
+
+
 ;
 
 (function (undefined) {
@@ -20,6 +26,14 @@
         API_ROOT: "api/data/",
 
         ttl: 30000, //30 seconds, for development purposes
+
+        injectors: [],
+
+        createInjector: function (injector) {
+
+            injectors.push(injector);
+
+        },
 
         status: {
             "0": "notOnitialized",
@@ -505,7 +519,15 @@
 
         },
 
+        login: function (login, success, fail) {
 
+            return this.postData({
+                url: "login",
+                success: success,
+                fail: fail
+            });
+
+        },
 
         getUsers: function (success) {
 
@@ -527,7 +549,7 @@
 
         },
 
-        addUser: function (userId, user, success) {
+        addUser: function (user, success) {
 
             return this.postData({
                 url: "user/" + userId,
@@ -556,52 +578,52 @@
 
 
 
-        getRoles: function (success) {
+        //getRoles: function (success) {
 
-            return this.getCachedObject({
-                url: "role",
-                cacheKey: "roles-",
-                success: success
-            });
+        //    return this.getCachedObject({
+        //        url: "role",
+        //        cacheKey: "roles-",
+        //        success: success
+        //    });
 
-        },
+        //},
 
-        getRole: function (roleId, success) {
+        //getRole: function (roleId, success) {
 
-            return this.getCachedObject({
-                url: "role/" + roleId,
-                cacheKey: "role-" + roleId,
-                success: success
-            });
+        //    return this.getCachedObject({
+        //        url: "role/" + roleId,
+        //        cacheKey: "role-" + roleId,
+        //        success: success
+        //    });
 
-        },
+        //},
 
-        addRole: function (roleId, role, success) {
+        //addRole: function (roleId, role, success) {
 
-            return this.postData({
-                url: "role/" + roleId,
-                success: success
-            });
+        //    return this.postData({
+        //        url: "role/" + roleId,
+        //        success: success
+        //    });
 
-        },
+        //},
 
-        udpateRole: function (role, success) {
+        //udpateRole: function (role, success) {
 
-            return this.putData({
-                url: "role/" + role.roleId,
-                success: success
-            });
+        //    return this.putData({
+        //        url: "role/" + role.roleId,
+        //        success: success
+        //    });
 
-        },
+        //},
 
-        deleteRole: function (roleId, success) {
+        //deleteRole: function (roleId, success) {
 
-            return this.deleteData({
-                url: "role/" + roleId,
-                success: success
-            });
+        //    return this.deleteData({
+        //        url: "role/" + roleId,
+        //        success: success
+        //    });
 
-        },
+        //},
 
 
 
@@ -625,32 +647,32 @@
 
         },
 
-        addOrder: function (orderId, order, success) {
+        addOrder: function (order, success) {
 
             return this.postData({
-                url: "order/" + orderId,
+                url: "order/",
                 success: success
             });
 
         },
 
-        udpateOrder: function (order, success) {
+        //udpateOrder: function (order, success) {
 
-            return this.putData({
-                url: "order/" + order.orderId,
-                success: success
-            });
+        //    return this.putData({
+        //        url: "order/" + order.orderId,
+        //        success: success
+        //    });
 
-        },
+        //},
 
-        deleteOrder: function (orderId, success) {
+        //deleteOrder: function (orderId, success) {
 
-            return this.deleteData({
-                url: "order/" + orderId,
-                success: success
-            });
+        //    return this.deleteData({
+        //        url: "order/" + orderId,
+        //        success: success
+        //    });
 
-        },
+        //},
 
 
 

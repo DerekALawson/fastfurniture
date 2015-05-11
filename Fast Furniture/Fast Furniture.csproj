@@ -161,12 +161,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\APIController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AuthIdentityResult.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\SubCategory.cs" />
@@ -216,6 +219,11 @@
     <Content Include="css\dev\ui\navigation.css" />
     <Content Include="css\dev\ui\typography.css" />
     <Content Include="css\dev\views\categories.css" />
+    <Content Include="css\dev\views\deferred\changePassword.css" />
+    <Content Include="css\dev\views\deferred\registerstatus.css" />
+    <Content Include="css\dev\views\deferred\shoppingCart.css" />
+    <Content Include="css\libs\bootstrap.lean.min.css" />
+    <Content Include="css\libs\toolbar.css" />
     <Content Include="css\libs\touch.css" />
     <Content Include="css\dev\ui\animations.css" />
     <Content Include="css\dev\ui\form.css" />
@@ -251,6 +259,7 @@
     <Content Include="js\dev\controllers\category.js" />
     <Content Include="js\dev\controllers\deferred\about.js" />
     <Content Include="js\dev\controllers\deferred\account.js" />
+    <Content Include="js\dev\controllers\deferred\changePassword.js" />
     <Content Include="js\dev\controllers\deferred\contact.js" />
     <Content Include="js\dev\controllers\deferred\feedback.js" />
     <Content Include="js\dev\controllers\deferred\my-favorites.js" />
@@ -259,6 +268,8 @@
     <Content Include="js\dev\controllers\deferred\orders.js" />
     <Content Include="js\dev\controllers\deferred\payment-options.js" />
     <Content Include="js\dev\controllers\deferred\place-order.js" />
+    <Content Include="js\dev\controllers\deferred\registerStatus.js" />
+    <Content Include="js\dev\controllers\deferred\shoppingCart.js" />
     <Content Include="js\dev\controllers\deferred\social.js" />
     <Content Include="js\dev\controllers\fastFurnitureAuthenticatedController.js" />
     <Content Include="js\dev\controllers\fastFurnitureController.js" />
@@ -268,6 +279,7 @@
     <Content Include="js\dev\controllers\login.js" />
     <Content Include="js\dev\controllers\NotFound.js" />
     <Content Include="js\dev\controllers\product.js" />
+    <Content Include="js\dev\controllers\deferred\register.js" />
     <Content Include="js\dev\controllers\search.js" />
     <Content Include="js\dev\Fast-Furniture.app.js" />
     <Content Include="js\dev\Fast-Furniture.bootstrap.js" />
@@ -281,6 +293,7 @@
     <Content Include="js\libs\simpleViewEngine.js" />
     <Content Include="js\libs\spa.js" />
     <Content Include="js\libs\spapm.js" />
+    <Content Include="js\libs\toolbar.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -355,11 +368,13 @@
     <Content Include="data\menu.json" />
     <Content Include="data\home-categories.json" />
     <Content Include="data\related-products.json" />
+    <Content Include="data\shopping.cart.json" />
+    <Content Include="data\orders.json" />
+    <Content Include="css\libs\bootstrap.lean.css.map" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Home\views\about.cshtml" />
     <Content Include="Views\Home\views\account.cshtml" />
     <Content Include="Views\Home\views\category.cshtml" />
-    <Content Include="Views\Home\views\feedback.cshtml" />
     <Content Include="Views\Home\views\forgotemail.cshtml" />
     <Content Include="Views\Home\views\forgotpassword.cshtml" />
     <Content Include="Views\Home\views\home.cshtml" />
@@ -389,6 +404,12 @@
     <Content Include="Views\Home\templates\categoryListItem.cshtml" />
     <Content Include="Views\Home\views\criticalcssmin.cshtml" />
     <Content Include="Views\Home\views\Contact.cshtml" />
+    <Content Include="Views\Home\views\Register.cshtml" />
+    <Content Include="Views\Home\views\registerSuccess.cshtml" />
+    <Content Include="Views\Home\templates\orderRecord.cshtml" />
+    <Content Include="Views\Home\views\shoppingCart.cshtml" />
+    <Content Include="Views\Home\views\changePassword.cshtml" />
+    <Content Include="Views\Home\templates\CartTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\git\SPAHelper\SPAHelper\SPAHelper.4.0.csproj">
