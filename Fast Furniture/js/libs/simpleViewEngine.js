@@ -21,283 +21,462 @@
 			var viewEngine = this,
 				setting;
 
-			viewEngine.views = JSON.parse(localStorage.getItem(viewEngine.appPrefix + "views"));
-
-			if (!viewEngine.views) {
-				viewEngine.views = {};
-			}
-
 			for (setting in settings) {
 				viewEngine[setting] = settings[setting];
 			}
 
-
 			return viewEngine;
 		},
 
-		version: "0.0.1",
+		version: "0.0.2",
 
-		bp: undefined,
-		eventPrefix: "spa-",
-		$rootScope: undefined,
-		templateService: undefined,
+		appName : "spa app",
+		appPrefix : "spaApp-",
+		cache: undefined,
+
 		ViewSelector: "script[class='spa-view']",
 		LayoutSelector: "script[class='spa-layout']",
+		cssSelector: "script[type='x-spa-css']",
+		scriptSelector: "script[type='x-spa-js']",
 		TemplateSelector: "[type='text/x-simpleTemplate-template']",
-		appPrefix: "spaApp-",
 
-		views: {},
-		templates: {},
+		scriptLoadingState: 0,
 
-		getTemplates: function () {
+		assetsComplete: function () { },
 
-		    this.templates = JSON.parse(localStorage.getItem(this.appPrefix + "templates")) || {};
-		},
+		getAttributeDefault: function (ele, attr, def) {
 
-		parseViews: function (html, remove) {
-
-			var viewEngine = this,
-				i, temp, viewMarkup,
-				views = JSON.parse(localStorage.getItem(viewEngine.appPrefix + "views")) || {},
-				templates = JSON.parse(localStorage.getItem(viewEngine.appPrefix + "templates")) || {},
-				ele = document,
-				t, temps;
-
-			if (remove === undefined) {
-				remove = true;
-			}
-
-			if (html !== undefined && typeof html !== "string") {
-
-				if (typeof html === "boolean") {
-					remove = html;
-				} else {
-					html = undefined;
-				}
-
-			}
-
-			if (typeof html === "string") {
-
-				ele = document.createElement("div");
-				ele.innerHTML = html;
-			}
-
-			t = ele.querySelectorAll(viewEngine.ViewSelector + ", " + viewEngine.LayoutSelector);
-
-			temps = ele.querySelectorAll(viewEngine.TemplateSelector);
-
-			for (i = 0; i < t.length; i++) {
-
-				temp = t[i];
-				viewMarkup = temp.innerHTML.replace(/(\r\n|\n|\r)/gm, "");
-
-				views[temp.id] = viewMarkup;
-
-				if (remove === true) {
-
-					if (temp.parentNode) {
-						temp.parentNode.removeChild(temp);
-					}
-
-				}
-
-			}
-
-			viewEngine.setViews(views);
-			viewEngine.saveViews();
-
-			//todo: refactor to common function with above loop
-			for (i = 0; i < temps.length; i++) {
-
-				temp = temps[i];
-				viewMarkup = temp.innerHTML.replace(/(\r\n|\n|\r)/gm, "");
-
-				templates[temp.id] = viewMarkup;
-
-				if (remove === true) {
-
-				    if (temp.parentNode) {
-				        temp.parentNode.removeChild(temp);
-				    }
-
-				}
-
-			}
-
-			viewEngine.setTemplates(templates);
-			viewEngine.saveTemplates();
-
-		},
-
-		createChildView: function (route) {
-
-			//only return the layout and the child view if the layout does not already exist.
-
-			var simpleViewEngine = this,
-				layout,
-				view,
-				viewAnchor;
-
-			layout = simpleViewEngine.views[route.layout];
-
-			if (layout) {
-
-				layout = simpleViewEngine.createFragment(layout);
-
-				viewAnchor = layout.querySelector(".spa-child-view");
-
-				if (viewAnchor) {
-					viewAnchor.innerHTML = simpleViewEngine.views[route.viewId];
-				}
-
-				return layout.innerHTML;
-			} else {
-
-				view = simpleViewEngine.createFragment(simpleViewEngine.views[route.viewId]);
-				return view.innerHTML;
-			}
-
-			return;
+		    return (ele.hasAttribute(attr) ? ele.getAttribute(attr) : def);
 
 		},
 
 		createFragment: function (htmlStr) {
 
-			var// frag = document.createDocumentFragment(),
+		    var// frag = document.createDocumentFragment(),
 				temp = document.createElement("div");
 
-			temp.innerHTML = htmlStr;
+		    temp.innerHTML = htmlStr;
 
-			//            frag.appendChild(temp);
+		    //            frag.appendChild(temp);
 
-			return temp;
+		    return temp;
+		},
+
+		loadImport: function (ImportURL, moduleName) {
+
+		    var viewEngine = this;
+
+		    viewEngine.getImport(ImportURL, function (content) {
+
+		        viewEngine.processSPA(content, moduleName);
+
+		    });
+
+		},
+
+		getImport: function (route, callback) {
+
+		    var request = new XMLHttpRequest();
+		    request.open('GET', route, true);
+
+		    request.onload = function () {
+		        if (request.status >= 200 && request.status < 400) {
+		            // Success!
+		            var resp = request.responseText.replace(/(\r\n|\n|\r)/gm, "");
+
+		            if (callback) {
+		                callback(resp);
+		            }
+
+		        } else {
+		            // We reached our target server, but it returned an error
+
+		        }
+		    };
+
+		    request.onerror = function () {
+		        // There was a connection error of some sort
+		    };
+
+		    request.send();
+
+		},
+
+	    //this calls the parseViews, parseScripts and parseCSS functions.
+		processSPA: function (content, moduleName, callback) {
+
+		    this.parseViews(content, true);
+		    this.parseCSS(content);
+		    this.parseScripts(content);
+		    this.parseTemplates(true);
+
+		},
+
+	    /*
+         * Adds previously cached asset references to the DOM
+         */
+		setupAssets: function (done) {
+
+		    var viewEngine = this,
+				asset,
+				scriptRefs = viewEngine.cache.getObject(viewEngine.appPrefix + "-scripts"),
+				cssRefs = viewEngine.cache.getObject(viewEngine.appPrefix + "-css");
+
+		    viewEngine.assetsComplete = done;
+
+		    for (asset in scriptRefs) {
+		        viewEngine.appendScript(scriptRefs[asset]);
+		    }
+
+		    for (asset in cssRefs) {
+		        viewEngine.appendCSS(cssRefs[asset]);
+		    }
+
+		    if (viewEngine.scriptLoadingState === 0 && viewEngine.assetsComplete) {
+		        viewEngine.assetsComplete();
+		    }
+
+		},
+
+
+	    /*
+         * View Processing
+         */
+
+		parseViews: function (html, remove) {
+
+		    var viewEngine = this,
+				i, temp, viewMarkup,
+				views = viewEngine.cache.getObject(viewEngine.appPrefix + "views") || {},
+				ele = document,
+				t;
+
+		    if (remove === undefined) {
+		        remove = true;
+		    }
+
+		    if (html !== undefined && typeof html !== "string") {
+
+		        if (typeof html === "boolean") {
+		            remove = html;
+		        } else {
+		            html = undefined;
+		        }
+
+		    }
+
+		    if (typeof html === "string") {
+
+		        ele = document.createElement("div");
+		        ele.innerHTML = html;
+
+		    }
+
+		    t = ele.querySelectorAll(viewEngine.ViewSelector + ", " + viewEngine.LayoutSelector);
+
+		    viewEngine.setupRoutes(t);
+
+		    for (i = 0; i < t.length; i++) {
+
+		        temp = t[i];
+
+		        //remove whitespace to save space
+		        viewMarkup = temp.innerHTML.replace(/(\r\n|\n|\r)/gm, "");
+
+		        views[temp.id] = viewMarkup;
+
+		        if (remove === true) {
+
+		            if (temp.parentNode) {
+		                temp.parentNode.removeChild(temp);
+		            }
+
+		        }
+
+		    }
+
+		    viewEngine.cache.setObject(viewEngine.appPrefix + "views", views);
+
 		},
 
 		getView: function (viewId) {
 
-			var viewEngine = this;
+		    var views = this.cache.getObject(this.appPrefix + "views") || {};
 
-			//if (route.layout) {
-
-			//	return viewEngine.createChildView(route);
-
-			//} else {
-
-			return viewEngine.views[viewId];
-
-			//			}
-
-		},
-
-		getViews: function () {
-			return this.views
-		},
-
-		setView: function (viewId, view) {
-
-			if (typeof view === "string") {
-				this.views[viewId] = view;
-			}
-
-		},
-
-		setViews: function (views) {
-
-			var that = this,
-				view;
-
-			for (view in views) {
-				that.setView(view, views[view]);
-			}
-
-		},
-
-		compileViews: function (views) {
-
-			var that = this,
-				i;
-
-			if (views === undefined || views.length === 0) {
-				that.parseViews();
-				views = that.getViews();
-			}
-
-			for (i in views) {
-				if (typeof views[i] === "function") {
-					views[i] = views[i];
-				} else {
-					views[i] = views[i];
-				}
-			}
-
-		},
-
-		addViews: function (views) {
-
-			var that = this,
-				name, copy;
-
-			for (name in views) {
-				//  src = target[name];
-				copy = views[name];
-
-				// Prevent never-ending loop
-				if (that.views === copy) {
-					continue;
-				}
-
-				if (copy !== undefined) {
-					that.views[name] = copy;
-				}
-			}
-
-			that.saveViews();
-
-		},
-
-		saveViews: function () {
-
-			var that = this;
-
-			localStorage.setItem(that.appPrefix + "views", JSON.stringify(that.views));
-
-		},
-
-		setTemplate: function (templateId, template) {
-
-			if (typeof template === "string") {
-				this.templates[templateId] = template;
-			}
-
-		},
-
-		setTemplates: function (templates) {
-
-			var that = this,
-				template;
-
-			for (template in templates) {
-				that.setTemplate(template, templates[template]);
-			}
+		    return views[viewId];
 
 		},
 
 
-		saveTemplates: function () {
+	    /*
+         * Template Management
+         */
 
-			var that = this;
+		parseTemplates: function (remove) {
 
-			localStorage.setItem(that.appPrefix + "templates", JSON.stringify(that.templates));
+		    var viewEngine = this,
+                temp, viewMarkup,
+                temps = [],
+                templates = viewEngine.getTemplates();
+
+		    temps = document.querySelectorAll(viewEngine.TemplateSelector);
+            
+		    //todo: refactor to common function with above loop
+		    for (var i = 0; i < temps.length; i++) {
+
+		        temp = temps[i];
+		        viewMarkup = temp.innerHTML.replace(/(\r\n|\n|\r)/gm, "");
+
+		        templates[temp.id] = viewMarkup;
+
+		        if (remove === true) {
+
+		            if (temp.parentNode) {
+		                temp.parentNode.removeChild(temp);
+		            }
+
+		        }
+
+		    }
+
+		    viewEngine.cache.setObject(viewEngine.appPrefix + "templates", templates);
+
+		},
+
+		getTemplates: function () {
+		    return this.cache.getObject(this.appPrefix + "templates") || {};
+		},
+
+		getTemplate: function (tempName) {
+
+		    var templates = JSON.parse(localStorage.getItem(this.appPrefix + "templates")) || {};
+
+		    return templates[tempName];
+		},
+
+
+	    /*
+         * CSS Processing
+         */
+
+		parseCSS: function (css) {
+
+		    var viewEngine = this,
+                cssRefs = viewEngine.cache.getObject(viewEngine.appPrefix + -"css") || {},
+                cssObjs = {};
+
+		    if (!css) {
+
+		        css = document.querySelector(viewEngine.cssSelector);
+
+		        if (!css) {
+		            return;
+		        }
+		    }
+
+		    if (typeof css === "string") {
+		        var temp = document.createElement("div");
+
+		        temp.innerHTML = css;
+		        css = temp.querySelector(viewEngine.cssSelector);
+
+		    }
+
+		    if (css.innerHTML !== "") {
+
+		        cssObjs = JSON.parse(css.innerHTML);
+
+		    }
+
+		    cssRefs = $.extend(cssRefs, cssObjs);
+
+		    for (var ref in cssRefs) {
+		        viewEngine.appendCSS(cssRefs[ref]);
+		    }
+
+		    viewEngine.cache.setObject(viewEngine.appPrefix + -"css", cssRefs);
+
+		},
+
+		appendCSS: function (cssObj) {
+
+		    var viewEngine = this,
+                cssLink;
+
+		    if (!document.getElementById(cssObj.id)) {
+
+		        cssLink = document.createElement("link");
+
+		        cssLink.id = cssObj.id;
+
+		        cssLink.rel = "stylesheet";
+		        cssLink.type = "text/css";
+		        cssLink.href = cssObj.url;
+
+		        document.head.appendChild(cssLink);
+
+		    }
 
 		},
 
 
-		removeView: function (key) {
+	    /*
+         * JavaScript Processing
+         */
 
-			delete this.views[key];
+		parseScripts: function (scripts) {
+
+		    var viewEngine = this,
+				scriptRefs = viewEngine.cache.getObject(viewEngine.appPrefix + "-scripts") || {},
+			    jsObjs = {};
+
+		    if (!scripts) {
+
+		        scripts = document.querySelector(viewEngine.scriptSelector);
+
+		        if (!scripts) {
+		            return;
+		        }
+		    }
+
+		    if (typeof scripts === "string") {
+		        var temp = document.createElement("div");
+
+		        temp.innerHTML = scripts;
+		        scripts = temp.querySelector(viewEngine.cssSelector);
+
+		    }
+
+		    if (scripts.innerHTML !== "") {
+
+		        jsObjs = JSON.parse(scripts.innerHTML);
+
+		    }
+
+		    scriptRefs = $.extend(scriptRefs, jsObjs);
+
+		    for (var ref in scriptRefs) {
+		        viewEngine.appendScript(scriptRefs[ref]);
+		    }
+
+		    viewEngine.cache.setObject(viewEngine.appPrefix + "-scripts", jsObjs);
 
 		},
+
+		appendScript: function (src) {
+
+		    var viewEngine = this,
+				script;
+
+		    if (!document.getElementById(src.id)) {
+
+		        viewEngine.scriptLoadingState += 1;
+
+		        script = document.createElement("script");
+
+		        script.id = src.id;
+		        script.src = src.url;
+
+		        script.onload = function () {
+
+		            viewEngine.scriptLoadingState -= 1;
+
+		            if (viewEngine.scriptLoadingState === 0 && viewEngine.assetsComplete) {
+		                viewEngine.assetsComplete();
+		            }
+
+		        };
+
+		        document.body.appendChild(script);
+
+		    }
+
+		},
+
+	    /*
+         * Routes
+         */
+
+		setupRoutes: function (views) {
+
+		    var viewEngine = this,
+				routes = viewEngine.getRoutes(),
+				i = 0,
+				rawPath, view, route, viewId;
+
+		    if (views.length === undefined) {
+		        views = [views];
+		    }
+
+		    for (; i < views.length; i++) {
+
+		        view = views[i];
+
+		        if (view.hasAttributes() && view.hasAttribute("id")) {
+
+		            viewId = view.getAttribute("id");
+		            rawPath = viewEngine.getAttributeDefault(view, "spa-route", "");
+
+		            route = viewEngine.createRoute(viewId, rawPath, view);
+
+		            if (route) {
+
+		                routes[route.path] = route;
+
+		            }
+
+		        }
+
+		    }
+
+		    viewEngine.cache.setObject(viewEngine.appPrefix + "routes", routes);
+
+		},
+
+		createRoute: function (viewId, rawPath, view) {
+
+		    //need to check for duplicate path
+		    var viewEngine = this,
+				route = {
+				    viewId: viewId,
+				    viewModule: viewEngine.getAttributeDefault(view, "spa-module", viewId),
+				    path: rawPath.split("/:")[0],
+				    params: rawPath.split("/:").slice(1),
+				    spaViewId: viewEngine.getAttributeDefault(view, "spa-view-id", "#" + viewId),
+				    title: viewEngine.getAttributeDefault(view, "spa-title", ""),
+				    viewType: viewEngine.getAttributeDefault(view, "spa-view-type", "view"),
+				    layout: viewEngine.getAttributeDefault(view, "spa-layout", undefined),
+				    transition: viewEngine.getAttributeDefault(view, "spa-transition", ""),
+				    paramValues: {},
+				    beforeonload: viewEngine.getAttributeDefault(view, "spa-beforeonload", undefined),
+				    onload: viewEngine.getAttributeDefault(view, "spa-onload", undefined),
+				    afteronload: viewEngine.getAttributeDefault(view, "spa-afteronload", undefined),
+				    beforeunload: viewEngine.getAttributeDefault(view, "spa-beforeunload", undefined),
+				    unload: viewEngine.getAttributeDefault(view, "spa-unload", undefined),
+				    afterunload: viewEngine.getAttributeDefault(view, "spa-afterunload", undefined)
+				};
+
+		    if (route.viewType === "view") {
+
+		        return route;
+
+		    }
+
+		},
+
+		getRoutes: function () {
+
+		    return JSON.parse(localStorage.getItem(this.appPrefix + "routes")) || {};
+		},
+
+
+	    /*
+         * 
+         * engine specific code goes here
+         * 
+         * 
+         */
+
 
 		render: function (html, data) {
 
@@ -337,8 +516,9 @@
 				return;
 			}
 
-			var that = this,
-				t = document.querySelector(targetSelector);
+			var viewEngine = this,
+				t = document.querySelector(targetSelector),
+			    templates = viewEngine.getTemplates();
 
 			if (!t) {
 				console.error("could not find view engine target ", targetSelector);
@@ -350,11 +530,11 @@
 				t = t[0];
 			}
 
-			if (that.templates[templateName]) {
+			if (templates[templateName]) {
 
 				requestAnimationFrame(function () {
 
-					t.innerHTML = that.render(that.templates[templateName], data);
+				    t.innerHTML = viewEngine.render(templates[templateName], data);
 
 				});
 

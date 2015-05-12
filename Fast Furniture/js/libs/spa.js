@@ -49,7 +49,6 @@
 			//cannot assume backpack anymore
 		    spa.viewEngine = spa.settings.viewEngine;
 		    spa.AppContext = spa.settings.AppContext;
-			spa.pm = spa.settings.pm;
 
 			spa.analytics = spa.settings.analytics;
 
@@ -57,9 +56,7 @@
 
 			if (spa.settings.parseDOM) {
 
-				spa.pm.setupRoutes(document.querySelectorAll(".spa-view"));
-
-				spa.viewEngine.parseViews();
+				spa.viewEngine.processSPA();
 
 				spa.AppContext.parsingEnd();
 
@@ -107,7 +104,7 @@
 		matchRouteByPath: function (path, routes) {
 
 			if (!routes) {
-				routes = this.pm.getRoutes();
+				routes = this.viewEngine.getRoutes();
 			}
 
 			var key, route, params, i,
@@ -157,7 +154,7 @@
 		matchRouteById: function (id, routes) {
 
 			if (!routes) {
-				routes = this.pm.getRoutes();
+			    routes = this.viewEngine.getRoutes();
 			}
 
 			var route;

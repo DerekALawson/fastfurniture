@@ -294,6 +294,7 @@
     <Content Include="js\libs\spa.js" />
     <Content Include="js\libs\spapm.js" />
     <Content Include="js\libs\toolbar.min.js" />
+    <Content Include="js\libs\view.engine.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

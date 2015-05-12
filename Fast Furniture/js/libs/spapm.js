@@ -322,6 +322,7 @@
             if (pm.scriptLoadingState === 0 && pm.assetsComplete) {
                 pm.assetsComplete();
             }
+
         },
 
         getAttributeDefault: function (ele, attr, def) {
