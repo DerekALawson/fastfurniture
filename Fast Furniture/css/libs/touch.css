@@ -60,12 +60,13 @@
     -ms-scroll-chaining: none;
     -ms-scroll-snap-type: proximity;
     -ms-scroll-translation: vertical-to-horizontal;
-    -ms-touch-action: pan-y;
-    touch-action: pan-y;
+    -ms-touch-action: pan-y pan-x;
+    touch-action: pan-y pan-x;
     overflow-scrolling: touch;
     overflow: hidden;
-    overflow-x: hidden;
+    overflow-x: scroll;
     overflow-y: scroll;
+    width:100%;
 }
 
 

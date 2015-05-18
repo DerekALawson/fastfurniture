@@ -132,9 +132,9 @@
 		        viewEngine.appendCSS(cssRefs[asset]);
 		    }
 
-		    if (viewEngine.scriptLoadingState === 0 && viewEngine.assetsComplete) {
+//		    if (viewEngine.scriptLoadingState === 0 && viewEngine.assetsComplete) {
 		        viewEngine.assetsComplete();
-		    }
+	//	    }
 
 		},
 
@@ -337,7 +337,7 @@
 		        if (!scripts) {
 		            return;
 		        }
-		    }
+		    }   
 
 		    if (typeof scripts === "string") {
 		        var temp = document.createElement("div");
@@ -380,6 +380,8 @@
 		        script.onload = function () {
 
 		            viewEngine.scriptLoadingState -= 1;
+
+		            console.log("viewEngine.scriptLoadingState : ", viewEngine.scriptLoadingState);
 
 		            if (viewEngine.scriptLoadingState === 0 && viewEngine.assetsComplete) {
 		                viewEngine.assetsComplete();
@@ -505,11 +507,11 @@
 	
 		},
 
-		bind: function (targetSelector, templateName, data) {
+		bind: function (options, start) {
 
-			if ((typeof targetSelector !== "string") ||
-			   (typeof templateName !== "string") ||
-				data === undefined) {
+		    if ((typeof options.targetSelector !== "string") ||
+			   (typeof options.templateName !== "string") ||
+				options.data === undefined) {
 
 				throw new Error("missing argument in mergeData");
 
@@ -517,11 +519,11 @@
 			}
 
 			var viewEngine = this,
-				t = document.querySelector(targetSelector),
+				t = document.querySelector(options.targetSelector),
 			    templates = viewEngine.getTemplates();
 
 			if (!t) {
-				console.error("could not find view engine target ", targetSelector);
+			    console.error("could not find view engine target ", options.targetSelector);
 				return;
 			}
 
@@ -530,12 +532,22 @@
 				t = t[0];
 			}
 
-			if (templates[templateName]) {
+			if (templates[options.templateName]) {
 
 				requestAnimationFrame(function () {
 
-				    t.innerHTML = viewEngine.render(templates[templateName], data);
+				    t.innerHTML = viewEngine.render(templates[options.templateName], options.data);
 
+				    if (start) {
+
+				        console.log("template ", options.templateName, " rendered in ms: ", window.performance.now() - start);
+
+				    }
+
+                    //need a callback here because we are adding markup in the RAF, so we loose synchronous path.
+				    if (options.callback) {
+				        options.callback();
+				    }
 				});
 
 			}

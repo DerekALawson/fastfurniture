@@ -59,7 +59,7 @@
             }
 
             options.cache = true;
-            options.type = "json";
+            options.type = options.type || "json";
 
             return this.getData(options);
 
@@ -85,9 +85,9 @@
 
         },
 
-
         FORM_ENCODED: "application/x-www-form-urlencoded",
         JSON_ENCODED: "application/x-json",
+        HTML_ENCODED: "text/html",
 
         buildAjaxDataQueryString: function (data) {
             var name, qs = "";
@@ -349,7 +349,9 @@
             return this.getCachedObject({
                 url: "homecategories",
                 cacheKey: "home-categories",
-                success: success
+                success: success,
+//                type: "html",
+                cacheTTL: 300000
             });
 
         },

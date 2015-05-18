@@ -6,23 +6,12 @@ var lsCache = l2Storeagecache(),
 	    "appPrefix": "Fast-Furniture-",
 	    cache: lsCache
 	}),
-	//pm = SPAPM({
-	//    viewEngine: ve,
-	//    cache: lsCache,
-	//    "appPrefix": "Fast-Furniture-"
-	//}),
-
 
 	fastFurnitureData = new FastFurnitureData(/* http, */ lsCache),
 
 	// the analytics global is assumed to be instantiated via Segment.io snippet
 
-	fastFurniture = FastFurniture({
-	    services: {
-	        "viewEngine": ve,
-	        "Fast-FurnitureData": fastFurnitureData
-	    }
-	});
+	fastFurniture = FastFurniture();
 
 fastFurniture.appKey = "Fast-Furniture-";
 
@@ -41,4 +30,7 @@ ve.setupAssets(function () {
     ve.loadImport("home/deferred", "deferred");
 
 });
+
+
+//window.addEventListener("DOMContentLoaded", function () {});
 

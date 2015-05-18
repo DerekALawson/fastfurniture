@@ -19,13 +19,10 @@
 
             var app = this;
 
-            app.parseServices(config.services);
+            if (config && config.services) {
 
-            if (!app.viewEngine) {
-                throw {
-                    "name": "SPA Exception",
-                    "message": "You must designate a viewEngine"
-                };
+                app.parseServices(config.services);
+
             }
 
             app.setupHamburger();
@@ -90,7 +87,12 @@
 
             ];
 
-            this.viewEngine.bind(".main-nav", "menuItem", {menu: menu});
+            ve.bind({
+                targetSelector: ".main-nav",
+                templateName: "menuItem",
+                data: { menu: menu }
+            });
+
 
         },
 

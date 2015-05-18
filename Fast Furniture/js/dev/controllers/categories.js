@@ -12,9 +12,11 @@ FastFurniture.fn.categories = FastFurniture.fn.fastFurnitureController.extend({
 
     renderHomeCategories: function (categories) {
 
-        console.log(categories);
-
-        ve.bind(".categories-grid", "categoryListItem", { "categories": categories });
+        ve.bind({
+            targetSelector: ".categories-grid",
+            templateName: "categoryListItem",
+            data: { "categories": categories }
+        });
 
     },
 

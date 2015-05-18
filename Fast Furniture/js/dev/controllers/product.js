@@ -13,10 +13,30 @@ FastFurniture.fn.product = FastFurniture.fn.fastFurnitureController.extend({
 
         fastFurnitureData.getProduct(slug, function (response) {
 
-            ve.bind(".product-details", "productDetails", response);
-            ve.bind(".product-details-related-products", "relatedProduct", response);
+            try {
 
-            document.querySelector(".add-to-cart").addEventListener("click", prod.addProductToCart);
+                ve.bind({
+                    targetSelector: ".product-details",
+                    templateName: "productDetails",
+                    data: response,
+                    callback: function () {
+
+                        document.querySelector(".add-to-cart").addEventListener("click", prod.addProductToCart);
+
+                    }
+                });
+
+                ve.bind({
+                    targetSelector: ".product-details-related-products",
+                    templateName: "relatedProduct",
+                    data: response
+                }, window.performance.now());
+
+            } catch (e) {
+
+                console.log("error ", e);
+
+            }
 
         });
 

@@ -20,24 +20,6 @@
 
 		response: undefined,
 
-		bind: function (targetSelector, data) {
-
-			var controller = this;
-
-			if (controller.rootScope && controller.rootScope.viewEngine) {
-
-				controller.rootScope.viewEngine.bind(targetSelector, data);
-
-
-			} else {
-				throw {
-					"Title": "Missing viewEngine",
-					"Message": "There is no accessible viewEngine"
-				};
-			}
-
-		},
-
 		version: "0.5.1",
 
 		noResults: "<div class='no-results'>Sorry There are No Results Available</div>",

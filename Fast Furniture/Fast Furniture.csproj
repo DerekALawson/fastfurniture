@@ -248,6 +248,7 @@
     <Content Include="css\libs\addtohomescreen.min.css" />
     <Content Include="css\libs\normalize.css" />
     <Content Include="css\libs\spa.css" />
+    <Content Include="data\home-categories.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -255,6 +256,7 @@
     <Content Include="data\products.json" />
     <Content Include="gruntfile.js" />
     <Content Include="img\profile_small.jpg" />
+    <Content Include="index.html" />
     <Content Include="js\dev\controllers\categories.js" />
     <Content Include="js\dev\controllers\category.js" />
     <Content Include="js\dev\controllers\deferred\about.js" />

@@ -63,7 +63,16 @@ namespace Fast_Furniture.Controllers
         [HttpGet]
         public HttpResponseMessage HomeCategories()
         {
-            string content = File.ReadAllText(HttpContext.Current.Server.MapPath(@"~\data\home-categories.json"));
+            string fileName = HttpContext.Current.Server.MapPath(@"~\data\home-categories.json");
+
+            if (Request.Headers.Accept.ToString() != "application/json, text/javascript")
+            {
+                fileName = HttpContext.Current.Server.MapPath(@"~\data\home-categories.html");
+            }
+
+
+            string content = File.ReadAllText(fileName);
+
 
             var resp = new HttpResponseMessage()
             {
