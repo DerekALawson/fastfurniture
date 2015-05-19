@@ -1,4 +1,14 @@
-﻿/* Normalize Box Model */
+﻿
+@font-face {
+    font-family: 'fastfurniture';
+    src: url('../../fonts/fastfurniture.eot?11647599');
+    src: url('../../fonts/fastfurniture.eot?11647599#iefix') format('embedded-opentype'), url('../../fonts/fastfurniture.woff?11647599') format('woff'), url('../../font/fastfurniture.ttf?11647599') format('truetype'), url('../../fonts/fastfurniture.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Normalize Box Model */
 *, *:before, *:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -75,7 +85,7 @@ h3, .view-title-large, .panel-title {
     font-weight: 200;
     font-size: 20pt;
     line-height: 1.2;
-    width:100%;
+    width: 100%;
 }
 
 h4, .panel-small-title {
@@ -105,7 +115,7 @@ h4, .panel-small-title {
     position: absolute;
     top: 70px;
     right: 0;
-    bottom: 0;
+    bottom: 35px;
     left: 0;
     overflow: hidden;
     background: #fff;
@@ -166,6 +176,24 @@ h4, .panel-small-title {
 
 .m-t-xs {
     margin-top: 5px;
+}
+
+.site-header .view-title {
+    font-size: 2.25em;
+    position: absolute;
+    left: 15%;
+    top: 10px;
+    width: 66%;
+    margin: 0;
+}
+
+.site-header .search-icon {
+    position: absolute;
+    top: 10px;
+    right: 2%;
+    width: 2.25em;
+    font-family: "fastfurniture";
+    font-size:2em;
 }
 
 
@@ -229,6 +257,13 @@ h4, .panel-small-title {
 
     .panel-title.selected > .title-view {
         display: none;
+    }
+}
+
+@media(min-width:720px) {
+
+    .main-content {
+        bottom: 10px;
     }
 }
 

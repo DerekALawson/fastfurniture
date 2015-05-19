@@ -8,6 +8,8 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web;
 using System.Web.Http;
+using WebApi.OutputCache.V2;
+using WebApi.OutputCache.V2.TimeAttributes;
 
 namespace Fast_Furniture.Controllers
 {
@@ -30,6 +32,8 @@ namespace Fast_Furniture.Controllers
         }
 
         [HttpGet]
+        [ActionName("GetProduct")]
+        [CacheOutput(ServerTimeSpan = 120, ClientTimeSpan = 120)]
         public HttpResponseMessage Product(string slug)
         {
 
@@ -61,6 +65,8 @@ namespace Fast_Furniture.Controllers
 
 
         [HttpGet]
+        [ActionName("HomeCategories")]
+        [CacheOutput(ServerTimeSpan = 120, ClientTimeSpan = 120)]
         public HttpResponseMessage HomeCategories()
         {
             string fileName = HttpContext.Current.Server.MapPath(@"~\data\home-categories.json");

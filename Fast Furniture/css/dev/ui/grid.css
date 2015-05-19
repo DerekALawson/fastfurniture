@@ -4,15 +4,29 @@
     padding: 0;
     overflow: hidden;
     margin-left: 0;
+    height: 100%;
     width: 1400px;
 }
 
 .item-grid-group {
-    display: inline-block;
+    float: left;
     margin: 1% 1%;
     height: 100%;
     width: 18%;
+    position: relative;
+    top: 0;
+    bottom: 0;
 }
+
+    .item-grid-group .panel-v-scroll {
+        position: absolute;
+        top: 30px;
+        bottom: 10px;
+        display: inline-block;
+        left: 0;
+        right: 0;
+    }
+
 
 .item-grid-target,
 .item-grid-target-first {
@@ -24,14 +38,14 @@
     background: transparent;
     text-align: center;
     float: left;
-    height: calc(50% - 20px);
+    height: calc(33% - 20px);
     position: relative;
 }
 
 .product-grid-photo {
     min-height: 72px;
     background: #808080;
-    max-height: 72px;
+    width: 116px;
 }
 
 
@@ -59,6 +73,10 @@
     display: none;
 }
 
+.item-grid-item-wrapper {
+    overflow: hidden;
+    height: 100%;
+}
 
 
 

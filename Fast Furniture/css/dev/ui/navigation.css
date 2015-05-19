@@ -1,4 +1,43 @@
-﻿       
+﻿
+.win-backbutton {
+    float: left;
+    margin: 20px 0 0 20px;
+    line-height: 1.75em;
+    border: solid 1px #000;
+    border-radius: 1.75em;
+    display: none;
+    height: 1.75em;
+    width: 1.75em;
+    text-align: center;
+}
+
+.back-btn {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABrSURBVDhPYxhwwAilUcC/f/9SgJQ1EH9hZGSsBOIvYAliAFBzwX8gANKfgZQNVJg4MDQ1M4I0AwOpH8QBagYF1hsQm2gANKAfZDu5AMUQIP0cSGmABUkFw8+QZiDeD8TLgYbwQIUHJWBgAAATadBlQVYlKgAAAABJRU5ErkJggg==");
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    margin: 3px auto;
+    display: block;
+}
+
+.icon-search:before { content: '\e800'; } /* '' */
+.icon-mail:before { content: '\e801'; } /* '' */
+.icon-tags:before { content: '\e802'; } /* '' */
+.icon-basket:before { content: '\e803'; } /* '' */
+.icon-home:before { content: '\e804'; } /* '' */
+.icon-star:before { content: '\e805'; } /* '' */
+.icon-star-empty:before { content: '\e806'; } /* '' */
+.icon-desktop:before { content: '\e807'; } /* '' */
+.icon-folder:before { content: '\e808'; } /* '' */
+.icon-tasks:before { content: '\e809'; } /* '' */
+.icon-briefcase:before { content: '\e80a'; } /* '' */
+.icon-road:before { content: '\e80b'; } /* '' */
+.icon-rocket:before { content: '\e80c'; } /* '' */
+.icon-building-filled:before { content: '\e80d'; } /* '' */
+.icon-book:before { content: '\e80e'; } /* '' */
+.icon-inbox:before { content: '\e80f'; } /* '' */
+
+       
 .action-panel,
 .left-panel {
     display: block;

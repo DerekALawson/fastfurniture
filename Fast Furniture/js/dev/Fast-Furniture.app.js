@@ -19,7 +19,7 @@
             }
             , {
                 title: "search",
-                iconClass: "search-icon",
+                iconClass: "icon-search",
                 url: "#!search"
             }, {
                 title: "contact",

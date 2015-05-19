@@ -15,15 +15,17 @@
              class="item-grid-target"
             <%}%>>
             <a href="#!product/<%this.categories[category].Products[index].Slug%>">
-                <img alt="<%this.categories[category].Products[index].Name%>"
-                <%if(index === "0"){%>
-                src="https://fastfurniture.blob.core.windows.net/originals/<%this.categories[category].Products[index].Photo%>" class="product-grid-photo"
-                <%}else{%>
-                src="https://fastfurniture.blob.core.windows.net/mobile/<%this.categories[category].Products[index].Photo%>" class="product-grid-photo"
-                <%}%>
-                >
-                <figcaption class="item-grid-photo-caption"><%this.categories[category].Products[index].Name%></figcaption>
-            </a>
+                <div class="item-grid-item-wrapper">
+
+                    <img alt="<%this.categories[category].Products[index].Name%>" <%if(index === "0"){%>
+                    src="https://fastfurniture.blob.core.windows.net/originals/<%this.categories[category].Products[index].Photo%>" class="product-grid-photo"
+                    <%}else{%>
+                    src="https://fastfurniture.blob.core.windows.net/mobile/<%this.categories[category].Products[index].Photo%>" class="product-grid-photo"
+                    <%}%>
+                    >
+                    </div>
+                    <figcaption class="item-grid-photo-caption"><%this.categories[category].Products[index].Name%></figcaption>
+</a>
         </div>
 
             <%}%>
