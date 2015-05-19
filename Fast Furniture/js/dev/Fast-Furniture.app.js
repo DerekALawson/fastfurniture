@@ -79,6 +79,25 @@
 
             app.setupHamburger();
 
+            var backBtn = document.querySelector(".win-backbutton");
+
+            deeptissue(backBtn).tap(function () {
+
+                history.back();
+
+            });
+
+            window.addEventListener("hashchange", function () {
+
+                if (window.history.length > 1) {
+
+                    backBtn.classList.add("show");
+
+                }
+
+            });
+
+
 
             return app;
         },
