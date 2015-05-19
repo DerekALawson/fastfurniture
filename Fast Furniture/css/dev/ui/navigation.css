@@ -8,10 +8,10 @@
     left: -220px;
     top: 70px;
     bottom: 0;
-    -moz-transition: left 1s ease-out;
-    -o-transition: left 1s ease-out;
-    -webkit-transition: left 1s ease-out;
-    transition: left 1s ease-out;
+    -moz-transition: left 700ms ease-out;
+    -o-transition: left 700ms ease-out;
+    -webkit-transition: left 700ms ease-out;
+    transition: left 700ms ease-out;
     color:#000;
 }
 
@@ -45,6 +45,7 @@
 
 /* Start Hamburger */
 .hamburger-nav {
+    display:none;
     width: 120px;
     height: 40px;
     margin: 10px 5px;
@@ -52,7 +53,6 @@
     margin-right: 2em;
     float: left;
     border: 1px solid #293846;
-    display: inline-block;
 }
 
 .hamburger-bar-wrapper {
@@ -161,7 +161,7 @@ a.sub-nav {
     border: none;
 }
 
-.expand-menu .main-content,
+/*.expand-menu .main-content,*/
 .expanded-action-panel .main-content,
 .expanded-menu.expanded-action-panel .main-content {
     left: 220px;
@@ -247,15 +247,24 @@ a.sub-nav {
     }
 }
 
+@media(min-width:720px) {
+
+/* Start Hamburger */
+    .hamburger-nav {
+        display: inline-block;
+    }
+
+}
+
 @media (min-width:960px) {
 
     .expand-menu .left-panel {
         left: 0;
     }
 
-    .expand-menu .main-content {
+    /*.expand-menu .main-content {
         left: 220px;
-    }
+    }*/
 
     .main-content {
         left: 0;

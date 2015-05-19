@@ -5,6 +5,53 @@
 
     "use strict";
 
+    var menuItems = {
+        topMenu: [
+            {
+                title: "home",
+                iconClass: "home-icon",
+                url: "#!"
+            },
+            {
+                title: "categories",
+                iconClass: "categories-icon",
+                url: "#!categories"
+            }
+            , {
+                title: "search",
+                iconClass: "search-icon",
+                url: "#!search"
+            }, {
+                title: "contact",
+                iconClass: "contact-icon",
+                url: "#!contact"
+            }
+        ],
+        subMenu: [
+             {
+                 title: "living room",
+                 url: "#!category/Living-Room"
+             }
+             , {
+                 title: "dinning room",
+                 url: "#!category/dinning-room"
+             }
+             , {
+                 title: "office",
+                 url: "#!category/Office"
+             }
+            , {
+                title: "bedroom",
+                url: "#!category/bedroom"
+            }
+            ,
+            {
+                title: "privacy",
+                url: "#!s/privacy"
+            }
+        ]
+    };
+
     var FastFurniture = function (customSettings) {
 
         return new FastFurniture.fn.init(customSettings);
@@ -25,6 +72,11 @@
 
             }
 
+            toolbar(".toolbar", {
+                menuItems: menuItems
+            });
+
+
             app.setupHamburger();
 
 
@@ -39,13 +91,19 @@
 
         setupHamburger: function () {
 
-            deeptissue(".hamburger-nav").tap(function () {
+            deeptissue(".hamburger-nav, .left-panel").tap(function () {
                 requestAnimationFrame(function () {
 
                     $("body").toggleClass("expand-menu");
 
                 });
             });
+
+            //deeptissue(".left-panel").tap(function () {
+
+            //    $("body").toggleClass("expand-menu");
+
+            //});
 
 
         },

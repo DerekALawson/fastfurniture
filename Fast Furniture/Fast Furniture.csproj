@@ -283,6 +283,7 @@
     <Content Include="js\dev\controllers\product.js" />
     <Content Include="js\dev\controllers\deferred\register.js" />
     <Content Include="js\dev\controllers\search.js" />
+    <Content Include="js\dev\controllers\static.js" />
     <Content Include="js\dev\Fast-Furniture.app.js" />
     <Content Include="js\dev\Fast-Furniture.bootstrap.js" />
     <Content Include="js\dev\services\Fast-Furniture.data.js" />
@@ -413,6 +414,7 @@
     <Content Include="Views\Home\views\shoppingCart.cshtml" />
     <Content Include="Views\Home\views\changePassword.cshtml" />
     <Content Include="Views\Home\templates\CartTemplate.cshtml" />
+    <Content Include="Views\Home\views\Static.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\git\SPAHelper\SPAHelper\SPAHelper.4.0.csproj">

@@ -22,20 +22,6 @@ FastFurniture.fn.home = FastFurniture.fn.fastFurnitureController.extend({
             data:{ "categories": categories }
         }, window.performance.now());
 
-        //var start, end;
-
-        //start = window.performance.now();
-
-        //requestAnimationFrame(function () {
-
-        //    document.querySelector(".products-wrapper").innerHTML = categories;
-
-        //    end = window.performance.now();
-
-        //    console.log("home rendered in ms: ", end - start);
-
-        //});
-
     }
 
 });

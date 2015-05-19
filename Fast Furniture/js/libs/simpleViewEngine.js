@@ -343,7 +343,7 @@
 		        var temp = document.createElement("div");
 
 		        temp.innerHTML = scripts;
-		        scripts = temp.querySelector(viewEngine.cssSelector);
+		        scripts = temp.querySelector(viewEngine.scriptSelector);
 
 		    }
 
