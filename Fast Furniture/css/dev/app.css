@@ -53,7 +53,7 @@ main {
 }
 
 a, a:visited {
-    color: #eee;
+    color: #222;
     text-decoration: none;
 }
 
@@ -180,20 +180,19 @@ h4, .panel-small-title {
 
 .site-header .view-title {
     font-size: 2.25em;
-    position: absolute;
-    left: 15%;
-    top: 10px;
-    width: 66%;
+    width: 45%;
     margin: 0;
+    line-height: 80px;
+    text-align: left;
 }
 
-.site-header .search-icon {
-    position: absolute;
-    top: 10px;
-    right: 2%;
-    width: 2.25em;
+
+.site-header .nav-icon {
+    width: 1.5em;
     font-family: "fastfurniture";
-    font-size:2em;
+    font-size: 2em;
+    float: right;
+    margin: 24px 1%;
 }
 
 
@@ -238,7 +237,7 @@ h4, .panel-small-title {
     .view-title {
         width: 400px;
         font-size: 1.5em;
-        height: 30pt;
+        height: 100%;
         line-height: 30pt;
     }
 
@@ -263,11 +262,20 @@ h4, .panel-small-title {
 @media(min-width:720px) {
 
     .main-content {
-        bottom: 10px;
+        bottom: 20px;
     }
 }
 
 @media (min-width:800px) {
+
+    .site-header .view-title {
+        left: 20%;
+        top: 5%;
+    }
+
+    .site-header .nav-icon {
+        margin: .6%;
+    }
 
     .main-content {
         left: 10px;
@@ -295,9 +303,16 @@ h4, .panel-small-title {
 
 @media (min-width:1100px) {
 
-    .nav-icon {
-        display: inline-block;
+
+    .site-header .nav-icon {
+        margin: 24px 1%;
     }
+}
+
+.nav-icon {
+    display: inline-block;
+}
+
 }
 
 .new-card {

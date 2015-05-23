@@ -1,1 +1,37 @@
 ﻿
+
+
+.shopping-cart-item {
+    float: left;
+    width: 90%;
+}
+
+.shopping-cart-item a {
+    display:inline-block;
+    width:40%;
+}
+
+.cart-item-photo{
+    margin: 0 1%;
+}
+
+.cart-item-qty,
+.cart-item-price,
+.cart-item-delete,
+.cart-item-name {
+    display: inline-block;
+}
+
+
+.cart-item-qty,
+.cart-item-price,
+.cart-item-delete{
+    width:20%
+}
+
+
+.cart-totals{
+    float:right;
+    margin: 2% 5%;
+    width:35%;
+}

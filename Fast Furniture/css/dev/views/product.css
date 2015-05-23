@@ -85,6 +85,7 @@
         float: left;
         margin: 1% 5% 1% 0;
         width: 60%;
+        text-align:center;
     }
 
     .product-detail-list {
@@ -109,7 +110,7 @@
 
     .product-detail-description,
     .product-detail-list {
-        width: 30%;
+        width: 100%;
     }
 }
 

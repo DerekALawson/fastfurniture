@@ -9,12 +9,12 @@
         topMenu: [
             {
                 title: "home",
-                iconClass: "home-icon",
+                iconClass: "icon-home",
                 url: "#!"
             },
             {
                 title: "categories",
-                iconClass: "categories-icon",
+                iconClass: "icon-tags",
                 url: "#!categories"
             }
             , {
@@ -79,7 +79,7 @@
 
             app.setupHamburger();
 
-            var backBtn = document.querySelector(".win-backbutton");
+            var backBtn = document.querySelector(".nav-icon.icon-left-open");
 
             deeptissue(backBtn).tap(function () {
 
@@ -133,33 +133,33 @@
                         {
                             "Name": "Home",
                             "Slug": "",
-                            "icon": "home-icon"
+                            "icon": "icon-home"
                         },
                         {
                             "Name": "Categories",
                             "Slug": "categories",
-                            "icon": "categories-icon",
+                            "icon": "icon-tags",
                             "children": []
                         },
                         {
                             "Name": "Login",
                             "Slug": "login",
-                            "icon": "login-icon"
+                            "icon": "icon-key"
                         },
                         {
                             "Name": "Privacy",
                             "Slug": "privacy",
-                            "icon": "home-icon"
+                            "icon": "icon-lock"
                         },
                         {
                             "Name": "About",
                             "Slug": "about",
-                            "icon": "home-icon"
+                            "icon": "icon-info-circled"
                         },
                         {
                             "Name": "Contact",
                             "Slug": "contact",
-                            "icon": "home-icon"
+                            "icon": "icon-mail-alt"
                         }
 
             ];

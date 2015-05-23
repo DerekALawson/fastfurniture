@@ -10,7 +10,50 @@
 
         <h1>Shopping Cart</h1>
 
-        <div class="shopping-cart-wrapper"></div>
+        <div class="shopping-cart-wrapper">
+
+            <div class="shopping-cart-item">
+                <a href="#!product/<%this.Items[orderItem].Slug%>">
+                    <img alt="Product Name" src="https://fastfurniture.blob.core.windows.net/thumb/1231045detMIRR.jpg" class="cart-item-photo">
+                    <span class="cart-item-name type-large">This is the name</span>
+                </a>
+                <div class="cart-item-qty type-medium">3</div>
+                <div class="cart-item-price type-medium">$299</div>
+                <div class="cart-item-delete"></div>
+            </div>
+            <div class="shopping-cart-item">
+                <a href="#!product/<%this.Items[orderItem].Slug%>">
+                    <img alt="Product Name" src="https://fastfurniture.blob.core.windows.net/thumb/1231045detMIRR.jpg" class="cart-item-photo">
+                    <span class="cart-item-name type-large">This is the name</span>
+                </a>
+                <div class="cart-item-qty type-medium">3</div>
+                <div class="cart-item-price type-medium">$299</div>
+                <div class="cart-item-delete"></div>
+            </div>
+
+            <div class="shopping-cart-item">
+                <a href="#!product/<%this.Items[orderItem].Slug%>">
+                    <img alt="Product Name" src="https://fastfurniture.blob.core.windows.net/thumb/1231045detMIRR.jpg" class="cart-item-photo">
+                    <span class="cart-item-name type-large">This is the name</span>
+                </a>
+                <div class="cart-item-qty type-medium">3</div>
+                <div class="cart-item-price type-medium">$299</div>
+                <div class="cart-item-delete"></div>
+            </div>
+
+
+            <div class="right col-sm-10">
+                <button class="btn btn-link">Update</button>
+                <button class="btn btn-primary">Check Out</button>
+            </div>
+
+            <div class="cart-totals">
+                <div class="cart-sales-tax"><label>Sales Tax: </label><%this.salesTax%></div>
+                <div class="cart-sales-shipping"><label>Shipping: </label><%this.shipping%></div>
+                <div class="cart-grand-total"><label>Grand Total: </label><%this.grandTotal%></div>
+            </div>
+
+        </div>
 
     </section>
 </script>

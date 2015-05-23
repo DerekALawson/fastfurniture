@@ -381,11 +381,11 @@
 
 		            viewEngine.scriptLoadingState -= 1;
 
-		            console.log("viewEngine.scriptLoadingState : ", viewEngine.scriptLoadingState);
+		            //console.log("viewEngine.scriptLoadingState : ", viewEngine.scriptLoadingState);
 
-		            if (viewEngine.scriptLoadingState === 0 && viewEngine.assetsComplete) {
-		                viewEngine.assetsComplete();
-		            }
+		            //if (viewEngine.scriptLoadingState === 0 && viewEngine.assetsComplete) {
+		            //    viewEngine.assetsComplete();
+		            //}
 
 		        };
 

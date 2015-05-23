@@ -54,6 +54,7 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
  
+
 .icon-search:before { content: '\e800'; } /* '' */
 .icon-mail:before { content: '\e801'; } /* '' */
 .icon-tags:before { content: '\e802'; } /* '' */
@@ -70,3 +71,22 @@
 .icon-building-filled:before { content: '\e80d'; } /* '' */
 .icon-book:before { content: '\e80e'; } /* '' */
 .icon-inbox:before { content: '\e80f'; } /* '' */
+.icon-angle-left:before { content: '\e810'; } /* '' */
+.icon-star-half:before { content: '\e811'; } /* '' */
+.icon-star-half-alt:before { content: '\e812'; } /* '' */
+.icon-ellipsis:before { content: '\e813'; } /* '' */
+.icon-ellipsis-vert:before { content: '\e814'; } /* '' */
+.icon-user:before { content: '\e815'; } /* '' */
+.icon-lock-open:before { content: '\e816'; } /* '' */
+.icon-lock-open-alt:before { content: '\e817'; } /* '' */
+.icon-lock:before { content: '\e818'; } /* '' */
+.icon-key:before { content: '\e819'; } /* '' */
+.icon-cc-visa:before { content: '\e81a'; } /* '' */
+.icon-cc-mastercard:before { content: '\e81b'; } /* '' */
+.icon-cc-discover:before { content: '\e81c'; } /* '' */
+.icon-cc-amex:before { content: '\e81d'; } /* '' */
+.icon-cc-paypal:before { content: '\e81e'; } /* '' */
+.icon-left-open:before { content: '\e81f'; } /* '' */
+.icon-help-circled:before { content: '\e820'; } /* '' */
+.icon-info-circled:before { content: '\e821'; } /* '' */
+.icon-mail-alt:before { content: '\e822'; } /* '' */

@@ -32,7 +32,7 @@ namespace Fast_Furniture.Controllers
         }
 
         [HttpGet]
-        [ActionName("GetProduct")]
+//        [ActionName("GetProduct")]
         [CacheOutput(ServerTimeSpan = 120, ClientTimeSpan = 120)]
         public HttpResponseMessage Product(string slug)
         {
