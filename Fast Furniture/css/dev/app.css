@@ -71,7 +71,7 @@ h1, .view-title {
     float: left;
     overflow: hidden;
     width: calc(100% - 100px);
-    height: 26pt;
+    height: 80px;
 }
 
 h2, .view-title-x-large, .page-title {

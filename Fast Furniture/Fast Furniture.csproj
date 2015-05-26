@@ -432,6 +432,8 @@
     <Content Include="Views\Home\templates\CartTemplate.cshtml" />
     <Content Include="Views\Home\views\Static.cshtml" />
     <Content Include="Views\Home\views\ForgotConfirm.cshtml" />
+    <Content Include="Views\Home\templates\childCategories.cshtml" />
+    <Content Include="Views\Home\templates\searchResultItems.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\git\SPAHelper\SPAHelper\SPAHelper.4.0.csproj">

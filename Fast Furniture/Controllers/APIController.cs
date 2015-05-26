@@ -164,5 +164,23 @@ namespace Fast_Furniture.Controllers
 
         }
 
+
+        [HttpGet]
+        //        [ActionName("GetProduct")]
+        [CacheOutput(ServerTimeSpan = 120, ClientTimeSpan = 120)]
+        public HttpResponseMessage Search(string term)
+        {
+
+            string content = File.ReadAllText(HttpContext.Current.Server.MapPath(@"~\data\searchresults.json"));
+
+            var resp = new HttpResponseMessage()
+            {
+                Content = new StringContent(content)
+            };
+            resp.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            return resp;
+
+        }
+
     }
 }

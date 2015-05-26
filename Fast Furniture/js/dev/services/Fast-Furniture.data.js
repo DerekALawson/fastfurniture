@@ -350,7 +350,7 @@
                 url: "homecategories",
                 cacheKey: "home-categories",
                 success: success,
-//                type: "html",
+                //                type: "html",
                 cacheTTL: 300000
             });
 
@@ -722,6 +722,19 @@
                 url: "contact/" + contactId,
                 success: success
             });
+
+        },
+
+
+        searchProducts: function (term, success) {
+
+            return this.getCachedObject({
+                url: "search?term=" + term,
+                cacheKey: "search-tern-" + term,
+                data: term,
+                success: success
+            });
+
 
         }
 
