@@ -449,6 +449,7 @@ a.sub-nav {
         left: 0;
     }
 
+    .site-header,
     .main-content {
         left: 220px;
     }

@@ -2,7 +2,7 @@
 
 .categories-grid-item {
     margin: 1% 2%;
-    width: 45%;
+    width: 90%;
     display: inline-block;
     float: left;
 }
@@ -21,6 +21,13 @@
     margin: 5px 6px;
     line-height: 1.5em;
     display: inline-block;
-    color:#000;
+    color: #000;
 }
 
+
+@media(min-width: 900px) {
+
+    .categories-grid-item {
+        width: 45%;
+    }
+}

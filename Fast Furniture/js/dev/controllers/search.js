@@ -1,5 +1,12 @@
 ﻿;
 
+
+/*****
+ * 
+ * add mediaQueryListener to change images based on width break points
+ * 
+ */
+
 FastFurniture.fn.search = FastFurniture.fn.fastFurnitureController.extend({
 
     onload: function (response) {

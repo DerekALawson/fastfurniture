@@ -105,10 +105,19 @@
 	    //this calls the parseViews, parseScripts and parseCSS functions.
 		processSPA: function (content, moduleName, callback) {
 
+		    if (typeof content === "function") {
+		        callback = content;
+		        content = undefined;
+		    }
+
 		    this.parseViews(content, true);
 		    this.parseCSS(content);
 		    this.parseScripts(content);
-		    this.parseTemplates(true);
+		    this.parseTemplates(content, true);
+
+		    if (callback) {
+		        callback();
+		    }
 
 		},
 
@@ -212,14 +221,23 @@
          * Template Management
          */
 
-		parseTemplates: function (remove) {
+		parseTemplates: function (html, remove) {
 
 		    var viewEngine = this,
                 temp, viewMarkup,
                 temps = [],
+                ele = document,
                 templates = viewEngine.getTemplates();
 
-		    temps = document.querySelectorAll(viewEngine.TemplateSelector);
+		    if (typeof html === "string") {
+
+		        ele = document.createElement("div");
+		        ele.innerHTML = html;
+
+		    }
+
+
+		    temps = ele.querySelectorAll(viewEngine.TemplateSelector);
             
 		    //todo: refactor to common function with above loop
 		    for (var i = 0; i < temps.length; i++) {
@@ -313,6 +331,12 @@
 		        cssLink.type = "text/css";
 		        cssLink.href = cssObj.url;
 
+		        cssLink.onload(function (e) {
+
+		            console.log("CSS file ", cssObj.url, " loaded");
+
+		        });
+
 		        document.head.appendChild(cssLink);
 
 		    }
@@ -377,7 +401,9 @@
 		        script.id = src.id;
 		        script.src = src.url;
 
-		        script.onload = function () {
+		        script.innerHTML = innerHTML;
+
+		        script.onload = function (e) {
 
 		            viewEngine.scriptLoadingState -= 1;
 

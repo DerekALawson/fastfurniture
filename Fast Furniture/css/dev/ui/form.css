@@ -67,6 +67,12 @@ fieldset[disabled] a.btn {
     pointer-events: none;
 }
 
+.contact-form {
+    width: 90%;
+    margin: 1% 5%;
+}
+
+
 form {
     margin: 0;
 }

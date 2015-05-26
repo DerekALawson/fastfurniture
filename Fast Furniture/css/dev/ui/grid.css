@@ -5,26 +5,29 @@
     overflow: hidden;
     margin-left: 0;
     height: 100%;
-    width: calc(490% - 150px);
+    width: 500%;
 }
 
 .item-grid-group {
     float: left;
-    margin: 1% 1%;
+    margin: 1% 10px;
     height: 100%;
-    width: 16%;
+    width: calc(20% - 20px);
     position: relative;
     top: 0;
     bottom: 0;
 }
 
-    .item-grid-group .panel-v-scroll {
+    .item-grid-group .product-wrapper {
         position: absolute;
         top: 30px;
         bottom: 10px;
         display: inline-block;
         left: 0;
         right: 0;
+        overflow:hidden;
+        overflow-x:hidden;
+        overflow-y:hidden;
     }
 
 
@@ -83,7 +86,7 @@
 
 @media(min-width:720px) {
 
-    .item-grid-group .panel-v-scroll div:nth-child(n+6) {
+    .item-grid-group .product-wrapper div:nth-child(n+6) {
         display: none;
     }
 
@@ -92,7 +95,7 @@
     }
 
     .item-grid {
-        width: 4500px;
+        width: 5400px;
     }
 
 

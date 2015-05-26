@@ -11,31 +11,7 @@
 FastFurniture.fn.category = FastFurniture.fn.fastFurnitureController.extend({
 
     onload: function (response) {
-
-        //fastFurnitureData.addCategory({
-        //    "Name": "Chris Love",
-        //    "Slug": "chrislove",
-        //    "Children": []
-        //}, function (response) {
-        //    console.log(response);
-        //});
-
-        //fastFurnitureData.udpateCategory({
-        //    "Name": "Chris Love",
-        //    "Slug": "chrislove",
-        //    "Children": []
-        //});
-
-        //fastFurnitureData.getCategory("clocks");
-
-        //fastFurnitureData.deleteCategory("clocks");
-
-        //fastFurnitureData.getCategories(function () {
-
-        //    console.log("categories recieved");
-
-        //});
-
+        
         document.querySelector(".spa-view-category .view-title-large").innerHTML = response.paramValues.Name;
 
         fastFurnitureData.getCategoryProducts(response.paramValues.Name, function (response) {
@@ -58,7 +34,7 @@ FastFurniture.fn.category = FastFurniture.fn.fastFurnitureController.extend({
                         firstWidth = 150;
                     } else if (width > 720 && width < 1024) {
                         itemWidth = 220;
-                        firstWidth = 320;
+                        firstWidth = 420;
                     } else {
                         itemWidth = 320;
                         firstWidth = 420;

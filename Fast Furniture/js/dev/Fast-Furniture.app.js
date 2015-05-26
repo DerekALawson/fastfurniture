@@ -23,7 +23,7 @@
                 url: "#!search"
             }, {
                 title: "contact",
-                iconClass: "contact-icon",
+                iconClass: "icon-mail-alt",
                 url: "#!contact"
             }
         ],
@@ -33,8 +33,8 @@
                  url: "#!category/Living-Room"
              }
              , {
-                 title: "dinning room",
-                 url: "#!category/dinning-room"
+                 title: "dining room",
+                 url: "#!category/dining"
              }
              , {
                  title: "office",
@@ -43,8 +43,11 @@
             , {
                 title: "bedroom",
                 url: "#!category/bedroom"
-            }
-            ,
+            },
+            {
+                "title": "Account",
+                "url": "#!account"
+            },
             {
                 title: "privacy",
                 url: "#!s/privacy"
@@ -147,13 +150,18 @@
                             "icon": "icon-key"
                         },
                         {
+                            "Name": "Account",
+                            "Slug": "account",
+                            "icon": "icon-user"
+                        },
+                        {
                             "Name": "Privacy",
-                            "Slug": "privacy",
+                            "Slug": "s/privacy",
                             "icon": "icon-lock"
                         },
                         {
                             "Name": "About",
-                            "Slug": "about",
+                            "Slug": "s/about",
                             "icon": "icon-info-circled"
                         },
                         {
@@ -186,7 +194,6 @@
             }
 
         },
-
 
         version: "0.0.1"
     };

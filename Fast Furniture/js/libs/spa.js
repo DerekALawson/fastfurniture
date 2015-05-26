@@ -20,6 +20,15 @@
 
 		spa.settings = $.extend({}, spa.settings, customSettings);
 
+		if (spa.getParameterByName(spa.settings.forceReload)) {
+
+		    window.location.replace(window.location.href.split("?")[0] + "#!" +
+                spa.getParameterByName(spa.settings.forceReload));
+		    return spa;
+
+		}
+
+
 		if (spa.settings.AppContext) {
 			spa.$context = spa.settings.AppContext;
 		} else {
@@ -56,9 +65,15 @@
 
 			if (spa.settings.parseDOM) {
 
-				spa.viewEngine.processSPA();
+			    spa.viewEngine.processSPA(function () {
 
-				spa.AppContext.parsingEnd();
+			        spa.AppContext.parsingEnd();
+
+			        if (spa.settings.initView) {
+			            spa.swapView();
+			        }
+			    });
+
 
 			}
 
@@ -69,16 +84,6 @@
 				spa.swapView();
 
 			});
-
-			if (spa.getParameterByName(spa.settings.forceReload)) {
-
-				window.location.replace(window.location.href.split("?")[0] + "#!" +
-					spa.getParameterByName(spa.settings.forceReload));
-				return spa;
-
-			} else if (spa.settings.initView) {
-				spa.swapView();
-			}
 
 //		});
 

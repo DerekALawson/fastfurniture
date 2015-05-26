@@ -5,12 +5,12 @@
     </header>
 
     <span class="product-detail-photo-wrapper">
-        <img alt="<%this.Name%>" src="https://fastfurniture.blob.core.windows.net/originals/<%this.Photos.Original%>" class="product-grid-photo">
+        <img alt="<%this.Name%>" src="https://fastfurniture.blob.core.windows.net/originals/<%this.Photos.Original%>" class="product-detail-photo">
     </span>
 
     <div class="product-detail-list">
         <div class="product-detail-list-item product-detail-price">$<%this.Price%></div>
-        <div class="product-detail-list-item"><button class="btn add-to-cart" data-product="<%this.Slug%>">Order Now</button></div>
+        <div class="product-detail-list-item order-btn"><button class="btn btn-default add-to-cart" data-product="<%this.Slug%>">Order Now</button></div>
     </div>
 
     <div class="product-detail-description">

@@ -86,6 +86,11 @@
     width: 100%;
 }
 
+.toolbar-sub-menu a{
+    height:100%;
+    display:block;
+}
+
 .toolbar-sub-menu-nav-list {
     padding-left: 6px;
 }
