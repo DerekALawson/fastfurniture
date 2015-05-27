@@ -80,50 +80,7 @@
         }
         else
         {
-
-            <script>
-
-                function loadCSS(href, before, media, callback) {
-                    "use strict";
-                    var ss = window.document.createElement("link"),
-                        ref = before || window.document.getElementsByTagName("script")[0],
-                        sheets = window.document.styleSheets;
-
-                    ss.rel = "stylesheet";
-                    ss.href = href;
-                    ss.media = "only x";
-
-                    if (callback) {
-                        ss.onload = callback;
-                    }
-
-                    ref.parentNode.insertBefore(ss, ref);
-
-                    ss.onloadcssdefined = function (cb) {
-                        var defined, i = 0;
-
-                        for (; i < sheets.length; i++) {
-                            if (sheets[i].href && sheets[i].href.indexOf(href) > -1) {
-                                defined = true;
-                            }
-                        }
-                        if (defined) {
-                            cb();
-                        } else {
-                            setTimeout(function () {
-                                ss.onloadcssdefined(cb);
-                            });
-                        }
-                    };
-                    ss.onloadcssdefined(function () {
-                        ss.media = media || "all";
-                    });
-                    return ss;
-                }
-
-                loadCSS("http://images.professionalaspnet.com/furniture/css/site.min.css");
-
-            </script>
+            <link href="https://az763773.vo.msecnd.net/css/site.min.css" rel="stylesheet" />
 
         }
 
@@ -131,13 +88,13 @@
     else
     {
 
-        <link href="http://images.professionalaspnet.com/furniture/css/core/Fast-Furniture.app.core.css" rel="stylesheet">
+        <link href="https://az763773.vo.msecnd.net/css/Fast-Furniture.app.core.css" rel="stylesheet">
 
     }
 
     @if (Request.UserAgent.ToLower().Contains("ipad") || Request.UserAgent.ToLower().Contains("iphone"))
     {
-        <link href="http://images.professionalaspnet.com/furniture/addtohomescreen.css" rel="stylesheet">
+        <link href="https://az763773.vo.msecnd.net/css/addtohomescreen.css" rel="stylesheet">
     }
 
     <meta content="Making Furnishing Your World Fast" name="description">
@@ -195,19 +152,7 @@
 
               <aside class="left-panel panel-v-scroll">
                   <div class="nav-header">
-                      <a href="#!accpount">
-                          <div class="dropdown profile-element">
-                              <span>
-                                  <img class="img-circle" alt="image" src="img/profile_small.jpg">
-                              </span>
-                              <span class="clear">
-                                  <span class="block m-t-xs">
-                                      <strong class="font-bold">David Williams</strong>
-                                  </span>
-                                  <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
-                              </span>
-                          </div>
-                      </a>
+
                   </div>
                   <div class="y-scroller-wrapper">
                       <nav class="main-nav" role="navigation"></nav>
@@ -245,6 +190,7 @@
                 @SPARenderPage("templates/ProductDetail.cshtml")
                 @SPARenderPage("templates/ChildCategories.cshtml")
                 @SPARenderPage("templates/searchResultItems.cshtml")
+                @SPARenderPage("templates/relatedProduct.cshtml")
 
               }
 
@@ -258,7 +204,6 @@
                       <script src="~/js/libs/class.js"></script>
                       <script src="~/js/libs/controller.js"></script>
                       <script src="~/js/libs/dollarbill.min.js"></script>
-                      <script src="~/js/libs/spapm.js"></script>
                       <script src="~/js/libs/simpleViewEngine.js"></script>
                       <script src="~/js/libs/l2Storagecache.js"></script>
                       <script src="~/js/libs/deeptissue.js"></script>
@@ -268,8 +213,8 @@
 
                       <script src="~/js/dev/services/Fast-Furniture.data.js"></script>
 
-                      <script src="~/js/dev/controllers/fastFurnitureController.js"></script>
-                      <script src="~/js/dev/controllers/fastFurnitureAuthenticatedController.js"></script>
+                      <script src="~/js/dev/fastFurnitureController.js"></script>
+                      <script src="~/js/dev/fastFurnitureAuthenticatedController.js"></script>
 
                       <script src="js/dev/controllers/category.js"></script>
                       <script src="js/dev/controllers/categories.js"></script>
@@ -286,11 +231,11 @@
                   }
                   else
                   {
-                      <script src="js/Fast-Furniture.app.min.js"></script>
+                      <script src="https://az763773.vo.msecnd.net/scripts/Fast-Furniture.app.min.js"></script>
 
                       if (Request.UserAgent.ToLower().Contains("ipad") || Request.UserAgent.ToLower().Contains("iphone"))
                       {
-                          <script src="http://images.professionalaspnet.com/furnitureaddtohomescreen.min.js" async="async"></script>
+                          <script src="https://az763773.vo.msecnd.net/scripts/addtohomescreen.min.js" async="async"></script>
                       }
                   }
 

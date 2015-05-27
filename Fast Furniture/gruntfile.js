@@ -13,12 +13,29 @@ module.exports = function (grunt) {
 				},
 				files: {
 				    "css/site.min.css": [
-                        "css/libs/**.css",
+                        "css/libs/bootstrap.lean.min.css",
+                        "css/libs/spa.css",
+                        "css/dev/ui/animations.css",
+                        "css/libs/toolbar.css",
+                        "css/libs/touch.css",
                         "css/dev/app.css",
-                        "css/dev/ui/**.css",
-                        "css/dev/views/**.css"
+                        "css/dev/ui/typography.css",
+                        "css/dev/ui/navigation.css",
+                        "css/dev/ui/action-menu.css",
+                        "css/dev/ui/grid.css",
+                        "css/dev/views/*.css"
                         ]
 				}
+			},
+			deferred: {
+			    options: {
+			        banner: '/* My minified css file */'
+			    },
+			    files: {
+			        "css/deferred.min.css": [
+                        "css/dev/views/deferred/*.css"
+			        ]
+			    }
 			},
 			criticalcss: {
 			    files: {
@@ -32,9 +49,18 @@ module.exports = function (grunt) {
 			},
 			applib: {
 			    src: [
-			        "js/libs/*.js",
+			        "js/libs/spa.js",
+                    "js/libs/class.js",
+                    "js/libs/controller.js",
+                    "js/libs/dollarbill.min.js",
+                    "js/libs/simpleViewEngine.js",
+                    "js/libs/l2Storagecache.js",
+                    "js/libs/deeptissue.js",
+                    "js/libs/toolbar.min.js",
                     "js/dev/Fast-Furniture.app.js",
-                    "js/dev/services/*.js",
+                    "js/dev/services/Fast-Furniture.data.js",
+                    "js/dev/fastFurnitureController.js",
+                    "js/dev/fastFurnitureAuthenticatedController.js",
                     "js/dev/controllers/*.js",
                     "js/dev/Fast-Furniture.bootstrap.js"
                 
