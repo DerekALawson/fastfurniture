@@ -7,9 +7,7 @@ var lsCache = l2Storeagecache(),
 	    cache: lsCache
 	}),
 
-	fastFurnitureData = new FastFurnitureData(/* http, */ lsCache),
-
-	// the analytics global is assumed to be instantiated via Segment.io snippet
+	fastFurnitureData = new FastFurnitureData(lsCache),
 
 	fastFurniture = FastFurniture();
 
@@ -30,7 +28,3 @@ ve.setupAssets(function () {
     ve.loadImport("home/deferred", "deferred");
 
 });
-
-
-//window.addEventListener("DOMContentLoaded", function () {});
-
