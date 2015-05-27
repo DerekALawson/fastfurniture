@@ -11,6 +11,8 @@
 FastFurniture.fn.category = FastFurniture.fn.fastFurnitureController.extend({
 
     onload: function (response) {
+
+        console.log("onload category");
         
         document.querySelector(".spa-view-category .view-title-large").innerHTML = response.paramValues.Name;
 

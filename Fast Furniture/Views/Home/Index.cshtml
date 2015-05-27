@@ -1,4 +1,5 @@
-﻿@using SPAHelper
+﻿
+@using SPAHelper
 
 <!DOCTYPE html>
 @{if (HttpContext.Current.IsDebuggingEnabled)
@@ -233,14 +234,10 @@
                   @SPARenderPage("views/login.cshtml")
                   @SPARenderPage("views/forgotemail.cshtml")
                   @SPARenderPage("views/forgotpassword.cshtml")
-                @SPARenderPage("views/static.cshtml")
-
-
+                
                 @SPARenderPage("templates/categoryGridItem.cshtml")
                 @SPARenderPage("templates/categoryListItem.cshtml")
-
-                @SPARenderPage("templates/staticText.cshtml")
-
+                  
                 @SPARenderPage("templates/productDetail.cshtml")
                 @SPARenderPage("templates/productGridGroup.cshtml")
                 @SPARenderPage("templates/productGridItem.cshtml")
@@ -281,7 +278,6 @@
                       <script src="js/dev/controllers/product.js"></script>
                       <script src="js/dev/controllers/search.js"></script>
                       <script src="js/dev/controllers/home.js"></script>
-                    <script src="js/dev/controllers/static.js"></script>
                       <script src="js/dev/controllers/NotFound.js"></script>
                       <script src="js/dev/controllers/login.js"></script>
                       <script src="js/dev/controllers/forgotemail.js"></script>

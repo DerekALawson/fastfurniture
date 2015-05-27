@@ -32,7 +32,7 @@
             },
             {
             "id": "about-css",
-            "url": "css/dev/views/deferred/about.css"
+            "url": "css/dev/views/deferred/static.css"
             },
             {
             "id": "feedback-css",
@@ -72,6 +72,7 @@
             "url": "deferred.min.css"
             }
             ]
+
         </script>
 
     }
@@ -84,15 +85,15 @@
 @SPARenderPage("views/placeorder.cshtml")
 @SPARenderPage("views/orderconfirmation.cshtml")
 @SPARenderPage("views/myfavorites.cshtml")
-@SPARenderPage("views/about.cshtml")
 @SPARenderPage("views/social.cshtml")
 @SPARenderPage("views/account.cshtml")
 @SPARenderPage("views/contact.cshtml")
 @SPARenderPage("views/registersuccess.cshtml")
 @SPARenderPage("views/register.cshtml")
 @SPARenderPage("views/shoppingCart.cshtml")
+@SPARenderPage("views/static.cshtml")
 
-
+@SPARenderPage("templates/staticText.cshtml")
 @SPARenderPage("templates/CartTemplate.cshtml")
 
 
@@ -129,8 +130,8 @@
                 "url": "js/dev/controllers/deferred/my-favorites.js"
                 },
                 {
-                "id": "about-js",
-                "url": "js/dev/controllers/deferred/about.js"
+                "id": "static-js",
+                "url": "js/dev/controllers/deferred/static.js"
                 },
                 {
                 "id": "feedback-js",

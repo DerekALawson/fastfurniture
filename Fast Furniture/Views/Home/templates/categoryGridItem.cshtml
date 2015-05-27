@@ -16,11 +16,11 @@
             <%}%>>
             <a href="#!product/<%this.categories[category].Products[index].Slug%>">
                 <div class="item-grid-item-wrapper">
-
+                    
                     <img alt="<%this.categories[category].Products[index].Name%>" <%if(index === "0"){%>
-                    src="https://fastfurniture.blob.core.windows.net/originals/<%this.categories[category].Products[index].Photo%>" class="product-grid-photo"
+                    src="https://fastfurniture.blob.core.windows.net/thumb/<%this.categories[category].Products[index].Photo%>" class="product-grid-photo"
                     <%}else{%>
-                    src="https://fastfurniture.blob.core.windows.net/mobile/<%this.categories[category].Products[index].Photo%>" class="product-grid-photo"
+                    src="https://fastfurniture.blob.core.windows.net/thumb/<%this.categories[category].Products[index].Photo%>" class="product-grid-photo"
                     <%}%>
                     >
                     </div>

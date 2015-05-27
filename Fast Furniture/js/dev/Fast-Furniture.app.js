@@ -75,6 +75,8 @@
 
             }
 
+            app.setupMQLs();
+
             toolbar(".toolbar", {
                 menuItems: menuItems
             });
@@ -99,8 +101,6 @@
                 }
 
             });
-
-
 
             return app;
         },
@@ -194,6 +194,65 @@
             }
 
         },
+
+        /* Begin Media Query Listeners */
+
+        phoneMQL: undefined,
+        smallTabletMQL: undefined,
+        tabletMQL: undefined,
+        desktopMQL: undefined,
+
+        setupMQLs: function () {
+
+            var app = this,
+                phone = window.matchMedia("(max-width: 600px)"),
+                smallTablet = window.matchMedia("(min-width: 720px)"),
+                tablet = window.matchMedia("(min-width: 980px)"),
+                desktop = window.matchMedia("(min-width: 1000px)");
+
+            phone.addListener(function (e) {
+
+                if (app.phoneMQL) {
+
+                    app.phoneMQL(e);
+
+                }
+
+            });
+
+            smallTablet.addListener(function (e) {
+
+                if (app.smallTabletMQL) {
+
+                    app.smallTabletMQL(e);
+
+                }
+
+            });
+
+            tablet.addListener(function (e) {
+
+                if (app.tabletMQL) {
+
+                    app.tabletMQL(e);
+
+                }
+
+            });
+
+            desktop.addListener(function (e) {
+
+                if (app.desktopMQL) {
+
+                    app.desktopMQL(e);
+
+                }
+
+            });
+
+        },
+
+        /* End MQLs */
 
         version: "0.0.1"
     };

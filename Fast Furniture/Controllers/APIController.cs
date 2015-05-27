@@ -182,5 +182,25 @@ namespace Fast_Furniture.Controllers
 
         }
 
+        [HttpGet]
+        [CacheOutput(ServerTimeSpan = 120, ClientTimeSpan = 120)]
+        public HttpResponseMessage Static(string slug)
+        {
+            string fileName = HttpContext.Current.Server.MapPath(@"~\data\static\" + slug + ".json");
+
+            string content = File.ReadAllText(fileName);
+
+            var resp = new HttpResponseMessage()
+            {
+                Content = new StringContent(content)
+            };
+
+            resp.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            return resp;
+
+        }
+
     }
+
 }

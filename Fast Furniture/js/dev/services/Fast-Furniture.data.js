@@ -735,8 +735,20 @@
                 success: success
             });
 
+        },
+
+        getStatic: function (slug, success) {
+
+            return this.getCachedObject({
+                url: "static?slug=" + slug,
+                cacheKey: "static-slug-" + slug,
+                data: slug,
+                success: success
+            });
+
 
         }
+
 
 
 

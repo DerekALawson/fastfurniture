@@ -1,13 +1,18 @@
 ﻿<script id="staticText" type="text/x-simpleTemplate-template">
 
     <article>
+
         <header>
 
-            <h1><%this.Title%></h1>
+            <h1 class="view-title"><%this.Title%></h1>
 
         </header>
 
-        <%this.body%>
+        <%for(var index in this.Content) {%>
+
+        <p><%this.Content[index]%></p>
+
+        <%}%>
 
     </article>
     

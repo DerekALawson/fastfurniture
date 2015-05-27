@@ -223,7 +223,6 @@
     <Content Include="critical_files\touch.css" />
     <Content Include="css\dev\app.css" />
     <Content Include="css\dev\ui\action-menu.css" />
-    <Content Include="css\dev\ui\action.panel.css" />
     <Content Include="css\dev\ui\grid.css" />
     <Content Include="css\dev\ui\navigation.css" />
     <Content Include="css\dev\ui\typography.css" />
@@ -231,14 +230,14 @@
     <Content Include="css\dev\views\deferred\changePassword.css" />
     <Content Include="css\dev\views\deferred\registerstatus.css" />
     <Content Include="css\dev\views\deferred\shoppingCart.css" />
+    <Content Include="css\dev\views\deferred\static.css" />
     <Content Include="css\libs\bootstrap.lean.min.css" />
-    <Content Include="css\libs\fastfurniture-codes.css" />
-    <Content Include="css\libs\fastfurniture-embedded.css" />
-    <Content Include="css\libs\fastfurniture.css" />
+    <Content Include="fonts\fastfurniture-codes.css" />
+    <Content Include="fonts\fastfurniture-embedded.css" />
+    <Content Include="fonts\fastfurniture.css" />
     <Content Include="css\libs\toolbar.css" />
     <Content Include="css\libs\touch.css" />
     <Content Include="css\dev\ui\animations.css" />
-    <Content Include="css\dev\ui\form.css" />
     <Content Include="css\dev\views\category.css" />
     <Content Include="css\dev\views\deferred\about.css" />
     <Content Include="css\dev\views\deferred\account.css" />
@@ -257,8 +256,8 @@
     <Content Include="css\dev\views\NotFound.css" />
     <Content Include="css\dev\views\product.css" />
     <Content Include="css\dev\views\search.css" />
-    <Content Include="css\libs\addtohomescreen.min.css" />
-    <Content Include="css\libs\normalize.css" />
+    <Content Include="css\addtohomescreen.min.css" />
+    <Content Include="fonts\normalize.css" />
     <Content Include="css\libs\spa.css" />
     <Content Include="data\home-categories.html" />
     <Content Include="favicon.ico" />
@@ -296,11 +295,11 @@
     <Content Include="js\dev\controllers\product.js" />
     <Content Include="js\dev\controllers\deferred\register.js" />
     <Content Include="js\dev\controllers\search.js" />
-    <Content Include="js\dev\controllers\static.js" />
+    <Content Include="js\dev\controllers\deferred\static.js" />
     <Content Include="js\dev\Fast-Furniture.app.js" />
     <Content Include="js\dev\Fast-Furniture.bootstrap.js" />
     <Content Include="js\dev\services\Fast-Furniture.data.js" />
-    <Content Include="js\libs\addtohomescreen.min.js" />
+    <Content Include="js\addtohomescreen.min.js" />
     <Content Include="js\libs\class.js" />
     <Content Include="js\libs\controller.js" />
     <Content Include="js\libs\deeptissue.js" />
@@ -308,9 +307,8 @@
     <Content Include="js\libs\l2Storagecache.js" />
     <Content Include="js\libs\simpleViewEngine.js" />
     <Content Include="js\libs\spa.js" />
-    <Content Include="js\libs\spapm.js" />
     <Content Include="js\libs\toolbar.min.js" />
-    <Content Include="js\libs\view.engine.js" />
+    <None Include="js\libs\view.engine.tmp" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

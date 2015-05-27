@@ -27,7 +27,7 @@ ve.setupAssets(function () {
         "defaultTitle": "Fast Furniture"
     });
 
-  //  ve.loadImport("home/deferred", "deferred");
+    ve.loadImport("home/deferred", "deferred");
 
 });
 

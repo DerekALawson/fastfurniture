@@ -331,12 +331,6 @@
 		        cssLink.type = "text/css";
 		        cssLink.href = cssObj.url;
 
-		        cssLink.onload(function (e) {
-
-		            console.log("CSS file ", cssObj.url, " loaded");
-
-		        });
-
 		        document.head.appendChild(cssLink);
 
 		    }
@@ -400,8 +394,6 @@
 
 		        script.id = src.id;
 		        script.src = src.url;
-
-		        script.innerHTML = innerHTML;
 
 		        script.onload = function (e) {
 
