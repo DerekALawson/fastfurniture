@@ -280,7 +280,7 @@
 		parseCSS: function (css) {
 
 		    var viewEngine = this,
-                cssRefs = viewEngine.cache.getObject(viewEngine.appPrefix + -"css") || {},
+                cssRefs = viewEngine.cache.getObject(viewEngine.appPrefix + "css") || {},
                 cssObjs = {};
 
 		    if (!css) {
@@ -312,7 +312,7 @@
 		        viewEngine.appendCSS(cssRefs[ref]);
 		    }
 
-		    viewEngine.cache.setObject(viewEngine.appPrefix + -"css", cssRefs);
+		    viewEngine.cache.setObject(viewEngine.appPrefix + "css", cssRefs);
 
 		},
 
