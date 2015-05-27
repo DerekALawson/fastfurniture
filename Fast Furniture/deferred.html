@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0029)http://localhost:7856/ -->
+<!DOCTYPE html PUBLIC "" "">
+<html lang="en">
+<head>
+    <meta content="IE=11.0000"
+          http-equiv="X-UA-Compatible">
+
+    <script>
+
+        var ef = "?_escaped_fragment_=";
+
+        if (!('querySelector' in document)
+			 || !('localStorage' in window)
+			 || !('addEventListener' in window)
+			|| !('matchMedia' in window)) {
+
+            if (window.location.href.indexOf("#!") > 0) {
+                window.location.href = window.location.href.replace("#!", ef);
+            } else {
+                if (window.location.href.indexOf(ef) < 0) {
+                    window.location.href = window.location.href + ef;
+                }
+            }
+
+        } else {
+
+            if (window.location.href.indexOf(ef) >= 0) {
+                window.location.href = window.location.href.replace(ef, "#!");
+            }
+        }
+
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="content-language" content="us-en">
+    <title>
+        Fast
+        Furniture
+    </title>
+    <link href="css/site.min.css" rel="stylesheet">
+
+    <meta name="description" content="Making Furnishing Your World Fast">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="favicon.ico" rel="shortcut icon">
+    <link href="http://images.professionalaspnet.com/furniture/touch-icon-android.png"
+          rel="icon" sizes="192x192">
+    <link href="http://images.professionalaspnet.com/furniture/touch-icon-iphone.png"
+          rel="apple-touch-icon">
+    <link href="http://images.professionalaspnet.com/furnituretouch-icon-ipad.png"
+          rel="apple-touch-icon" sizes="76x76">
+    <link href="http://images.professionalaspnet.com/furniture/touch-icon-iphone-retina.png"
+          rel="apple-touch-icon" sizes="120x120">
+    <link href="http://images.professionalaspnet.com/furniture/touch-icon-ipad-retina.png"
+          rel="apple-touch-icon" sizes="152x152">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link href="http://images.professionalaspnet.com/furniturestartup.png" rel="apple-touch-startup-image">
+
+    <meta name="application-name" content="">
+    <meta name="msapplication-config" content="IEconfig.xml">
+    <meta name="msapplication-allowDomainMetaTags" content="true">
+    <meta name="msapplication-navbutton-color" content="">
+    <meta name="msapplication-badge" content="frequency=1440; polling-uri=">
+    <meta name="msapplication-notification" content="frequency=1440;polling-uri=; cycle=1">
+
+    <meta name="msapplication-starturl" content="#!">
+    <meta name="msapplication-tooltip" content="">
+    <link href="http://furniture.love2dev.com/humans.txt"
+          rel="author" type="text/plain">
+    <meta name="GENERATOR" content="MSHTML 11.00.9600.17728">
+</head>
+<body spa-app="">
+    <header class="site-header" role="banner">
+        <span class="back-btn"><span class="nav-icon icon-left-open"></span></span>
+        <span class="hamburger-nav">
+            <span class="hamburger-bar-wrapper">
+                <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
+            </span>
+            <span class="hamburger-bar-text">menu</span>
+        </span>
+        <h1 class="view-title">Fast Furniture</h1>
+
+        <a href="#!search"><span class="nav-icon icon-search"></span></a>
+        <a href="#!cart"><span class="nav-icon icon-basket"></span></a>
+    </header>
+
+    <main class="main-content" role="main">
+
+
+        <section class="spa-layout" spa-layout="fast-furniture-layout">
+            <section class="spa-child-view home-child-view main"></section>
+        </section>
+
+        <section class="spa-view-category">
+
+            <h1 class="view-title-large">Category Furniture</h1>
+
+            <div class="child-categories"></div>
+
+            <div class="x-scroller-wrapper">
+
+                <div class="item-grid products-wrapper"></div>
+
+            </div>
+
+        </section>
+
+        <section class="spa-view-categories">
+
+            <div class="y-scroller-wrapper">
+
+                <div class="categories-grid"></div>
+
+            </div>
+        </section>
+
+        <section class="spa-view-product ">
+
+            <div class="y-scroller-wrapper full-text">
+
+                <section class="product-details"></section>
+
+                <section class="product-details-related-products"></section>
+            </div>
+        </section>
+
+
+        <section class="spa-view-search">
+
+            <form action="/search" name="furnitureSearch">
+                <div class="searchBox">
+                    <input id="searchTerm" class="search" spellcheck="true" autocapitalize="off"
+                           autofocus="" name="searchTerm" placeholder="search term" results="5" type="search" />
+                    <span class="search-input-icon"></span>
+                </div>
+            </form>
+
+            <div class="y-scroller-wrapper">
+                <div class="search-result-list">
+                </div>
+            </div>
+
+        </section>
+
+        <section class="spa-view-home">
+
+            <div class="x-scroller-wrapper">
+
+                <div class="item-grid products-wrapper"></div>
+            </div>
+        </section>
+
+        <section class="spa-view-404"></section>
+
+        <section class="spa-view-login col-sm-offset-2">
+            <div class="col-sm-5">
+                <h1>Provide your e-mail and password</h1>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">Username:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="username" class="form-control username" placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">Password:</label>
+                        <div class="col-sm-10">
+                            <input type="password" name="password" class="form-control password" placeholder="Password" />
+                        </div>
+                    </div>
+                    <div class="checkbox col-sm-offset-2">
+                        <label class="checkbox" for="rememberme"><input type="checkbox" name="rememberme" />Remmeber Me</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-1 col-sm-10 text-right">
+                            <a class="btn btn-link" href="#!forgot/password">Forgot Password</a>
+                            <a class="btn btn-link" href="#!register">Sign Up</a>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="spa-view-forgot-email col-sm-offset-2">
+
+            <div class="col-sm-5">
+                <h1>Login</h1>
+                <h2>Forgot your e-mail?</h2>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">Username:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="username" class="username form-control" placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-5 text-right">
+                            <button class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="spa-view-forgot-password col-sm-offset-2">
+            <div class="col-sm-5">
+                <h1>Forgot your password?</h1>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">Username:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="username" class="username form-control" placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-5 text-right">
+                            <button class="btn btn-primary">Recover Password</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <%for(var category in this.categories) {%>
+
+        <div class="item-grid-group">
+            <a class="item-grid-group-title" href="#!category/<%this.categories[category].Slug%>"><%this.categories[category].Name%> ></a>
+
+            <div class="product-wrapper">
+                <%for(var index in this.categories[category].Products) {%>
+
+                <div
+             <%if(index === "0"){%>
+            class="item-grid-target-first"
+            <%}else{%>
+             class="item-grid-target"
+            <%}%>>
+            <a href="#!product/<%this.categories[category].Products[index].Slug%>">
+                <div class="item-grid-item-wrapper">
+
+                    <img alt="<%this.categories[category].Products[index].Name%>" <%if(index === "0"){%>
+                    src="https://fastfurniture.blob.core.windows.net/thumb/<%this.categories[category].Products[index].Photo%>" class="product-grid-photo"
+                    <%}else{%>
+                    src="https://fastfurniture.blob.core.windows.net/thumb/<%this.categories[category].Products[index].Photo%>" class="product-grid-photo"
+                    <%}%>
+                    >
+                    </div>
+                    <figcaption class="item-grid-photo-caption"><%this.categories[category].Products[index].Name%></figcaption>
+</a>
+        </div>
+
+                <%}%>
+            </div>
+        </div>
+        <%}%>
+
+
+        <%for(var index in this.categories) {%>
+
+        <div class="categories-grid-item">
+            <a class="categories-grid-parent-title" href="#!category/<%this.categories[index].Slug%>"><%this.categories[index].Name%></a>
+
+            <div class="categories-grid-item-children">
+
+                <%for(var child in this.categories[index].Children) {%>
+
+                <a class="categories-grid-child-title" href="#!category/<%this.categories[index].Children[child].Slug%>"><%this.categories[index].Children[child].Name%></a>
+
+                <%}%>
+            </div>
+        </div>
+
+        <%}%>
+
+            <header class="product-detail-header">
+                <h1><%this.Name%></h1>
+            </header>
+
+            <span class="product-detail-photo-wrapper">
+                <img alt="<%this.Name%>" src="https://fastfurniture.blob.core.windows.net/originals/<%this.Photos.Original%>" class="product-detail-photo">
+            </span>
+
+            <div class="product-detail-list">
+                <div class="product-detail-list-item product-detail-price">$<%this.Price%></div>
+                <div class="product-detail-list-item order-btn"><button class="btn btn-default add-to-cart" data-product="<%this.Slug%>">Order Now</button></div>
+            </div>
+
+            <div class="product-detail-description">
+                <%this.Description%>
+            </div>
+
+            <%for(var index in this.groups) {%>
+            <div class="item-grid-group">
+                <h1 class="item-grid-group-title"><%this.groups[index].Name%></h1>
+
+                <div class="item-grid-group-items group-items-<%this.groups[index].Name%>"></div>
+
+            </div>
+
+            <%}%>
+
+
+            <%for(var index in this.products) {%>
+
+            <div
+             <%if(index === "0"){%>
+            class="item-grid-target-first"
+            <%}else{%>
+             class="item-grid-target"
+            <%}%>>
+        <a href="#!product/<%this.products[index].Slug%>">
+            <img alt="<%this.products[index].Name%>"
+                                <%if(index === "0"){%>
+                src="https://fastfurniture.blob.core.windows.net/thunmb/<%this.products[index].Photo%>"
+                <%}else{%>
+                src="https://fastfurniture.blob.core.windows.net/thumb/<%this.products[index].Photo%>"
+                <%}%>
+
+                  class="product-grid-photo">
+            <figcaption class="item-grid-photo-caption"><%this.products[index].Name%></figcaption>
+        </a>
+    </div>
+
+            <%}%>
+
+            <%for(var index in this.menu) {%>
+            <a href="#!<%this.menu[index].Slug%>" role="menuitem" class="home-nav"><span class="nav-icon <%this.menu[index].icon%>"></span><span class="nav-text"><%this.menu[index].Name%></span></a>
+            <%}%>
+
+            <span>
+                <img class="img-circle" alt="image" src="<%this.Photos.thumb%>">
+            </span>
+            <span class="clear">
+                <span class="block m-t-xs">
+                    <strong class="font-bold"><%this.Name%></strong>
+                </span>
+                <span class="text-muted text-xs block"><%this.Title%> <b class="caret"></b></span>
+            </span>
+
+            <%for(var index in this.Related) {%>
+
+            <div class="related-products-target">
+                <a href="#!product/<%this.Related[index].Slug%>">
+                    <img alt="Product Name" src="https://fastfurniture.blob.core.windows.net/thumb/<%this.Related[index].Photos.Thumb%>" class="replated-product-photo">
+                    <figcaption class="related-products-photo-caption"><%this.Related[index].Name%></figcaption>
+                </a>
+            </div>
+
+            <%}%>
+
+            <header class="product-detail-header">
+                <h1><%this.Name%></h1>
+            </header>
+
+            <span class="product-detail-photo-wrapper">
+                <img alt="<%this.Name%>" src="https://fastfurniture.blob.core.windows.net/originals/<%this.Photos.Original%>" class="product-detail-photo">
+            </span>
+
+            <div class="product-detail-list">
+                <div class="product-detail-list-item product-detail-price">$<%this.Price%></div>
+                <div class="product-detail-list-item order-btn"><button class="btn btn-default add-to-cart" data-product="<%this.Slug%>">Order Now</button></div>
+            </div>
+
+            <div class="product-detail-description">
+                <%this.Description%>
+            </div>
+
+            <%for(var index in this.Children) {%>
+
+            <div class="categories-grid-item-children">
+
+                <a class="categories-grid-child-title" href="#!category/<%this.Children[index].Slug%>"><%this.Children[index].Name%></a>
+
+            </div>
+            <%}%>
+
+            <%for(var index in this.products) {%>
+
+            <div class="item-grid-target">
+                <a href="#!product/<%this.products[index].Slug%>">
+                    <img alt="<%this.products[index].Name%>"
+                         src="https://fastfurniture.blob.core.windows.net/mobile/<%this.products[index].Photo%>"
+                         class="product-grid-photo">
+                    <figcaption class="item-grid-photo-caption"><%this.products[index].Name%></figcaption>
+                </a>
+            </div>
+
+            <%}%>
+
+
+    </main>
+
+    <aside class="left-panel panel-v-scroll">
+        <div class="nav-header">
+            <a href="#!accpount">
+                <div class="dropdown profile-element">
+                    <span>
+                        <img class="img-circle" alt="image" src="img/profile_small.jpg">
+                    </span>
+                    <span class="clear">
+                        <span class="block m-t-xs">
+                            <strong class="font-bold">David Williams</strong>
+                        </span>
+                        <span class="text-muted text-xs block">Art Director <b class="caret"></b></span>
+                    </span>
+                </div>
+            </a>
+        </div>
+        <div class="y-scroller-wrapper">
+            <nav class="main-nav" role="navigation"></nav>
+        </div>
+        <div class="action-items"></div>
+    </aside>
+
+    <footer class="toolbar">
+        <nav class="toolbar-top-menu"></nav>
+        <nav class="toolbar-sub-menu"></nav>
+    </footer>
+
+</body>
+</html>

@@ -40,14 +40,33 @@ module.exports = function (grunt) {
                 
 			    ],
 			    dest: 'js/Fast-Furniture.app.min.js'
+			},
+			deferred: {
+			    src: [
+                    "js/dev/services/deferred/*.js",
+                    "js/dev/controllers/deferred/*.js"
+
+			    ],
+			    dest: 'js/deferred.min.js'
 			}
 		},
 		uncss: {
-		    dist: {
+		    critical: {
 		        files: {
 		            'css/critical.site.css': ['http://localhost:7856/critical.html']
 		        }
+		    },
+		    initial: {
+		        files: {
+		            'css/initial.site.css': ['http://localhost:7856/initial.html']
+		        }
+		    },
+		    deferred: {
+		        files: {
+		            'css/deferred.site.css': ['http://localhost:7856/deferred.html']
+		        }
 		    }
+
 		}
 	});
 

@@ -221,6 +221,7 @@
     <Content Include="critical_files\spa.js" />
     <Content Include="critical_files\spapm.js" />
     <Content Include="critical_files\touch.css" />
+    <Content Include="css\critical.site.css" />
     <Content Include="css\dev\app.css" />
     <Content Include="css\dev\ui\action-menu.css" />
     <Content Include="css\dev\ui\grid.css" />
@@ -228,10 +229,13 @@
     <Content Include="css\dev\ui\typography.css" />
     <Content Include="css\dev\views\categories.css" />
     <Content Include="css\dev\views\deferred\changePassword.css" />
+    <Content Include="css\dev\views\deferred\register.css" />
     <Content Include="css\dev\views\deferred\registerstatus.css" />
     <Content Include="css\dev\views\deferred\shoppingCart.css" />
     <Content Include="css\dev\views\deferred\static.css" />
     <Content Include="css\libs\bootstrap.lean.min.css" />
+    <Content Include="css\site.min.css" />
+    <Content Include="deferred.html" />
     <Content Include="fonts\fastfurniture-codes.css" />
     <Content Include="fonts\fastfurniture-embedded.css" />
     <Content Include="fonts\fastfurniture.css" />
@@ -239,9 +243,7 @@
     <Content Include="css\libs\touch.css" />
     <Content Include="css\dev\ui\animations.css" />
     <Content Include="css\dev\views\category.css" />
-    <Content Include="css\dev\views\deferred\about.css" />
     <Content Include="css\dev\views\deferred\account.css" />
-    <Content Include="css\dev\views\deferred\feedback.css" />
     <Content Include="css\dev\views\deferred\my.favorites.css" />
     <Content Include="css\dev\views\deferred\new.account.css" />
     <Content Include="css\dev\views\deferred\order.confirmation.css" />
@@ -269,6 +271,7 @@
     <Content Include="gruntfile.js" />
     <Content Include="img\profile_small.jpg" />
     <Content Include="index.html" />
+    <Content Include="initial.html" />
     <Content Include="js\dev\controllers\categories.js" />
     <Content Include="js\dev\controllers\category.js" />
     <Content Include="js\dev\controllers\deferred\about.js" />
@@ -362,9 +365,7 @@
     <Content Include="css\dev\mixins.less" />
     <Content Include="css\dev\variables.less" />
     <Content Include="css\dev\views\category.less" />
-    <Content Include="css\dev\views\deferred\about.less" />
     <Content Include="css\dev\views\deferred\account.less" />
-    <Content Include="css\dev\views\deferred\feedback.less" />
     <Content Include="css\dev\views\deferred\my.favorites.less" />
     <Content Include="css\dev\views\deferred\new.account.less" />
     <Content Include="css\dev\views\deferred\order confirmation.less" />
@@ -390,7 +391,6 @@
     <Content Include="fonts\fastfurniture.ttf" />
     <Content Include="fonts\fastfurniture.woff" />
     <None Include="Project_Readme.html" />
-    <Content Include="Views\Home\views\about.cshtml" />
     <Content Include="Views\Home\views\account.cshtml" />
     <Content Include="Views\Home\views\category.cshtml" />
     <Content Include="Views\Home\views\forgotemail.cshtml" />
@@ -398,7 +398,6 @@
     <Content Include="Views\Home\views\home.cshtml" />
     <Content Include="Views\Home\views\login.cshtml" />
     <Content Include="Views\Home\views\myfavorites.cshtml" />
-    <Content Include="Views\Home\views\newaccount.cshtml" />
     <Content Include="Views\Home\views\NotFound.cshtml" />
     <Content Include="Views\Home\views\orderconfirmation.cshtml" />
     <Content Include="Views\Home\views\orders.cshtml" />
