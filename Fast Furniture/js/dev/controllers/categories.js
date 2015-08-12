@@ -18,12 +18,6 @@ FastFurniture.fn.categories = FastFurniture.fn.fastFurnitureController.extend({
             data: { "categories": categories }
         });
 
-    },
-
-    callMe: function () {
-
-        console.log("called me");
-
     }
 
 });

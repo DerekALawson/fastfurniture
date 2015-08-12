@@ -676,8 +676,6 @@
 
         //},
 
-
-
         getContacts: function (success) {
 
             return this.getCachedObject({
@@ -725,7 +723,6 @@
 
         },
 
-
         searchProducts: function (term, success) {
 
             return this.getCachedObject({
@@ -748,9 +745,6 @@
 
 
         }
-
-
-
 
     });
 

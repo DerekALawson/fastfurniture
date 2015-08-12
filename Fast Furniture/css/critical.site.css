@@ -10,10 +10,22 @@ body {
   margin: 0px;
 }
 
-aside,
-footer,
-header,
- main,
+aside {
+  display: block;
+}
+
+footer {
+  display: block;
+}
+
+header {
+  display: block;
+}
+
+main {
+  display: block;
+}
+
 nav {
   display: block;
 }
@@ -22,12 +34,19 @@ a {
   background: none;
 }
 
-a:active ,
+a:active {
+  outline: 0px;
+}
+
 a:hover {
   outline: 0px;
 }
 
-b, strong {
+b {
+  font-weight: bold;
+}
+
+strong {
   font-weight: bold;
 }
 
@@ -224,11 +243,11 @@ h1 {
 }
 
 .win-backbutton {
-  display: none;
+  display: inline-block;
 }
 
 .back-btn {
-  display: none;
+  display: block;
 }
 
 .main-content {
@@ -267,6 +286,14 @@ h1 {
     display: inline-block;
   }
 
+  .back-btn {
+    margin: 3px auto;
+    width: 16px;
+    height: 16px;
+    display: none;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABrSURBVDhPYxhwwAilUcC/f/9SgJQ1EH9hZGSsBOIvYAliAFBzwX8gANKfgZQNVJg4MDQ1M4I0AwOpH8QBagYF1hsQm2gANKAfZDu5AMUQIP0cSGmABUkFw8+QZiDeD8TLgYbwQIUHJWBgAAATadBlQVYlKgAAAABJRU5ErkJggg==");
+    background-repeat: no-repeat;
+  }
 }
 
 @media all and (min-width:600px) {
@@ -299,9 +326,124 @@ h1 {
 
 /*** uncss> filename: http://localhost:7856/css/dev/ui/typography.css ***/
 
+.type-xx-large-internal) {
+  font-size: 42pt;
+  font-weight: 200;
+  line-height: 1.1429;
+  letter-spacing: 0px;
+}
+
 /*** uncss> filename: http://localhost:7856/css/dev/ui/forms.css ***/
 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>IIS 10.0 Detailed Error - 404.0 - Not Found</title> 
+<style type="text/css"> 
+<!-- 
+body {
+  margin: 0;
+  font-size: .7em;
+  font-family: Verdana,Arial,Helvetica,sans-serif;
+}
+
+a:link,
+a:visited {
+  color: #007EFF;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2.4em;
+  margin: 0;
+  color: #FFF;
+}
+
+.clear {
+  clear: both;
+}
+
+--> 
+</style> 
+ 
+</head> 
+<body> 
+<div id="content"> 
+<div class="content-container"> 
+  <h3>HTTP Error 404.0 - Not Found</h3> 
+  <h4>The resource you are looking for has been removed,
+or is temporarily unavailable.</h4> 
+</div> 
+<div class="content-container"> 
+ <fieldset><h4>Most likely causes:</h4> 
+  <ul> 	<li>The directory or file specified does not exist on the Web server.</li> 	<li>The URL contains a typographical error.</li> 	<li>A custom filter or module,
+restricts access to the file.</li> </ul> 
+ </fieldset> 
+</div> 
+<div class="content-container"> 
+ <fieldset><h4>Things you can try:</h4> 
+  <ul> 	<li>Create the content on the Web server.</li> 	<li>Review the browser URL.</li> 	<li>Check the failed request tracing log and see which module is calling SetStatus. For more information,
+click <a href="http://go.microsoft.com/fwlink/?LinkID=66439">here</a>. </li> </ul> 
+ </fieldset> 
+</div> 
+ 
+<div class="content-container"> 
+ <fieldset><h4>Detailed Error Information:</h4> 
+  <div id="details-left"> 
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tr class="alt"><th>Module</th><td>&nbsp;&nbsp;&nbsp;IIS Web Core</td></tr> 
+    <tr><th>Notification</th><td>&nbsp;&nbsp;&nbsp;MapRequestHandler</td></tr> 
+    <tr class="alt"><th>Handler</th><td>&nbsp;&nbsp;&nbsp;StaticFile</td></tr> 
+    <tr><th>Error Code</th><td>&nbsp;&nbsp;&nbsp;0x80070002</td></tr> 
+     
+   </table> 
+  </div> 
+  <div id="details-right"> 
+   <table border="0" cellpadding="0" cellspacing="0"> 
+    <tr class="alt"><th>Requested URL</th><td>&nbsp;&nbsp;&nbsp;http://localhost:7856/css/dev/ui/forms.css</td></tr> 
+    <tr><th>Physical Path</th><td>&nbsp;&nbsp;&nbsp;C:\Source Code\Web Properties\Fast Furniture\Fast Furniture\css\dev\ui\forms.css</td></tr> 
+    <tr class="alt"><th>Logon Method</th><td>&nbsp;&nbsp;&nbsp;Anonymous</td></tr> 
+    <tr><th>Logon User</th><td>&nbsp;&nbsp;&nbsp;Anonymous</td></tr> 
+    <tr class="alt"><th>Request Tracing Directory</th><td>&nbsp;&nbsp;&nbsp;C:\Users\Chris\Documents\IISExpress\TraceLogFiles\FAST FURNITURE</td></tr> 
+   </table> 
+   <div class="clear"></div> 
+  </div> 
+ </fieldset> 
+</div> 
+ 
+<div class="content-container"> 
+ <fieldset><h4>More Information:</h4> 
+  This error means that the file or directory does not exist on the server. Create the file or directory and try the request again. 
+  <p><a href="http://go.microsoft.com/fwlink/?LinkID=62293&amp;IIS70Error=404,
+0,
+0x80070002,
+10240">View more information &raquo;</a></p> 
+   
+ </fieldset> 
+</div> 
+</div> 
+</body> 
+</html> 
+ 
 /*** uncss> filename: http://localhost:7856/critical_files/navigation.css ***/
+.action-panel {
+  background: rgb(222, 222, 222);
+  transition: left 1s ease-out;
+  left: -220px;
+  top: 70px;
+  width: 220px;
+  bottom: 0px;
+  color: rgb(0, 0, 0);
+  display: block;
+  position: absolute;
+  -moz-transition: left 1s ease-out;
+  -o-transition: left 1s ease-out;
+  -webkit-transition: left 1s ease-out;
+}
 
 .left-panel {
   background: rgb(222, 222, 222);
@@ -334,6 +476,9 @@ h1 {
 .hamburger-nav {
   margin: 10px 2em 10px 5px;
   border: 1px solid rgb(41, 56, 70);
+  -moz-border-image: none;
+  -o-border-image: none;
+  -webkit-border-image: none;
   border-image: none;
   width: 120px;
   height: 40px;

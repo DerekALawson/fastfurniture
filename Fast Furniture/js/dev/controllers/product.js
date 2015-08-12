@@ -21,7 +21,8 @@ FastFurniture.fn.product = FastFurniture.fn.fastFurnitureController.extend({
                     data: response,
                     callback: function () {
 
-                        document.querySelector(".add-to-cart").addEventListener("click", prod.addProductToCart);
+                        document.querySelector(".add-to-cart")
+                            .addEventListener("click", prod.addProductToCart);
 
                     }
                 });
@@ -30,7 +31,7 @@ FastFurniture.fn.product = FastFurniture.fn.fastFurnitureController.extend({
                     targetSelector: ".product-details-related-products",
                     templateName: "relatedProduct",
                     data: response
-                }, window.performance.now());
+                });
 
             } catch (e) {
 

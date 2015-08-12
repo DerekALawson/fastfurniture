@@ -15,7 +15,11 @@
                 <%}else{%>
                 src="https://az763773.vo.msecnd.net/mobile/<%this.products[index].Photo%>"
                 <%}%> 
- 
+                srcset="https://az763773.vo.msecnd.net/thumb/<%this.products[index].Photo%> 116w,
+                        https://az763773.vo.msecnd.net/mobile/<%this.products[index].Photo%> 300w,
+                        https://az763773.vo.msecnd.net/display/<%this.products[index].Photo%> 400w,
+                        https://az763773.vo.msecnd.net/originals/<%this.products[index].Photo%> 1000w"
+
                   class="product-grid-photo">
             <figcaption class="item-grid-photo-caption"><%this.products[index].Name%></figcaption>
         </a>

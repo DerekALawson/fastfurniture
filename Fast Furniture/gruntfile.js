@@ -1,3 +1,4 @@
+/// <binding />
 module.exports = function (grunt) {
 
 
