@@ -33,24 +33,24 @@
 
             this.support = $.buildVendorNames();
 
-            this.touchType = window.navigator.msPointerEnabled ? "pointer" :
+            this.touchType = window.navigator.pointerEnabled ? "pointer" :
                                 "ontouchstart" in window ? "touch" : "mouse";
 
             this.hasMouse = ("ontouchstart" in window && "onmousedown" in window);
 
-            this.touchStart = this.touchType === "pointer" ? "MSPointerDown" :
+            this.touchStart = this.touchType === "pointer" ? "pointerdown" :
                             this.touchType === "touch" ? "touchstart" : "mousedown";
 
-            this.touchEnd = this.touchType === "pointer" ? "MSPointerUp" :
+            this.touchEnd = this.touchType === "pointer" ? "pointerup" :
                             this.touchType === "touch" ? "touchend" : "mouseup";
 
-            this.touchOut = this.touchType === "pointer" ? "MSPointerOut" :
+            this.touchOut = this.touchType === "pointer" ? "pointerout" :
                             this.touchType === "touch" ? "touchcancel" : "mouseout";
 
-            this.touchMove = this.touchType === "pointer" ? "MSPointerMove" :
+            this.touchMove = this.touchType === "pointer" ? "pointermove" :
                             this.touchType === "touch" ? "touchmove" : "mousemove";
 
-            this.touchCancel = this.touchType === "pointer" ? "MSPointerCancel" :
+            this.touchCancel = this.touchType === "pointer" ? "pointercancel" :
                             this.touchType === "touch" ? "touchcancel" : "mouseout";
 
             if (this.hasmsGesture) {
@@ -63,7 +63,7 @@
             return this;
         },
 
-        version: "0.0.7",
+        version: "0.1.0",
 
         hasMouse: "",
         touchType: "",
@@ -85,8 +85,6 @@
                 [].forEach.call(this.node, function (el) {
 
                     el.addEventListener("gesturestart", function (evt) {
-
-                    //    evt.preventDefault();
 
                     });
 
@@ -125,7 +123,7 @@
 
                         t.target = el;
 
-                        el.addEventListener("MSPointerDown", function (evt) {
+                        el.addEventListener("pointerdown", function (evt) {
 
                             if (t.target) {
 
@@ -143,13 +141,12 @@
                         });
 
                         ///Double Tap functionality
-                        el.addEventListener("MSPointerDown", function (evt) {
+                        el.addEventListener("pointerdown", function (evt) {
                             that.doDoubleTap(evt, el, settings);
                         });
 
                         ///Double Tap functionality
                         el.addEventListener("MSGestureEnd", function (evt) {
-                            // console.info("MSGestureEnd");
                             that.endGesture(evt);
                         });
 
@@ -248,16 +245,8 @@
         processSwipe: function (el, e, settings, m) {
 
             var that = this;
-                //horizontal = false,
-                //vertical = false;
 
             m = m || {};
-
-            //if (that.swipeX !== null || that.swipeY !== null) {
-            //    horizontal = Math.abs((e.clientX - that.swipeX)) >
-            //                Math.abs((e.clientY - that.swipeY));
-            //    vertical = !horizontal;
-            //}
 
             if (el.hasAttribute(settings.swipeRight) && !that.swipping) {
 
@@ -268,7 +257,6 @@
                     (e.clientX - that.swipeX) > settings.swipeRightThreshold) {
 
                     if (!that.swipping) {
-                        // console.info("swipeRight");
 
                         that.swipping = true;
 
@@ -290,7 +278,6 @@
                         (e.clientX - that.swipeX) < settings.swipeLeftThreshold) {
 
                     if (!that.swipping) {
-                        // console.info("swipe Left");
 
                         that.swipping = true;
 
@@ -318,7 +305,6 @@
                         (clientY - that.swipeY) < settings.swipeUpThreshold) {
 
                         if (!that.swipping) {
-                            // console.info("swipeUp");
 
                             that.swipping = true;
 
@@ -342,7 +328,7 @@
                     (e.clientY - that.swipeY) > settings.swipeDownThreshold) {
 
                     if (!that.swipping) {
-                        // console.info("swipe Down");
+
                         that.swipping = true;
 
                         that.swipeY = null;
@@ -365,25 +351,15 @@
             var el = e.target,
                 settings = this.settings;
 
-        //    e.preventDefault();
-
-            // console.info("gesture Change \r\n" +
-            //              el.hasAttribute(settings.rotateIndicator) + "\r\n");
-
             if (el.hasAttribute(settings.rotateIndicator) &&
                     Math.abs(e.rotation) > settings.rotateThreshold) {
-                //probably going to remove this or make it an optional setting to trigger
-                //el.style.webkitTransform =
-                //        'rotate(' + (el.gStartRotation + e.rotation) + 'deg)';
 
                 this.rotateCallback(e);
             }
 
             if (el.hasAttribute(settings.scaleIndicator) &&
                     Math.abs(e.scale) > settings.scaleThreshold) {
-                //probably going to remove this or make it an optional setting to trigger
-                //el.style.webkitTransform =
-                //        'scale(' + (el.gStartScale * e.scale) + ') ';
+
                 this.scaleCallback(e);
             }
 
@@ -563,17 +539,14 @@
 
                 var moveHandler = function (evt) {
 
-               //     evt.preventDefault();
                     that.touchMoveHandler.call(that, evt, el, settings);
                 },
                     endHandler = function (evt) {
 
-      //                  evt.preventDefault();
                         that.endTouchHandler.call(that, evt, el, settings);
                     },
                     startHandler = function (evt) {
 
-                  //      evt.preventDefault();
                         that.startTouchHandler.call(that, evt, el, settings);
                     };
 
@@ -582,36 +555,17 @@
                 el.addEventListener(that.touchEnd, endHandler);
                 el.addEventListener(that.touchCancel, endHandler);
 
-                //el.addEventListener("mouseout", endHandler);
-                //el.addEventListener("mouseup", endHandler);
-
-                el.addEventListener(that.touchEnd, function () {
-                    // console.info("touchEnd");
-                });
-
-                //el.addEventListener("mouseout", function () {
-                //    // console.info("mouseout");
+                //el.addEventListener(that.touchEnd, function () {
+                //    // console.info("touchEnd");
                 //});
 
-                //el.addEventListener("mouseup", function () {
-                //    // console.info("mouseup");
+                //el.addEventListener(that.touchCancel, function () {
+                //    // console.info("touchCancel");
                 //});
 
-                el.addEventListener(that.touchCancel, function () {
-                    // console.info("touchCancel");
-                });
-
-                el.addEventListener(that.touchOut, function () {
-                    // console.info("touchOut");
-                });
-
-                //if (that.hasMouse) {
-
-                //    el.addEventListener("mousedown", startHandler);
-                //    el.addEventListener("mousemove", moveHandler);
-                //    el.addEventListener("mouseup", endHandler);
-
-                //}
+                //el.addEventListener(that.touchOut, function () {
+                //    // console.info("touchOut");
+                //});
 
             });
 
@@ -730,8 +684,6 @@
             var that = this;
             settings = this.settings;
 
-         //   evt.preventDefault();
-
             if (el.hasAttribute(settings.moveIndicator)) {
 
                 if (!el.hasAttribute(settings.moveTouchEnded) &&
@@ -743,8 +695,6 @@
 
                     el.style[that.support.transform] = "translate3D(" + translate.translationX + "px, " +
                                                     translate.translationY + "px, 0)";
-
-                    //                    console.log(that.support.transform + ": " + el.style[that.support.transform]);
 
                 }
 
@@ -912,7 +862,7 @@
 
             var //that = this,
                 settings = this.settings;
-                //tl = document.querySelector(".touch-log");
+            //tl = document.querySelector(".touch-log");
 
             if (callback) {
                 settings.doubleTapCallback = callback;
@@ -976,7 +926,7 @@
         preventTapHoldContext: function (elm) {
 
             elm.addEventListener("contextmenu", function (e) {
-              //  e.preventDefault();    // Disables system menu
+
             }, false);
 
         },
@@ -1008,10 +958,6 @@
         tapHoldCallback: function (evt) {
 
             var that = this;
-
-          //  evt.preventDefault();
-
-            // // console.info("evt.detail - " + evt.detail);
 
             if (evt.detail & evt.MSGESTURE_FLAG_BEGIN) {
 

@@ -2,10 +2,7 @@
 @font-face {
     font-family: 'fastfurniture';
     src: url('../../fonts/fastfurniture.eot?11647599');
-    src: url('../../fonts/fastfurniture.eot?11647599#iefix') format('embedded-opentype'), 
-         url('../../fonts/fastfurniture.woff?11647599') format('woff'), 
-         url('../../font/fastfurniture.ttf?11647599') format('truetype'), 
-         url('../../fonts/fastfurniture.svg') format('svg');
+    src: url('../../fonts/fastfurniture.eot?11647599#iefix') format('embedded-opentype'), url('../../fonts/fastfurniture.woff?11647599') format('woff'), url('../../font/fastfurniture.ttf?11647599') format('truetype'), url('../../fonts/fastfurniture.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -159,7 +156,7 @@ h4, .panel-small-title {
 }
 
 .full-text a {
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: 500;
 }
 
@@ -183,7 +180,7 @@ h4, .panel-small-title {
 }
 
 .site-header .view-title {
-    font-size: 2.25em;
+    font-size: 1.75em;
     width: 45%;
     margin: 0;
     line-height: 80px;
@@ -222,7 +219,9 @@ article header h1.view-title {
     display: block;
 }
 
-
+.form-horizontal {
+    clear: both;
+}
 
 @media screen and (max-width: 320px) {
     @-ms-viewport {
@@ -306,6 +305,7 @@ article header h1.view-title {
     }
 
     .site-header .view-title {
+        font-size: 2.25em;
         left: 20%;
         top: 5%;
     }
