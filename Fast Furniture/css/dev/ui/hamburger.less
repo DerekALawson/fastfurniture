@@ -1,0 +1,121 @@
+﻿// Core variables and mixins
+@import "../variables.less";
+@import "../mixins.less";
+
+
+
+/* Start Hamburger */
+.hamburger-nav {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin: 0 3%;
+    line-height: 26pt;
+    float: left;
+}
+
+
+.hamburger-bar-wrapper {
+    float: left;
+    width: 45px;
+    height:32px;
+    display: inline-block;
+    margin: 0 0 5px 0;
+}
+
+
+.hamburger-bar,
+.hamburger-bar:before,
+.hamburger-bar:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 2px;
+    width: 35px;
+    background: @white;
+    position: absolute;
+    display: block;
+    content: '';
+    top: 16px;
+
+}
+
+.hamburger-bar:before {
+    top: 8px;
+}
+
+.hamburger-bar:after {
+    bottom: 8px;
+}
+
+.hamburger-bar-text {
+    line-height: 12px;
+    margin: 0 auto;
+    width: 35px;
+    text-align: center;
+    display: inline-block;
+    float: left;
+}
+
+.expand-menu .hamburger-bar,
+.expand-menu .hamburger-bar:before,
+.expand-menu .hamburger-bar:after {
+    -moz-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+}
+
+.expand-menu .hamburger-bar {
+
+  background-color: transparent;
+
+}
+
+.expand-menu .hamburger-bar:before, 
+.expand-menu .hamburger-bar:after {
+
+  top: 8px;
+
+}
+
+.expand-menu .hamburger-bar:before {
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.expand-menu .hamburger-bar:after {
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+
+
+@media (min-width: 720px) {
+
+    .hamburger-nav {
+        margin: 1% 3%;
+    }
+}
+
+@media (min-width: 1120px) {
+
+    .hamburger-nav {
+        margin: 5px 3%;
+    }
+}
+
+@media (min-width:1180px) {
+
+    .hamburger-nav,
+    .expand-menu .hamburger-nav {
+        /*display: none;*/
+    }
+}
+
+/* End Hamburger */

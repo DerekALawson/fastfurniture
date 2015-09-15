@@ -213,7 +213,11 @@
     <Content Include="css\dev\app.css" />
     <Content Include="css\dev\ui\action-menu.css" />
     <Content Include="css\dev\ui\grid.css" />
+    <Content Include="css\dev\ui\hamburger.css" />
+    <Content Include="css\dev\ui\loader.css" />
     <Content Include="css\dev\ui\navigation.css" />
+    <Content Include="css\dev\ui\search.css" />
+    <Content Include="css\dev\ui\social.css" />
     <Content Include="css\dev\ui\typography.css" />
     <Content Include="css\dev\views\categories.css" />
     <Content Include="css\dev\views\deferred\changePassword.css" />
@@ -259,7 +263,6 @@
     <Content Include="gruntfile.js" />
     <Content Include="img\profile_small.jpg" />
     <Content Include="index.html" />
-    <Content Include="initial.html" />
     <Content Include="js\deferred.min.js" />
     <Content Include="js\dev\controllers\categories.js" />
     <Content Include="js\dev\controllers\category.js" />
@@ -302,6 +305,13 @@
     <Content Include="js\libs\spa.js" />
     <Content Include="js\libs\toolbar.min.js" />
     <Content Include="app.cache" />
+    <Content Include="Views\dev\css.html" />
+    <Content Include="Views\dev\deferred.html" />
+    <Content Include="Views\dev\scripts.html" />
+    <Content Include="Views\production\css.html" />
+    <Content Include="Views\production\deferred.html" />
+    <Content Include="Views\production\scripts.html" />
+    <Content Include="Views\static.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -312,7 +322,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -360,10 +369,10 @@
     <Content Include="css\dev\views\deferred\account.less" />
     <Content Include="css\dev\views\deferred\my.favorites.less" />
     <Content Include="css\dev\views\deferred\new.account.less" />
-    <Content Include="css\dev\views\deferred\order confirmation.less" />
+    <Content Include="css\dev\views\deferred\order.confirmation.less" />
     <Content Include="css\dev\views\deferred\orders.less" />
-    <Content Include="css\dev\views\deferred\payment options.less" />
-    <Content Include="css\dev\views\deferred\place order.less" />
+    <Content Include="css\dev\views\deferred\payment.options.less" />
+    <Content Include="css\dev\views\deferred\place.order.less" />
     <Content Include="css\dev\views\deferred\social.less" />
     <Content Include="css\dev\views\forgotemail.less" />
     <Content Include="css\dev\views\forgotpassword.less" />
@@ -382,6 +391,24 @@
     <Content Include="fonts\fastfurniture.eot" />
     <Content Include="fonts\fastfurniture.ttf" />
     <Content Include="fonts\fastfurniture.woff" />
+    <Content Include="css\dev\ui\social.less" />
+    <Content Include="css\dev\ui\typography.less" />
+    <Content Include="css\dev\ui\navigation.less" />
+    <Content Include="css\dev\ui\grid.less" />
+    <Content Include="css\dev\ui\animations.less" />
+    <Content Include="css\dev\ui\action-menu.less" />
+    <Content Include="css\dev\views\categories.less" />
+    <Content Include="css\dev\views\deferred\changePassword.less" />
+    <Content Include="css\dev\views\deferred\register.less" />
+    <Content Include="css\dev\views\deferred\static.less" />
+    <Content Include="css\dev\views\deferred\shoppingCart.less" />
+    <Content Include="css\dev\views\deferred\registerstatus.less" />
+    <Content Include="css\dev\ui\hamburger.css.map" />
+    <Content Include="css\dev\ui\hamburger.less" />
+    <Content Include="css\dev\ui\loader.css.map" />
+    <Content Include="css\dev\ui\loader.less" />
+    <Content Include="css\dev\ui\search.css.map" />
+    <Content Include="css\dev\ui\search.less" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Home\views\account.cshtml" />
     <Content Include="Views\Home\views\category.cshtml" />
