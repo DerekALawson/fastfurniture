@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.Http;
 using WebApi.OutputCache.V2;
 using WebApi.OutputCache.V2.TimeAttributes;
+using Newtonsoft.Json;
 
 namespace Fast_Furniture.Controllers
 {
@@ -37,14 +38,38 @@ namespace Fast_Furniture.Controllers
         public HttpResponseMessage Product(string slug)
         {
 
-            string content = File.ReadAllText(HttpContext.Current.Server.MapPath(@"~\data\products\" + slug + ".json"));
-
-            var resp = new HttpResponseMessage()
+            try
             {
-                Content = new StringContent(content)
-            };
-            resp.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            return resp;
+
+                string content = File.ReadAllText(HttpContext.Current.Server.MapPath(@"~\data\products\" + slug + ".json"));
+
+                var resp = new HttpResponseMessage()
+                {
+                    Content = new StringContent(content)
+                };
+
+                resp.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                return resp;
+
+            }
+            catch (Exception ex)
+            {
+
+                string content = JsonConvert.SerializeObject(ex);
+
+                var resp = new HttpResponseMessage()
+                {
+                    Content = new StringContent(content)
+                };
+
+                resp.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                resp.StatusCode = HttpStatusCode.InternalServerError;
+
+                return resp;
+
+                throw;
+            }
+
 
         }
 
