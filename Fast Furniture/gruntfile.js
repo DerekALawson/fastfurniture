@@ -297,6 +297,26 @@ module.exports = function (grunt) {
                       "css/dev/ui/grid.css",
                       "css/dev/views/*.css"
                     ],
+                    "criticalCSS": "views/criticalcssmin.html",
+                    "indexSrc": "views/static.html",
+                    "src": [
+                      "Views/Home/layouts/*.html",
+                      "Views/Home/views/*.html",
+                      "Views/Home/templates/*.html"
+                    ],
+                    "dest": "index.html"
+                }
+
+            },
+            production: {
+                options: {
+                    "scripts": [
+                      "js/Fast-Furniture.app.min.js"
+                    ],
+                    "styles": [
+                      "css/site.min.css"
+                    ],
+                    "criticalCSS": "views/criticalcssmin.html",
                     "indexSrc": "views/static.html",
                     "src": [
                       "Views/Home/layouts/*.html",

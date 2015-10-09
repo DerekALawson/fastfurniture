@@ -488,7 +488,6 @@
     <Content Include="Views\Home\views\social.html" />
     <Content Include="Views\Home\deferred.cshtml" />
     <Content Include="Views\Home\layouts\fastFurnitureLayout.html" />
-    <Content Include="Views\Home\views\criticalcss.html" />
     <Content Include="Views\Home\templates\productGridItem.html" />
     <Content Include="Views\Home\templates\productDetail.html" />
     <Content Include="Views\Home\templates\categoryGridItem.html" />
@@ -499,7 +498,7 @@
     <Content Include="Views\Home\templates\userMenuProfile.html" />
     <Content Include="Views\Home\templates\relatedProduct.html" />
     <Content Include="Views\Home\templates\categoryListItem.html" />
-    <Content Include="Views\Home\views\criticalcssmin.html" />
+    <Content Include="Views\critical\criticalcssmin.html" />
     <Content Include="Views\Home\views\Contact.html" />
     <Content Include="Views\Home\views\Register.html" />
     <Content Include="Views\Home\views\registerSuccess.html" />
