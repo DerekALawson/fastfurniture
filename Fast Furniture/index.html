@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- This is the static page from the src template -->
+    <!-- This is the static page from the src template dsfsfsdfsdf -->
     <script>
 
         var ef = "?_escaped_fragment_=";
@@ -29,7 +29,6 @@
     </script>
 
     <meta content="on" http-equiv="cleartype">
-    <meta http-equiv="content-language" content="us-en">
 
     <link rel="dns-prefetch" href="//az763773.vo.msecnd.net/">
     <link rel="dns-prefetch" href="//images.professionalaspnet.com/">
@@ -38,34 +37,29 @@
     <title>Fast Furniture - An Example High Performance Single Page Application</title>
 
     <!-- critical css -->
-
     <!-- CSS References -->
 
-    <link id="spa-css" href="/css/libs/bootstrap.lean.min.css" rel="stylesheet" />
-    <link id="spa-css" href="/css/libs/spa.css" rel="stylesheet" />
-    <link id="animations-css" href="/css/dev/ui/animations.css" rel="stylesheet" />
-    <link id="touch-css" href="/css/libs/touch.css" rel="stylesheet" />
-    <link id="toolbar-css" href="/css/libs/toolbar.css" rel="stylesheet" />
-    <link id="app-css" href="/css/dev/app.css" rel="stylesheet" />
-    <link id="typography-css" href="/css/dev/ui/typography.css" rel="stylesheet" />
-    <link id="navigation-css" href="css/dev/ui/navigation.css" rel="stylesheet" />
-    <link id="action-menu-css" href="css/dev/ui/action-menu.css" rel="stylesheet" />
-    <link id="grid-css" href="/css/dev/ui/grid.css" rel="stylesheet" />
-    <link id="hamburger-css" href="/css/dev/ui/hamburger.css" rel="stylesheet" />
-    <link id="loader-css" href="/css/dev/ui/loader.css" rel="stylesheet" />
-    <link id="social-css" href="/css/dev/ui/social.css" rel="stylesheet" />
+    <link href="css/libs/bootstrap.lean.min.css" id="bootstrap.lean.min-css" rel="stylesheet" />
+    <link href="css/libs/spa.css" id="spa-css" rel="stylesheet" />
+    <link href="css/dev/ui/animations.css" id="animations-css" rel="stylesheet" />
+    <link href="css/libs/toolbar.css" id="toolbar-css" rel="stylesheet" />
+    <link href="css/libs/touch.css" id="touch-css" rel="stylesheet" />
+    <link href="css/dev/app.css" id="app-css" rel="stylesheet" />
+    <link href="css/dev/ui/typography.css" id="typography-css" rel="stylesheet" />
+    <link href="css/dev/ui/navigation.css" id="navigation-css" rel="stylesheet" />
+    <link href="css/dev/ui/action-menu.css" id="action-menu-css" rel="stylesheet" />
+    <link href="css/dev/ui/grid.css" id="grid-css" rel="stylesheet" />
+    <link href="css/dev/views/NotFound.css" id="NotFound-css" rel="stylesheet" />
+    <link href="css/dev/views/categories.css" id="categories-css" rel="stylesheet" />
+    <link href="css/dev/views/category.css" id="category-css" rel="stylesheet" />
+    <link href="css/dev/views/forgotemail.css" id="forgotemail-css" rel="stylesheet" />
+    <link href="css/dev/views/forgotpassword.css" id="forgotpassword-css" rel="stylesheet" />
+    <link href="css/dev/views/home.css" id="home-css" rel="stylesheet" />
+    <link href="css/dev/views/login.css" id="login-css" rel="stylesheet" />
+    <link href="css/dev/views/product.css" id="product-css" rel="stylesheet" />
+    <link href="css/dev/views/search.css" id="search-css" rel="stylesheet" />
 
-    <!-- Add library specific CSS references here -->
-    <link href="css/dev/views/category.css" rel="stylesheet" />
-    <link href="css/dev/views/categories.css" rel="stylesheet" />
-    <link href="css/dev/views/product.css" rel="stylesheet" />
-    <link href="css/dev/views/search.css" rel="stylesheet" />
-    <link href="css/dev/views/home.css" rel="stylesheet" />
-    <link href="css/dev/views/NotFound.css" rel="stylesheet" />
-    <link href="css/dev/views/login.css" rel="stylesheet" />
-    <link href="css/dev/views/forgotemail.css" rel="stylesheet" />
-    <link href="css/dev/views/forgotpassword.css" rel="stylesheet" />
-    
+
     <meta content="Making Furnishing Your World Fast" name="description">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -140,35 +134,798 @@
         <nav class="toolbar-sub-menu"></nav>
     </footer>
 
-    
+    <script id="fast-furniture-layout"
+            class="spa-layout"
+            spa-title="Fast Furniture"
+            spa-view-type="layout"
+            spa-transition="slide"
+            type="spa-layout">
 
-        <script src="/js/libs/spa.js"></script>
-        <script src="/js/libs/class.js"></script>
-        <script src="/js/libs/controller.js"></script>
-        <script src="/js/libs/dollarbill.min.js"></script>
-        <script src="/js/libs/simpleViewEngine.js"></script>
-        <script src="/js/libs/l2Storagecache.js"></script>
-        <script src="/js/libs/deeptissue.js"></script>
-        <script src="/js/libs/toolbar.min.js"></script>
+        <section class="spa-layout" spa-layout="fast-furniture-layout">
+            <section class="spa-child-view home-child-view main"></section>
+        </section>
 
-        <script src="/js/dev/Fast-Furniture.app.js"></script>
+    </script>
+    <script id="contact"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-contact"
+            spa-layout="fast-furniture-layout"
+            spa-route="contact"
+            type="spa-view">
 
-        <script src="/js/dev/services/Fast-Furniture.data.js"></script>
+        <section class="spa-view-contact">
 
-        <script src="/js/dev/fastFurnitureController.js"></script>
-        <script src="/js/dev/fastFurnitureAuthenticatedController.js"></script>
+            <h1 class="view-title">contact</h1>
 
-        <script src="js/dev/controllers/category.js"></script>
-        <script src="js/dev/controllers/categories.js"></script>
-        <script src="js/dev/controllers/product.js"></script>
-        <script src="js/dev/controllers/search.js"></script>
-        <script src="js/dev/controllers/home.js"></script>
-        <script src="js/dev/controllers/NotFound.js"></script>
-        <script src="js/dev/controllers/login.js"></script>
-        <script src="js/dev/controllers/forgotemail.js"></script>
-        <script src="js/dev/controllers/forgotpassword.js"></script>
+            <div class="contact-form">
 
-        <script src="/js/dev/Fast-Furniture.bootstrap.js"></script>
+                <form class="form-horizontal" name="contactForm">
+                    <div class="form-group">
+                        <label for="firstName" class="col-sm-2 control-label">First Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="firstName" placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="LastName" class="col-sm-2 control-label">Last Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="LastName" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" name="email" placeholder="Enter email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Message" class="col-sm-2 control-label">Message</label>
+                        <div class="col-sm-10">
+                            <textarea name="Message" cols="80" rows="10"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10 text-right">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <div class="contact-form-confirm hide">
+
+                <p>your request has been submitted</p>
+            </div>
+        </section>
+    </script>
+    <script id="forgotpassword"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-forgot-password"
+            spa-layout="fast-furniture-layout"
+            spa-route="forgot/password"
+            type="spa-view">
+
+        <section class="spa-view-forgot-password  col-sm-offset-2">
+
+            <h1>Forgot your password?</h1>
+
+            <p>Check your e-mal inbox for password recovery instructions.</p>
+        </section>
+    </script>
+    <script id="NotFound"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-404"
+            spa-layout="fast-furniture-layout"
+            spa-route="404"
+            type="spa-view">
+
+        <section class="spa-view-404">
+
+            <h1 class="view-title">Sorry There is No One Here By That Name.</h1>
+
+        </section>
+    </script>
+    <script id="register"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-register"
+            spa-layout="fast-furniture-layout"
+            spa-route="register"
+            type="spa-view">
+
+        <section class="spa-view-register">
+
+            <h1 class="view-title-large">Register</h1>
+
+            <p>Sign up for a Fast Furniture Account</p>
+
+            <div class="col-sm-8 y-scroller-wrapper">
+                <form class="form-horizontal" name="userRegistration">
+                    <div class="form-group">
+                        <label for="firstName" class="col-sm-2 control-label">First Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="firstName" placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="LastName" class="col-sm-2 control-label">Last Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="LastName" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" name="email" placeholder="Enter email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Password1" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" name="Password1" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Password2" class="col-sm-2 control-label">Confirm Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" name="Password2" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-offset-5 col-sm-10 text-right">
+                        <button type="button" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Create Account</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </script>
+    <script id="static"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-static"
+            spa-layout="fast-furniture-layout"
+            spa-route="s/:slug"
+            type="spa-view">
+
+        <section class="spa-view-static"></section>
+
+    </script>
+    <script id="account"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-account"
+            spa-layout="fast-furniture-layout"
+            spa-route="account"
+            type="spa-view">
+
+        <section class="spa-view-account">
+
+            <h1 class="view-title">Account</h1>
+
+        </section>
+    </script>
+    <script id="categories"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-categories"
+            spa-layout="fast-furniture-layout"
+            spa-route="categories"
+            type="spa-view">
+
+        <section class="spa-view-categories">
+
+            <div class="y-scroller-wrapper">
+
+                <div class="categories-grid"></div>
+
+            </div>
+        </section>
+
+    </script>
+    <script id="category"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-category"
+            spa-layout="fast-furniture-layout"
+            spa-route="category/:Name"
+            type="spa-view">
+
+        <section class="spa-view-category">
+
+            <h1 class="view-title-large">Category Furniture</h1>
+
+            <div class="child-categories"></div>
+
+            <div class="x-scroller-wrapper">
+
+                <div class="item-grid products-wrapper"></div>
+
+            </div>
+
+        </section>
+    </script>
+    <script id="changePassword"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-change-password"
+            spa-layout="fast-furniture-layout"
+            spa-route="changepassword"
+            type="spa-view">
+
+        <section class="spa-view-change-password">
+
+            <h1 class="view-title-large">Change Password</h1>
+
+        </section>
+    </script>
+
+    <script id="forgotemail"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-forgot-email"
+            spa-layout="fast-furniture-layout"
+            spa-route="forgot/email"
+            type="spa-view">
+
+        <section class="spa-view-forgot-email col-sm-offset-2">
+
+            <div class="col-sm-5">
+                <h1>Login</h1>
+                <h2>Forgot your e-mail?</h2>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">Username:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="username" class="username form-control" placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-5 text-right">
+                            <button class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </script>
+    <script id="forgotpassword"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-forgot-password"
+            spa-layout="fast-furniture-layout"
+            spa-route="forgot/password"
+            type="spa-view">
+
+        <section class="spa-view-forgot-password col-sm-offset-2">
+            <div class="col-sm-5">
+                <h1>Forgot your password?</h1>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">Username:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="username" class="username form-control" placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-5 text-right">
+                            <button class="btn btn-primary">Recover Password</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </script>
+    <script id="home"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-home"
+            spa-layout="fast-furniture-layout"
+            spa-route=""
+            type="spa-view">
+
+        <section class="spa-view-home">
+
+            <div class="x-scroller-wrapper">
+
+                <div class="item-grid products-wrapper"></div>
+            </div>
+        </section>
+    </script>
+    <script id="login"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-login"
+            spa-layout="fast-furniture-layout"
+            spa-route="login"
+            type="spa-view">
+
+        <section class="spa-view-login col-sm-offset-2">
+            <div class="col-sm-5">
+                <h1>Provide your e-mail and password</h1>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">Username:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="username" class="form-control username" placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">Password:</label>
+                        <div class="col-sm-10">
+                            <input type="password" name="password" class="form-control password" placeholder="Password" />
+                        </div>
+                    </div>
+                    <div class="checkbox col-sm-offset-2">
+                        <label class="checkbox" for="rememberme"><input type="checkbox" name="rememberme" />Remmeber Me</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-1 col-sm-10 text-right">
+                            <a class="btn btn-link" href="#!forgot/password">Forgot Password</a>
+                            <a class="btn btn-link" href="#!register">Sign Up</a>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </script>
+    <script id="myFavorites"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-my-favorites"
+            spa-layout="fast-furniture-layout"
+            spa-route="favorites"
+            type="spa-view">
+
+        <section class="spa-view-my-favorites"></section>
+    </script>
+    <script id="orderConfirmation"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-order-confirmation"
+            spa-layout="fast-furniture-layout"
+            spa-route="order/confirmation"
+            type="spa-view">
+
+        <section class="spa-view-order-confirmation"></section>
+    </script>
+    <script id="orders"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-orders"
+            spa-layout="fast-furniture-layout"
+            spa-route="orders"
+            type="spa-view">
+
+        <section class="spa-view-orders">
+
+            <div class="y-scroller-wrapper">
+                <header class="orders-header">
+                    <div class="col-md-1">id</div>
+                    <div class="col-md-3">Date</div>
+                    <div class="col-md-3">Total</div>
+                    <div class="col-md-5">Items</div>
+                </header>
+                <div class="row order-row">
+                    <div class="col-md-1">474747</div>
+                    <div class="col-md-3">5/6/2015</div>
+                    <div class="col-md-3">$998</div>
+                    <div class="col-md-5 orders-order-list">
+                        <div class="row">
+                            <div class="orders-order-name">foo bar</div>
+                            <div class="orders-order-price">$499</div>
+                        </div>
+                        <div class="row">
+                            <div class="orders-order-name">foo bar</div>
+                            <div class="orders-order-price">$499</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row order-row">
+                    <div class="col-md-1">48392</div>
+                    <div class="col-md-3">5/5/2015</div>
+                    <div class="col-md-3">$998</div>
+                    <div class="col-md-5 orders-order-list">
+                        <div class="row">
+                            <div class="orders-order-name">foo bar</div>
+                            <div class="orders-order-price">$499</div>
+                        </div>
+                        <div class="row">
+                            <div class="orders-order-name">foo bar</div>
+                            <div class="orders-order-price">$499</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </script>
+    <script id="paymentOptions"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-payment-option"
+            spa-layout="fast-furniture-layout"
+            spa-route="account/payment"
+            type="spa-view">
+
+        <section class="spa-view-payment-option">
+
+            <h1>Payment Options</h1>
+
+        </section>
+    </script>
+    <script id="placeOrder"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-place-order"
+            spa-layout="fast-furniture-layout"
+            spa-route="order/place"
+            type="spa-view">
+
+        <section class="spa-view-place-order"></section>
+    </script>
+    <script id="product"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-product"
+            spa-layout="fast-furniture-layout"
+            spa-route="product/:Name"
+            type="spa-view">
+
+        <section class="spa-view-product ">
+
+            <div class="y-scroller-wrapper full-text">
+
+                <section class="product-details"></section>
+
+                <section class="product-details-related-products"></section>
+            </div>
+        </section>
+    </script>
+    <script id="registerStatus"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-register-status"
+            spa-layout="fast-furniture-layout"
+            spa-route="registerstatus/:status"
+            type="spa-view">
+
+        <section class="spa-view-register-status">
+
+            <h1>Registration Success</h1>
+
+        </section>
+
+    </script>
+    <script id="search"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-search"
+            spa-layout="fast-furniture-layout"
+            spa-route="search/:query"
+            type="spa-view">
+
+        <section class="spa-view-search">
+
+            <form action="/search" name="furnitureSearch">
+                <div class="searchBox">
+                    <input id="searchTerm" class="search" spellcheck="true" autocapitalize="off"
+                           autofocus="" name="searchTerm" placeholder="search term" results="5" type="search" />
+                    <span class="search-input-icon"></span>
+                </div>
+            </form>
+
+            <div class="y-scroller-wrapper">
+                <div class="search-result-list">
+                </div>
+            </div>
+
+        </section>
+    </script>
+    <script id="shoppingCart"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-shopping-cart"
+            spa-layout="fast-furniture-layout"
+            spa-route="cart"
+            type="spa-view">
+
+        <section class="spa-view-shopping-cart">
+
+            <h1>Shopping Cart</h1>
+
+            <div class="shopping-cart-wrapper"></div>
+
+        </section>
+    </script>
+    <script id="social"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-social"
+            spa-layout="fast-furniture-layout"
+            spa-route="social"
+            type="spa-view">
+
+        <section class="spa-view-social"></section>
+    </script>
+    <script id="shoppingCartTemplate" type="text/x-simpleTemplate-template">
+
+        <div class="shopping-cart-items">
+
+            <%for(var orderItem in this.Items) {%>
+
+            <div class="shopping-cart-item">
+                <a href="#!product/<%this.Items[orderItem].Slug%>">
+                    <img alt="<%this.Items[orderItem].Name%>" src="https://az763773.vo.msecnd.net/thumb/<%this.Items[orderItem].Photos.Thumb%>" class="cart-item-photo">
+                    <span class="cart-item-name type-large"><%this.Items[orderItem].Name%></span>
+                </a>
+                <div class="cart-item-qty type-medium" data-id="<%this.Items[orderItem].Id%>"><%this.Items[orderItem].Qty%></div>
+                <div class="cart-item-price type-medium"><%this.Items[orderItem].Price%></div>
+                <div class="cart-item-delete">X</div>
+            </div>
+
+            <%}%>
+
+        </div>
+        <div class=" text-right col-sm-10 cart-actions">
+            <button class="btn btn-link btn-update">Update</button>
+            <a href="#!account/payment" class="btn btn-default btn-checkout">Check Out</a>
+        </div>
+
+        <div class="cart-totals">
+            <div class="cart-sales-tax"><label>Sales Tax: </label><%this.salesTax%></div>
+            <div class="cart-sales-shipping"><label>Shipping: </label><%this.shipping%></div>
+            <div class="cart-grand-total"><label>Grand Total: </label><%this.grandTotal%></div>
+        </div>
+
+
+    </script>
+    <script id="categoryGridItem" type="text/x-simpleTemplate-template">
+
+        <%for(var category in this.categories) {%>
+
+        <div class="item-grid-group">
+            <a class="item-grid-group-title" href="#!category/<%this.categories[category].Slug%>"><%this.categories[category].Name%> ></a>
+
+            <div class="product-wrapper">
+                <%for(var index in this.categories[category].Products) {%>
+
+                <div <%if(index === "0"){%>
+            class="item-grid-target-first"
+            <%}else{%>
+             class="item-grid-target"
+            <%}%>>
+            <a href="#!product/<%this.categories[category].Products[index].Slug%>">
+                <div class="item-grid-item-wrapper">
+
+                    <img alt="<%this.categories[category].Products[index].Name%>" class="product-grid-photo"
+                    <%if(index === "0"){%>
+                    src="https://az763773.vo.msecnd.net/display/<%this.categories[category].Products[index].Photo%>"
+                    <%}else{%>
+                    src="https://az763773.vo.msecnd.net/mobile/<%this.categories[category].Products[index].Photo%>"
+                    <%}%>
+                    srcset="https://az763773.vo.msecnd.net/thumb/<%this.categories[category].Products[index].Photo%> 116w,
+                            https://az763773.vo.msecnd.net/mobile/<%this.categories[category].Products[index].Photo%> 300w,
+                            https://az763773.vo.msecnd.net/display/<%this.categories[category].Products[index].Photo%> 400w,
+                            https://az763773.vo.msecnd.net/originals/<%this.categories[category].Products[index].Photo%> 1000w"
+                    >
+                    </div>
+                    <figcaption class="item-grid-photo-caption"><%this.categories[category].Products[index].Name%></figcaption>
+            </a>
+        </div>
+
+                <%}%>
+            </div>
+        </div>
+        <%}%>
+
+    </script>
+
+    <script id="categoryListItem" type="text/x-simpleTemplate-template">
+
+        <%for(var index in this.categories) {%>
+
+        <div class="categories-grid-item">
+            <a class="categories-grid-parent-title" href="#!category/<%this.categories[index].Slug%>"><%this.categories[index].Name%></a>
+
+            <div class="categories-grid-item-children">
+
+                <%for(var child in this.categories[index].Children) {%>
+
+                <a class="categories-grid-child-title" href="#!category/<%this.categories[index].Children[child].Slug%>"><%this.categories[index].Children[child].Name%></a>
+
+                <%}%>
+            </div>
+        </div>
+
+        <%}%>
+
+    </script>
+
+    <script id="childCategoryList" type="text/x-simpleTemplate-template">
+
+        <%for(var index in this.Children) {%>
+
+        <div class="categories-grid-item-children">
+
+            <a class="categories-grid-child-title" href="#!category/<%this.Children[index].Slug%>"><%this.Children[index].Name%></a>
+
+        </div>
+        <%}%>
+
+    </script>
+    <script id="menuItem" type="text/x-simpleTemplate-template">
+
+        <%for(var index in this.menu) {%>
+        <a href="#!<%this.menu[index].Slug%>" role="menuitem" class="home-nav"><span class="nav-icon <%this.menu[index].icon%>"></span><span class="nav-text"><%this.menu[index].Name%></span></a>
+        <%}%>
+
+    </script>
+    <script id="orderRecord" type="text/x-simpleTemplate-template">
+
+        <%for(var order in this.orders) {%>
+
+        <div class="item-grid-group">
+            <%this.order.id%>
+        </div>
+        <%}%>
+
+    </script>
+    <script id="productDetails" type="text/x-simpleTemplate-template">
+
+        <header class="product-detail-header">
+            <h1><%this.Name%></h1>
+        </header>
+
+        <span class="product-detail-photo-wrapper">
+            <img alt="<%this.Name%>" src="https://az763773.vo.msecnd.net/display/<%this.Photos.Original%>" class="product-detail-photo">
+        </span>
+
+        <div class="product-detail-list">
+            <div class="product-detail-list-item product-detail-price">$<%this.Price%></div>
+            <div class="product-detail-list-item order-btn"><button class="btn btn-default add-to-cart" data-product="<%this.Slug%>">Order Now</button></div>
+        </div>
+
+        <div class="product-detail-description">
+            <%this.Description%>
+        </div>
+
+
+    </script>
+    <script id="productGridGroup" type="text/x-simpleTemplate-template">
+
+        <%for(var index in this.groups) {%>
+        <div class="item-grid-group">
+            <h1 class="item-grid-group-title"><%this.groups[index].Name%></h1>
+
+            <div class="item-grid-group-items group-items-<%this.groups[index].Name%>"></div>
+
+        </div>
+
+        <%}%>
+    </script>
+
+    <script id="productGridItem" type="text/x-simpleTemplate-template">
+
+        <%for(var index in this.products) {%>
+
+        <div
+             <%if(index === "0"){%>
+            class="item-grid-target-first"
+            <%}else{%>
+             class="item-grid-target"
+            <%}%>>
+        <a href="#!product/<%this.products[index].Slug%>">
+            <img alt="<%this.products[index].Name%>"
+                                <%if(index === "0"){%>
+                src="https://az763773.vo.msecnd.net/display/<%this.products[index].Photo%>"
+                <%}else{%>
+                src="https://az763773.vo.msecnd.net/mobile/<%this.products[index].Photo%>"
+                <%}%>
+                srcset="https://az763773.vo.msecnd.net/thumb/<%this.products[index].Photo%> 116w,
+                        https://az763773.vo.msecnd.net/mobile/<%this.products[index].Photo%> 300w,
+                        https://az763773.vo.msecnd.net/display/<%this.products[index].Photo%> 400w,
+                        https://az763773.vo.msecnd.net/originals/<%this.products[index].Photo%> 1000w"
+
+                  class="product-grid-photo">
+            <figcaption class="item-grid-photo-caption"><%this.products[index].Name%></figcaption>
+        </a>
+    </div>
+
+        <%}%>
+
+    </script>
+    <script id="relatedProduct" type="text/x-simpleTemplate-template">
+
+        <%for(var index in this.Related) {%>
+
+        <div class="related-products-target">
+            <a href="#!product/<%this.Related[index].Slug%>">
+                <img alt="Product Name" src="https://az763773.vo.msecnd.net/thumb/<%this.Related[index].Photos.Thumb%>" class="replated-product-photo">
+                <figcaption class="related-products-photo-caption"><%this.Related[index].Name%></figcaption>
+            </a>
+        </div>
+
+        <%}%>
+
+    </script>
+
+    <script id="searchReultItems" type="text/x-simpleTemplate-template">
+
+        <%for(var index in this.products) {%>
+
+        <div class="item-grid-target">
+            <a href="#!product/<%this.products[index].Slug%>">
+                <img alt="<%this.products[index].Name%>"
+                     src="https://az763773.vo.msecnd.net/mobile/<%this.products[index].Photo%>"
+                     class="product-grid-photo">
+                <figcaption class="item-grid-photo-caption"><%this.products[index].Name%></figcaption>
+            </a>
+        </div>
+
+        <%}%>
+
+    </script>
+    <script id="staticText" type="text/x-simpleTemplate-template">
+
+        <article>
+
+            <header>
+
+                <h1 class="view-title"><%this.Title%></h1>
+
+            </header>
+
+            <%for(var index in this.Content) {%>
+
+            <p><%this.Content[index]%></p>
+
+            <%}%>
+
+        </article>
+
+    </script>
+    <script id="userMenuProfile" type="text/x-simpleTemplate-template">
+
+        <span>
+            <img class="img-circle" alt="image" src="<%this.Photos.thumb%>">
+        </span>
+        <span class="clear">
+            <span class="block m-t-xs">
+                <strong class="font-bold"><%this.Name%></strong>
+            </span>
+            <span class="text-muted text-xs block"><%this.Title%> <b class="caret"></b></span>
+        </span>
+
+    </script>
+
+
+    <script src="js/libs/spa.js" id="spa-script"></script>
+    <script src="js/libs/class.js" id="class-script"></script>
+    <script src="js/libs/controller.js" id="controller-script"></script>
+    <script src="js/libs/dollarbill.min.js" id="dollarbill.min-script"></script>
+    <script src="js/libs/simpleViewEngine.js" id="simpleViewEngine-script"></script>
+    <script src="js/libs/l2Storagecache.js" id="l2Storagecache-script"></script>
+    <script src="js/libs/deeptissue.js" id="deeptissue-script"></script>
+    <script src="js/libs/toolbar.min.js" id="toolbar.min-script"></script>
+    <script src="js/dev/Fast-Furniture.app.js" id="Fast-Furniture.app-script"></script>
+    <script src="js/dev/services/Fast-Furniture.data.js" id="Fast-Furniture.data-script"></script>
+    <script src="js/dev/fastFurnitureController.js" id="fastFurnitureController-script"></script>
+    <script src="js/dev/fastFurnitureAuthenticatedController.js" id="fastFurnitureAuthenticatedController-script"></script>
+    <script src="js/dev/controllers/NotFound.js" id="NotFound-script"></script>
+    <script src="js/dev/controllers/categories.js" id="categories-script"></script>
+    <script src="js/dev/controllers/category.js" id="category-script"></script>
+    <script src="js/dev/controllers/forgotemail.js" id="forgotemail-script"></script>
+    <script src="js/dev/controllers/forgotpassword.js" id="forgotpassword-script"></script>
+    <script src="js/dev/controllers/home.js" id="home-script"></script>
+    <script src="js/dev/controllers/login.js" id="login-script"></script>
+    <script src="js/dev/controllers/product.js" id="product-script"></script>
+    <script src="js/dev/controllers/search.js" id="search-script"></script>
+    <script src="js/dev/Fast-Furniture.bootstrap.js" id="Fast-Furniture.bootstrap-script"></script>
 
 </body>
 

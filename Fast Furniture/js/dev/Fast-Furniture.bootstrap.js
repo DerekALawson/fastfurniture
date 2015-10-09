@@ -1,4 +1,4 @@
-﻿
+﻿//kicks off the application
 
 var lsCache = l2Storeagecache(),
 	ve = simpleViewEngine({
@@ -10,7 +10,7 @@ var lsCache = l2Storeagecache(),
 	fastFurnitureData = new FastFurnitureData(lsCache),
 
 	fastFurniture = FastFurniture();
-
+    
 fastFurniture.appKey = "Fast-Furniture-";
 
 ve.setupAssets(function () {
@@ -25,6 +25,6 @@ ve.setupAssets(function () {
         "defaultTitle": "Fast Furniture"
     });
 
-    ve.loadImport("home/deferred", "deferred");
+    ve.loadImport("deferred.html", "deferred");
 
 });

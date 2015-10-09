@@ -5,18 +5,19 @@ module.exports = function (grunt) {
     require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
     grunt.loadNpmTasks("grunt-makeHTML");
+    grunt.loadNpmTasks('grunt-browser-sync');
 
 
-	// Project configuration.
-	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
-		cssmin: {
-			sitecss: {
-				options: {
-					banner: '/* My minified css file */'
-				},
-				files: {
-				    "css/site.min.css": [
+    // Project configuration.
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        cssmin: {
+            sitecss: {
+                options: {
+                    banner: '/* My minified css file */'
+                },
+                files: {
+                    "css/site.min.css": [
                         "css/libs/bootstrap.lean.min.css",
                         "css/libs/spa.css",
                         "css/dev/ui/animations.css",
@@ -28,31 +29,31 @@ module.exports = function (grunt) {
                         "css/dev/ui/action-menu.css",
                         "css/dev/ui/grid.css",
                         "css/dev/views/*.css"
-                        ]
-				}
-			},
-			deferred: {
-			    options: {
-			        banner: '/* My minified css file */'
-			    },
-			    files: {
-			        "css/deferred.min.css": [
+                    ]
+                }
+            },
+            deferred: {
+                options: {
+                    banner: '/* My minified css file */'
+                },
+                files: {
+                    "css/deferred.min.css": [
                         "css/dev/views/deferred/*.css"
-			        ]
-			    }
-			},
-			criticalcss: {
-			    files: {
-			        "views/home/views/criticalcssmin.cshtml": ["css/critical.site.css"],
-			    }
-			}
-		},
-		uglify: {
-			options: {
-			    compress: {}
-			},
-			applib: {
-			    src: [
+                    ]
+                }
+            },
+            criticalcss: {
+                files: {
+                    "views/home/views/criticalcssmin.cshtml": ["css/critical.site.css"],
+                }
+            }
+        },
+        uglify: {
+            options: {
+                compress: {}
+            },
+            applib: {
+                src: [
 			        "js/libs/spa.js",
                     "js/libs/class.js",
                     "js/libs/controller.js",
@@ -67,45 +68,55 @@ module.exports = function (grunt) {
                     "js/dev/fastFurnitureAuthenticatedController.js",
                     "js/dev/controllers/*.js",
                     "js/dev/Fast-Furniture.bootstrap.js"
-                
-			    ],
-			    dest: 'js/Fast-Furniture.app.min.js'
-			},
-			deferred: {
-			    src: [
+
+                ],
+                dest: 'js/Fast-Furniture.app.min.js'
+            },
+            deferred: {
+                src: [
                     "js/dev/services/deferred/*.js",
                     "js/dev/controllers/deferred/*.js"
 
-			    ],
-			    dest: 'js/deferred.min.js'
-			}
-		},
-		uncss: {
-		    critical: {
-		        files: {
-		            'css/critical.site.css': ['http://localhost:7856/critical.html']
-		        }
-		    },
-		    initial: {
-		        files: {
-		            'css/initial.site.css': ['http://localhost:7856/initial.html']
-		        }
-		    },
-		    deferred: {
-		        files: {
-		            'css/deferred.site.css': ['http://localhost:7856/deferred.html']
-		        }
-		    }
+                ],
+                dest: 'js/deferred.min.js'
+            }
+        },
+        browserSync: {
+            bsFiles: {
+                src: 'assets/css/*.css'
+            },
+            options: {
+                server: {
+                    baseDir: "./"
+                }
+            }
+        },
+        uncss: {
+            critical: {
+                files: {
+                    'css/critical.site.css': ['http://localhost:7856/critical.html']
+                }
+            },
+            initial: {
+                files: {
+                    'css/initial.site.css': ['http://localhost:7856/initial.html']
+                }
+            },
+            deferred: {
+                files: {
+                    'css/deferred.site.css': ['http://localhost:7856/deferred.html']
+                }
+            }
 
-		},
-		less: {
-		    dev: {
-		        options: {
-		            strictMath: true,
-		            sourceMap: true,
-		            outputSourceFiles: true
-		        },
-		        files: [
+        },
+        less: {
+            dev: {
+                options: {
+                    strictMath: true,
+                    sourceMap: true,
+                    outputSourceFiles: true
+                },
+                files: [
                     {
                         src: 'css/dev/ui/navigation.less',
                         dest: 'css/dev/ui/navigation.css'
@@ -235,44 +246,93 @@ module.exports = function (grunt) {
                         src: 'css/libs/spa.less',
                         dest: 'css/libs/spa.css'
                     }
-		        ]
-		    }
-		},
+                ]
+            }
+        },
 
-		watch: {
-		    less: {
-		        files: [
+        watch: {
+            less: {
+                files: [
                     'css/**/**.less'
-		        ],
-		        tasks: ['less']
-		    },
-		    makeHTML: {
-		        files: [
+                ],
+                tasks: ['less']
+            },
+            makeHTML: {
+                files: [
                     'views/**/**.html'
-		        ],
-		        tasks: ['makeHTML']
-		    }
+                ],
+                tasks: ['makeHTML']
+            }
 
-		},
-		makeHTML: {
-		    debug: {
-		        options: {
+        },
+        makeHTML: {
+            debug: {
+                options: {
+                    "scripts": [
+                      "js/libs/spa.js",
+                      "js/libs/class.js",
+                      "js/libs/controller.js",
+                      "js/libs/dollarbill.min.js",
+                      "js/libs/simpleViewEngine.js",
+                      "js/libs/l2Storagecache.js",
+                      "js/libs/deeptissue.js",
+                      "js/libs/toolbar.min.js",
+                      "js/dev/Fast-Furniture.app.js",
+                      "js/dev/services/Fast-Furniture.data.js",
+                      "js/dev/fastFurnitureController.js",
+                      "js/dev/fastFurnitureAuthenticatedController.js",
+                      "js/dev/controllers/*.js",
+                      "js/dev/Fast-Furniture.bootstrap.js"
+                    ],
+                    "styles": [
+                      "css/libs/bootstrap.lean.min.css",
+                      "css/libs/spa.css",
+                      "css/dev/ui/animations.css",
+                      "css/libs/toolbar.css",
+                      "css/libs/touch.css",
+                      "css/dev/app.css",
+                      "css/dev/ui/typography.css",
+                      "css/dev/ui/navigation.css",
+                      "css/dev/ui/action-menu.css",
+                      "css/dev/ui/grid.css",
+                      "css/dev/views/*.css"
+                    ],
+                    "indexSrc": "views/static.html",
+                    "src": [
+                      "Views/Home/layouts/*.html",
+                      "Views/Home/views/*.html",
+                      "Views/Home/templates/*.html"
+                    ],
+                    "dest": "index.html"
+                }
 
-		            indexSrc: "Views/static.html",
-		            src: [
-                        "Views/Home/layouts/*.html",
-                        "Views/Home/views/*.html",
-                        "Views/Home/templates/*.html"
-		            ],
-		            dest: "index.html"
-		        }
+            }
+        },
+        express: {
+            options: {
+                // Override defaults here
+            },
+            dev: {
+                options: {
+                    script: 'path/to/dev/server.js'
+                }
+            },
+            prod: {
+                options: {
+                    script: 'path/to/prod/server.js',
+                    node_env: 'production'
+                }
+            },
+            test: {
+                options: {
+                    script: 'path/to/test/server.js'
+                }
+            }
+        }
+    });
 
-		    }
-		}
-	});
 
-
-	// Default task.
-	grunt.registerTask('default', ['uglify', 'cssmin']);
+    // Default task.
+    grunt.registerTask('default', ['uglify', 'cssmin']);
 
 };

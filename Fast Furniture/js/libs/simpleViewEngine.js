@@ -300,9 +300,13 @@
 
 		    }
 
-		    if (css.innerHTML !== "") {
+		    if (css) {
 
-		        cssObjs = JSON.parse(css.innerHTML);
+		        if (css.innerHTML !== "") {
+
+		            cssObjs = JSON.parse(css.innerHTML);
+
+		        }
 
 		    }
 
@@ -365,7 +369,7 @@
 
 		    }
 
-		    if (scripts.innerHTML !== "") {
+		    if (scripts && scripts.innerHTML !== "") {
 
 		        jsObjs = JSON.parse(scripts.innerHTML);
 
