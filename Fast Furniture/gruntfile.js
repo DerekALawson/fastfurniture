@@ -44,7 +44,7 @@ module.exports = function (grunt) {
             },
             criticalcss: {
                 files: {
-                    "views/home/views/criticalcssmin.cshtml": ["css/critical.site.css"],
+                    "views/critical/criticalcssmin.html": ["css/critical.site.css"],
                 }
             }
         },
@@ -297,7 +297,7 @@ module.exports = function (grunt) {
                       "css/dev/ui/grid.css",
                       "css/dev/views/*.css"
                     ],
-                    "criticalCSS": "views/criticalcssmin.html",
+                    "criticalCSS": "views/critical/criticalcssmin.html",
                     "indexSrc": "views/static.html",
                     "src": [
                       "Views/Home/layouts/*.html",

@@ -134,18 +134,15 @@
         float: none;
     }
 
-    /*.main-content {
-        right:45px;
-    }*/
-
     .blog-post h1 {
         margin: 0;
     }
 }
 
-@Media(min-width:720px) {
+@media(min-width:720px) {
 
     .toolbar {
         display: none;
     }
+
 }
