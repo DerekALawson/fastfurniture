@@ -558,7 +558,8 @@
 
 				requestAnimationFrame(function () {
 
-				    t.innerHTML = viewEngine.render(templates[options.templateName], options.data);
+				    t.innerHTML = viewEngine.render(templates[options.templateName],
+                                                    options.data);
 
 				    if (start) {
 
