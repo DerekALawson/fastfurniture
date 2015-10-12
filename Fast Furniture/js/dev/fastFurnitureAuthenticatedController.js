@@ -2,10 +2,7 @@
 
 FastFurniture.fn.fastFurnitureAuthenticatedController = FastFurniture.fn.fastFurnitureController.extend({
 
-    onload: function (response) {
-
-
-    }
+    //Custom Fast Furniture functions common to many authentication requiring view controllers should go here.
 
 });
 

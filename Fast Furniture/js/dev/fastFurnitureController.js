@@ -2,10 +2,7 @@
 
 FastFurniture.fn.fastFurnitureController = Controller.extend({
 
-    onload: function (response) {
-
-
-    }
+  //Custom Fast Furniture functions common to many view controllers should go here.
 
 });
 

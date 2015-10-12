@@ -54,8 +54,10 @@
 
 			window.location.hash = "#!" + route;
 
-		}
+		},
 
+		onload: function () {}
+        
 	});
 
 	return (window.Controller = Controller);
