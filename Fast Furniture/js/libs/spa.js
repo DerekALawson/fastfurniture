@@ -53,11 +53,13 @@
 
 		}
 
-//		window.addEventListener("DOMContentLoaded", function () {
-
 			//cannot assume backpack anymore
 		    spa.viewEngine = spa.settings.viewEngine;
 		    spa.AppContext = spa.settings.AppContext;
+
+		    if (!spa.viewEngine) {
+		        throw new Error("Must include a View Engine to Enable the SPA");
+		    }
 
 			spa.analytics = spa.settings.analytics;
 

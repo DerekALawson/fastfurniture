@@ -744,6 +744,21 @@
             });
 
 
+        },
+
+        login: function (username, password) { },
+
+        socialLogin: function (provider) {
+
+            var url = "https://love2dev.auth0.com/authorize?" +
+                        "response_type=token" +    // code - server side flows | token - client side flows
+                        "&client_id=oYREKdagTrGmgKDZKN6CSxmGM7kVhKDs" +  // Default App
+                        "&connection=" + provider +
+                        "&scope=openid%20profile" +
+                        "&redirect_uri=http%3A%2F%2Flocalhost%3A7856%2Fauth.html";
+
+            window.location = url;
+
         }
 
     });

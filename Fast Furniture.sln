@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fast Furniture", "Fast Furn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPAHelper.4.0", "..\..\git\SPAHelper\SPAHelper\SPAHelper.4.0.csproj", "{909666FF-501B-405F-BEFA-1CBDF60A10B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CacheHeaders", "CacheHeaders\CacheHeaders.csproj", "{C9362BDC-7AC2-4070-BDBF-2EF4A75712D7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{909666FF-501B-405F-BEFA-1CBDF60A10B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{909666FF-501B-405F-BEFA-1CBDF60A10B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{909666FF-501B-405F-BEFA-1CBDF60A10B7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C9362BDC-7AC2-4070-BDBF-2EF4A75712D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9362BDC-7AC2-4070-BDBF-2EF4A75712D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9362BDC-7AC2-4070-BDBF-2EF4A75712D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9362BDC-7AC2-4070-BDBF-2EF4A75712D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

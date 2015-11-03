@@ -175,6 +175,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="auth.html" />
     <Content Include="critical.html" />
     <Content Include="critical_files\action-menu.css" />
     <Content Include="critical_files\animations.css" />
@@ -295,6 +296,7 @@
     <Content Include="js\dev\services\Fast-Furniture.data.js" />
     <Content Include="js\addtohomescreen.min.js" />
     <Content Include="js\Fast-Furniture.app.min.js" />
+    <Content Include="js\libs\browser-update.js" />
     <Content Include="js\libs\class.js" />
     <Content Include="js\libs\controller.js" />
     <Content Include="js\libs\deeptissue.js" />

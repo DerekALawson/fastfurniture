@@ -4,6 +4,7 @@
     <!-- This is the static page from the src template -->
     <script>
 
+        //Need to add a script here to tell obsolete browser users to upgrade
         var ef = "?_escaped_fragment_=";
 
         if (!('querySelector' in document)
@@ -11,6 +12,10 @@
 			 || !('addEventListener' in window)
 			|| !('matchMedia' in window)) {
 
+            //display notifcation here that their browser is obsolete
+            //dynamically load the script from the server
+            //let the server distinguish the language and load the correct script.
+            //or parse the language client-side and request the right script.
             if (window.location.href.indexOf("#!") > 0) {
                 window.location.href = window.location.href.replace("#!", ef);
             } else {
@@ -50,7 +55,7 @@
 
             <link href="favicon.ico" rel="shortcut icon">
 
-            <link rel="icon" sizes="192x192" href="http://images.professionalaspnet.com/furniture/touch-icon-android.png">
+            <!--<link rel="icon" sizes="192x192" href="http://images.professionalaspnet.com/furniture/touch-icon-android.png">-->
             <link rel="apple-touch-icon" href="http://images.professionalaspnet.com/furniture/touch-icon-iphone.png">
             <link rel="apple-touch-icon" sizes="76x76" href="http://images.professionalaspnet.com/furnituretouch-icon-ipad.png">
             <link rel="apple-touch-icon" sizes="120x120" href="http://images.professionalaspnet.com/furniture/touch-icon-iphone-retina.png">
