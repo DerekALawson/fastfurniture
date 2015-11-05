@@ -11,6 +11,9 @@
 
     "use strict";
 
+    /*
+     * FastFurnitureData
+     */
     var FastFurnitureData = Class.extend({
 
         init: function (cache) {
@@ -23,7 +26,7 @@
 
         cache: undefined,
 
-        API_ROOT: "api/data/",
+        API_ROOT: "http://fastfurniture.love2dev.com/api/data/",
 
         ttl: 30000, //30 seconds, for development purposes
 
@@ -284,6 +287,8 @@
                 delete ajaxOptions.contentType;
                 delete ajaxOptions.dataType;
             }
+            
+//            ajaxOptions.url = "http://fastfurniture.love2dev.com/" + ajaxOptions.url;
 
             this.doAJAX(ajaxOptions);
 

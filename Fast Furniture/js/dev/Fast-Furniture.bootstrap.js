@@ -1,4 +1,4 @@
-﻿\//kicks off the application
+﻿//kicks off the application
 
 var lsCache = l2Storeagecache(),
 	ve = simpleViewEngine({

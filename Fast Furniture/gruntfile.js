@@ -7,8 +7,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-makeHTML");
     grunt.loadNpmTasks('grunt-browser-sync');
 
-
-    // Project configuration.
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         cssmin: {
@@ -329,26 +327,27 @@ module.exports = function (grunt) {
             }
         },
         express: {
-            options: {
-                // Override defaults here
-            },
-            dev: {
+            server: {
                 options: {
-                    script: 'path/to/dev/server.js'
+                    port: 9000,
+                    bases: 'public'
                 }
-            },
-            prod: {
+            }
+        },
+          connect: {
+            server: {
                 options: {
-                    script: 'path/to/prod/server.js',
-                    node_env: 'production'
-                }
-            },
-            test: {
-                options: {
-                    script: 'path/to/test/server.js'
+                    port: 9000,
+                    base: '',
+                    keepalive: true,
+                    open: {
+                    target: 'http://localhost:9000'
+                    }
                 }
             }
         }
+
+
     });
 
 
