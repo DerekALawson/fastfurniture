@@ -293,9 +293,11 @@
     <Content Include="js\dev\controllers\deferred\static.js" />
     <Content Include="js\dev\Fast-Furniture.app.js" />
     <Content Include="js\dev\Fast-Furniture.bootstrap.js" />
+    <Content Include="js\dev\login\fastFurniture.login.bootstrap.js" />
     <Content Include="js\dev\services\Fast-Furniture.data.js" />
     <Content Include="js\addtohomescreen.min.js" />
     <Content Include="js\Fast-Furniture.app.min.js" />
+    <Content Include="js\libs\authenticate.js" />
     <Content Include="js\libs\browser-update.js" />
     <Content Include="js\libs\class.js" />
     <Content Include="js\libs\controller.js" />
@@ -303,6 +305,7 @@
     <Content Include="js\libs\dollarbill.min.js" />
     <Content Include="js\libs\l2Storagecache.js" />
     <Content Include="js\libs\simpleViewEngine.js" />
+    <Content Include="js\libs\spa.app.js" />
     <Content Include="js\libs\spa.js" />
     <Content Include="js\libs\toolbar.min.js" />
     <Content Include="app.cache" />
@@ -708,6 +711,8 @@
     <Content Include="data\Products\NMbrisbane-sofa-table.json" />
     <Content Include="data\Products\NMbrisbaneoccasionals.json" />
     <Content Include="data\Products\NMbroadwayoccasionals.json" />
+    <Content Include="js\dev\login\fastFurniture.login.app.js" />
+    <Content Include="js\libs\ajax.js" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Home\views\account.html" />
     <Content Include="Views\Home\views\category.html" />

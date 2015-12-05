@@ -56,6 +56,7 @@
 			//cannot assume backpack anymore
 		    spa.viewEngine = spa.settings.viewEngine;
 		    spa.AppContext = spa.settings.AppContext;
+		    spa.auth = spa.settings.auth;
 
 		    if (!spa.viewEngine) {
 		        throw new Error("Must include a View Engine to Enable the SPA");
@@ -81,13 +82,9 @@
 
 			window.addEventListener("hashchange", function () {
 
-			    console.log(window.location.hash);
-
 				spa.swapView();
 
 			});
-
-//		});
 
 		return spa;
 
@@ -104,6 +101,7 @@
 		version: "0.1.2",
 
 		viewEngine: undefined,
+	    auth: undefined,
 
 		$context: undefined,
 		$controller: undefined,
@@ -353,6 +351,11 @@
 
 		swapView: function () {
 
+		    if (window.location.hash === "") {
+		        window.location.hash = this.settings.defaultRoute;
+		        return;
+		    }
+
 			var spa = this,
 				settings = spa.settings,
 				anim, childView,
@@ -363,8 +366,13 @@
 				route = spa.matchRouteByPath(path);
 
 			if (!route || hasEscapeFragment !== "") {
+
 				window.location.hash = "#!" + settings.NotFoundRoute;
 				return;
+			}
+
+			if (spa.auth && !spa.auth.isAuthenticated() && route.roles && route.roles.length > 0) {
+			    console.log(route.roles);
 			}
 
 			//get current layout
@@ -495,9 +503,12 @@
 
 				if (route && spa.$controller) {
 
-					spa.makeViewCallback(spa.$controller, "beforeonload", route);
-					spa.makeViewCallback(spa.$controller, "onload", route);
-					spa.makeViewCallback(spa.$controller, "afteronload", route);
+				    ["beforeonload", "onload", "afteronload"].forEach(function (evt) {
+
+				        spa.makeViewCallback(spa.$controller, evt, route);
+
+				    });
+
 				}
 
 			}
@@ -719,8 +730,10 @@
 		},
 
 		settings: {
-			routes: [],
-			viewSelector: ".spa-view", //"[type='text/x-Rivets-template']", 
+		    routes: [],
+		    defaultRoute: "#!",
+            loginRoute: "#!login",
+			viewSelector: ".spa-view",
 			currentViewClass: "spa-current-view",
 			currentLayoutClass: "spa-current-layout",
 			layoutClass: "spa-layout",

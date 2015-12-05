@@ -1,4 +1,4 @@
-/// <binding />
+/// <binding ProjectOpened='watch:less, watch:makeHTML' />
 module.exports = function (grunt) {
 
 
@@ -266,9 +266,11 @@ module.exports = function (grunt) {
         makeHTML: {
             debug: {
                 options: {
-                    "scripts": [
+                    scripts: [
                       "js/libs/spa.js",
                       "js/libs/class.js",
+                      "js/libs/ajax.js",
+                      "js/libs/authenticate.js",
                       "js/libs/controller.js",
                       "js/libs/dollarbill.min.js",
                       "js/libs/simpleViewEngine.js",
@@ -282,7 +284,7 @@ module.exports = function (grunt) {
                       "js/dev/controllers/*.js",
                       "js/dev/Fast-Furniture.bootstrap.js"
                     ],
-                    "styles": [
+                    styles: [
                       "css/libs/bootstrap.lean.min.css",
                       "css/libs/spa.css",
                       "css/dev/ui/animations.css",
@@ -295,14 +297,13 @@ module.exports = function (grunt) {
                       "css/dev/ui/grid.css",
                       "css/dev/views/*.css"
                     ],
-                    "criticalCSS": "views/critical/criticalcssmin.html",
-                    "indexSrc": "views/static.html",
-                    "src": [
+                    indexSrc: "views/static.html",
+                    src: [
                       "Views/Home/layouts/*.html",
                       "Views/Home/views/*.html",
                       "Views/Home/templates/*.html"
                     ],
-                    "dest": "index.html"
+                    dest: "index.html"
                 }
 
             },

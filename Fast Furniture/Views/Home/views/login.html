@@ -3,7 +3,7 @@
         spa-transition="slide"
         spa-view-id=".spa-view-login"
         spa-layout="fast-furniture-layout"
-        spa-route="login"
+        spa-route="login/:returnRoute"
         type="spa-view">
 
     <section class="spa-view-login col-sm-offset-2">
@@ -29,10 +29,12 @@
                     <div class="col-sm-offset-1 col-sm-10 text-right">
                         <a class="btn btn-link" href="#!forgot/password">Forgot Password</a>
                         <a class="btn btn-link" href="#!register">Sign Up</a>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary btn-login">Login</button>
                     </div>
                 </div>
             </form>
+
+            <div class="response-area"></div>
         </div>
     </section>
 </script>

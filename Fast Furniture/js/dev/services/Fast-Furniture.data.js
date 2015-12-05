@@ -14,323 +14,15 @@
     /*
      * FastFurnitureData
      */
-    var FastFurnitureData = Class.extend({
+    var FastFurnitureData = AJAX.extend({
 
-        init: function (cache) {
+        init: function (cache, appKey) {
 
-            this.cache = cache;
-
-        },
-
-        version: "0.0.1",
-
-        cache: undefined,
-
-        API_ROOT: "http://fastfurniture.love2dev.com/api/data/",
-
-        ttl: 30000, //30 seconds, for development purposes
-
-        injectors: [],
-
-        createInjector: function (injector) {
-
-            injectors.push(injector);
+            this._super(cache, appKey);
 
         },
 
-        status: {
-            "0": "notOnitialized",
-            "1": "connectionEstablished",
-            "2": "received",
-            "3": "processing",
-            "4": "success"
-        },
-
-        appKey: "fast-funriture-",
-
-        getCachedObject: function (options) {
-
-            var appData = this,
-                cachedData = appData.cache.getObject(appData.appKey + options.cacheKey);
-
-            if (cachedData) {
-
-                if (options.success) {
-                    options.success(cachedData);
-                    return;
-                }
-            }
-
-            options.cache = true;
-            options.type = options.type || "json";
-
-            return this.getData(options);
-
-        },
-
-        getCachedText: function (options) {
-
-            var appData = this,
-                cachedData = appData.cache.getItem(appData.appKey + options.cacheKey);
-
-            if (cachedData) {
-
-                if (options.success) {
-                    options.success(cachedData);
-                    return;
-                }
-            }
-
-            options.cache = true;
-            options.type = "text";
-
-            return this.getData(options);
-
-        },
-
-        FORM_ENCODED: "application/x-www-form-urlencoded",
-        JSON_ENCODED: "application/x-json",
-        HTML_ENCODED: "text/html",
-
-        buildAjaxDataQueryString: function (data) {
-            var name, qs = "";
-
-            for (name in data) {
-
-                if (qs === "") {
-                    qs += name + "=" + data[name];
-                } else {
-                    qs += "&" + name + "=" + data[name];
-                }
-
-            }
-
-            return qs;
-
-        },
-
-        defaultHeaders: {
-            contentType: 'application/x-www-form-urlencoded',
-            accept: {
-                '*': 'text/javascript, text/html, application/json, text/xml, */*'
-               , xml: 'application/xml, text/xml'
-               , html: 'text/html'
-               , text: 'text/plain'
-               , json: 'application/json, text/javascript'
-               , js: 'application/javascript, text/javascript'
-            }
-        },
-
-        getAcceptHeader: function (type) {
-
-            if (!type || type === "") {
-                return this.defaultHeaders.accept["*"];
-            }
-
-            return this.defaultHeaders.accept[type];
-
-        },
-
-        errorsuccess: function (err) {
-
-            err = JSON.parse(err.response);
-
-            console.error(err.message);
-
-
-        },
-
-        serialize: function (obj, join) {
-            var str = [], p;
-
-            if (join === undefined) {
-                join = true;
-            }
-
-            for (p in obj) {
-
-                str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-            }
-
-            if (join) {
-
-                return str.join("&");
-
-            }
-
-            return str;
-        },
-
-        ajaxSettings: {
-            cache: false,
-            cacheTTL: 60000, //1 minute default
-            dataType: "json",
-            method: 'get',
-            type: 'json',
-            contentType: 'application/json',
-            success: function (d) { }
-        },
-
-        failsuccess: function (data) {
-
-            if (data.responseText) {
-                console.error(JSON.stringify(data.responseText));
-            }
-
-        },
-
-        doAJAX: function (options) {
-
-            var that = this,
-                xhr = new XMLHttpRequest();
-
-            options = $.extend({},
-                    this.ajaxSettings,
-                    options);
-
-            if (options.onload) {
-                xhr.onload = options.onload;
-            }
-
-            if (options.onerror) {
-                xhr.onerror = options.onerror;
-            }
-
-            options.url = this.API_ROOT + options.url;
-
-            xhr.open(options.method, options.url);
-            xhr.setRequestHeader("Content-Type", options.contentType);
-            xhr.setRequestHeader("Accept", this.getAcceptHeader(options.type));
-
-            //xhr.addEventListener("progress", function () { console.info("progress"); }, false);
-            //xhr.addEventListener("load", function () { console.info("load"); }, false);
-            //xhr.addEventListener("error", function () { console.info("error"); }, false);
-            //xhr.addEventListener("abort", function () { console.info("abort"); }, false);
-
-            xhr.onreadystatechange = function (e) {
-
-                if (xhr.readyState != 4 && options[xhr.readyState]) {
-
-                    options[xhr.readyState]();
-
-                }
-
-                if (xhr.readyState === 4 && xhr.status == 200 && options.success) {
-
-                    try {
-
-                        switch (options.type) {
-
-                            case "json":
-
-                                options.success.call(that, JSON.parse(this.responseText));
-
-                                break;
-
-                            case "text":
-
-                                options.success.call(that, this.responseText);
-
-                                break;
-
-                            default: //DOMString
-
-                                options.success.call(that, this.responseText);
-
-                        }
-
-                        if (options.cache) {
-                            that.cache.setObject(that.appKey + options.cacheKey, this.responseText, options.cacheTTL);
-                        }
-
-                    }
-                    catch (e) {
-
-                        options.success.call(that, this.responseText);
-
-                        if (options.cache) {
-                            that.cache.setItem(that.appKey + options.cacheKey, this.responseText, options.cacheTTL);
-                        }
-
-                    }
-
-                }
-            }
-
-            if (options.data) {
-
-                if (options.dataType === "json") {
-
-                    xhr.send(JSON.stringify(options.data));
-
-                } else {
-
-                    xhr.send(JSON.stringify(options.data));
-
-                }
-
-            } else {
-
-                xhr.send();
-
-            }
-
-        },
-
-        getData: function (options) {
-
-            var ajaxOptions = $.extend({},
-                                this.ajaxSettings,
-                                options);
-
-            if (options.type === "jsonp") {
-                delete ajaxOptions.contentType;
-                delete ajaxOptions.dataType;
-            }
-            
-//            ajaxOptions.url = "http://fastfurniture.love2dev.com/" + ajaxOptions.url;
-
-            this.doAJAX(ajaxOptions);
-
-        },
-
-        postData: function (options) {
-
-            options.method = "POST";
-
-            this.doAJAX(options);
-
-        },
-
-        postJSON: function (options) {
-
-            options.dataType = "json";
-
-            this.postData(options);
-
-        },
-
-        putData: function (options) {
-
-            options.method = "PUT";
-
-            this.doAJAX(options);
-
-        },
-
-        putJSON: function (options) {
-            options.dataType = "json";
-            this.putData(options);
-        },
-
-        deleteData: function (options) {
-
-            options.method = "DELETE";
-
-            this.doAJAX(options);
-
-        },
-
+        version: "0.0.2",
 
         /*
          * 
@@ -522,16 +214,6 @@
             return this.deleteData({
                 url: "cart?cartId=" + cartId,
                 success: success
-            });
-
-        },
-
-        login: function (login, success, fail) {
-
-            return this.postData({
-                url: "login",
-                success: success,
-                fail: fail
             });
 
         },
@@ -749,22 +431,57 @@
             });
 
 
-        },
-
-        login: function (username, password) { },
-
-        socialLogin: function (provider) {
-
-            var url = "https://love2dev.auth0.com/authorize?" +
-                        "response_type=token" +    // code - server side flows | token - client side flows
-                        "&client_id=oYREKdagTrGmgKDZKN6CSxmGM7kVhKDs" +  // Default App
-                        "&connection=" + provider +
-                        "&scope=openid%20profile" +
-                        "&redirect_uri=http%3A%2F%2Flocalhost%3A7856%2Fauth.html";
-
-            window.location = url;
-
         }
+
+
+        //updatePassword: function (userid, newPassword) {
+
+        //    return this.patchJSON({
+        //        url: "https://love2dev.auth0.com/api/v2/users/" + userid,
+        //        success: success,
+        //        data: {
+        //            "password": newPassword
+        //        }
+        //    });
+
+        //},
+
+        //updateUser: function (userid, userInfo) {
+
+        //    return this.patchJSON({
+        //        url: "https://love2dev.auth0.com/api/v2/users/" + userid,
+        //        success: success,
+        //        data: userInfo
+        //    });
+
+        //},
+
+        //deleteUser: function (userid) {
+
+        //    return this.patchJSON({
+        //        url: "https://love2dev.auth0.com/api/v2/users/" + userid,
+        //        success: success
+        //    });
+
+        //},
+
+        //createUser: function (userInfo) {
+
+        //    return this.postJSON({
+        //        url: "https://love2dev.auth0.com/api/v2/users/",
+        //        success: success,
+        //        data: userInfo
+        //    });
+
+        //},
+
+        //recoverPassword: function () {
+
+        //    ///api/v2/users/{id} 
+
+        //},
+
+        //getUserProfile: function (id) { }
 
     });
 

@@ -38,65 +38,774 @@
 
     <!-- critical css -->
     <style>
-        /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */.btn,.btn:active{background-image:none}.panel-v-scroll,.y-scroller-wrapper{width:100%;-ms-scroll-chaining:none}.btn,.nav-text{vertical-align:middle}.btn:focus,.btn:hover,.toolbar a:hover,a,a:active,a:focus,a:hover,a:visited{text-decoration:none}html{font-family:sans-serif}aside,figcaption,footer,header,main,nav,section{display:block}a{background-color:transparent}a:active,a:hover{outline:0}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}a:focus,a:hover{color:#23527c}a:focus{outline:dotted thin;outline:-webkit-focus-ring-color auto 5px;outline-offset:-2px}h1{font-family:inherit;color:inherit;margin-top:20px;margin-bottom:10px}.form-control::-moz-placeholder{color:#999;opacity:1}.form-control:-ms-input-placeholder{color:#999}.btn{display:inline-block;margin-bottom:0;font-weight:400;text-align:center;touch-action:manipulation;cursor:pointer;border:1px solid transparent;white-space:nowrap;padding:6px 12px;font-size:14px;line-height:1.42857143;border-radius:4px;user-select:none}.btn,body{-moz-user-select:none;-ms-user-select:none;-webkit-user-select:none}.btn:active:focus,.btn:focus{outline:dotted thin;outline:-webkit-focus-ring-color auto 5px;outline-offset:-2px}.btn:focus,.btn:hover{color:#333}.btn:active{outline:0;-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}.show{display:block!important}@-ms-viewport{width:device-width}.spa-layout{display:none;position:absolute;top:0;left:0;bottom:10px;right:0;border-radius:5px;overflow:hidden;padding:2%}.spa-child-view{height:100%;position:relative}.main-content,.site-header{position:absolute;right:0;left:0}.y-scroller-wrapper{-ms-scroll-translation:vertical-to-horizontal;-ms-touch-action:pan-y;touch-action:pan-y;overflow:hidden;overflow-x:hidden;padding-right:15px;-ms-overflow-style:-ms-autohiding-scrollbar;-webkit-overflow-style:none;overflow-style:none;-moz-overflow-scrolling:touch;-webkit-overflow-scrolling:touch;overflow-scrolling:touch;height:100%;-ms-overflow-y:scroll;overflow-y:scroll}.panel-v-scroll{-moz-overflow-scrolling:touch;-webkit-overflow-scrolling:touch;-ms-overflow-style:-ms-autohiding-scrollbar;overflow-style:none;-ms-scroll-snap-type:proximity;-ms-scroll-translation:vertical-to-horizontal;-ms-touch-action:pan-y pan-x;touch-action:pan-y pan-x;overflow-scrolling:touch;overflow:hidden;overflow-x:scroll;overflow-y:scroll}@media (min-width:1024px){.panel-v-scroll{-ms-overflow-style:none;-ms-touch-action:none;touch-action:none;overflow-style:none;overflow:hidden;overflow-x:hidden;overflow-y:hidden}}@font-face{font-family:fastfurniture;src:url(https://fastfurniture.blob.core.windows.net/font/fastfurniture.eot?11647599);src:url(https://fastfurniture.blob.core.windows.net/font/fastfurniture.eot?11647599#iefix) format('embedded-opentype'),url(https://fastfurniture.blob.core.windows.net/font/fastfurniture.woff?11647599) format('woff'),url(https://fastfurniture.blob.core.windows.net/font/fastfurniture.ttf) format('truetype'),url(https://fastfurniture.blob.core.windows.net/font/fastfurniture.svg) format('svg');font-weight:400;font-style:normal}*,:after,:before{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}html{-webkit-tap-highlight-color:transparent;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:100%}body{margin:0;-ms-scroll-translation:vertical-to-horizontal;-ms-touch-action:none;touch-action:none;-webkit-touch-callout:none;-khtml-user-select:none;user-select:none;-ms-content-zooming:none;overflow-x:hidden;background-color:#fff;color:#000;letter-spacing:.02em;font-size:13px;font-family:"Segoe UI","Segoe WP","Roboto Medium","Helvetica Neue",Helvetica,sans-serif;line-height:1.231;background-attachment:fixed;background-repeat:no-repeat;-moz-background-size:cover;-o-background-size:cover;-webkit-background-size:cover;background-size:cover}main{display:block}a,a:visited{color:#222}.view-title,h1{margin:2% 0;letter-spacing:0;font-weight:200;font-size:2em;line-height:50px;text-align:center;float:left;overflow:hidden;width:100%;height:50px}.site-header{top:0;height:80px}.main-content{top:70px;bottom:35px;overflow:hidden;background:#fff;-moz-transition:left 1s ease-out;-o-transition:left 1s ease-out;-webkit-transition:left 1s ease-out;transition:left 1s ease-out}.site-header .view-title{font-size:2.25em;width:45%;margin:0;line-height:80px;height:80px;text-align:left}.site-header .nav-icon{width:1.5em;font-family:fastfurniture;font-size:2em;float:right;margin:24px 1%}.site-header .icon-basket{display:inline-block}@media screen and (max-width:320px){@-ms-viewport{width:320px}@-o-viewport{width:320px}@viewport{width:320px}.back-btn{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABrSURBVDhPYxhwwAilUcC/f/9SgJQ1EH9hZGSsBOIvYAliAFBzwX8gANKfgZQNVJg4MDQ1M4I0AwOpH8QBagYF1hsQm2gANKAfZDu5AMUQIP0cSGmABUkFw8+QZiDeD8TLgYbwQIUHJWBgAAATadBlQVYlKgAAAABJRU5ErkJggg==);background-repeat:no-repeat;height:16px;width:16px;margin:3px auto;display:none}}@media (min-width:600px){.view-title{width:400px;font-size:1.5em;height:100%;line-height:30pt}}@media (min-width:720px){.main-content{bottom:20px}}@media (min-width:800px){.view-title,h1{margin:3% 0;font-size:1.25em;line-height:60px;text-align:left;overflow:hidden;height:60px}.site-header .view-title{left:20%;top:5%}.site-header .nav-icon{margin:.6%}.main-content{left:10px;bottom:40px}.view-title{font-size:26pt;line-height:30pt;padding-bottom:2pt}}.left-panel,.toolbar{position:absolute;bottom:0}@media (min-width:1100px){.view-title,h1{margin:15px 0 0 40px;font-size:1.5em;line-height:80px;width:calc(100% - 100px);height:80px}.site-header .nav-icon{margin:24px 1%}.nav-icon{display:inline-block}}.back-btn,.nav-icon.icon-left-open{display:none;height:32px;width:32px;margin:0;text-align:center}.back-btn{display:block;float:left;margin:24px 0 24px 20px}.icon-search:before{content:'\e800'}.icon-tags:before{content:'\e802'}.icon-basket:before{content:'\e803'}.icon-home:before{content:'\e804'}.icon-user:before{content:'\e815'}.icon-lock:before{content:'\e818'}.icon-key:before{content:'\e819'}.icon-left-open:before{content:'\e81f'}.icon-info-circled:before{content:'\e821'}.icon-mail-alt:before{content:'\e822'}.left-panel{display:block;width:220px;background:#222;left:-220px;top:0;-moz-transition:left 700ms ease-out;-o-transition:left 700ms ease-out;-webkit-transition:left 700ms ease-out;transition:left 700ms ease-out;color:#293846}.nav-icon,.toolbar-item-icon{background-repeat:no-repeat;font-family:fastfurniture}.nav-header{padding:33px 25px;width:220px}.hamburger-nav{display:none;width:120px;height:40px;margin:20px 2em 20px 5px;line-height:26pt;float:left;border:1px solid #293846}.hamburger-bar-wrapper{float:left;height:40px;padding-top:8px;width:40px;display:inline-block}.hamburger-bar{height:4px;background-color:#293846;border-radius:4px;margin:3px auto;width:30px;display:block}.hamburger-bar-text{line-height:40px;margin:0 10px;width:40px;height:40px;display:inline-block;float:left}.main-nav>a,.main-nav>a:active,.main-nav>a:hover,.main-nav>a:visited{background-color:transparent;font-weight:300;color:#eee;text-decoration:none;font-size:1.25em;display:block;width:220px;height:40px;border-bottom:1px solid #777;padding:0 0 0 12px}.main-nav>a:active{border-bottom:solid 2px #fff;background-color:#293846!important}.nav-text{height:40px;line-height:40px}.nav-icon{width:32px;height:32px;display:none}.left-panel .y-scroller-wrapper{height:calc(100% - 75px)}@media (min-width:600px){.hamburger-nav{margin-left:2em}.main-nav{width:220px;background-color:transparent;height:auto;padding-bottom:2%}.main-nav>a:visited{padding-left:10px;color:#c9c9c9;text-align:center;text-decoration:none;font-weight:700;font-size:1.25em;display:block;width:220px;height:40px}.main-nav .nav-icon{width:30px;height:40px;text-align:center;line-height:40px;margin:0;font-family:fastfurniture}.nav-icon,.nav-text{display:inline-block;float:left;text-align:left}.nav-text{width:calc(100% - 40px);padding-left:10px;overflow:hidden}.view-title{width:calc(100% - 220px)}}@media (min-width:720px){.hamburger-nav{display:inline-block}}@media (min-width:960px){.main-content{left:0}}@media (min-width:1180px){.nav-icon{display:inline-block}.left-panel{left:0}.main-content,.site-header{left:220px}.hamburger-nav{display:none}}.toolbar,.toolbar-sub-menu-nav-item{right:0;left:0;overflow:hidden;color:#fff}.toolbar{z-index:100;background-color:#111;height:35px;text-align:center}.toolbar-top-menu{float:left;width:100%}.toolbar-item{display:inline-block;margin:5px 0 0;width:18%;height:42px;float:left}.toolbar-item a,.toolbar-item a:visited{color:#fff}.toolbar-item-icon{display:block;overflow:hidden;margin:auto;width:30px;height:26px;color:#fff;font-size:1.25em}.expand-toolbar{display:inline-block;margin:5px 5% 0;width:36px;height:42px;color:#fff;text-align:center;font-weight:700;font-size:2em;line-height:24px}.toolbar-item figcaption{display:block;margin:2px auto;width:100%;color:#fff;text-align:center;font-weight:700;font-size:9px;line-height:14px}.toolbar-sub-menu{display:block;float:left;width:100%}.toolbar-sub-menu a{height:100%;display:block}.toolbar-sub-menu-nav-item{margin:5% 0;padding-left:6px;height:36px;font-size:21px;line-height:36px;text-align:left}@media all and (orientation:landscape){.toolbar,.toolbar-top-menu{margin:0;width:42px;height:100%}.toolbar{top:0;left:auto}.toolbar-item{margin:15% auto;width:100%}.toolbar-sub-menu{float:none}}@media (min-width:720px){.toolbar{display:none}}
+        /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */ .btn, .btn:active {
+            background-image: none;
+        }
+
+        .panel-v-scroll, .y-scroller-wrapper {
+            width: 100%;
+            -ms-scroll-chaining: none;
+        }
+
+        .btn, .nav-text {
+            vertical-align: middle;
+        }
+
+            .btn:focus, .btn:hover, .toolbar a:hover, a, a:active, a:focus, a:hover, a:visited {
+                text-decoration: none;
+            }
+
+        html {
+            font-family: sans-serif;
+        }
+
+        aside, figcaption, footer, header, main, nav, section {
+            display: block;
+        }
+
+        a {
+            background-color: transparent;
+        }
+
+            a:active, a:hover {
+                outline: 0;
+            }
+
+        button::-moz-focus-inner, input::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+
+        a:focus, a:hover {
+            color: #23527c;
+        }
+
+        a:focus {
+            outline: dotted thin;
+            outline: -webkit-focus-ring-color auto 5px;
+            outline-offset: -2px;
+        }
+
+        h1 {
+            font-family: inherit;
+            color: inherit;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .form-control::-moz-placeholder {
+            color: #999;
+            opacity: 1;
+        }
+
+        .form-control:-ms-input-placeholder {
+            color: #999;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-bottom: 0;
+            font-weight: 400;
+            text-align: center;
+            touch-action: manipulation;
+            cursor: pointer;
+            border: 1px solid transparent;
+            white-space: nowrap;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            border-radius: 4px;
+            user-select: none;
+        }
+
+        .btn, body {
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+        }
+
+            .btn:active:focus, .btn:focus {
+                outline: dotted thin;
+                outline: -webkit-focus-ring-color auto 5px;
+                outline-offset: -2px;
+            }
+
+            .btn:focus, .btn:hover {
+                color: #333;
+            }
+
+            .btn:active {
+                outline: 0;
+                -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+                box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+            }
+
+        .show {
+            display: block !important;
+        }
+
+        @-ms-viewport {
+            width: device-width;
+        }
+
+        .spa-layout {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 10px;
+            right: 0;
+            border-radius: 5px;
+            overflow: hidden;
+            padding: 2%;
+        }
+
+        .spa-child-view {
+            height: 100%;
+            position: relative;
+        }
+
+        .main-content, .site-header {
+            position: absolute;
+            right: 0;
+            left: 0;
+        }
+
+        .y-scroller-wrapper {
+            -ms-scroll-translation: vertical-to-horizontal;
+            -ms-touch-action: pan-y;
+            touch-action: pan-y;
+            overflow: hidden;
+            overflow-x: hidden;
+            padding-right: 15px;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            -webkit-overflow-style: none;
+            overflow-style: none;
+            -moz-overflow-scrolling: touch;
+            -webkit-overflow-scrolling: touch;
+            overflow-scrolling: touch;
+            height: 100%;
+            -ms-overflow-y: scroll;
+            overflow-y: scroll;
+        }
+
+        .panel-v-scroll {
+            -moz-overflow-scrolling: touch;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: -ms-autohiding-scrollbar;
+            overflow-style: none;
+            -ms-scroll-snap-type: proximity;
+            -ms-scroll-translation: vertical-to-horizontal;
+            -ms-touch-action: pan-y pan-x;
+            touch-action: pan-y pan-x;
+            overflow-scrolling: touch;
+            overflow: hidden;
+            overflow-x: scroll;
+            overflow-y: scroll;
+        }
+
+        @media (min-width:1024px) {
+            .panel-v-scroll {
+                -ms-overflow-style: none;
+                -ms-touch-action: none;
+                touch-action: none;
+                overflow-style: none;
+                overflow: hidden;
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+        }
+
+        @font-face {
+            font-family: fastfurniture;
+            src: url(https://fastfurniture.blob.core.windows.net/font/fastfurniture.eot?11647599);
+            src: url(https://fastfurniture.blob.core.windows.net/font/fastfurniture.eot?11647599#iefix) format('embedded-opentype'),url(https://fastfurniture.blob.core.windows.net/font/fastfurniture.woff?11647599) format('woff'),url(https://fastfurniture.blob.core.windows.net/font/fastfurniture.ttf) format('truetype'),url(https://fastfurniture.blob.core.windows.net/font/fastfurniture.svg) format('svg');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        *, :after, :before {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        html {
+            -webkit-tap-highlight-color: transparent;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+            font-size: 100%;
+        }
+
+        body {
+            margin: 0;
+            -ms-scroll-translation: vertical-to-horizontal;
+            -ms-touch-action: none;
+            touch-action: none;
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
+            user-select: none;
+            -ms-content-zooming: none;
+            overflow-x: hidden;
+            background-color: #fff;
+            color: #000;
+            letter-spacing: .02em;
+            font-size: 13px;
+            font-family: "Segoe UI","Segoe WP","Roboto Medium","Helvetica Neue",Helvetica,sans-serif;
+            line-height: 1.231;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+
+        main {
+            display: block;
+        }
+
+        a, a:visited {
+            color: #222;
+        }
+
+        .view-title, h1 {
+            margin: 2% 0;
+            letter-spacing: 0;
+            font-weight: 200;
+            font-size: 2em;
+            line-height: 50px;
+            text-align: center;
+            float: left;
+            overflow: hidden;
+            width: 100%;
+            height: 50px;
+        }
+
+        .site-header {
+            top: 0;
+            height: 80px;
+        }
+
+        .main-content {
+            top: 70px;
+            bottom: 35px;
+            overflow: hidden;
+            background: #fff;
+            -moz-transition: left 1s ease-out;
+            -o-transition: left 1s ease-out;
+            -webkit-transition: left 1s ease-out;
+            transition: left 1s ease-out;
+        }
+
+        .site-header .view-title {
+            font-size: 2.25em;
+            width: 45%;
+            margin: 0;
+            line-height: 80px;
+            height: 80px;
+            text-align: left;
+        }
+
+        .site-header .nav-icon {
+            width: 1.5em;
+            font-family: fastfurniture;
+            font-size: 2em;
+            float: right;
+            margin: 24px 1%;
+        }
+
+        .site-header .icon-basket {
+            display: inline-block;
+        }
+
+        @media screen and (max-width:320px) {
+            @-ms-viewport {
+                width: 320px;
+            }
+
+            @-o-viewport {
+                width: 320px;
+            }
+
+            @viewport {
+                width: 320px;
+            }
+
+            .back-btn {
+                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABrSURBVDhPYxhwwAilUcC/f/9SgJQ1EH9hZGSsBOIvYAliAFBzwX8gANKfgZQNVJg4MDQ1M4I0AwOpH8QBagYF1hsQm2gANKAfZDu5AMUQIP0cSGmABUkFw8+QZiDeD8TLgYbwQIUHJWBgAAATadBlQVYlKgAAAABJRU5ErkJggg==);
+                background-repeat: no-repeat;
+                height: 16px;
+                width: 16px;
+                margin: 3px auto;
+                display: none;
+            }
+        }
+
+        @media (min-width:600px) {
+            .view-title {
+                width: 400px;
+                font-size: 1.5em;
+                height: 100%;
+                line-height: 30pt;
+            }
+        }
+
+        @media (min-width:720px) {
+            .main-content {
+                bottom: 20px;
+            }
+        }
+
+        @media (min-width:800px) {
+            .view-title, h1 {
+                margin: 3% 0;
+                font-size: 1.25em;
+                line-height: 60px;
+                text-align: left;
+                overflow: hidden;
+                height: 60px;
+            }
+
+            .site-header .view-title {
+                left: 20%;
+                top: 5%;
+            }
+
+            .site-header .nav-icon {
+                margin: .6%;
+            }
+
+            .main-content {
+                left: 10px;
+                bottom: 40px;
+            }
+
+            .view-title {
+                font-size: 26pt;
+                line-height: 30pt;
+                padding-bottom: 2pt;
+            }
+        }
+
+        .left-panel, .toolbar {
+            position: absolute;
+            bottom: 0;
+        }
+
+        @media (min-width:1100px) {
+            .view-title, h1 {
+                margin: 15px 0 0 40px;
+                font-size: 1.5em;
+                line-height: 80px;
+                width: calc(100% - 100px);
+                height: 80px;
+            }
+
+            .site-header .nav-icon {
+                margin: 24px 1%;
+            }
+
+            .nav-icon {
+                display: inline-block;
+            }
+        }
+
+        .back-btn, .nav-icon.icon-left-open {
+            display: none;
+            height: 32px;
+            width: 32px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .back-btn {
+            display: block;
+            float: left;
+            margin: 24px 0 24px 20px;
+        }
+
+        .icon-search:before {
+            content: '\e800';
+        }
+
+        .icon-tags:before {
+            content: '\e802';
+        }
+
+        .icon-basket:before {
+            content: '\e803';
+        }
+
+        .icon-home:before {
+            content: '\e804';
+        }
+
+        .icon-user:before {
+            content: '\e815';
+        }
+
+        .icon-lock:before {
+            content: '\e818';
+        }
+
+        .icon-key:before {
+            content: '\e819';
+        }
+
+        .icon-left-open:before {
+            content: '\e81f';
+        }
+
+        .icon-info-circled:before {
+            content: '\e821';
+        }
+
+        .icon-mail-alt:before {
+            content: '\e822';
+        }
+
+        .left-panel {
+            display: block;
+            width: 220px;
+            background: #222;
+            left: -220px;
+            top: 0;
+            -moz-transition: left 700ms ease-out;
+            -o-transition: left 700ms ease-out;
+            -webkit-transition: left 700ms ease-out;
+            transition: left 700ms ease-out;
+            color: #293846;
+        }
+
+        .nav-icon, .toolbar-item-icon {
+            background-repeat: no-repeat;
+            font-family: fastfurniture;
+        }
+
+        .nav-header {
+            padding: 33px 25px;
+            width: 220px;
+        }
+
+        .hamburger-nav {
+            display: none;
+            width: 120px;
+            height: 40px;
+            margin: 20px 2em 20px 5px;
+            line-height: 26pt;
+            float: left;
+            border: 1px solid #293846;
+        }
+
+        .hamburger-bar-wrapper {
+            float: left;
+            height: 40px;
+            padding-top: 8px;
+            width: 40px;
+            display: inline-block;
+        }
+
+        .hamburger-bar {
+            height: 4px;
+            background-color: #293846;
+            border-radius: 4px;
+            margin: 3px auto;
+            width: 30px;
+            display: block;
+        }
+
+        .hamburger-bar-text {
+            line-height: 40px;
+            margin: 0 10px;
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            float: left;
+        }
+
+        .main-nav > a, .main-nav > a:active, .main-nav > a:hover, .main-nav > a:visited {
+            background-color: transparent;
+            font-weight: 300;
+            color: #eee;
+            text-decoration: none;
+            font-size: 1.25em;
+            display: block;
+            width: 220px;
+            height: 40px;
+            border-bottom: 1px solid #777;
+            padding: 0 0 0 12px;
+        }
+
+            .main-nav > a:active {
+                border-bottom: solid 2px #fff;
+                background-color: #293846 !important;
+            }
+
+        .nav-text {
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .nav-icon {
+            width: 32px;
+            height: 32px;
+            display: none;
+        }
+
+        .left-panel .y-scroller-wrapper {
+            height: calc(100% - 75px);
+        }
+
+        @media (min-width:600px) {
+            .hamburger-nav {
+                margin-left: 2em;
+            }
+
+            .main-nav {
+                width: 220px;
+                background-color: transparent;
+                height: auto;
+                padding-bottom: 2%;
+            }
+
+                .main-nav > a:visited {
+                    padding-left: 10px;
+                    color: #c9c9c9;
+                    text-align: center;
+                    text-decoration: none;
+                    font-weight: 700;
+                    font-size: 1.25em;
+                    display: block;
+                    width: 220px;
+                    height: 40px;
+                }
+
+                .main-nav .nav-icon {
+                    width: 30px;
+                    height: 40px;
+                    text-align: center;
+                    line-height: 40px;
+                    margin: 0;
+                    font-family: fastfurniture;
+                }
+
+            .nav-icon, .nav-text {
+                display: inline-block;
+                float: left;
+                text-align: left;
+            }
+
+            .nav-text {
+                width: calc(100% - 40px);
+                padding-left: 10px;
+                overflow: hidden;
+            }
+
+            .view-title {
+                width: calc(100% - 220px);
+            }
+        }
+
+        @media (min-width:720px) {
+            .hamburger-nav {
+                display: inline-block;
+            }
+        }
+
+        @media (min-width:960px) {
+            .main-content {
+                left: 0;
+            }
+        }
+
+        @media (min-width:1180px) {
+            .nav-icon {
+                display: inline-block;
+            }
+
+            .left-panel {
+                left: 0;
+            }
+
+            .main-content, .site-header {
+                left: 220px;
+            }
+
+            .hamburger-nav {
+                display: none;
+            }
+        }
+
+        .toolbar, .toolbar-sub-menu-nav-item {
+            right: 0;
+            left: 0;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .toolbar {
+            z-index: 100;
+            background-color: #111;
+            height: 35px;
+            text-align: center;
+        }
+
+        .toolbar-top-menu {
+            float: left;
+            width: 100%;
+        }
+
+        .toolbar-item {
+            display: inline-block;
+            margin: 5px 0 0;
+            width: 18%;
+            height: 42px;
+            float: left;
+        }
+
+            .toolbar-item a, .toolbar-item a:visited {
+                color: #fff;
+            }
+
+        .toolbar-item-icon {
+            display: block;
+            overflow: hidden;
+            margin: auto;
+            width: 30px;
+            height: 26px;
+            color: #fff;
+            font-size: 1.25em;
+        }
+
+        .expand-toolbar {
+            display: inline-block;
+            margin: 5px 5% 0;
+            width: 36px;
+            height: 42px;
+            color: #fff;
+            text-align: center;
+            font-weight: 700;
+            font-size: 2em;
+            line-height: 24px;
+        }
+
+        .toolbar-item figcaption {
+            display: block;
+            margin: 2px auto;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            font-weight: 700;
+            font-size: 9px;
+            line-height: 14px;
+        }
+
+        .toolbar-sub-menu {
+            display: block;
+            float: left;
+            width: 100%;
+        }
+
+            .toolbar-sub-menu a {
+                height: 100%;
+                display: block;
+            }
+
+        .toolbar-sub-menu-nav-item {
+            margin: 5% 0;
+            padding-left: 6px;
+            height: 36px;
+            font-size: 21px;
+            line-height: 36px;
+            text-align: left;
+        }
+
+        @media all and (orientation:landscape) {
+            .toolbar, .toolbar-top-menu {
+                margin: 0;
+                width: 42px;
+                height: 100%;
+            }
+
+            .toolbar {
+                top: 0;
+                left: auto;
+            }
+
+            .toolbar-item {
+                margin: 15% auto;
+                width: 100%;
+            }
+
+            .toolbar-sub-menu {
+                float: none;
+            }
+        }
+
+        @media (min-width:720px) {
+            .toolbar {
+                display: none;
+            }
+        }
     </style>
 
-        <!-- CSS References -->
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- CSS References -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-        <link href="css/libs/bootstrap.lean.min.css" id="bootstrap.lean.min-css" rel="stylesheet" />
-<link href="css/libs/spa.css" id="spa-css" rel="stylesheet" />
-<link href="css/dev/ui/animations.css" id="animations-css" rel="stylesheet" />
-<link href="css/libs/toolbar.css" id="toolbar-css" rel="stylesheet" />
-<link href="css/libs/touch.css" id="touch-css" rel="stylesheet" />
-<link href="css/dev/app.css" id="app-css" rel="stylesheet" />
-<link href="css/dev/ui/typography.css" id="typography-css" rel="stylesheet" />
-<link href="css/dev/ui/navigation.css" id="navigation-css" rel="stylesheet" />
-<link href="css/dev/ui/action-menu.css" id="action-menu-css" rel="stylesheet" />
-<link href="css/dev/ui/grid.css" id="grid-css" rel="stylesheet" />
-<link href="css/dev/views/NotFound.css" id="NotFound-css" rel="stylesheet" />
-<link href="css/dev/views/categories.css" id="categories-css" rel="stylesheet" />
-<link href="css/dev/views/category.css" id="category-css" rel="stylesheet" />
-<link href="css/dev/views/forgotemail.css" id="forgotemail-css" rel="stylesheet" />
-<link href="css/dev/views/forgotpassword.css" id="forgotpassword-css" rel="stylesheet" />
-<link href="css/dev/views/home.css" id="home-css" rel="stylesheet" />
-<link href="css/dev/views/login.css" id="login-css" rel="stylesheet" />
-<link href="css/dev/views/product.css" id="product-css" rel="stylesheet" />
-<link href="css/dev/views/search.css" id="search-css" rel="stylesheet" />
+    <link href="css/libs/bootstrap.lean.min.css" id="bootstrap.lean.min-css" rel="stylesheet" />
+    <link href="css/libs/spa.css" id="spa-css" rel="stylesheet" />
+    <link href="css/dev/ui/animations.css" id="animations-css" rel="stylesheet" />
+    <link href="css/libs/toolbar.css" id="toolbar-css" rel="stylesheet" />
+    <link href="css/libs/touch.css" id="touch-css" rel="stylesheet" />
+    <link href="css/dev/app.css" id="app-css" rel="stylesheet" />
+    <link href="css/dev/ui/typography.css" id="typography-css" rel="stylesheet" />
+    <link href="css/dev/ui/navigation.css" id="navigation-css" rel="stylesheet" />
+    <link href="css/dev/ui/action-menu.css" id="action-menu-css" rel="stylesheet" />
+    <link href="css/dev/ui/grid.css" id="grid-css" rel="stylesheet" />
+    <link href="css/dev/views/NotFound.css" id="NotFound-css" rel="stylesheet" />
+    <link href="css/dev/views/categories.css" id="categories-css" rel="stylesheet" />
+    <link href="css/dev/views/category.css" id="category-css" rel="stylesheet" />
+    <link href="css/dev/views/forgotemail.css" id="forgotemail-css" rel="stylesheet" />
+    <link href="css/dev/views/forgotpassword.css" id="forgotpassword-css" rel="stylesheet" />
+    <link href="css/dev/views/home.css" id="home-css" rel="stylesheet" />
+    <link href="css/dev/views/login.css" id="login-css" rel="stylesheet" />
+    <link href="css/dev/views/product.css" id="product-css" rel="stylesheet" />
+    <link href="css/dev/views/search.css" id="search-css" rel="stylesheet" />
 
 
-            <meta content="Making Furnishing Your World Fast" name="description">
+    <meta content="Making Furnishing Your World Fast" name="description">
 
-            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-            <link href="favicon.ico" rel="shortcut icon">
+    <link href="favicon.ico" rel="shortcut icon">
 
-            <link rel="icon" sizes="192x192" href="http://images.professionalaspnet.com/furniture/touch-icon-android.png">
-            <link rel="apple-touch-icon" href="http://images.professionalaspnet.com/furniture/touch-icon-iphone.png">
-            <link rel="apple-touch-icon" sizes="76x76" href="http://images.professionalaspnet.com/furnituretouch-icon-ipad.png">
-            <link rel="apple-touch-icon" sizes="120x120" href="http://images.professionalaspnet.com/furniture/touch-icon-iphone-retina.png">
-            <link rel="apple-touch-icon" sizes="152x152" href="http://images.professionalaspnet.com/furniture/touch-icon-ipad-retina.png">
+    <link rel="icon" sizes="192x192" href="http://images.professionalaspnet.com/furniture/touch-icon-android.png">
+    <link rel="apple-touch-icon" href="http://images.professionalaspnet.com/furniture/touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="http://images.professionalaspnet.com/furnituretouch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="http://images.professionalaspnet.com/furniture/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="http://images.professionalaspnet.com/furniture/touch-icon-ipad-retina.png">
 
-            <meta content="yes" name="apple-mobile-web-app-capable">
-            <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
 
-            <link rel="apple-touch-startup-image" href="http://images.professionalaspnet.com/furniturestartup.png">
+    <link rel="apple-touch-startup-image" href="http://images.professionalaspnet.com/furniturestartup.png">
 
-            <meta name="application-name" content="" />
-            <meta name="msapplication-config" content="IEconfig.xml" />
+    <meta name="application-name" content="" />
+    <meta name="msapplication-config" content="IEconfig.xml" />
 
-            <meta name="msapplication-allowDomainMetaTags" content="true">
-            <meta name="msapplication-navbutton-color" content="">
-            <meta name="msapplication-badge" content="frequency=1440; polling-uri=">
-            <meta name="msapplication-notification" content="frequency=1440;polling-uri=; cycle=1" />
-            <meta name="msapplication-starturl" content="#!">
-            <meta name="msapplication-tooltip" content="">
+    <meta name="msapplication-allowDomainMetaTags" content="true">
+    <meta name="msapplication-navbutton-color" content="">
+    <meta name="msapplication-badge" content="frequency=1440; polling-uri=">
+    <meta name="msapplication-notification" content="frequency=1440;polling-uri=; cycle=1" />
+    <meta name="msapplication-starturl" content="#!">
+    <meta name="msapplication-tooltip" content="">
 
-            <link type="text/plain" rel="author" href="humans.txt" />
+    <link type="text/plain" rel="author" href="humans.txt" />
 
-            <noscript>
-                <meta http-equiv="refresh" content="1;URL=http://furniture.love2dev.com/coresite">
-            </noscript>
+    <noscript>
+        <meta http-equiv="refresh" content="1;URL=http://furniture.love2dev.com/coresite">
+    </noscript>
 
 </head>
 
@@ -140,568 +849,565 @@
     </footer>
 
     <script id="fast-furniture-layout"
-        class="spa-layout"
-        spa-title="Fast Furniture"
-        spa-view-type="layout"
-        spa-transition="slide"
-        type="spa-layout">
+            class="spa-layout"
+            spa-title="Fast Furniture"
+            spa-view-type="layout"
+            spa-transition="slide"
+            type="spa-layout">
 
-    <section class="spa-layout" spa-layout="fast-furniture-layout">
-        <section class="spa-child-view home-child-view main"></section>
-    </section>
+        <section class="spa-layout" spa-layout="fast-furniture-layout">
+            <section class="spa-child-view home-child-view main"></section>
+        </section>
 
-</script>
-<script id="contact"
-        class="spa-view"
-        spa-transition="slide"
-        spa-view-id=".spa-view-contact"
-        spa-layout="fast-furniture-layout"
-        spa-route="contact"
-        type="spa-view">
-
-    <section class="spa-view-contact">
-
-        <h1 class="view-title">contact</h1>
-
-        <div class="contact-form">
-
-            <form class="form-horizontal" name="contactForm">
-                <div class="form-group">
-                    <label for="firstName" class="col-sm-2 control-label">First Name</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="firstName" placeholder="First Name">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="LastName" class="col-sm-2 control-label">Last Name</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="LastName" placeholder="Last Name">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="email" class="col-sm-2 control-label">Email</label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" name="email" placeholder="Enter email">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="Message" class="col-sm-2 control-label">Message</label>
-                    <div class="col-sm-10">
-                        <textarea name="Message" cols="80" rows="10"></textarea>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10 text-right">
-                        <button type="submit" class="btn btn-default">Submit</button>
-                    </div>
-                </div>
-            </form>
-
-        </div>
-
-        <div class="contact-form-confirm hide">
-
-            <p>your request has been submitted</p>
-        </div>
-    </section>
-</script>
-<script id="forgotpassword"
-        class="spa-view"
-        spa-transition="slide"
-        spa-view-id=".spa-view-forgot-password"
-        spa-layout="fast-furniture-layout"
-        spa-route="forgot/password"
-        type="spa-view">
-
-    <section class="spa-view-forgot-password  col-sm-offset-2">
-
-        <h1>Forgot your password?</h1>
-
-        <p>Check your e-mal inbox for password recovery instructions.</p>
-    </section>
-</script>
-<script id="NotFound"
-		  class="spa-view"
-		  spa-transition="slide"
-		  spa-view-id=".spa-view-404"
-		  spa-layout="fast-furniture-layout"
-		  spa-route="404"
+    </script>
+    <script id="contact"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-contact"
+            spa-layout="fast-furniture-layout"
+            spa-route="contact"
             type="spa-view">
 
-	<section class="spa-view-404">
+        <section class="spa-view-contact">
 
-        <h1 class="view-title">Sorry There is No One Here By That Name.</h1>
+            <h1 class="view-title">contact</h1>
 
-    </section>
-</script>
-<script id="register"
-        class="spa-view"
-        spa-transition="slide"
-        spa-view-id=".spa-view-register"
-        spa-layout="fast-furniture-layout"
-        spa-route="register"
-        type="spa-view">
+            <div class="contact-form">
 
-    <section class="spa-view-register">
-
-        <h1 class="view-title-large">Register</h1>
-
-        <p>Sign up for a Fast Furniture Account</p>
-
-        <div class="col-sm-8 y-scroller-wrapper">
-            <form class="form-horizontal" name="userRegistration">
-                <div class="form-group">
-                    <label for="firstName" class="col-sm-2 control-label">First Name</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="firstName" placeholder="First Name">
+                <form class="form-horizontal" name="contactForm">
+                    <div class="form-group">
+                        <label for="firstName" class="col-sm-2 control-label">First Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="firstName" placeholder="First Name">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="LastName" class="col-sm-2 control-label">Last Name</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="LastName" placeholder="Last Name">
+                    <div class="form-group">
+                        <label for="LastName" class="col-sm-2 control-label">Last Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="LastName" placeholder="Last Name">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="email" class="col-sm-2 control-label">Email</label>
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control" name="email" placeholder="Enter email">
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" name="email" placeholder="Enter email">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="Password1" class="col-sm-2 control-label">Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" name="Password1" placeholder="Password">
+                    <div class="form-group">
+                        <label for="Message" class="col-sm-2 control-label">Message</label>
+                        <div class="col-sm-10">
+                            <textarea name="Message" cols="80" rows="10"></textarea>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="Password2" class="col-sm-2 control-label">Confirm Password</label>
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control" name="Password2" placeholder="Confirm Password">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10 text-right">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group col-md-offset-5 col-sm-10 text-right">
-                    <button type="button" class="btn btn-default">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Create Account</button>
-                </div>
-            </form>
-        </div>
-    </section>
-</script>
-<script id="static"
-        class="spa-view"
-        spa-transition="slide"
-        spa-view-id=".spa-view-static"
-        spa-layout="fast-furniture-layout"
-        spa-route="s/:slug"
-        type="spa-view">
+                </form>
 
-    <section class="spa-view-static">
-
-
-    </section>
-
-</script>
-<script id="account"
-		  class="spa-view"
-		  spa-transition="slide"
-		  spa-view-id=".spa-view-account"
-		  spa-layout="fast-furniture-layout"
-		  spa-route="account"
-            type="spa-view">
-
-	<section class="spa-view-account">
-
-        <h1 class="view-title">Account</h1>
-
-    </section>
-</script>
-<script id="categories"
-        class="spa-view"
-        spa-transition="slide"
-        spa-view-id=".spa-view-categories"
-        spa-layout="fast-furniture-layout"
-        spa-route="categories"
-        type="spa-view">
-
-    <section class="spa-view-categories">
-
-        <div class="y-scroller-wrapper">
-
-            <div class="categories-grid"></div>
-
-        </div>
-    </section>
-
-</script>
-<script id="category"
-        class="spa-view"
-        spa-transition="slide"
-        spa-view-id=".spa-view-category"
-        spa-layout="fast-furniture-layout"
-        spa-route="category/:Name"
-        type="spa-view">
-
-    <section class="spa-view-category">
-
-        <h1 class="view-title-large">Category Furniture</h1>
-
-        <div class="child-categories"></div>
-
-        <div class="x-scroller-wrapper">
-
-            <div class="item-grid products-wrapper"></div>
-
-        </div>
-
-    </section>
-</script>
-<script id="changePassword"
-        class="spa-view"
-        spa-transition="slide"
-        spa-view-id=".spa-view-change-password"
-        spa-layout="fast-furniture-layout"
-        spa-route="changepassword"
-        type="spa-view">
-
-    <section class="spa-view-change-password">
-
-        <h1 class="view-title-large">Change Password</h1>
-
-    </section>
-</script>
-<script id="forgotemail"
-        class="spa-view"
-        spa-transition="slide"
-        spa-view-id=".spa-view-forgot-email"
-        spa-layout="fast-furniture-layout"
-        spa-route="forgot/email"
-        type="spa-view">
-
-    <section class="spa-view-forgot-email col-sm-offset-2">
-
-        <div class="col-sm-5">
-            <h1>Login</h1>
-            <h2>Forgot your e-mail?</h2>
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label for="username" class="col-sm-2 control-label">Username:</label>
-                    <div class="col-sm-10">
-                        <input type="text" name="username" class="username form-control" placeholder="Username" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-5 text-right">
-                        <button class="btn btn-primary">Login</button>
-                    </div>
-                </div>
-            </form>
             </div>
-</section>
-</script>
-<script id="forgotpassword"
-        class="spa-view"
-        spa-transition="slide"
-        spa-view-id=".spa-view-forgot-password"
-        spa-layout="fast-furniture-layout"
-        spa-route="forgot/password"
-        type="spa-view">
 
-    <section class="spa-view-forgot-password col-sm-offset-2">
-        <div class="col-sm-5">
+            <div class="contact-form-confirm hide">
+
+                <p>your request has been submitted</p>
+            </div>
+        </section>
+    </script>
+    <script id="forgotpassword"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-forgot-password"
+            spa-layout="fast-furniture-layout"
+            spa-route="forgot/password"
+            type="spa-view">
+
+        <section class="spa-view-forgot-password  col-sm-offset-2">
+
             <h1>Forgot your password?</h1>
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label for="username" class="col-sm-2 control-label">Username:</label>
-                    <div class="col-sm-10">
-                        <input type="text" name="username" class="username form-control" placeholder="Username" />
+
+            <p>Check your e-mal inbox for password recovery instructions.</p>
+        </section>
+    </script>
+    <script id="NotFound"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-404"
+            spa-layout="fast-furniture-layout"
+            spa-route="404"
+            type="spa-view">
+
+        <section class="spa-view-404">
+
+            <h1 class="view-title">Sorry There is No One Here By That Name.</h1>
+
+        </section>
+    </script>
+    <script id="register"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-register"
+            spa-layout="fast-furniture-layout"
+            spa-route="register"
+            type="spa-view">
+
+        <section class="spa-view-register">
+
+            <h1 class="view-title-large">Register</h1>
+
+            <p>Sign up for a Fast Furniture Account</p>
+
+            <div class="col-sm-8 y-scroller-wrapper">
+                <form class="form-horizontal" name="userRegistration">
+                    <div class="form-group">
+                        <label for="firstName" class="col-sm-2 control-label">First Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="firstName" placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="LastName" class="col-sm-2 control-label">Last Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="LastName" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" name="email" placeholder="Enter email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Password1" class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" name="Password1" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Password2" class="col-sm-2 control-label">Confirm Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" name="Password2" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-offset-5 col-sm-10 text-right">
+                        <button type="button" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Create Account</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </script>
+    <script id="static"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-static"
+            spa-layout="fast-furniture-layout"
+            spa-route="s/:slug"
+            type="spa-view">
+
+        <section class="spa-view-static"></section>
+
+    </script>
+    <script id="account"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-account"
+            spa-layout="fast-furniture-layout"
+            spa-route="account"
+            type="spa-view">
+
+        <section class="spa-view-account">
+
+            <h1 class="view-title">Account</h1>
+
+        </section>
+    </script>
+    <script id="categories"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-categories"
+            spa-layout="fast-furniture-layout"
+            spa-route="categories"
+            type="spa-view">
+
+        <section class="spa-view-categories">
+
+            <div class="y-scroller-wrapper">
+
+                <div class="categories-grid"></div>
+
+            </div>
+        </section>
+
+    </script>
+    <script id="category"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-category"
+            spa-layout="fast-furniture-layout"
+            spa-route="category/:Name"
+            type="spa-view">
+
+        <section class="spa-view-category">
+
+            <h1 class="view-title-large">Category Furniture</h1>
+
+            <div class="child-categories"></div>
+
+            <div class="x-scroller-wrapper">
+
+                <div class="item-grid products-wrapper"></div>
+
+            </div>
+
+        </section>
+    </script>
+    <script id="changePassword"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-change-password"
+            spa-layout="fast-furniture-layout"
+            spa-route="changepassword"
+            type="spa-view">
+
+        <section class="spa-view-change-password">
+
+            <h1 class="view-title-large">Change Password</h1>
+
+        </section>
+    </script>
+    <script id="forgotemail"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-forgot-email"
+            spa-layout="fast-furniture-layout"
+            spa-route="forgot/email"
+            type="spa-view">
+
+        <section class="spa-view-forgot-email col-sm-offset-2">
+
+            <div class="col-sm-5">
+                <h1>Login</h1>
+                <h2>Forgot your e-mail?</h2>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">Username:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="username" class="username form-control" placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-5 text-right">
+                            <button class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </script>
+    <script id="forgotpassword"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-forgot-password"
+            spa-layout="fast-furniture-layout"
+            spa-route="forgot/password"
+            type="spa-view">
+
+        <section class="spa-view-forgot-password col-sm-offset-2">
+            <div class="col-sm-5">
+                <h1>Forgot your password?</h1>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">Username:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="username" class="username form-control" placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-5 text-right">
+                            <button class="btn btn-primary">Recover Password</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </script>
+    <script id="home"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-home"
+            spa-layout="fast-furniture-layout"
+            spa-route=""
+            type="spa-view">
+
+        <section class="spa-view-home">
+
+            <div class="x-scroller-wrapper">
+
+                <div class="item-grid products-wrapper"></div>
+            </div>
+        </section>
+    </script>
+    <script id="login"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-login"
+            spa-layout="fast-furniture-layout"
+            spa-route="login"
+            type="spa-view">
+
+        <section class="spa-view-login col-sm-offset-2">
+            <div class="col-sm-5 login-form">
+                <h1>Provide your e-mail and password</h1>
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-2 control-label">Username:</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="username" class="form-control username" placeholder="Username" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-2 control-label">Password:</label>
+                        <div class="col-sm-10">
+                            <input type="password" name="password" class="form-control password" placeholder="Password" />
+                        </div>
+                    </div>
+                    <div class="checkbox col-sm-offset-2">
+                        <label class="checkbox" for="rememberme"><input type="checkbox" name="rememberme" />Remmeber Me</label>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-1 col-sm-10 text-right">
+                            <a class="btn btn-link" href="#!forgot/password">Forgot Password</a>
+                            <a class="btn btn-link" href="#!register">Sign Up</a>
+                            <button type="submit" class="btn btn-primary btn-login">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </script>
+    <script id="myFavorites"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-my-favorites"
+            spa-layout="fast-furniture-layout"
+            spa-route="favorites"
+            type="spa-view">
+
+        <section class="spa-view-my-favorites"></section>
+    </script>
+    <script id="orderConfirmation"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-order-confirmation"
+            spa-layout="fast-furniture-layout"
+            spa-route="order/confirmation"
+            type="spa-view">
+
+        <section class="spa-view-order-confirmation"></section>
+    </script>
+    <script id="orders"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-orders"
+            spa-layout="fast-furniture-layout"
+            spa-route="orders"
+            type="spa-view">
+
+        <section class="spa-view-orders">
+
+            <div class="y-scroller-wrapper">
+                <header class="orders-header">
+                    <div class="col-md-1">id</div>
+                    <div class="col-md-3">Date</div>
+                    <div class="col-md-3">Total</div>
+                    <div class="col-md-5">Items</div>
+                </header>
+                <div class="row order-row">
+                    <div class="col-md-1">474747</div>
+                    <div class="col-md-3">5/6/2015</div>
+                    <div class="col-md-3">$998</div>
+                    <div class="col-md-5 orders-order-list">
+                        <div class="row">
+                            <div class="orders-order-name">foo bar</div>
+                            <div class="orders-order-price">$499</div>
+                        </div>
+                        <div class="row">
+                            <div class="orders-order-name">foo bar</div>
+                            <div class="orders-order-price">$499</div>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-5 text-right">
-                        <button class="btn btn-primary">Recover Password</button>
+                <div class="row order-row">
+                    <div class="col-md-1">48392</div>
+                    <div class="col-md-3">5/5/2015</div>
+                    <div class="col-md-3">$998</div>
+                    <div class="col-md-5 orders-order-list">
+                        <div class="row">
+                            <div class="orders-order-name">foo bar</div>
+                            <div class="orders-order-price">$499</div>
+                        </div>
+                        <div class="row">
+                            <div class="orders-order-name">foo bar</div>
+                            <div class="orders-order-price">$499</div>
+                        </div>
                     </div>
+                </div>
+            </div>
+
+        </section>
+    </script>
+    <script id="paymentOptions"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-payment-option"
+            spa-layout="fast-furniture-layout"
+            spa-route="account/payment"
+            type="spa-view">
+
+        <section class="spa-view-payment-option">
+
+            <h1>Payment Options</h1>
+
+        </section>
+    </script>
+    <script id="placeOrder"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-place-order"
+            spa-layout="fast-furniture-layout"
+            spa-route="order/place"
+            type="spa-view">
+
+        <section class="spa-view-place-order"></section>
+    </script>
+    <script id="product"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-product"
+            spa-layout="fast-furniture-layout"
+            spa-route="product/:Name"
+            type="spa-view">
+
+        <section class="spa-view-product ">
+
+            <div class="y-scroller-wrapper full-text">
+
+                <section class="product-details"></section>
+
+                <section class="product-details-related-products"></section>
+            </div>
+        </section>
+    </script>
+    <script id="registerStatus"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-register-status"
+            spa-layout="fast-furniture-layout"
+            spa-route="registerstatus/:status"
+            type="spa-view">
+
+        <section class="spa-view-register-status">
+
+            <h1>Registration Success</h1>
+
+        </section>
+
+    </script>
+    <script id="search"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-search"
+            spa-layout="fast-furniture-layout"
+            spa-route="search/:query"
+            type="spa-view">
+
+        <section class="spa-view-search">
+
+            <form action="/search" name="furnitureSearch">
+                <div class="searchBox">
+                    <input id="searchTerm" class="search" spellcheck="true" autocapitalize="off"
+                           autofocus="" name="searchTerm" placeholder="search term" results="5" type="search" />
+                    <span class="search-input-icon"></span>
                 </div>
             </form>
-        </div>
-    </section>
-</script>
-<script id="home"
-        class="spa-view"
-        spa-transition="slide"
-        spa-view-id=".spa-view-home"
-        spa-layout="fast-furniture-layout"
-        spa-route=""
-        type="spa-view">
 
-    <section class="spa-view-home">
-
-        <div class="x-scroller-wrapper">
-
-            <div class="item-grid products-wrapper"></div>
-        </div>
-    </section>
-</script>
-<script id="login"
-        class="spa-view"
-        spa-transition="slide"
-        spa-view-id=".spa-view-login"
-        spa-layout="fast-furniture-layout"
-        spa-route="login"
-        type="spa-view">
-
-    <section class="spa-view-login col-sm-offset-2">
-        <div class="col-sm-5">
-            <h1>Provide your e-mail and password</h1>
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label for="username" class="col-sm-2 control-label">Username:</label>
-                    <div class="col-sm-10">
-                        <input type="text" name="username" class="form-control username" placeholder="Username" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="password" class="col-sm-2 control-label">Password:</label>
-                    <div class="col-sm-10">
-                        <input type="password" name="password" class="form-control password" placeholder="Password" />
-                    </div>
-                </div>
-                <div class="checkbox col-sm-offset-2">
-                    <label class="checkbox" for="rememberme"><input type="checkbox" name="rememberme" />Remmeber Me</label>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-offset-1 col-sm-10 text-right">
-                        <a class="btn btn-link" href="#!forgot/password">Forgot Password</a>
-                        <a class="btn btn-link" href="#!register">Sign Up</a>
-                        <button type="submit" class="btn btn-primary">Login</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
-</script>
-<script id="myFavorites"
-		  class="spa-view"
-		  spa-transition="slide"
-		  spa-view-id=".spa-view-my-favorites"
-		  spa-layout="fast-furniture-layout"
-		  spa-route="favorites"
-            type="spa-view">
-
-	<section class="spa-view-my-favorites"></section>
-</script>
-<script id="orderConfirmation"
-		  class="spa-view"
-		  spa-transition="slide"
-		  spa-view-id=".spa-view-order-confirmation"
-		  spa-layout="fast-furniture-layout"
-		  spa-route="order/confirmation"
-            type="spa-view">
-
-	<section class="spa-view-order-confirmation"></section>
-</script>
-<script id="orders"
-		  class="spa-view"
-		  spa-transition="slide"
-		  spa-view-id=".spa-view-orders"
-		  spa-layout="fast-furniture-layout"
-		  spa-route="orders"
-            type="spa-view">
-
-    <section class="spa-view-orders">
-
-        <div class="y-scroller-wrapper">
-            <header class="orders-header">
-                <div class="col-md-1">id</div>
-                <div class="col-md-3">Date</div>
-                <div class="col-md-3">Total</div>
-                <div class="col-md-5">Items</div>
-            </header>
-            <div class="row order-row">
-                <div class="col-md-1">474747</div>
-                <div class="col-md-3">5/6/2015</div>
-                <div class="col-md-3">$998</div>
-                <div class="col-md-5 orders-order-list">
-                    <div class="row">
-                        <div class="orders-order-name">foo bar</div>
-                        <div class="orders-order-price">$499</div>
-                    </div>
-                    <div class="row">
-                        <div class="orders-order-name">foo bar</div>
-                        <div class="orders-order-price">$499</div>
-                    </div>
+            <div class="y-scroller-wrapper">
+                <div class="search-result-list">
                 </div>
             </div>
-            <div class="row order-row">
-                <div class="col-md-1">48392</div>
-                <div class="col-md-3">5/5/2015</div>
-                <div class="col-md-3">$998</div>
-                <div class="col-md-5 orders-order-list">
-                    <div class="row">
-                        <div class="orders-order-name">foo bar</div>
-                        <div class="orders-order-price">$499</div>
-                    </div>
-                    <div class="row">
-                        <div class="orders-order-name">foo bar</div>
-                        <div class="orders-order-price">$499</div>
-                    </div>
-                </div>
+
+        </section>
+    </script>
+    <script id="shoppingCart"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-shopping-cart"
+            spa-layout="fast-furniture-layout"
+            spa-route="cart"
+            type="spa-view">
+
+        <section class="spa-view-shopping-cart">
+
+            <h1>Shopping Cart</h1>
+
+            <div class="shopping-cart-wrapper"></div>
+
+        </section>
+    </script>
+    <script id="social"
+            class="spa-view"
+            spa-transition="slide"
+            spa-view-id=".spa-view-social"
+            spa-layout="fast-furniture-layout"
+            spa-route="social"
+            type="spa-view">
+
+        <section class="spa-view-social"></section>
+    </script>
+    <script id="shoppingCartTemplate" type="text/x-simpleTemplate-template">
+
+        <div class="shopping-cart-items">
+
+            <%for(var orderItem in this.Items) {%>
+
+            <div class="shopping-cart-item">
+                <a href="#!product/<%this.Items[orderItem].Slug%>">
+                    <img alt="<%this.Items[orderItem].Name%>" src="https://az763773.vo.msecnd.net/thumb/<%this.Items[orderItem].Photos.Thumb%>" class="cart-item-photo">
+                    <span class="cart-item-name type-large"><%this.Items[orderItem].Name%></span>
+                </a>
+                <div class="cart-item-qty type-medium" data-id="<%this.Items[orderItem].Id%>"><%this.Items[orderItem].Qty%></div>
+                <div class="cart-item-price type-medium"><%this.Items[orderItem].Price%></div>
+                <div class="cart-item-delete">X</div>
             </div>
+
+            <%}%>
+
+        </div>
+        <div class=" text-right col-sm-10 cart-actions">
+            <button class="btn btn-link btn-update">Update</button>
+            <a href="#!account/payment" class="btn btn-default btn-checkout">Check Out</a>
         </div>
 
-    </section>
-</script>
-<script id="paymentOptions"
-		  class="spa-view"
-		  spa-transition="slide"
-		  spa-view-id=".spa-view-payment-option"
-		  spa-layout="fast-furniture-layout"
-		  spa-route="account/payment"
-            type="spa-view">
-
-	<section class="spa-view-payment-option">
-
-        <h1>Payment Options</h1>
-
-    </section>
-</script>
-<script id="placeOrder"
-		  class="spa-view"
-		  spa-transition="slide"
-		  spa-view-id=".spa-view-place-order"
-		  spa-layout="fast-furniture-layout"
-		  spa-route="order/place"
-            type="spa-view">
-
-	<section class="spa-view-place-order"></section>
-</script>
-<script id="product"
-        class="spa-view"
-        spa-transition="slide"
-        spa-view-id=".spa-view-product"
-        spa-layout="fast-furniture-layout"
-        spa-route="product/:Name"
-        type="spa-view">
-
-    <section class="spa-view-product ">
-
-        <div class="y-scroller-wrapper full-text">
-
-            <section class="product-details"></section>
-
-            <section class="product-details-related-products"></section>
-        </div>
-    </section>
-</script>
-<script id="registerStatus"
-        class="spa-view"
-        spa-transition="slide"
-        spa-view-id=".spa-view-register-status"
-        spa-layout="fast-furniture-layout"
-        spa-route="registerstatus/:status"
-        type="spa-view">
-
-    <section class="spa-view-register-status">
-
-        <h1>Registration Success</h1>
-
-    </section>
-
-</script>
-<script id="search"
-		  class="spa-view"
-		  spa-transition="slide"
-		  spa-view-id=".spa-view-search"
-		  spa-layout="fast-furniture-layout"
-		  spa-route="search/:query"
-            type="spa-view">
-
-	<section class="spa-view-search">
-
-        <form action="/search" name="furnitureSearch">
-            <div class="searchBox">
-                <input id="searchTerm" class="search" spellcheck="true" autocapitalize="off"
-                       autofocus="" name="searchTerm" placeholder="search term" results="5" type="search" />
-                <span class="search-input-icon"></span>
-            </div>
-        </form>
-
-        <div class="y-scroller-wrapper">
-            <div class="search-result-list">
-            </div>
+        <div class="cart-totals">
+            <div class="cart-sales-tax"><label>Sales Tax: </label><%this.salesTax%></div>
+            <div class="cart-sales-shipping"><label>Shipping: </label><%this.shipping%></div>
+            <div class="cart-grand-total"><label>Grand Total: </label><%this.grandTotal%></div>
         </div>
 
-    </section>
-</script>
-<script id="shoppingCart"
-        class="spa-view"
-        spa-transition="slide"
-        spa-view-id=".spa-view-shopping-cart"
-        spa-layout="fast-furniture-layout"
-        spa-route="cart"
-        type="spa-view">
 
-    <section class="spa-view-shopping-cart">
+    </script>
+    <script id="categoryGridItem" type="text/x-simpleTemplate-template">
 
-        <h1>Shopping Cart</h1>
+        <%for(var category in this.categories) {%>
 
-        <div class="shopping-cart-wrapper"></div>
+        <div class="item-grid-group">
+            <a class="item-grid-group-title" href="#!category/<%this.categories[category].Slug%>"><%this.categories[category].Name%> ></a>
 
-    </section>
-</script>
-<script id="social"
-		  class="spa-view"
-		  spa-transition="slide"
-		  spa-view-id=".spa-view-social"
-		  spa-layout="fast-furniture-layout"
-		  spa-route="social"
-            type="spa-view">
+            <div class="product-wrapper">
+                <%for(var index in this.categories[category].Products) {%>
 
-	<section class="spa-view-social"></section>
-</script>
-<script id="shoppingCartTemplate" type="text/x-simpleTemplate-template">
-
-    <div class="shopping-cart-items">
-
-        <%for(var orderItem in this.Items) {%>
-
-        <div class="shopping-cart-item">
-            <a href="#!product/<%this.Items[orderItem].Slug%>">
-                <img alt="<%this.Items[orderItem].Name%>" src="https://az763773.vo.msecnd.net/thumb/<%this.Items[orderItem].Photos.Thumb%>" class="cart-item-photo">
-                <span class="cart-item-name type-large"><%this.Items[orderItem].Name%></span>
-            </a>
-            <div class="cart-item-qty type-medium" data-id="<%this.Items[orderItem].Id%>"><%this.Items[orderItem].Qty%></div>
-            <div class="cart-item-price type-medium"><%this.Items[orderItem].Price%></div>
-            <div class="cart-item-delete">X</div>
-        </div>
-
-        <%}%>
-
-    </div>
-    <div class=" text-right col-sm-10 cart-actions">
-        <button class="btn btn-link btn-update">Update</button>
-        <a href="#!account/payment" class="btn btn-default btn-checkout">Check Out</a>
-    </div>
-
-    <div class="cart-totals">
-        <div class="cart-sales-tax"><label>Sales Tax: </label><%this.salesTax%></div>
-        <div class="cart-sales-shipping"><label>Shipping: </label><%this.shipping%></div>
-        <div class="cart-grand-total"><label>Grand Total: </label><%this.grandTotal%></div>
-    </div>
-
-
-</script>
-<script id="categoryGridItem" type="text/x-simpleTemplate-template">
-
-    <%for(var category in this.categories) {%>
-
-    <div class="item-grid-group">
-        <a class="item-grid-group-title" href="#!category/<%this.categories[category].Slug%>"><%this.categories[category].Name%> ></a>
-
-        <div class="product-wrapper">
-            <%for(var index in this.categories[category].Products) {%>
-
-            <div
+                <div
              <%if(index === "0"){%>
             class="item-grid-target-first"
             <%}else{%>
@@ -726,114 +1432,114 @@
             </a>
         </div>
 
-            <%}%>
+                <%}%>
+            </div>
         </div>
-    </div>
-    <%}%>
+        <%}%>
 
-</script>
+    </script>
 
-<script id="categoryListItem" type="text/x-simpleTemplate-template">
+    <script id="categoryListItem" type="text/x-simpleTemplate-template">
 
-    <%for(var index in this.categories) {%>
+        <%for(var index in this.categories) {%>
 
-    <div class="categories-grid-item">
-        <a class="categories-grid-parent-title" href="#!category/<%this.categories[index].Slug%>"><%this.categories[index].Name%></a>
+        <div class="categories-grid-item">
+            <a class="categories-grid-parent-title" href="#!category/<%this.categories[index].Slug%>"><%this.categories[index].Name%></a>
+
+            <div class="categories-grid-item-children">
+
+                <%for(var child in this.categories[index].Children) {%>
+
+                <a class="categories-grid-child-title" href="#!category/<%this.categories[index].Children[child].Slug%>"><%this.categories[index].Children[child].Name%></a>
+
+                <%}%>
+            </div>
+        </div>
+
+        <%}%>
+
+    </script>
+
+    <script id="childCategoryList" type="text/x-simpleTemplate-template">
+
+        <%for(var index in this.Children) {%>
 
         <div class="categories-grid-item-children">
 
-            <%for(var child in this.categories[index].Children) {%>
+            <a class="categories-grid-child-title" href="#!category/<%this.Children[index].Slug%>"><%this.Children[index].Name%></a>
 
-            <a class="categories-grid-child-title" href="#!category/<%this.categories[index].Children[child].Slug%>"><%this.categories[index].Children[child].Name%></a>
-
-            <%}%>
         </div>
-    </div>
+        <%}%>
 
-    <%}%>
+    </script>
+    <script id="menuItem" type="text/x-simpleTemplate-template">
 
-</script>
+        <%for(var index in this.menu) {%>
+        <a href="#!<%this.menu[index].Slug%>" role="menuitem" class="home-nav"><span class="nav-icon <%this.menu[index].icon%>"></span><span class="nav-text"><%this.menu[index].Name%></span></a>
+        <%}%>
 
-<script id="childCategoryList" type="text/x-simpleTemplate-template">
+    </script>
+    <script id="orderRecord" type="text/x-simpleTemplate-template">
 
-    <%for(var index in this.Children) {%>
+        <%for(var order in this.orders) {%>
 
-    <div class="categories-grid-item-children">
+        <div class="item-grid-group">
+            <%this.order.id%>
+        </div>
+        <%}%>
 
-        <a class="categories-grid-child-title" href="#!category/<%this.Children[index].Slug%>"><%this.Children[index].Name%></a>
+    </script>
+    <script id="productDetails" type="text/x-simpleTemplate-template">
 
-    </div>
-    <%}%>
+        <header class="product-detail-header">
+            <h1><%this.Name%></h1>
+        </header>
 
-</script>
-<script id="menuItem" type="text/x-simpleTemplate-template">
+        <span class="product-detail-photo-wrapper">
+            <img alt="<%this.Name%>" src="https://az763773.vo.msecnd.net/display/<%this.Photos.Original%>" class="product-detail-photo">
+        </span>
 
-    <%for(var index in this.menu) {%>
-    <a href="#!<%this.menu[index].Slug%>" role="menuitem" class="home-nav"><span class="nav-icon <%this.menu[index].icon%>"></span><span class="nav-text"><%this.menu[index].Name%></span></a>
-    <%}%>
+        <div class="product-detail-list">
+            <div class="product-detail-list-item product-detail-price">$<%this.Price%></div>
+            <div class="product-detail-list-item order-btn"><button class="btn btn-default add-to-cart" data-product="<%this.Slug%>">Order Now</button></div>
+        </div>
 
-</script>
-<script id="orderRecord" type="text/x-simpleTemplate-template">
-
-    <%for(var order in this.orders) {%>
-
-    <div class="item-grid-group">
-        <%this.order.id%>
-    </div>
-    <%}%>
-
-</script>
-<script id="productDetails" type="text/x-simpleTemplate-template">
-
-    <header class="product-detail-header">
-        <h1><%this.Name%></h1>
-    </header>
-
-    <span class="product-detail-photo-wrapper">
-        <img alt="<%this.Name%>" src="https://az763773.vo.msecnd.net/display/<%this.Photos.Original%>" class="product-detail-photo">
-    </span>
-
-    <div class="product-detail-list">
-        <div class="product-detail-list-item product-detail-price">$<%this.Price%></div>
-        <div class="product-detail-list-item order-btn"><button class="btn btn-default add-to-cart" data-product="<%this.Slug%>">Order Now</button></div>
-    </div>
-
-    <div class="product-detail-description">
-        <%this.Description%>
-    </div>
+        <div class="product-detail-description">
+            <%this.Description%>
+        </div>
 
 
-</script>
-<script id="productGridGroup" type="text/x-simpleTemplate-template">
+    </script>
+    <script id="productGridGroup" type="text/x-simpleTemplate-template">
 
-    <%for(var index in this.groups) {%>
-    <div class="item-grid-group">
-        <h1 class="item-grid-group-title"><%this.groups[index].Name%></h1>
+        <%for(var index in this.groups) {%>
+        <div class="item-grid-group">
+            <h1 class="item-grid-group-title"><%this.groups[index].Name%></h1>
 
-        <div class="item-grid-group-items group-items-<%this.groups[index].Name%>"></div>
+            <div class="item-grid-group-items group-items-<%this.groups[index].Name%>"></div>
 
-    </div>
+        </div>
 
-    <%}%>
-</script>
+        <%}%>
+    </script>
 
-<script id="productGridItem" type="text/x-simpleTemplate-template">
+    <script id="productGridItem" type="text/x-simpleTemplate-template">
 
-    <%for(var index in this.products) {%>
+        <%for(var index in this.products) {%>
 
-    <div 
+        <div
              <%if(index === "0"){%>
             class="item-grid-target-first"
             <%}else{%>
              class="item-grid-target"
             <%}%>>
         <a href="#!product/<%this.products[index].Slug%>">
-            <img alt="<%this.products[index].Name%>" 
+            <img alt="<%this.products[index].Name%>"
                                 <%if(index === "0"){%>
-                src="https://az763773.vo.msecnd.net/display/<%this.products[index].Photo%>" 
+                src="https://az763773.vo.msecnd.net/display/<%this.products[index].Photo%>"
                 <%}else{%>
                 src="https://az763773.vo.msecnd.net/mobile/<%this.products[index].Photo%>"
-                <%}%> 
+                <%}%>
                 srcset="https://az763773.vo.msecnd.net/thumb/<%this.products[index].Photo%> 116w,
                         https://az763773.vo.msecnd.net/mobile/<%this.products[index].Photo%> 300w,
                         https://az763773.vo.msecnd.net/display/<%this.products[index].Photo%> 400w,
@@ -844,96 +1550,99 @@
         </a>
     </div>
 
-    <%}%>
+        <%}%>
 
-</script>
-<script id="relatedProduct" type="text/x-simpleTemplate-template">
+    </script>
+    <script id="relatedProduct" type="text/x-simpleTemplate-template">
 
-    <%for(var index in this.Related) {%>
+        <%for(var index in this.Related) {%>
 
-    <div class="related-products-target">
-        <a href="#!product/<%this.Related[index].Slug%>">
-            <img alt="Product Name" src="https://az763773.vo.msecnd.net/thumb/<%this.Related[index].Photos.Thumb%>" class="replated-product-photo">
-            <figcaption class="related-products-photo-caption"><%this.Related[index].Name%></figcaption>
-        </a>
-    </div>
-
-    <%}%>
-
-</script>
-
-<script id="searchReultItems" type="text/x-simpleTemplate-template">
-
-    <%for(var index in this.products) {%>
-
-    <div class="item-grid-target">
-        <a href="#!product/<%this.products[index].Slug%>">
-            <img alt="<%this.products[index].Name%>"
-                src="https://az763773.vo.msecnd.net/mobile/<%this.products[index].Photo%>"
-                  class="product-grid-photo">
-            <figcaption class="item-grid-photo-caption"><%this.products[index].Name%></figcaption>
-        </a>
-    </div>
-
-    <%}%>
-
-</script>
-<script id="staticText" type="text/x-simpleTemplate-template">
-
-    <article>
-
-        <header>
-
-            <h1 class="view-title"><%this.Title%></h1>
-
-        </header>
-
-        <%for(var index in this.Content) {%>
-
-        <p><%this.Content[index]%></p>
+        <div class="related-products-target">
+            <a href="#!product/<%this.Related[index].Slug%>">
+                <img alt="Product Name" src="https://az763773.vo.msecnd.net/thumb/<%this.Related[index].Photos.Thumb%>" class="replated-product-photo">
+                <figcaption class="related-products-photo-caption"><%this.Related[index].Name%></figcaption>
+            </a>
+        </div>
 
         <%}%>
 
-    </article>
-    
-</script>
-<script id="userMenuProfile" type="text/x-simpleTemplate-template">
+    </script>
 
-    <span>
-        <img class="img-circle" alt="image" src="<%this.Photos.thumb%>">
-    </span>
-    <span class="clear">
-        <span class="block m-t-xs">
-            <strong class="font-bold"><%this.Name%></strong>
+    <script id="searchReultItems" type="text/x-simpleTemplate-template">
+
+        <%for(var index in this.products) {%>
+
+        <div class="item-grid-target">
+            <a href="#!product/<%this.products[index].Slug%>">
+                <img alt="<%this.products[index].Name%>"
+                     src="https://az763773.vo.msecnd.net/mobile/<%this.products[index].Photo%>"
+                     class="product-grid-photo">
+                <figcaption class="item-grid-photo-caption"><%this.products[index].Name%></figcaption>
+            </a>
+        </div>
+
+        <%}%>
+
+    </script>
+    <script id="staticText" type="text/x-simpleTemplate-template">
+
+        <article>
+
+            <header>
+
+                <h1 class="view-title"><%this.Title%></h1>
+
+            </header>
+
+            <%for(var index in this.Content) {%>
+
+            <p><%this.Content[index]%></p>
+
+            <%}%>
+
+        </article>
+
+    </script>
+    <script id="userMenuProfile" type="text/x-simpleTemplate-template">
+
+        <span>
+            <img class="img-circle" alt="image" src="<%this.Photos.thumb%>">
         </span>
-        <span class="text-muted text-xs block"><%this.Title%> <b class="caret"></b></span>
-    </span>
+        <span class="clear">
+            <span class="block m-t-xs">
+                <strong class="font-bold"><%this.Name%></strong>
+            </span>
+            <span class="text-muted text-xs block"><%this.Title%> <b class="caret"></b></span>
+        </span>
 
-</script>
+    </script>
 
 
-        <script src="js/libs/spa.js" id="spa-script"></script>
-<script src="js/libs/class.js" id="class-script"></script>
-<script src="js/libs/controller.js" id="controller-script"></script>
-<script src="js/libs/dollarbill.min.js" id="dollarbill.min-script"></script>
-<script src="js/libs/simpleViewEngine.js" id="simpleViewEngine-script"></script>
-<script src="js/libs/l2Storagecache.js" id="l2Storagecache-script"></script>
-<script src="js/libs/deeptissue.js" id="deeptissue-script"></script>
-<script src="js/libs/toolbar.min.js" id="toolbar.min-script"></script>
-<script src="js/dev/Fast-Furniture.app.js" id="Fast-Furniture.app-script"></script>
-<script src="js/dev/services/Fast-Furniture.data.js" id="Fast-Furniture.data-script"></script>
-<script src="js/dev/fastFurnitureController.js" id="fastFurnitureController-script"></script>
-<script src="js/dev/fastFurnitureAuthenticatedController.js" id="fastFurnitureAuthenticatedController-script"></script>
-<script src="js/dev/controllers/NotFound.js" id="NotFound-script"></script>
-<script src="js/dev/controllers/categories.js" id="categories-script"></script>
-<script src="js/dev/controllers/category.js" id="category-script"></script>
-<script src="js/dev/controllers/forgotemail.js" id="forgotemail-script"></script>
-<script src="js/dev/controllers/forgotpassword.js" id="forgotpassword-script"></script>
-<script src="js/dev/controllers/home.js" id="home-script"></script>
-<script src="js/dev/controllers/login.js" id="login-script"></script>
-<script src="js/dev/controllers/product.js" id="product-script"></script>
-<script src="js/dev/controllers/search.js" id="search-script"></script>
-<script src="js/dev/Fast-Furniture.bootstrap.js" id="Fast-Furniture.bootstrap-script"></script>
+    <script src="js/libs/spa.js" id="spa-script"></script>
+    <script src="js/libs/class.js" id="class-script"></script>
+    <script src="js/libs/ajax.js" id="ajax-script"></script>
+    <script src="js/libs/authenticate.js" id="authenticate-script"></script>
+
+    <script src="js/libs/controller.js" id="controller-script"></script>
+    <script src="js/libs/dollarbill.min.js" id="dollarbill.min-script"></script>
+    <script src="js/libs/simpleViewEngine.js" id="simpleViewEngine-script"></script>
+    <script src="js/libs/l2Storagecache.js" id="l2Storagecache-script"></script>
+    <script src="js/libs/deeptissue.js" id="deeptissue-script"></script>
+    <script src="js/libs/toolbar.min.js" id="toolbar.min-script"></script>
+    <script src="js/dev/Fast-Furniture.app.js" id="Fast-Furniture.app-script"></script>
+    <script src="js/dev/services/Fast-Furniture.data.js" id="Fast-Furniture.data-script"></script>
+    <script src="js/dev/fastFurnitureController.js" id="fastFurnitureController-script"></script>
+    <script src="js/dev/fastFurnitureAuthenticatedController.js" id="fastFurnitureAuthenticatedController-script"></script>
+    <script src="js/dev/controllers/NotFound.js" id="NotFound-script"></script>
+    <script src="js/dev/controllers/categories.js" id="categories-script"></script>
+    <script src="js/dev/controllers/category.js" id="category-script"></script>
+    <script src="js/dev/controllers/forgotemail.js" id="forgotemail-script"></script>
+    <script src="js/dev/controllers/forgotpassword.js" id="forgotpassword-script"></script>
+    <script src="js/dev/controllers/home.js" id="home-script"></script>
+    <script src="js/dev/controllers/login.js" id="login-script"></script>
+    <script src="js/dev/controllers/product.js" id="product-script"></script>
+    <script src="js/dev/controllers/search.js" id="search-script"></script>
+    <script src="js/dev/Fast-Furniture.bootstrap.js" id="Fast-Furniture.bootstrap-script"></script>
 
 </body>
 
