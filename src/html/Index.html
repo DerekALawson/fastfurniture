@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+
+<head>
+
+
+    <meta content="on" http-equiv="cleartype">
+    <meta http-equiv="content-language" content="us-en">
+
+    <#spaCSS#>
+
+        <link rel="dns-prefetch" href="//az763773.vo.msecnd.net/">
+        <link rel="dns-prefetch" href="//images.professionalaspnet.com/">
+
+        <title>Fast Furniture</title>
+
+
+
+        <meta content="Making Furnishing Your World Fast" name="description">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+        <link href="favicon.ico" rel="shortcut icon">
+
+        <link rel="icon" sizes="192x192" href="http://images.professionalaspnet.com/furniture/touch-icon-android.png">
+        <link rel="apple-touch-icon" sizes="57x57" href="touch-icon-iphone.gif" />
+        <link rel="apple-touch-icon" href="http://images.professionalaspnet.com/furniture/touch-icon-iphone.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="http://images.professionalaspnet.com/furnituretouch-icon-ipad.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="http://images.professionalaspnet.com/furniture/touch-icon-iphone-retina.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="http://images.professionalaspnet.com/furniture/touch-icon-ipad-retina.png">
+
+        <meta content="yes" name="apple-mobile-web-app-capable">
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+
+        <link rel="apple-touch-startup-image" href="http://images.professionalaspnet.com/furniturestartup.png">
+
+        <meta name="application-name" content="" />
+        <meta name="msapplication-config" content="IEconfig.xml" />
+
+        <meta name="msapplication-allowDomainMetaTags" content="true">
+        <meta name="msapplication-navbutton-color" content="">
+        <meta name="msapplication-badge" content="frequency=1440; polling-uri=">
+        <meta name="msapplication-notification" content="frequency=1440;polling-uri=; cycle=1" />
+        <meta name="msapplication-starturl" content="#!">
+        <meta name="msapplication-tooltip" content="">
+
+        <link type="text/plain" rel="author" href="http://furniture.love2dev.com/humans.txt" />
+
+
+<!--Use this to manage legacy browser, progressive enhancement to load a classic web site version-->
+
+        <!--<noscript>
+        <meta http-equiv="refresh" content="1;URL=http://www.indiana.edu/~account/new-directory">
+    </noscript>-->
+
+</head>
+
+<body spa-app="fastFurniture">
+
+    <header class="site-header" role="banner">
+        <span class="back-btn"><span class="nav-icon icon-left-open"></span></span>
+        <span class="hamburger-nav">
+            <span class="hamburger-bar-wrapper">
+                <span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span>
+        </span>
+        <span class="hamburger-bar-text">menu</span>
+        </span>
+        <h1 class="view-title">Fast Furniture</h1>
+
+        <a href="#!search"><span class="nav-icon icon-search"></span></a>
+        <a href="#!cart"><span class="nav-icon icon-basket"></span></a>
+    </header>
+
+    <main class="main-content" role="main"></main>
+
+    <aside class="left-panel panel-v-scroll">
+        <div class="nav-header">
+
+        </div>
+        <div class="y-scroller-wrapper">
+            <nav class="main-nav" role="navigation"></nav>
+            <nav class="social-icons" role="menu">
+
+                <a href="twitter.com/chrislove" class="btn btn-social fa fa-twitter"></a>
+                <a href="facebook.com" class="btn btn-social fa fa-facebook "></a>
+                <a href="google.com" class="btn btn-social fa fa-google"></a>
+                <a href="pinterest.com" class="btn btn-social fa fa-pinterest"></a>
+            </nav>
+        </div>
+    </aside>
+
+    <footer class="toolbar">
+        <nav class="toolbar-top-menu"></nav>
+        <nav class="toolbar-sub-menu"></nav>
+    </footer>
+
+    <#spaHTML#>
+
+        <script type="text/javascript">
+
+            var scripts = <#spaScripts#>,
+                src,
+                script,
+                pendingScripts = [],
+                firstScript = document.scripts[0];
+
+            if (typeof Promise == "undefined" || Promise.toString().indexOf("[native code]") === -1) {
+
+                scripts.unshift("js/libs/es6-promise.min.js");
+
+            }
+
+            // Watch scripts load in IE
+            function stateChange() {
+                // Execute as many scripts in order as we can
+
+                var pendingScript;
+
+                while (pendingScripts[0] && pendingScripts[0].readyState == 'loaded') {
+                    pendingScript = pendingScripts.shift();
+                    // avoid future loading events from this script (eg, if src changes)
+                    pendingScript.onreadystatechange = null;
+                    // can't just appendChild, old IE bug if element isn't closed
+                    firstScript.parentNode.insertBefore(pendingScript, firstScript);
+                }
+
+            }
+
+            // loop through our script urls
+            while (src = scripts.shift()) {
+
+                if ('async' in firstScript) { // modern browsers
+
+                    script = document.createElement('script');
+                    script.async = false;
+                    script.src = src;
+                    document.body.appendChild(script);
+
+                } else if (firstScript.readyState) { // IE<10
+                    // create a script and add it to our todo pile
+                    script = document.createElement('script');
+                    pendingScripts.push(script);
+                    // listen for state changes
+                    script.onreadystatechange = stateChange;
+                    // must set src AFTER adding onreadystatechange listener
+                    // else we’ll miss the loaded event for cached scripts
+                    script.src = src;
+                } else { // fall back to defer
+                    document.write('<script src="' + src + '" defer></' + 'script>');
+                }
+            }
+        </script>
+
+
+</body>
+
+</html>

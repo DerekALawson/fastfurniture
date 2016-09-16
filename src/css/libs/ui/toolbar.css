@@ -1,0 +1,84 @@
+.toolbar {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #c30000;
+  color: #fff;
+  height: 35px;
+  overflow: hidden;
+}
+.toolbar-top-menu {
+  width: 100%;
+  float: left;
+}
+.toolbar-item {
+  display: inline-block;
+  width: 14%;
+  height: 42px;
+  margin: 5px 3% 0px 3%;
+  text-align: center;
+  line-height: 42px;
+}
+.toolbar-item a {
+  color: #fff;
+}
+.toolbar-item-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+  line-height: 30px;
+  overflow: hidden;
+}
+.toolbar-item-landscape {
+  transform: rotate(90deg);
+}
+.expand-toolbar {
+  display: inline-block;
+  width: 36px;
+  height: 42px;
+  margin: 5px 5% 0px 5%;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  vertical-align: top;
+  line-height: 24px;
+}
+.toolbar-sub-menu {
+  float: left;
+  width: 100%;
+  display: block;
+}
+.toolbar-sub-menu-nav-list {
+  padding-left: 6px;
+}
+.toolbar-sub-menu-nav-item {
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  margin-bottom: 3px;
+  padding-left: 6px;
+  height: 36px;
+  color: #fff;
+  font-size: 21px;
+  line-height: 36px;
+}
+.toolbar-caption {
+  text-align: center;
+  font-size: 9px;
+  color: #fff;
+  font-weight: bold;
+  margin: 2px auto;
+  display: block;
+  width: 36px;
+  line-height: 10px;
+  height: 10px;
+}
+@media (min-width: 732px) {
+  .toolbar {
+    display: none;
+  }
+}

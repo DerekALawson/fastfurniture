@@ -1,0 +1,21 @@
+[
+    "js/libs/spa.js",
+    "js/libs/class.js",
+    "js/libs/controller.js",
+    "js/libs/dollarbill.min.js",
+    "js/libs/simpleViewEngine.js",
+    "js/libs/l2Storagecache.js",
+    "js/libs/authenticate.js",
+    "js/libs/deeptissue.js",
+    "js/libs/ui/toolbar.min.js",
+    "js/libs/ui/modal.js",
+    "js/libs/ui/preloader.js",
+    "js/libs/ui/pop-up-promotional.js",
+    "js/libs/ajax.js",
+    "js/dev/services/Fast-Furniture.data.js",
+    "js/dev/Fast-Furniture.app.js",
+    "js/dev/fastFurnitureController.js",
+    "js/dev/fastFurnitureAuthenticatedController.js",
+    "js/dev/controllers/**.js",
+    "js/dev/Fast-Furniture.bootstrap.js"
+]

@@ -1,0 +1,13 @@
+[
+    "css/libs/spa.css",
+    "css/libs/app.css",
+    "css/libs/ui/*.css",
+    "css/dev/core/grid.css",
+    "css/dev/core/list.css",
+    "css/dev/core/typography.css",
+    "css/dev/core/form.css",
+    "css/dev/core/buttons.css",
+    "css/dev/core/code.css",
+    "css/dev/ui/*.css",
+    "css/dev/views/*.css"
+]

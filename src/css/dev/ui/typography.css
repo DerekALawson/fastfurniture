@@ -1,0 +1,75 @@
+/* Mixin */
+/* Complimentary Color Scheme */
+/* Subtle Color Scheme */
+.type-xx-large {
+  font-size: 42pt;
+  font-weight: 200;
+  line-height: 1.1429;
+  letter-spacing: 0;
+}
+.type-x-large {
+  font-size: 20pt;
+  font-weight: 200;
+  line-height: 1.2;
+}
+.type-large {
+  font-size: 14pt;
+  font-weight: 600;
+  line-height: 1.3636;
+}
+.type-medium {
+  font-size: 11pt;
+  font-weight: 400;
+  line-height: 1.3636;
+}
+.type-small {
+  font-size: 11pt;
+  font-weight: 300;
+  line-height: 1.3636;
+}
+.type-x-small {
+  font-size: 11pt;
+  font-weight: 300;
+  line-height: 1.3636;
+}
+.type-xx-small {
+  font-size: 9pt;
+  font-weight: 400;
+  line-height: 1.6667;
+}
+.type-xx-large-internal {
+  font-size: 42pt;
+  font-weight: 200;
+  line-height: 1.1429;
+  letter-spacing: 0;
+}
+.type-x-large-internal {
+  font-size: 20pt;
+  font-weight: 200;
+  line-height: 1.2;
+}
+.type-large-internal {
+  font-size: 11pt;
+  font-weight: 600;
+  line-height: 1.3636;
+}
+.type-medium-internal {
+  font-size: 11pt;
+  font-weight: 400;
+  line-height: 1.3636;
+}
+.type-small-internal {
+  font-size: 11pt;
+  font-weight: 300;
+  line-height: 1.3636;
+}
+.type-x-small-internal {
+  font-size: 11pt;
+  font-weight: 300;
+  line-height: 1.3636;
+}
+.type-xx-small-internal {
+  font-size: 9pt;
+  font-weight: 400;
+  line-height: 1.6667;
+}

@@ -1,0 +1,125 @@
+/* Mixin */
+/* Complimentary Color Scheme */
+/* Subtle Color Scheme */
+.item-grid {
+  padding: 0;
+  overflow: hidden;
+  margin-left: 0;
+  height: 100%;
+  width: 500%;
+}
+.item-grid-group {
+  float: left;
+  margin: 1% 10px;
+  height: 100%;
+  width: calc(20% - 20px);
+  position: relative;
+  top: 0;
+  bottom: 0;
+}
+.item-grid-group .product-wrapper {
+  position: absolute;
+  top: 30px;
+  bottom: 10px;
+  display: inline-block;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.item-grid-target,
+.item-grid-target-first {
+  display: inline-block;
+  list-style-type: none;
+  margin: 10px;
+  width: 130px;
+  overflow: hidden;
+  background: transparent;
+  text-align: center;
+  float: left;
+  height: 130px;
+  position: relative;
+}
+.product-grid-photo {
+  min-height: 72px;
+  background: #808080;
+  width: 116px;
+}
+.item-grid-group-title {
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: 400;
+  padding: 0;
+  margin: 1% 0;
+  color: #000;
+  float: left;
+}
+.item-grid-photo-caption {
+  color: #ccc;
+  background: #333;
+  font-size: 1.2em;
+  padding: 1%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: absolute;
+  height: 3em;
+  display: none;
+}
+.item-grid-item-wrapper {
+  overflow: hidden;
+  height: 100%;
+}
+@media (min-width: 720px) {
+  .item-grid-target,
+  .item-grid-target-first {
+    width: 130px;
+    height: calc(40% - 20px);
+  }
+  .item-grid-group .product-wrapper div:nth-child(n+6) {
+    display: none;
+  }
+  .item-grid-photo-caption {
+    display: block;
+  }
+  .item-grid {
+    width: 5400px;
+  }
+  .item-grid-group {
+    width: 1060px;
+  }
+  .item-grid-target,
+  .item-grid-target-first {
+    margin: 10px;
+    width: 200px;
+  }
+  .item-grid-target-first {
+    width: 400px;
+    max-width: 400px;
+    height: calc(80% - 20px);
+  }
+  /*.item-grid-target-first .product-grid-photo {
+            min-width: 200px;
+            max-height: 470px;
+        }*/
+  .product-grid-photo {
+    min-height: 210px;
+    max-height: none;
+    width: 200px;
+    margin: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .item-grid-target {
+    margin: 10px;
+    width: 300px;
+  }
+  .item-grid-target-first .product-grid-photo {
+    width: 400px;
+  }
+  .product-grid-photo {
+    width: 300px;
+    margin: 0;
+  }
+}

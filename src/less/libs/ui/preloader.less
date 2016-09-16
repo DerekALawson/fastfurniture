@@ -1,0 +1,144 @@
+//http://codepen.io/anon/pen/LkdJrB
+// Core variables and mixins
+@import "../../dev/variables.less";
+@preloader-height-sm: 3px;
+@preloader-height-lg: 6px;
+.preloader {
+    position: relative;
+    left: -1%;
+    right: 0;
+    height: @preloader-height-sm;
+    bottom: 0;
+    padding: 0;
+    width: 105%;
+    background-color: #132122;
+    -webkit-animation: preloader-background linear 3.5s infinite;
+    animation: preloader-background linear 3.5s infinite;
+}
+
+.preloader::before, .preloader::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 0;
+    height: @preloader-height-sm;
+    background: #222;
+    -webkit-animation: preloader-front linear 3.5s infinite;
+    animation: preloader-front linear 3.5s infinite;
+    content: '';
+}
+
+.preloader::before {
+    right: 50%;
+}
+
+.preloader::after {
+    left: 50%;
+}
+
+@media(min-width: @screen-ipad) {
+    .preloader::before, .preloader::after, .preloader {
+        height: @preloader-height-lg;
+    }
+}
+
+@-webkit-keyframes preloader-background {
+    0%, 24.9% {
+        background-color: #8b0000;
+    }
+    25%, 49.9% {
+        background-color: #e0eff3;
+    }
+    50%, 74.9% {
+        background-color: #b89ea1;
+    }
+    75%, 100% {
+        background-color: #bb1a2c;
+    }
+}
+
+@keyframes preloader-background {
+    0%, 24.9% {
+        background-color: #8b0000;
+    }
+    25%, 49.9% {
+        background-color: #e0eff3;
+    }
+    50%, 74.9% {
+        background-color: #b89ea1;
+    }
+    75%, 100% {
+        background-color: #bb1a2c;
+    }
+}
+
+@-webkit-keyframes preloader-front {
+    0% {
+        width: 0;
+        background-color: #bb1a2c;
+    }
+    24.9% {
+        width: 50%;
+        background-color: #bb1a2c;
+    }
+    25% {
+        width: 0;
+        background-color: #bb1a2c;
+    }
+    49.9% {
+        width: 50%;
+        background-color: #8b0000;
+    }
+    50% {
+        width: 0;
+        background-color: #e0eff3;
+    }
+    74.9% {
+        width: 50%;
+        background-color: #e0eff3;
+    }
+    75% {
+        width: 0%;
+        background-color: #b89ea1;
+    }
+    100% {
+        width: 50%;
+        background-color: #b89ea1;
+    }
+}
+
+@keyframes preloader-front {
+    0% {
+        width: 0;
+        background-color: #bb1a2c;
+    }
+    24.9% {
+        width: 50%;
+        background-color: #bb1a2c;
+    }
+    25% {
+        width: 0;
+        background-color: #bb1a2c;
+    }
+    49.9% {
+        width: 50%;
+        background-color: #8b0000;
+    }
+    50% {
+        width: 0;
+        background-color: #e0eff3;
+    }
+    74.9% {
+        width: 50%;
+        background-color: #e0eff3;
+    }
+    75% {
+        width: 0%;
+        background-color: #b89ea1;
+    }
+    100% {
+        width: 50%;
+        background-color: #b89ea1;
+    }
+}

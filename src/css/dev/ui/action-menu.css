@@ -1,0 +1,46 @@
+/* Mixin */
+/* Complimentary Color Scheme */
+/* Subtle Color Scheme */
+.expanded-action-panel .action-panel {
+  display: block;
+  width: 220px;
+}
+.action-nav {
+  background-color: transparent;
+  font-weight: 300;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.25em;
+  display: block;
+  width: 220px;
+  border-bottom: 1px solid #777;
+  padding: 0 0 0 12px;
+}
+.aniswath-nav {
+  color: #fff;
+  width: 190px;
+  display: block;
+  margin-left: 20px;
+  text-decoration: none;
+}
+.sub-sub-nav {
+  display: block;
+  width: 220px;
+  border-bottom: 1px solid #777;
+}
+.redraw-actions {
+  display: none;
+}
+@media (min-width: 600px) {
+  /*and (max-width:1024px)*/
+  .main-nav .sub-sub-nav .btn {
+    width: 33%;
+    font-size: 1em;
+    height: 25px;
+  }
+  .main-nav .sub-sub-nav .fa {
+    height: 20px;
+    width: 20px;
+    margin-top: -2em;
+  }
+}

@@ -1,0 +1,331 @@
+@font-face {
+  font-family: 'fastfurniture';
+  src: url('https://fastfurniture.blob.core.windows.net/font/fastfurniture.eot?11647599');
+  src: url('https://fastfurniture.blob.core.windows.net/font/fastfurniture.eot?11647599#iefix') format('embedded-opentype'), url('https://fastfurniture.blob.core.windows.net/font/fastfurniture.woff?11647599') format('woff'), url('https://fastfurniture.blob.core.windows.net/font/fastfurniture.ttf') format('truetype'), url('https://fastfurniture.blob.core.windows.net/font/fastfurniture.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Normalize Box Model */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 100%;
+}
+body {
+  -ms-scroll-translation: vertical-to-horizontal;
+  -ms-touch-action: none;
+  touch-action: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -ms-content-zooming: none;
+  overflow-x: hidden;
+  background-color: #fff;
+  color: #000;
+  letter-spacing: 0.02em;
+  font-size: 13px;
+  font-family: "Segoe UI", "Segoe WP", "Roboto Medium", "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.231;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+/*http://www.sitepoint.com/html5-main-element/  */
+main {
+  display: block;
+}
+a,
+a:visited {
+  color: #222222;
+  text-decoration: none;
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+h1,
+.view-title {
+  margin: 2% 0;
+  letter-spacing: 0;
+  font-weight: 200;
+  font-size: 2em;
+  line-height: 50px;
+  text-align: center;
+  float: left;
+  overflow: hidden;
+  width: 100%;
+  height: 50px;
+}
+h2,
+.view-title-x-large,
+.page-title {
+  font-weight: 400;
+  font-size: 22pt;
+  line-height: 1.1429;
+}
+h3,
+.view-title-large,
+.panel-title {
+  margin: 6px 12px 6px 0;
+  font-weight: 200;
+  font-size: 20pt;
+  line-height: 1.2;
+  width: 100%;
+}
+h4,
+.panel-small-title {
+  font-weight: 400;
+  font-size: 18pt;
+  line-height: 1.1429;
+}
+.site-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 80px;
+}
+.win-backbutton {
+  display: inline-block;
+}
+.back-btn {
+  display: block;
+}
+.main-content {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  bottom: 35px;
+  left: 0;
+  overflow: hidden;
+  background: #fff;
+  -moz-transition: left 1s ease-out;
+  -o-transition: left 1s ease-out;
+  -webkit-transition: left 1s ease-out;
+  transition: left 1s ease-out;
+}
+.content-pane {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  display: none;
+}
+.current {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.vertical-list,
+.horizontal-list {
+  list-style-type: none;
+  margin: 0 6px 0 0;
+  padding: 0;
+}
+.title-view {
+  display: none;
+  margin: 0 3px;
+  line-height: 1em;
+  height: 1em;
+  width: 1em;
+  text-align: center;
+}
+.full-text a {
+  text-decoration: underline;
+  font-weight: 500;
+}
+.left {
+  float: left;
+  margin: 0 20px;
+}
+.no-results {
+  width: 50%;
+  margin: 3em auto;
+  font-size: 2em;
+}
+.block {
+  display: block;
+}
+.m-t-xs {
+  margin-top: 5px;
+}
+.site-header .view-title {
+  font-size: 1.9em;
+  width: 45%;
+  margin: 0;
+  line-height: 80px;
+  height: 80px;
+  text-align: left;
+}
+.site-header .nav-icon {
+  width: 1.5em;
+  font-family: "fastfurniture";
+  font-size: 2em;
+  float: right;
+  margin: 24px 1%;
+}
+.site-header .icon-basket {
+  display: inline-block;
+}
+.contact-form {
+  width: 90%;
+  margin: 1% 5%;
+}
+textarea {
+  width: 100%;
+  height: 48px;
+  overflow: auto;
+  border: 1px solid #eeeeee;
+}
+article header h1.view-title {
+  width: 100%;
+  display: block;
+}
+pre {
+  outline: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+}
+.string {
+  color: green;
+}
+.number {
+  color: darkorange;
+}
+.boolean {
+  color: blue;
+}
+.null {
+  color: magenta;
+}
+.key {
+  color: red;
+}
+@media screen and (max-width: 320px) {
+  @-ms-viewport {
+    width: 320px;
+  }
+  @-o-viewport {
+    width: 320px;
+  }
+  @viewport {
+    width: 320px;
+  }
+  /* CSS for 320px width snapped layout goes here */
+  .win-backbutton {
+    float: left;
+    margin: 20px 0 0 20px;
+    line-height: 1.75em;
+    border: solid 2px #fff;
+    border-radius: 1.75em;
+    display: inline-block;
+    height: 1.75em;
+    width: 1.75em;
+    text-align: center;
+  }
+  .back-btn {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABrSURBVDhPYxhwwAilUcC/f/9SgJQ1EH9hZGSsBOIvYAliAFBzwX8gANKfgZQNVJg4MDQ1M4I0AwOpH8QBagYF1hsQm2gANKAfZDu5AMUQIP0cSGmABUkFw8+QZiDeD8TLgYbwQIUHJWBgAAATadBlQVYlKgAAAABJRU5ErkJggg==");
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    margin: 3px auto;
+    display: none;
+  }
+}
+@media (min-width: 420px) {
+  .site-header .view-title {
+    font-size: 2.25em;
+  }
+}
+@media (min-width: 600px) {
+  .view-title {
+    width: 400px;
+    font-size: 1.5em;
+    height: 100%;
+    line-height: 30pt;
+  }
+  .panel-title {
+    font-size: 14pt;
+    width: 100%;
+  }
+  .panel-title.selected {
+    font-weight: bold;
+  }
+  .title-view {
+    display: inline-block;
+  }
+  .panel-title.selected > .title-view {
+    display: none;
+  }
+}
+@media (min-width: 720px) {
+  .main-content {
+    bottom: 20px;
+  }
+}
+@media (min-width: 800px) {
+  h1,
+  .view-title {
+    margin: 3% 0;
+    font-size: 1.25em;
+    line-height: 60px;
+    text-align: left;
+    overflow: hidden;
+    height: 60px;
+  }
+  .site-header .view-title {
+    left: 20%;
+    top: 5%;
+  }
+  .site-header .nav-icon {
+    margin: .6%;
+  }
+  .main-content {
+    left: 10px;
+    bottom: 40px;
+  }
+  .content-pane {
+    left: 0;
+  }
+  .title-view {
+    display: none;
+  }
+  .panel-title {
+    font-weight: bold;
+  }
+  .view-title {
+    font-size: 26pt;
+    line-height: 30pt;
+    padding-bottom: 2pt;
+  }
+}
+@media (min-width: 1100px) {
+  h1,
+  .view-title {
+    margin: 15px 0 0 40px;
+    font-size: 1.5em;
+    line-height: 80px;
+    width: calc(100% - 100px);
+    height: 80px;
+  }
+  .site-header .nav-icon {
+    margin: 24px 1%;
+  }
+  .nav-icon {
+    display: inline-block;
+  }
+}

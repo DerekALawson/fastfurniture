@@ -1,0 +1,55 @@
+// Core variables and mixins
+@import "../dev/variables.less";
+@import "../dev/mixins.less";
+.spa-layout {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 10px;
+    right: 0;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.spa-view {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.spa-current-view {
+    display: block;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.spa-child-view {
+    padding: 0 !important;
+    height: 100%;
+    width: 90%;
+    margin: 0 5%;
+}
+
+.show {
+    display: block !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.inline {
+    display: inline-block !important;
+}
+
+@media (min-width: @screen-md-min) {
+    .spa-child-view {
+        margin: 0;
+    }
+    .spa-current-view {
+        min-height: 300px;
+    }
+}

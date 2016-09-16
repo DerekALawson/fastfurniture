@@ -1,0 +1,43 @@
+{
+    "name": "lvoe2spascaffolding",
+    "version": "0.0.3",
+    "description": "foo bar",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Chris Love",
+    "license": "restricted",
+    "private": true,
+    "devDependencies": {
+        "ncp": "*",
+        "glob": "*",
+        "graceful-fs": "*",
+        "underscore": "*",
+        "strip-bom": "*",
+        "mustache": "*",
+        "grunt-contrib-connect": "*",
+        "grunt-run-grunt": "*",
+        "fs.js": "*",
+        "grunt": "*",
+        "grunt-contrib-copy": "*",
+        "grunt-contrib-cssmin": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-uncss": "*",
+        "grunt-azure-blob": "*",
+        "grunt-contrib-csslint": "*",
+        "grunt-autoprefixer": "*",
+        "grunt-contrib-watch": "*",
+        "grunt-contrib-less": "*",
+        "grunt-criticalcss": "*",
+        "grunt-contrib-yuidoc": "*",
+        "matchdep": "*",
+        "grunt-jscs": "*",
+        "grunt-contrib-htmlmin": "*",
+        "grunt-contrib-compress": "*",
+        "grunt-contrib-clean": "*",
+        "grunt-contrib-nodeunit": "*",
+        "grunt-banner": "*",
+        "grunt-bump": "*"
+    }
+}

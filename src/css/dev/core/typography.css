@@ -1,0 +1,218 @@
+/* Mixin */
+/* Complimentary Color Scheme */
+/* Subtle Color Scheme */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small,
+.h1 small,
+.h2 small,
+.h3 small,
+.h4 small,
+.h5 small,
+.h6 small,
+h1 .small,
+h2 .small,
+h3 .small,
+h4 .small,
+h5 .small,
+h6 .small,
+.h1 .small,
+.h2 .small,
+.h3 .small,
+.h4 .small,
+.h5 .small,
+.h6 .small {
+  font-weight: normal;
+  line-height: 1;
+  color: #777777;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+h1 small,
+.h1 small,
+h2 small,
+.h2 small,
+h3 small,
+.h3 small,
+h1 .small,
+.h1 .small,
+h2 .small,
+.h2 .small,
+h3 .small,
+.h3 .small {
+  font-size: 65%;
+}
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h4 small,
+.h4 small,
+h5 small,
+.h5 small,
+h6 small,
+.h6 small,
+h4 .small,
+.h4 .small,
+h5 .small,
+.h5 .small,
+h6 .small,
+.h6 .small {
+  font-size: 75%;
+}
+h1,
+.h1 {
+  font-size: 21px;
+}
+h2,
+.h2 {
+  font-size: 18px;
+}
+h3,
+.h3 {
+  font-size: 18px;
+}
+h4,
+.h4 {
+  font-size: 16px;
+}
+h5,
+.h5 {
+  font-size: 14px;
+}
+h6,
+.h6 {
+  font-size: 12px;
+}
+p {
+  margin: 0 0 10px;
+}
+.white,
+a.white,
+a.white:hover,
+a.white:active,
+a.white:visited {
+  color: #DFD6D9;
+}
+.xl-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  text-align: center;
+  padding: 1%;
+  text-shadow: 2px 2px 2px #555555;
+}
+.xl-text {
+  font-size: 1.25em;
+}
+.lg-text {
+  font-size: 1.15em;
+}
+.md-text {
+  font-size: .9em;
+}
+@media (min-width: 732px) {
+  .xl-title {
+    font-size: 2.5em;
+  }
+  .xl-text {
+    font-size: 2em;
+  }
+  .lg-text {
+    font-size: 1.75em;
+  }
+  .md-text {
+    font-size: 1.25em;
+  }
+  h1,
+  .h1 {
+    font-size: 25px;
+  }
+  h2,
+  .h2 {
+    font-size: 21px;
+  }
+  h3,
+  .h3 {
+    font-size: 21px;
+  }
+  h4,
+  .h4 {
+    font-size: 19px;
+  }
+  h5,
+  .h5 {
+    font-size: 16px;
+  }
+  h6,
+  .h6 {
+    font-size: 14px;
+  }
+}
+@media (min-width: 1200px) {
+  .xl-title,
+  .xl-text {
+    font-size: 3em;
+  }
+  .lg-text {
+    font-size: 2em;
+  }
+  .md-text {
+    font-size: 1.25em;
+  }
+  h1,
+  .h1 {
+    font-size: 31px;
+  }
+  h2,
+  .h2 {
+    font-size: 27px;
+  }
+  h3,
+  .h3 {
+    font-size: 27px;
+  }
+  h4,
+  .h4 {
+    font-size: 24px;
+  }
+  h5,
+  .h5 {
+    font-size: 21px;
+  }
+  h6,
+  .h6 {
+    font-size: 18px;
+  }
+}

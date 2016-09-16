@@ -1,0 +1,37 @@
+/* Mixin */
+/* Complimentary Color Scheme */
+/* Subtle Color Scheme */
+/* Mixin */
+/* Complimentary Color Scheme */
+/* Subtle Color Scheme */
+.social-icons {
+  margin: 5% auto;
+  width: 100%;
+  height: auto;
+  display: block;
+  clear: both;
+}
+.btn-social {
+  text-align: center;
+  background: #fff;
+  font-size: 5em;
+  padding: 1%;
+  margin: 1%;
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+  width: 46%;
+  height: 90%;
+}
+a[href*="twitter.com"] {
+  color: #55acee;
+}
+a[href*="facebook.com"] {
+  color: #3b5998;
+}
+a[href*="google.com"] {
+  color: #db4437;
+}
+a[href*="pinterest.com"] {
+  color: #db4437;
+}

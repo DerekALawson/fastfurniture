@@ -1,0 +1,26 @@
+.categories-grid-item {
+  margin: 1% 2%;
+  width: 90%;
+  display: inline-block;
+  float: left;
+}
+.categories-grid-parent-title {
+  color: #444;
+  font-size: 1.5em;
+  padding: .75% 1%;
+  margin: 1.5% 0;
+  display: block;
+}
+.categories-grid-child-title {
+  background: #dcdcdc;
+  padding: 2px 3px;
+  margin: 5px 6px;
+  line-height: 1.5em;
+  display: inline-block;
+  color: #000;
+}
+@media (min-width: 900px) {
+  .categories-grid-item {
+    width: 45%;
+  }
+}
