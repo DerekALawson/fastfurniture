@@ -1,1 +1,58 @@
-{"Id":3665,"Name":"0243R1-mcneilly-recl","Slug":"0243R1-mcneilly-recl","Description":"Diam dapibus.\r\nOdio nisl, dui cras, accumsan est nullam. Duis faucibus, molestie ante adipiscing, id eget elit.\r\nInteger magna nullam, pulvinar litora elit. Libero vestibulum.\r\n","Photos":{"Original":"0243R1-mcneilly-recl.jpg","Display":"0243R1-mcneilly-recl.jpg","Mobile":"0243R1-mcneilly-recl.jpg","Thumb":"0243R1-mcneilly-recl.jpg"},"Price":949.0,"Categories":["Living Room","Dressers & Chests","Living Room"],"Related":[{"Id":3665,"Name":"919313R-919401-919020-919220-americandrew-camden","Slug":"919313R-919401-919020-919220-americandrew-camden","Photos":{"Original":"919313R-919401-919020-919220-americandrew-camden.jpg","Display":"919313R-919401-919020-919220-americandrew-camden.jpg","Mobile":"919313R-919401-919020-919220-americandrew-camden.jpg","Thumb":"919313R-919401-919020-919220-americandrew-camden.jpg"},"Price":100.0},{"Id":3665,"Name":"DAjessicamcclintockhomecardtabletop","Slug":"DAjessicamcclintockhomecardtabletop","Photos":{"Original":"DAjessicamcclintockhomecardtabletop.jpg","Display":"DAjessicamcclintockhomecardtabletop.jpg","Mobile":"DAjessicamcclintockhomecardtabletop.jpg","Thumb":"DAjessicamcclintockhomecardtabletop.jpg"},"Price":949.0},{"Id":3665,"Name":"1450-20-loveseat","Slug":"1450-20-loveseat","Photos":{"Original":"1450-20-loveseat.jpg","Display":"1450-20-loveseat.jpg","Mobile":"1450-20-loveseat.jpg","Thumb":"1450-20-loveseat.jpg"},"Price":100.0}],"Reviews":[],"AvgRating":0}
+{
+    "Id": 3665,
+    "Name": "0243R1-mcneilly-recl",
+    "Slug": "0243R1-mcneilly-recl",
+    "Description": "Diam dapibus.\r\nOdio nisl, dui cras, accumsan est nullam. Duis faucibus, molestie ante adipiscing, id eget elit.\r\nInteger magna nullam, pulvinar litora elit. Libero vestibulum.\r\n",
+    "Photos": {
+        "Original": "0243R1-mcneilly-recl.jpg",
+        "Display": "0243R1-mcneilly-recl.jpg",
+        "Mobile": "0243R1-mcneilly-recl.jpg",
+        "Thumb": "0243R1-mcneilly-recl.jpg"
+    },
+    "Price": 949.0,
+    "Categories": [
+        "Living Room",
+        "Dressers & Chests",
+        "Living Room"
+    ],
+    "Related": [
+        {
+            "Id": 3665,
+            "Name": "919313R-919401-919020-919220-americandrew-camden",
+            "Slug": "919313R-919401-919020-919220-americandrew-camden",
+            "Photos": {
+                "Original": "919313R-919401-919020-919220-americandrew-camden.jpg",
+                "Display": "919313R-919401-919020-919220-americandrew-camden.jpg",
+                "Mobile": "919313R-919401-919020-919220-americandrew-camden.jpg",
+                "Thumb": "919313R-919401-919020-919220-americandrew-camden.jpg"
+            },
+            "Price": 100.0
+        },
+        {
+            "Id": 3665,
+            "Name": "DAjessicamcclintockhomecardtabletop",
+            "Slug": "DAjessicamcclintockhomecardtabletop",
+            "Photos": {
+                "Original": "DAjessicamcclintockhomecardtabletop.jpg",
+                "Display": "DAjessicamcclintockhomecardtabletop.jpg",
+                "Mobile": "DAjessicamcclintockhomecardtabletop.jpg",
+                "Thumb": "DAjessicamcclintockhomecardtabletop.jpg"
+            },
+            "Price": 949.0
+        },
+        {
+            "Id": 3665,
+            "Name": "1450-20-loveseat",
+            "Slug": "1450-20-loveseat",
+            "Photos": {
+                "Original": "1450-20-loveseat.jpg",
+                "Display": "1450-20-loveseat.jpg",
+                "Mobile": "1450-20-loveseat.jpg",
+                "Thumb": "1450-20-loveseat.jpg"
+            },
+            "Price": 100.0
+        }
+    ],
+    "Reviews": [],
+    "AvgRating": 0
+}
