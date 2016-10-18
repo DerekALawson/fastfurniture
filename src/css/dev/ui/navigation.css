@@ -1,6 +1,9 @@
 /* Mixin */
 /* Complimentary Color Scheme */
 /* Subtle Color Scheme */
+/* Mixin */
+/* Complimentary Color Scheme */
+/* Subtle Color Scheme */
 .nav-icon.icon-left-open,
 .back-btn {
   display: none;
@@ -157,7 +160,7 @@
 .left-panel {
   display: block;
   width: 220px;
-  background: #222;
+  background: #F99D36;
   position: absolute;
   left: -220px;
   top: 0;
@@ -166,7 +169,7 @@
   -o-transition: left 700ms ease-out;
   -webkit-transition: left 700ms ease-out;
   transition: left 700ms ease-out;
-  color: #293846;
+  color: #55B4F6;
 }
 .expand-menu .left-panel {
   width: 220px;
@@ -192,7 +195,7 @@
   line-height: 26pt;
   margin-right: 2em;
   float: left;
-  border: 1px solid #293846;
+  border: 1px solid #55B4F6;
 }
 .hamburger-bar-wrapper {
   float: left;
@@ -203,7 +206,7 @@
 }
 .hamburger-bar {
   height: 4px;
-  background-color: #293846;
+  background-color: #55B4F6;
   border-radius: 4px;
   margin: 3px auto;
   width: 30px;
@@ -241,7 +244,7 @@
 .main-nav > a:active {
   /*color: rgb(193,40,40);*/
   border-bottom: solid 2px #fff;
-  background-color: #293846 !important;
+  background-color: #55B4F6 !important;
 }
 .main-nav .fa {
   font-size: 1.5em;
@@ -261,7 +264,7 @@
   font-family: "fastfurniture";
 }
 .seleted-nav {
-  background-color: #293846 !important;
+  background-color: #55B4F6 !important;
 }
 .main-nav > a.sub-nav,
 .main-nav > a.sub-nav:visited {

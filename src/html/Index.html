@@ -13,25 +13,24 @@
 
         <title>Fast Furniture</title>
 
-
-
         <meta content="Making Furnishing Your World Fast" name="description">
 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
         <link href="favicon.ico" rel="shortcut icon">
 
-        <link rel="icon" sizes="192x192" href="http://images.professionalaspnet.com/furniture/touch-icon-android.png">
+        <link rel="icon" sizes="192x192" href="/touch-icon-android.png">
         <link rel="apple-touch-icon" sizes="57x57" href="touch-icon-iphone.gif" />
-        <link rel="apple-touch-icon" href="http://images.professionalaspnet.com/furniture/touch-icon-iphone.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="http://images.professionalaspnet.com/furnituretouch-icon-ipad.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="http://images.professionalaspnet.com/furniture/touch-icon-iphone-retina.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="http://images.professionalaspnet.com/furniture/touch-icon-ipad-retina.png">
+        <link rel="apple-touch-icon" href="/touch-icon-iphone.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/touch-icon-ipad.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/touch-icon-iphone-retina.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
 
         <meta content="yes" name="apple-mobile-web-app-capable">
         <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta name="apple-mobile-web-app-title" content="Fast Furniture">
 
-        <link rel="apple-touch-startup-image" href="http://images.professionalaspnet.com/furniturestartup.png">
+        <link rel="apple-touch-startup-image" href="/startup.png">
 
         <meta name="application-name" content="" />
         <meta name="msapplication-config" content="IEconfig.xml" />
@@ -43,13 +42,18 @@
         <meta name="msapplication-starturl" content="#!">
         <meta name="msapplication-tooltip" content="">
 
-        <link type="text/plain" rel="author" href="http://furniture.love2dev.com/humans.txt" />
+        <meta name="msapplication-TileImage" content="/Fast-Furniture-152x152.png">
+        <meta name="msapplication-TileColor" content="#2F3BA2">
 
+        <link type="text/plain" rel="author" href="/humans.txt" />
+
+
+        <link rel="manifest" href="/manifest.json">
 
 <!--Use this to manage legacy browser, progressive enhancement to load a classic web site version-->
 
         <!--<noscript>
-        <meta http-equiv="refresh" content="1;URL=http://www.indiana.edu/~account/new-directory">
+        <meta http-equiv="refresh" content="1;URL=http://fastfurniture.love2dev.com/lo-fi.index.html">
     </noscript>-->
 
 </head>
@@ -148,8 +152,19 @@
                     document.write('<script src="' + src + '" defer></' + 'script>');
                 }
             }
-        </script>
 
+
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+              // Registration was successful
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }).catch(function(err) {
+              // registration failed :(
+              console.log('ServiceWorker registration failed: ', err);
+            });
+          }
+
+        </script>
 
 </body>
 

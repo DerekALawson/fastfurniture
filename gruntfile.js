@@ -149,7 +149,7 @@ module.exports = function (grunt) {
             development: {
                 expand: true,
                 cwd: "src",
-                src: ['**/*.jpg', '**/*.ico', '**/*.gif', '**/*.png', 'js/**/*.js', 'css/**/*.css', 'img/**/*.*', '**/*.txt', '**/*.rss', '**/*.xml', '**/*.cache', '**/*.json', 'fonts/**/*.*'],
+                src: ['**/*.jpg', '**/*.ico', '**/*.gif', '**/*.png', '**/*.js', 'css/**/*.css', 'img/**/*.*', '**/*.txt', '**/*.rss', '**/*.xml', '**/*.cache', '**/*.json', 'fonts/**/*.*'],
                 dest: 'development/'
             },
             production: {
@@ -237,7 +237,7 @@ module.exports = function (grunt) {
         connect: {
             development: {
                 options: {
-                    port: 57664,
+                    port: 57661,
                     base: "development",
                     keepalive: true
                 }

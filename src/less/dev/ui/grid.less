@@ -1,9 +1,6 @@
 ﻿// Core variables and mixins
 @import "../variables.less";
 @import "../mixins.less";
-
-
-
 .item-grid {
     padding: 0;
     overflow: hidden;
@@ -22,21 +19,19 @@
     bottom: 0;
 }
 
-    .item-grid-group .product-wrapper {
-        position: absolute;
-        top: 30px;
-        bottom: 10px;
-        display: inline-block;
-        left: 0;
-        right: 0;
-        overflow: hidden;
-        overflow-x: hidden;
-        overflow-y: hidden;
-    }
+.item-grid-group .product-wrapper {
+    position: absolute;
+    top: 30px;
+    bottom: 10px;
+    display: inline-block;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
 
-
-.item-grid-target,
-.item-grid-target-first {
+.item-grid-target, .item-grid-target-first {
     display: inline-block;
     list-style-type: none;
     margin: 10px;
@@ -55,8 +50,6 @@
     width: 116px;
 }
 
-
-
 .item-grid-group-title {
     width: 100%;
     font-size: 1.5em;
@@ -68,8 +61,8 @@
 }
 
 .item-grid-photo-caption {
-    color: #ccc;
-    background: #333;
+    color: @gray-darker;
+    background: @brand-primary-dark;
     font-size: 1.2em;
     padding: 1%;
     bottom: 0;
@@ -85,52 +78,36 @@
     height: 100%;
 }
 
-
-
-
 @media(min-width:720px) {
-
-    .item-grid-target,
-    .item-grid-target-first {
+    .item-grid-target, .item-grid-target-first {
         width: 130px;
         height: calc(40% - 20px);
     }
-
-
     .item-grid-group .product-wrapper div:nth-child(n+6) {
         display: none;
     }
-
     .item-grid-photo-caption {
         display: block;
     }
-
     .item-grid {
         width: 5400px;
     }
-
-
     .item-grid-group {
         width: 1060px;
     }
-
-    .item-grid-target,
-    .item-grid-target-first {
+    .item-grid-target, .item-grid-target-first {
         margin: 10px;
         width: 200px;
     }
-
     .item-grid-target-first {
         width: 400px;
         max-width: 400px;
         height: calc(80% - 20px);
     }
-
     /*.item-grid-target-first .product-grid-photo {
             min-width: 200px;
             max-height: 470px;
         }*/
-
     .product-grid-photo {
         min-height: 210px;
         max-height: none;
@@ -140,16 +117,13 @@
 }
 
 @media(min-width:1024px) {
-
     .item-grid-target {
         margin: 10px;
         width: 300px;
     }
-
     .item-grid-target-first .product-grid-photo {
         width: 400px;
     }
-
     .product-grid-photo {
         width: 300px;
         margin: 0;

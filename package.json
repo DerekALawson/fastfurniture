@@ -38,6 +38,8 @@
         "grunt-contrib-clean": "*",
         "grunt-contrib-nodeunit": "*",
         "grunt-banner": "*",
-        "grunt-bump": "*"
+        "grunt-bump": "*",
+        "uncss": "*",
+        "cssmin": "*"
     }
 }
