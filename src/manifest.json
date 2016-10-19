@@ -1,0 +1,25 @@
+{
+  "name": "Fast Furniture",
+  "short_name": "Fast Furniture",
+  "icons": [{
+      "src": "Fast-Furniture-70x70.png",
+      "sizes": "70x70",
+      "type": "image/png"
+    }, {
+      "src": "Fast-Furniture-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    }, {
+      "src": "Fast-Furniture310x310-wide.png",
+      "sizes": "310x310",
+      "type": "image/png"
+    }, {
+      "src": "Fast-Furniture-310x310.png",
+      "sizes": "310x310",
+      "type": "image/png"
+    }],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F99D36",
+  "theme_color": "#55B4F6"
+}

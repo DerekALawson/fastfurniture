@@ -107,9 +107,15 @@
                 pendingScripts = [],
                 firstScript = document.scripts[0];
 
-            if (typeof Promise == "undefined" || Promise.toString().indexOf("[native code]") === -1) {
+            if (typeof Promise === "undefined" || Promise.toString().indexOf("[native code]") === -1) {
 
                 scripts.unshift("js/libs/es6-promise.min.js");
+
+            }
+
+            if (typeof fetch === "undefined" || fetch.toString().indexOf("[native code]") === -1) {
+
+                scripts.unshift("js/libs/fetch.js");
 
             }
 
