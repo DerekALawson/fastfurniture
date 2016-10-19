@@ -1,53 +1,56 @@
 ﻿//kicks off the application
 
-var appPrefix = "Fast-Furniture-",
-    appConfig = {
-        "environment": "dev"
-    },
-    lsCache = l2Storeagecache(),
-    ajax = new AJAX({
-        cache: lsCache,
-        appKey: appPrefix,
-        API_ROOT: "data/"
-    }),
-    ve = simpleViewEngine({
-        "appName": "Fast-Furniture",
-        "appPrefix": "Fast-Furniture-",
-        cache: lsCache
-    }),
-    auth = new Authenticate({
-        ajax: ajax,
-        cache: lsCache,
-        appPrefix: appPrefix,
-        provider: "Auth0"
-    });
+;
 
-fastFurnitureData = new FastFurnitureData(lsCache, appPrefix),
+(function (window, undefined) {
 
-    fastFurniture = FastFurniture({
-        appPrefix: appPrefix,
-        appKey: appPrefix,
-        "services": {
-            "viewEngine": ve
-        }
-    });
+    "use strict";
 
 
-ve.setupAssets(function () {
+    var appPrefix = "Fast-Furniture-",
+        appConfig = {
+            "environment": "dev"
+        },
+        lsCache = l2Storeagecache(),
+        data = new FastFurnitureData(lsCache, appPrefix),
+        ve = simpleViewEngine({
+            "appName": "Fast-Furniture",
+            "appPrefix": "Fast-Furniture-",
+            cache: lsCache
+        }),
 
-    ve.processSPA(function () {
+        fastFurniture = FastFurniture({
+            appPrefix: appPrefix,
+            appKey: appPrefix,
+            "services": {
+                "viewEngine": ve,
+                "data": data,
+                "auth": new Authenticate({
+                    ajax: data,
+                    cache: lsCache,
+                    appPrefix: appPrefix,
+                    provider: "Auth0"
+                })
+            }
+        });
 
-        _spa = SPA({
-            "AppContext": fastFurniture,
-            "viewEngine": ve,
-            "viewSelector": "[type='text/x--template']",
-            "defaultPage": "index",
-            "viewWrapper": "#main",
-            "viewTransition": "slide",
-            "defaultTitle": "Fast Furniture"
+
+    ve.setupAssets(function () {
+
+        ve.processSPA(function () {
+
+            SPA({
+                "AppContext": fastFurniture,
+                "viewEngine": ve,
+                "viewSelector": "[type='text/x--template']",
+                "defaultPage": "index",
+                "viewWrapper": "#main",
+                "viewTransition": "slide",
+                "defaultTitle": "Fast Furniture"
+            });
+
         });
 
     });
 
-
-});
+} (window));

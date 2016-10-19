@@ -6,7 +6,7 @@ FastFurniture.fn.categories = FastFurniture.fn.fastFurnitureController.extend({
 
         var home = this;
 
-        fastFurnitureData.getItem("data/categories.json", "slug", "home-categories")
+        home.rootScope.data.getItem("data/categories.json", "slug", "home-categories")
             .then(function (categories) {
 
                 home.renderHomeCategories(categories);
@@ -17,7 +17,7 @@ FastFurniture.fn.categories = FastFurniture.fn.fastFurnitureController.extend({
 
     renderHomeCategories: function (categories) {
 
-        ve.bind({
+        this.rootScope.viewEngine.bind({
             targetSelector: ".categories-grid",
             templateName: "categoryListItem",
             data: { "categories": categories }

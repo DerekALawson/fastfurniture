@@ -1,7 +1,3 @@
-
-
-
-
 FastFurniture.fn.contact = FastFurniture.fn.fastFurnitureController.extend({
 
     onload: function (response) {
@@ -9,10 +5,9 @@ FastFurniture.fn.contact = FastFurniture.fn.fastFurnitureController.extend({
 
         if (this._super(response)) {
 
+            this.bindForm();
 
         };
-
-        this.bindForm();
     },
 
     bindForm: function () {
@@ -42,10 +37,10 @@ FastFurniture.fn.contact = FastFurniture.fn.fastFurnitureController.extend({
                 "Body": document.querySelector("[name='message']").value
             };
 
-        l2dData.postData({
-            url: "http://love2devapi20160606115144.azurewebsites.net/api/InfoRequest",
-            data: request
-        })
+        contact.rotScope.data.postData({
+                url: "http://love2devapi20160606115144.azurewebsites.net/api/InfoRequest",
+                data: request
+            })
             .then(function (result) {
 
                 window.location.hash = "#!content/contact-confirmation";
@@ -55,4 +50,3 @@ FastFurniture.fn.contact = FastFurniture.fn.fastFurnitureController.extend({
     }
 
 });
-

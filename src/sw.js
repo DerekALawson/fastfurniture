@@ -1,6 +1,8 @@
 var cacheName = 'fast-furninture-app';
 var filesToCache = [
   "index.html",
+  "fast-furniture-icon-64x64.ico",
+  "fast-furniture-icon-340x340.gif",
   "Fast-Furniture-600x310.png",
   "css/libs/spa.css",
   "css/libs/app.css",

@@ -11,12 +11,12 @@ FastFurniture.fn.product = FastFurniture.fn.fastFurnitureController.extend({
 
         var prod = this;
 
-        fastFurnitureData.getItem("data/Products/" + slug + ".json", "product", slug)
+        prod.rootScope.data.getItem("data/Products/" + slug + ".json", "product", slug)
             .then(function (response) {
 
             try {
 
-                ve.bind({
+                prod.rootScope.viewEngine.bind({
                     targetSelector: ".product-details",
                     templateName: "productDetails",
                     data: response,
@@ -28,7 +28,7 @@ FastFurniture.fn.product = FastFurniture.fn.fastFurnitureController.extend({
                     }
                 });
 
-                ve.bind({
+                prod.rootScope.viewEngine.bind({
                     targetSelector: ".product-details-related-products",
                     templateName: "relatedProduct",
                     data: response

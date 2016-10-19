@@ -78,7 +78,6 @@
                 menuItems: menuItems
             });
 
-
             app.setupHamburger();
 
             var backBtn = document.querySelector(".nav-icon.icon-left-open");
@@ -162,7 +161,7 @@
 
             ];
 
-            ve.bind({
+            this.viewEngine.bind({
                 targetSelector: ".main-nav",
                 templateName: "menuItem",
                 data: { menu: menu }

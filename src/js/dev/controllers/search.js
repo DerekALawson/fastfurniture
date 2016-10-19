@@ -36,7 +36,7 @@ FastFurniture.fn.search = FastFurniture.fn.fastFurnitureController.extend({
 
         if (value !== "") {
 
-        fastFurnitureData.getItem("data/" + value + ".json", "search", "search")
+        sv.rootScope.data.getItem("data/" + value + ".json", "search", "search")
             .then(function (response) {
 
                 if (response) {
@@ -44,7 +44,7 @@ FastFurniture.fn.search = FastFurniture.fn.fastFurnitureController.extend({
                     document.querySelector(".search-result-list").innerHTML = "";
                     document.querySelector(".y-scroller-wrapper").scrollLeft = 0;
 
-                    ve.bind({
+                    sv.rootScope.viewEngine.bind({
                         targetSelector: ".search-result-list",
                         templateName: "searchReultItems",
                         data: {products: response}
@@ -105,7 +105,6 @@ FastFurniture.fn.search = FastFurniture.fn.fastFurnitureController.extend({
         }
 
     }
-
 
 });
 

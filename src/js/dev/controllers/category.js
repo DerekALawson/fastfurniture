@@ -12,18 +12,21 @@ FastFurniture.fn.category = FastFurniture.fn.fastFurnitureController.extend({
 
     onload: function (response) {
 
+        var category = this;
+
         document.querySelector(".spa-view-category .view-title-large").innerHTML = response.paramValues.Name;
 
-        fastFurnitureData.getItem("data/" + response.paramValues.Name + ".json", "cateogory", response.paramValues.Name)
+        category.rootScope.data.getItem("data/" + response.paramValues.Name + ".json", "cateogory", response.paramValues.Name)
             .then(function (response) {
 
-                ve.bind({
+                category.rootScope.viewEngine.bind({
                     targetSelector: ".products-wrapper",
                     templateName: "productGridItem",
                     data: { "products": response }
                 })
                     .then(function () {
 
+                        //move to CSS
                         var totalWidth = 0,
                             wrapper = document.querySelector(".products-wrapper"),
                             width = window.innerWidth,

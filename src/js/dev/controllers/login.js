@@ -9,7 +9,7 @@ FastFurniture.fn.login = FastFurniture.fn.fastFurnitureController.extend({
             username, password;
 
 
-        if (!auth.isAuthenticated()) {
+        if (!loginView.rootScope.auth.isAuthenticated()) {
 
             $(".login-form").show();
 
@@ -20,7 +20,7 @@ FastFurniture.fn.login = FastFurniture.fn.fastFurnitureController.extend({
                 username = document.querySelector(".username");
                 password = document.querySelector(".password");
 
-                auth.login(username.value,
+                loginView.rootScope.auth.login(username.value,
                                         password.value,
                                         function (data) {
 
@@ -38,7 +38,9 @@ FastFurniture.fn.login = FastFurniture.fn.fastFurnitureController.extend({
 
         }
 
-    },
+    }
+    
+    /*,
 
     //http://stackoverflow.com/questions/4810841/how-can-i-pretty-print-json-using-javascript
     syntaxHighlight: function (json) {
@@ -63,6 +65,8 @@ FastFurniture.fn.login = FastFurniture.fn.fastFurnitureController.extend({
             return '<span class="' + cls + '">' + match + '</span>';
         });
     }
+
+    */
 
 });
 
