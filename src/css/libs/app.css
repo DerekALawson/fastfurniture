@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'fastfurniture';
-  src: url('https://fastfurniture.blob.core.windows.net/font/fastfurniture.eot?11647599');
-  src: url('https://fastfurniture.blob.core.windows.net/font/fastfurniture.eot?11647599#iefix') format('embedded-opentype'), url('https://fastfurniture.blob.core.windows.net/font/fastfurniture.woff?11647599') format('woff'), url('https://fastfurniture.blob.core.windows.net/font/fastfurniture.ttf') format('truetype'), url('https://fastfurniture.blob.core.windows.net/font/fastfurniture.svg') format('svg');
+  src: url('/font/fastfurniture.eot?11647599');
+  src: url('/font/fastfurniture.eot?11647599#iefix') format('embedded-opentype'), url('/font/fastfurniture.woff?11647599') format('woff'), url('/font/fastfurniture.ttf') format('truetype'), url('/font/fastfurniture.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }

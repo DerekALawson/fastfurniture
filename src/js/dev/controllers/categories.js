@@ -17,7 +17,7 @@ FastFurniture.fn.categories = FastFurniture.fn.fastFurnitureController.extend({
 
     renderHomeCategories: function (categories) {
 
-        this.rootScope.viewEngine.bind({
+        this.render({
             targetSelector: ".categories-grid",
             templateName: "categoryListItem",
             data: { "categories": categories }

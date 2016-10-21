@@ -19,14 +19,14 @@
 
                     <img alt="<%= categories[category].Products[index].Name%>" class="product-grid-photo"
                     <%if(index === "0"){%>
-                    src="https://az763773.vo.msecnd.net/display/<%= categories[category].Products[index].Photo%>"
+                    src="img/display/<%= categories[category].Products[index].Photo%>"
                     <%}else{%>
-                    src="https://az763773.vo.msecnd.net/mobile/<%= categories[category].Products[index].Photo%>"
+                    src="img/mobile/<%= categories[category].Products[index].Photo%>"
                     <%}%>
-                    srcset="https://az763773.vo.msecnd.net/thumb/<%= categories[category].Products[index].Photo%> 116w,
-                            https://az763773.vo.msecnd.net/mobile/<%= categories[category].Products[index].Photo%> 300w,
-                            https://az763773.vo.msecnd.net/display/<%= categories[category].Products[index].Photo%> 400w,
-                            https://az763773.vo.msecnd.net/originals/<%= categories[category].Products[index].Photo%> 1000w"
+                    srcset="img/thumb/<%= categories[category].Products[index].Photo%> 116w,
+                            img/mobile/<%= categories[category].Products[index].Photo%> 300w,
+                            img/display/<%= categories[category].Products[index].Photo%> 400w,
+                            img/originals/<%= categories[category].Products[index].Photo%> 1000w"
                     >
                     </div>
                     <figcaption class="item-grid-photo-caption"><%= categories[category].Products[index].Name%></figcaption>

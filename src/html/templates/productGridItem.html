@@ -11,14 +11,14 @@
         <a href="#!product/<%= products[index].Slug%>">
             <img alt="<%= products[index].Name%>" 
                                 <%if(index === "0"){%>
-                src="https://az763773.vo.msecnd.net/display/<%= products[index].Photo%>" 
+                src="img/display/<%= products[index].Photo%>" 
                 <%}else{%>
-                src="https://az763773.vo.msecnd.net/mobile/<%= products[index].Photo%>"
+                src="img/mobile/<%= products[index].Photo%>"
                 <%}%> 
-                srcset="https://az763773.vo.msecnd.net/thumb/<%= products[index].Photo%> 116w,
-                        https://az763773.vo.msecnd.net/mobile/<%= products[index].Photo%> 300w,
-                        https://az763773.vo.msecnd.net/display/<%= products[index].Photo%> 400w,
-                        https://az763773.vo.msecnd.net/originals/<%= products[index].Photo%> 1000w"
+                srcset="img/thumb/<%= products[index].Photo%> 116w,
+                        img/mobile/<%= products[index].Photo%> 300w,
+                        img/display/<%= products[index].Photo%> 400w,
+                        img/originals/<%= products[index].Photo%> 1000w"
 
                   class="product-grid-photo">
             <figcaption class="item-grid-photo-caption"><%= products[index].Name%></figcaption>

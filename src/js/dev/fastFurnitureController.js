@@ -7,6 +7,12 @@ FastFurniture.fn.fastFurnitureController = Controller.extend({
 
     return true;
 
+  },
+
+  render: function (options) {
+
+    this.rootScope.viewEngine.bind(options);
+
   }
 
 

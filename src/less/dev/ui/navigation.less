@@ -355,19 +355,19 @@
 .main-nav > a, .main-nav > a:visited, .main-nav > a:active, .main-nav > a:hover {
   background-color: transparent;
   font-weight: 300;
-  color: #eee;
+  color: @nav-text;
   text-decoration: none;
   font-size: 1.25em;
   display: block;
   width: 220px;
   height: 40px;
-  border-bottom: 1px solid #777;
+  border-bottom: 1px solid @gray-light;
   padding: 0 0 0 12px;
 }
 
 .main-nav > a:active {
   /*color: rgb(193,40,40);*/
-  border-bottom: solid 2px #fff;
+  border-bottom: solid 2px @white;
   background-color: @nav-text !important;
 }
 
@@ -443,9 +443,8 @@ a.sub-nav {
     padding-bottom: 2%;
   }
   .login-info > a, .login-info > a:visited .main-nav > a, .main-nav > a:visited {
-    /*margin: 0 5px;*/
+
     padding-left: 10px;
-    color: #c9c9c9;
     text-align: center;
     text-decoration: none;
     font-weight: bold;

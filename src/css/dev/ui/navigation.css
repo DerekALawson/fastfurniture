@@ -169,7 +169,7 @@
   -o-transition: left 700ms ease-out;
   -webkit-transition: left 700ms ease-out;
   transition: left 700ms ease-out;
-  color: #55B4F6;
+  color: #fff;
 }
 .expand-menu .left-panel {
   width: 220px;
@@ -195,7 +195,7 @@
   line-height: 26pt;
   margin-right: 2em;
   float: left;
-  border: 1px solid #55B4F6;
+  border: 1px solid #fff;
 }
 .hamburger-bar-wrapper {
   float: left;
@@ -206,7 +206,7 @@
 }
 .hamburger-bar {
   height: 4px;
-  background-color: #55B4F6;
+  background-color: #fff;
   border-radius: 4px;
   margin: 3px auto;
   width: 30px;
@@ -232,19 +232,19 @@
 .main-nav > a:hover {
   background-color: transparent;
   font-weight: 300;
-  color: #eee;
+  color: #fff;
   text-decoration: none;
   font-size: 1.25em;
   display: block;
   width: 220px;
   height: 40px;
-  border-bottom: 1px solid #777;
+  border-bottom: 1px solid #777777;
   padding: 0 0 0 12px;
 }
 .main-nav > a:active {
   /*color: rgb(193,40,40);*/
   border-bottom: solid 2px #fff;
-  background-color: #55B4F6 !important;
+  background-color: #fff !important;
 }
 .main-nav .fa {
   font-size: 1.5em;
@@ -264,7 +264,7 @@
   font-family: "fastfurniture";
 }
 .seleted-nav {
-  background-color: #55B4F6 !important;
+  background-color: #fff !important;
 }
 .main-nav > a.sub-nav,
 .main-nav > a.sub-nav:visited {
@@ -312,9 +312,7 @@ a.sub-nav {
   .login-info > a,
   .login-info > a:visited .main-nav > a,
   .main-nav > a:visited {
-    /*margin: 0 5px;*/
     padding-left: 10px;
-    color: #c9c9c9;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
